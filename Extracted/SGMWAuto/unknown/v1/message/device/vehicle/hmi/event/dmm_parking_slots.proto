@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+
+import "v1/message/device/vehicle/common.proto";
+
+/**
+ * DMM车位框
+ * 结构体 : sys_msgs::HmiParkingSlotList
+ * topic : /sys/hmi_parkingslot_list/v1
+ * 频率   : 5 Hz
+ */
+message DmmParkingSlotListEvt {
+  uint32 suggested_slot_id = 1;
+  repeated ParkingSlot slots = 2;
+}

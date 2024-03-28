@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package v2.device.driving.event;
+option go_package = "v2/device/driving/event";
+
+/**
+ * DMM车道线数据
+ * 结构体 :
+ * topic : /sys/dmm_line_info/v1
+ */
+message DmmLineInfoEvt {
+  repeated LineInfo line_info = 1;    //感知车道线
+  repeated LineInfo map_line_info = 2;//地图车道线
+  repeated LaneInfo lane_info = 3;    //感知车道
+  repeated LaneInfo map_lane_info = 4;//地图车道
+}
+
+message LineInfo {
+  uint64 line_id = 1;
+  EnumLineType line_type = 2;   //车道线类型
+  EnumLineColor line_color = 3; //车道线颜色
+  uint32 end_point = 4;         //线的终点
+  float curve_param_a = 5;      //曲线系数：y=ax^3+bx^2+cx+d
+  float curve_param_b = 6;
+  float curve_param_c = 7;
+  float curve_param_d = 8;
+}
+
+message LaneInfo {
+  uint64 lane_id = 1;
+  EnumLanePosition lane_pos = 2;  //车道位置
+  EnumLineColor lane_color = 3;   //车道颜色
+  uint64 left_line_id = 4;        //左侧车道线id
+  uint64 right_line_id = 5;       //右侧车道线id
+}
+
+enum EnumLineType {
+  LINE_NO = 0;    //没有检测到车道线
+  LINE_REAL = 1;  //实线
+  LINE_DASH = 2;  //虚线
+}
+
+enum EnumLanePosition {
+  EGO_LANE = 0;   //车辆所在车道
+  LEFT_LANE = 1;  //左侧车道
+  RIGHT_LANE = 2; //右侧车道
+}
+
+enum EnumLineColor {
+  LINE_GRAY = 0;    //灰色
+  LINE_BLUE = 1;    //蓝色
+  LINE_YELLOW = 2;  //黄色
+  LINE_RED = 3;     //红色
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/linearLayout1" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/BT_serial_port_baudrate" />
+    </LinearLayout>
+    <Spinner android:entries="@array/bt_baudrate" android:id="@id/spinner1" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginLeft="50.0dip" />
+    <LinearLayout android:orientation="vertical" android:id="@id/linearLayout2" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/textView2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/BT_serial_port_number" />
+    </LinearLayout>
+    <Spinner android:entries="@array/bt_uart" android:id="@id/spinner2" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginLeft="50.0dip" />
+    <Button android:id="@id/button1" android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginLeft="50.0dip" android:layout_marginTop="10.0dip" android:text="@string/BT_start" />
+</LinearLayout>

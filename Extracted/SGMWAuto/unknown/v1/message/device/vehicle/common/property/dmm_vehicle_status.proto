@@ -1,0 +1,89 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.common.property;
+option go_package = "v1/message/device/vehicle/common/property";
+
+import "v1/message/device/vehicle/common.proto";
+
+/**
+ * 车辆数据
+ * 结构体 :
+ * topic : /sys/dmm/vehicle_status/v1
+ */
+message DmmVehicleStatusEvt {
+  HmiSpeedInfo hmi_speed_info = 1;                  //表显车速和期望车速
+  VehicleLightStatus vehicle_light_status = 2;      //车辆灯光状态
+  VehicleDoorStatus vehicle_door_status = 3;        //车门状态
+  VehicleWindowOpenDegree vehicle_window_status = 4;//车窗开度
+  VehicleSeatStatus vehicle_seat_status = 5;        //座位状态
+  EnumVehicleGear vehicle_gear = 6;                 //档位
+  EnumWiper vehicle_wiper = 7;                      //雨刮状态
+  EnumSwitch hand_brake_status = 8;                 //手刹, off-放下, 1-拉起
+  uint32 vehicle_soc = 9;                           //电池电量/油量百分比
+  float steer_wheel_angle = 10;                     //方向盘转角（角度，范围:+—570）
+}
+
+message HmiSpeedInfo {
+  uint32 vehicle_speed = 1; //仪表速度
+  uint32 custom_speed = 2;  //期望速度
+  bool auto_adjust_custom_speed = 3;  //是否是车辆自动调整
+  uint32 speed_limit = 4;  //限制速度
+}
+
+message VehicleLightStatus {
+  EnumSwitch high_beam = 1;       //远光灯
+  EnumSwitch stop_lamp = 2;       //制动灯
+  EnumSwitch low_beam = 3;        //近光灯
+  EnumSwitch hazard_light = 4;    //危险警报灯
+  EnumSwitch rear_fog_lamp = 5;   //后雾灯
+  EnumSwitch left_turn_lamp = 6;  //左转向灯
+  EnumSwitch right_turn_lamp = 7; //右转向灯
+}
+
+message DoorStatus {
+  EnumSwitch ajar = 1;  //门碰开关状态
+  EnumSwitch lock = 2;  //门锁开关状态
+}
+
+message VehicleDoorStatus {
+  DoorStatus driver_door = 1;       //驾驶员侧门
+  DoorStatus passenger_door = 2;    //右前门
+  DoorStatus rear_left_door = 3;    //左后门
+  DoorStatus rear_right_door = 4;   //右后门
+  DoorStatus tail_door = 5;         //尾门
+}
+
+message VehicleWindowOpenDegree {
+  float driver_window = 1;      //驾驶员侧车窗
+  float passenger_window = 2;   //副驾驶侧车窗
+  float rear_left_window = 3;   //左后车窗
+  float rear_right_window = 4;  //右后车窗
+}
+
+message SeatStatus {
+  EnumSwitch seat_belt_attached = 1;  //安全带状态
+  uint32 seat_occupancy_status = 2;   //座位占用状态, 0-空置, 1-占用， 2-g故障
+}
+
+message VehicleSeatStatus {
+    SeatStatus driver_seat = 1;       //主驾驶座位
+    SeatStatus passenger_seat = 2;    //副驾驶座位
+    SeatStatus rear_left_seat = 3;    //左后座位
+    SeatStatus rear_middle_seat = 4;  //中后座位
+    SeatStatus rear_right_seat = 5;   //右后座位
+}
+
+enum EnumVehicleGear {
+  GEAR_N = 0;
+  GEAR_D = 1;
+  GEAR_S = 2;
+  GEAR_R = 3;
+  GEAR_P = 4;
+}
+
+enum EnumWiper {
+  WIPER_CLOSED = 0;         //关闭
+  WIPER_INTERMISSION = 1;   //间歇
+  WIPER_LOW_SPEED = 2;      //低速
+  WIPER_HIGH_SPEED = 3;     //高速
+}

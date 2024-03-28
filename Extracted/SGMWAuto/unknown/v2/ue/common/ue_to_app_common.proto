@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package v2.ue.common;
+option go_package = "v2/ue/common";
+
+message Common3DCmd {
+    string ue_version = 1;     //3D 版本号
+}
+
+/**
+ * 窗口变化相关指令
+ */
+message ScreenChangeUeCmd {
+    EnumScreenChangeUeCmd cmd = 1;
+}
+
+enum EnumScreenChangeUeCmd {
+    ScreenChangeUeStart = 0;
+    ScreenChangeUeEnd = 1;
+}

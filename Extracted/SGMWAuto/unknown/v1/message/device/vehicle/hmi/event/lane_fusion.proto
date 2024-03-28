@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+import "v1/message/device/vehicle/common.proto";
+
+/**
+ * 车道线数据
+ * 结构体 : sys_msgs::map_fusion::FusedLanes
+ * topic : /sys/fused_lanes/v2
+ */
+message LaneFusionEvt {
+  repeated LaneBorder lane_border = 1;
+}
+
+message LaneBorder {
+  uint32 id = 1;
+  uint32 num_type = 2; /**< lane semantic type number*/
+  repeated uint32 type_end = 3; /**< lane semantic type endpoint*/
+  repeated uint32 type = 4; /**< lane semantic types
+                                 0: ground
+                                 1. dotted line
+                                 2. solid line
+                                 3. solid-dotted line
+                                 4. dotted-solid line
+                                 5. diversion line*/
+  repeated OdomVector samples = 5; /*each border can not have samples more then 1000*/
+}

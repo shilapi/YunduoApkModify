@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.common.event;
+option go_package = "v1/message/device/vehicle/common/event";
+
+/**
+   * 超声波雷达数据
+   * 结构体: sys_msgs::SonarDisplay
+   * topic: /planning/sonar_warning
+   *          1       2
+   *  0   ________________  3
+   *     |     front     |
+   * 11  |               |   4
+   *     |               |
+   *     |               |
+   *     |left      right|
+   *     |               |
+   * 10  |               |   5
+   *     |     rear      |
+   *     |_______________|
+   * 9       8       7       6
+   */
+
+message SonarDisplayEvt {
+  uint32 sonar_alarm = 1; //超声波报警和色块，0: 报警和色块都关闭，1: 报警声关闭，色块打开，2: 报警声级别1，3: 报警声级别2, 4: 报警声级别3
+  repeated SonarColorType sonar_waring = 2; /**<index 0 is the left_front sonar, sort as clockwise*/
+}
+
+message SonarColorType {
+  uint32 color_type = 1; //color display: 0-off, 1-Green, 2-Yellow, 3-Red
+  uint32 distance = 2; //real dis = distance*0.02(m), range is [0m,5.1m]*/
+  uint32 reserve = 3;
+}

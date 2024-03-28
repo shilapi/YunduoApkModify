@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="horizontal" android:id="@id/LinearLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip">
+            <TextView android:id="@id/Wfd_Display_Toast_Time" android:layout_width="220.0dip" android:layout_height="wrap_content" android:text="@string/wfd_display_toast_time" />
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <EditText android:id="@id/Wfd_Display_Toast_Time_Edit" android:layout_width="100.0dip" android:layout_height="wrap_content" android:maxLength="10" android:numeric="integer" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/LinearLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip">
+            <TextView android:id="@id/Wfd_Display_Notif_Time" android:layout_width="220.0dip" android:layout_height="wrap_content" android:text="@string/wfd_display_notif_time" />
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <EditText android:id="@id/Wfd_Display_Notif_Time_Edit" android:layout_width="100.0dip" android:layout_height="wrap_content" android:maxLength="10" android:numeric="integer" />
+            </LinearLayout>
+        </LinearLayout>
+        <CheckBox android:id="@id/Wfd_Sqc_Info" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/wfd_sqc_tx" />
+        <CheckBox android:id="@id/Wfd_qe_Info" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/wfd_qe_tx" />
+        <CheckBox android:id="@id/Wfd_acs_Info" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/wfd_acs_tx" />
+        <Button android:id="@id/Wfd_Done" android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginLeft="80.0dip" android:layout_marginTop="10.0dip" android:text="@string/wfd_Done" />
+    </LinearLayout>
+</ScrollView>

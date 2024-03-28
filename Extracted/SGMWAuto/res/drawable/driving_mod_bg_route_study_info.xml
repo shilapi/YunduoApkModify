@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape android:shape="rectangle"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:radius="20.0dip" />
+    <solid android:color="@color/driving_mod_bg_route_study_info" />
+    <stroke android:width="1.0dip" android:color="@color/driving_mod_color_study_info_outline" />
+</shape>

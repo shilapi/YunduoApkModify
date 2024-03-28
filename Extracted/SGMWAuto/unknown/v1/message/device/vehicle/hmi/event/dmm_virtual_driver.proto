@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+
+/**
+ * DMM虚拟教学
+ * 结构体 : DmmVirtualDriverAction
+ * topic : /sys/dmm/virtual_driver_action/v1
+ * 频率: 5hz
+ */
+message DmmVirtualDriverEvt {
+  EnumVirtualDriverType virtual_driver = 1;     //虚拟教学模式下驾驶员动作
+  uint32 virtual_lon_overriding_flag = 2;       //虚拟教学模式下驾驶员纵向override
+  uint32 virtual_lat_overriding_flag = 3;       //虚拟教学模式下驾驶员横向override
+  uint32 virtual_co_overriding_flag = 4;        //虚拟教学模式下驾驶员同时override
+  uint32 virtual_desired_spd = 5;               //虚拟教学模式下期望速度
+  uint32 virtual_time_gap = 6;                  //虚拟教学模式下车距
+  uint32 virtual_hand_on_req = 7;               //虚拟教学模式下脱手报警
+  float virtual_steer_angle = 8;                //方向盘角度，单位：度
+  float virtual_brake_pedal_value = 9;          //刹车踏板深度，单位：mm
+  float virtual_gas_pedal_value = 10;           //油门踏板深度，单位：mm
+}
+
+enum EnumVirtualDriverType {
+  VIRTUAL_NO_ACTION = 0;              //驾驶员无操作
+  VIRTUAL_SETTING_ON = 1;             //驾驶员设置自动驾驶功能打开
+  VIRTUAL_SETTING_OFF = 2;            //驾驶员设置自动驾驶功能关闭
+  VIRTUAL_ACTIVATION = 3;             //驾驶员激活自动驾驶
+  VIRTUAL_BUTTON_DEACTIVATION = 4;    //驾驶员按键退出自动驾驶
+  VIRTUAL_BRAKE_DEACTIVATION = 5;     //驾驶员刹车退出自动驾驶
+  VIRTUAL_STEER_DEACTIVATION = 6;     //驾驶员方向盘退出自动驾驶
+  VIRTUAL_TRIG_LC_LEFT = 7;           //驾驶员向左拨杆
+  VIRTUAL_TRIG_LC_RIGHT = 8;          //驾驶员向右拨杆
+  VIRTUAL_LC_SUSPEND = 9;             //驾驶员回中拨杆
+  VIRTUAL_DESIRED_SPEED_UP = 10;      //驾驶员期望速度增加按钮按下
+  VIRTUAL_DESIRED_SPEED_DOWN = 11;    //驾驶员期望速度减少按钮按下
+}

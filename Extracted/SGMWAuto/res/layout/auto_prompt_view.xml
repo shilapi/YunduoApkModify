@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="498.0dip" android:layout_height="92.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/prompt_iv_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/toast_ic_default_blue" android:scaleType="centerInside" android:layout_marginStart="16.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <TextView android:textSize="@dimen/common_text_size_middle" android:textColor="@color/common_color_text_prompt" android:gravity="center" android:id="@id/prompt_tv_title" android:layout_width="386.0dip" android:layout_height="wrap_content" android:text="智能巡航辅助已退出" android:maxLines="2" android:layout_marginStart="8.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toEndOf="@id/prompt_iv_icon" app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

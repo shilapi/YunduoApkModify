@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:textColor="#ff000000" android:orientation="vertical" android:id="@id/em_info_curve_layout" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textColor="#ffffffff" android:gravity="center_horizontal" android:id="@id/em_info_curve_title" android:background="#ff000000" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <TextView android:textColor="#ff000000" android:gravity="center_horizontal" android:id="@id/em_info_curve_info" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <TextView android:textColor="#ff000000" android:gravity="center" android:id="@id/em_info_curve_y_label" android:visibility="gone" android:layout_width="20.0sp" android:layout_height="fill_parent" android:rotation="270.0" />
+        <com.mediatek.engineermode.mdmcomponent.CurveView android:id="@id/em_info_curve" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
+    </LinearLayout>
+    <TextView android:textColor="#ff000000" android:gravity="center_horizontal" android:id="@id/em_info_curve_x_label" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

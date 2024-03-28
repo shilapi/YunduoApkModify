@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:weightSum="2.0"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/ll_tab_apa" android:background="@drawable/bg_avm_tab" android:layout_width="112.0dip" android:layout_height="52.0dip" android:layout_marginStart="24.0dip" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <TextView android:textSize="@dimen/common_text_size_small" android:textColor="@color/avm_text_normal" android:id="@id/ll_tv_tab_apa" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sgmw_pad_ipa_parkin_tittle" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/ll_tab_reverse" android:background="@drawable/bg_avm_tab" android:visibility="gone" android:layout_width="112.0dip" android:layout_height="52.0dip" android:layout_marginStart="24.0dip" app:layout_constraintStart_toEndOf="@id/ll_tab_apa" app:layout_constraintTop_toTopOf="parent">
+        <TextView android:textSize="@dimen/common_text_size_small" android:textColor="@color/avm_text_normal" android:id="@id/ll_tv_tab_reverse" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sgmw_pad_avm_ra_enter_tittle" android:layout_marginStart="4.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

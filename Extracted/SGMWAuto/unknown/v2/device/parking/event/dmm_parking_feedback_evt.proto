@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package v2.device.parking.event;
+option go_package = "v2/device/parking/event";
+
+import "v2/common/auto_common.proto";
+option objc_class_prefix = "DSG";
+
+/**
+ * 手机版泊车使用
+ */
+message DmmParkingFeedbackEvt {
+  .v2.common.EnumParkingMode mode = 1;         //泊车模式(车机选择)
+  repeated .v2.common.OdomVector points = 2;   //区域、车位框、召唤点(车机选择)
+  uint32 slotId = 3;                //车位框ID(车机选择)
+  uint64 map_id = 4;                //地图ID(车机泊车准备好后的地图、dmm推荐的召唤地图)
+  int32 floorId = 5;                //当前楼层id, B1->-1, B2->-2, L1-1, ...
+  EnumPhoneParkingLocatorState state = 6;//定位状态(泊车/召唤)
+  CarPose pose = 7;                 //车辆在地图位置
+  ParkingResult parking_result = 8; //泊车结果反馈
+}
+
+enum EnumPhoneParkingLocatorState {
+  PHONE_LS_INITIALIZING = 0; //定位初始化中
+  PHONE_LS_TRACKING = 1;     //定位成功
+  PHONE_LS_FAIL = 2;         //定位失败
+}
+
+message CarPose {
+  .v2.common.OdomVector pose = 1;              //车辆在地图位置
+  float yaw = 2;
+  float pitch = 3;
+  float roll = 4;
+}
+
+message ParkingResult {
+  float parking_distance = 1;      //泊车距离，最大范围为巡航1000m、泊车50m
+  float parking_time = 2;          //泊车时间，最大范围为360s
+  uint32 avoidance_times = 3;      //泊车避让次数，最大范围为16次
+}

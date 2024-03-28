@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.service;
+option go_package = "v1/message/device/vehicle/hmi/service";
+
+/**
+ * mod地图列表
+ * 结构体:
+ * topic: /sys/dmm/cd_map_manage_service/v3
+ */
+message CDMapManageReq {
+    CDMapManageType manage_type = 1;
+    repeated CDMapManageInfo map_list = 2;
+}
+
+enum CDMapManageType {
+    MANAGE_NONE = 0;
+    MANAGE_DELETE = 1;
+    MANAGE_STICK_TOP = 2;
+    MANAGE_STICK_COLLECT = 4;
+    MANAGE_CLEAR_HISTORY = 5;
+    MANAGE_CANCEL_STICK_TOP = 6;
+    MANAGE_CANCEL_COLLECT = 8;
+    MANAGE_RENAME = 9;
+    MANAGE_SEARCH = 10;
+    MANAGE_SYNS_POSE_FILE = 11;
+    MANAGE_UPDATE = 12;
+}
+
+message CDMapManageInfo {
+    int64 map_id = 1;
+    string map_name = 2;
+    string creator_name = 3;    //创建该地图的用户
+    string device_key = 4;      //创建该地图的设备名
+    string start_point = 5;     //起点名
+    string end_point = 6;       //终点名
+    bytes thumbnail = 7;        //缩略图
+    uint32 map_short_id = 8;    //地图短ID
+}
+
+message CDMapManageResp {
+    CDMapManageRespType map_manage_resp = 1;
+}
+
+enum CDMapManageRespType {
+    TYPE_SUCCESS = 0;
+    TYPE_FAIL = 1;
+    TYPE_UNAVAILABLE = 2;
+    TYPE_UNKNOWN = 3;
+}

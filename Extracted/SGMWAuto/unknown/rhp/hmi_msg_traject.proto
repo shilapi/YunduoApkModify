@@ -1,0 +1,19 @@
+// From sys_msgs/schema/hmi/hmi_msg_traject.h
+
+syntax = "proto3";
+
+package rhp;
+
+option go_package = "rhp";
+
+message HmiMsgTrajectPoint {
+  float x = 1;
+  float y = 2;
+}
+
+/**
+ * topic: /sys/interactor/traject
+ */
+ message HmiMsgTraject {
+  repeated HmiMsgTrajectPoint points = 1; // max 16
+}

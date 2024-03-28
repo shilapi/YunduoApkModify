@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/mod_dialog_container" android:layout_width="fill_parent" android:layout_height="fill_parent" android:contentDescription="@string/sgmw_pad_auto_mod_dialog_container_description" />
+</androidx.constraintlayout.widget.ConstraintLayout>

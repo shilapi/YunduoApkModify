@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/content_iot_wfc" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="30.0sp" android:layout_gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/str_ota_title" />
+    <TextView android:id="@id/mcf_ota_hint" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0pt" android:layout_marginTop="5.0pt" android:layout_marginRight="5.0pt" android:layout_marginBottom="10.0dip" android:text="@string/mcf_ota_hint" style="@style/info_label" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="15.0sp" android:layout_gravity="center_horizontal" android:id="@id/ota_file" android:background="@drawable/edittext_background" android:padding="10.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="3.0" />
+        <Button android:id="@id/add_ota_browser" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip" android:text="@string/str_browse" android:layout_weight="1.0" />
+    </LinearLayout>
+    <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <TextView android:textSize="30.0sp" android:layout_gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" android:text="@string/str_op_ota_title" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="15.0sp" android:layout_gravity="center_horizontal" android:id="@id/op_ota_file" android:background="@drawable/edittext_background" android:padding="10.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="3.0" />
+        <Button android:id="@id/add_op_ota_browser" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip" android:text="@string/str_browse" android:layout_weight="1.0" />
+    </LinearLayout>
+    <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <View android:layout_width="fill_parent" android:layout_height="100.0dip" />
+    <Button android:id="@id/ota_apply" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/str_apply" />
+    <Button android:id="@id/ota_clear" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/str_clear" />
+</LinearLayout>

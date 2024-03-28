@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+
+import "v1/message/device/vehicle/common.proto";
+
+/**
+ * faceID检测反馈信息
+ * 结构体: dji_msgs::dms::FaceIdState
+ * register topic: /dms_ml/faceid_register/v1
+ * login topic: /dms_ml/faceid_login/v1
+ */
+message DmsFaceIdState {
+  uint32 uid = 1;                     //用户id
+  EnumSwitch existence = 2;           //是否检测到用户
+  EnumHeadPosture head_posture = 3;   //头部姿态
+  EnumSwitch face_living = 4;         //是否为活体
+  EnumSwitch wearing_hat = 5;         //是否戴帽子
+  EnumSwitch wearing_glasses = 6;     //是否戴眼镜
+  EnumSwitch wearing_respirator = 7;  //是否戴口罩
+  EnumSwitch face_occlusion = 8;      //面部是否被遮挡
+  uint32 result = 9;    //状态码; 0为操作成功, 1为未检测到人脸，2为头部姿势无效, 3为非活体, 4为人脸遮挡,
+  //100为重复注册, 101为匹配失败, 102为人脸删除失败
+}
+
+enum EnumHeadPosture {
+  UP = 0;     //向上偏
+  DOWN = 1;
+  LEFT = 2;
+  RIGHT = 3;
+}

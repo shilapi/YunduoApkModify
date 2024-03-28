@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package v1.message.product.thing;
+option go_package = "v1/message/product/thing";
+
+import "v1/message/common/common.proto";
+
+
+// ThingPropertyPostMsg 单个属性上报请求消息[device->cloud]
+// Topic:/sys/$productKey/$deviceKey/thing/property/($functionBlock:)$identifier/post
+message ThingPropertyPostMsg {
+    common.MessageHeader header = 1;
+    ThingProperty property = 2;
+}
+
+
+// PostThingPropertyReqMsg 属性上报请求消息[device->cloud]
+// Topic:/sys/$productKey/$deviceKey/thing/property/post
+message PostThingPropertyReqMsg {
+    common.MessageHeader header = 1;
+    repeated ThingProperty properties = 2;
+}
+
+message ThingProperty {
+    string identifier = 1; // 属性名称唯一标识
+    int64 time = 2; // 属性时间戳(毫秒)
+    bytes inputParams = 3; // 输入参数消息体
+}

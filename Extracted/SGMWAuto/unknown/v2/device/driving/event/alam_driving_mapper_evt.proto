@@ -1,0 +1,121 @@
+syntax = "proto3";
+
+package v2.device.driving.event;
+option go_package = "v2/device/driving/event";
+
+/**
+ * 记忆行车建图信息
+ * 结构体: per_msgs:alam::DrivingMapperUniteMsg
+ * topic: /alam/driving/map_unite_info/v1
+ * 与之相似的topic: /alam/driving/map_info/v1将会弃用
+ */
+message AlamDrivingMapperEvt {
+  EnumMapperState state = 1;
+  double total_dist = 2;                // 建图过程中走过的距离
+  uint32 percentage = 3;                // 建图过程百分比
+  uint32 mapping_score = 4;             // 建图质量分数
+  uint32 update_mapping_score = 5;      // 地图更新后的建图质量分数
+  uint64 map_id     = 6;                // 地图id
+  uint64 create_time = 7;               // 创建时间
+  string map_name   = 8;                // 地图名称
+  string creator = 9;                   // 创建者
+  repeated uint32 semantic_element = 10;// 建图新增不同语义数量，数组大小为64，数组不同下标代表不同元素，具体表示可对照EnumSemanticElement
+}
+
+enum EnumMapperState {
+  //建图相关
+  STATE_WAITING_TRAINING            = 0; // 等待训练
+  STATE_MAPPER_TRAINING             = 1; // 训练中
+  STATE_MAPPER_MAPPING              = 2; // 建图中
+  STATE_MAPPER_BUILD_SUCCESS_1      = 3; // 一阶段建图完成
+  STATE_MAPPER_BUILD_SUCCESS_2      = 4; // 二阶段建图完成
+
+  //地图更新相关
+  UPDATER_STATE_WAITING = 5;        // 等待训练
+  UPDATER_STATE_TRAINING = 6;       // 训练中
+  UPDATER_STATE_MAPPING = 7;        // 建图中
+  UPDATER_STATE_SUCCESS = 8;        // 建图成功
+  UPDATER_STATE_UPLOAD_SUCCESS = 9; // 上传成功
+
+  //众包地图建图相关
+  CROWED_MAPPER_STATE_WAITING = 10;         // 等待训练
+  CROWED_MAPPER_STATE_TRAINING = 11;        // 训练中
+  CROWED_MAPPER_STATE_MAPPING = 12;         // 建图中
+  CROWED_MAPPER_STATE_SUCCESS = 13;         // 建图成功
+  CROWED_MAPPER_STATE_UPLOAD_SUCCESS = 14;  // 上传成功
+
+  NO_FAILURE = 49;                       //无错误
+
+  //初始化错误
+  FAILURE_INIT_CONFIG_NOT_EXIT = 50;   //配置文件不存在
+  FAILURE_EXTRINSIC_ERROR = 51;        //查询外参失败
+  FAILURE_INTRINSIC_ERROR = 52;        //查询内参失败
+  FAILURE_DCOS_ERROR = 53;             //DCOS错误
+
+  //学习过程中的错误
+  FAILURE_NO_MSG = 70;                 //上游消息缺失
+  FAILURE_BIG_MOTION = 71;             //检测到大运动
+  FAILURE_HMI_TRIGER = 72;             //App取消建图
+
+  FAILURE_NO_GPS = 120;                          // 无GPS
+  FAILURE_GPS_TOO_SPARSE = 121;                  // GPS太稀疏
+  FAILURE_GPS_VELOCITY_ERROR = 122;              // GPS速度单位不正确
+  FAILURE_ORIENTATION_ERROR = 123;               // GPS方向错误
+  FAILURE_GPS_FILL_MODE_ERROR = 124;             // CSM代码错误
+  FAILURE_GPS_ERROR_NO_CONVERGENCE = 125;        // GF不收敛
+  FAILURE_GPS_ERROR_TIMESTAMP_MISS_ALIGN = 126;  // GPS时间对齐失败
+  FAILURE_GPS_MESSAGE_LOST = 127;                // GPS消息缺失
+  FAILURE_GPS_LARGE_RELATIVE_POSE = 128;         // GPS相对误差过大
+  FAILURE_GPS_SEARCH_GNSS_RANGE_ERROR = 129;     // GPS范围搜索失败
+  FAILURE_GPS_SEARCH_GNSS_BY_YAW_ERROR = 130;    // GPS方向搜索错误
+  FAILURE_GPS_ERROR_UNDEFINED = 131;             // GPS错误未定义
+
+  // 建图失败原因
+  FAILURE_TOO_FAST        = 150;        // 速度太快(速度 > 40km/h)
+  FAILURE_TOO_SHORT_TRAJ  = 151;        // alam stage 1, 轨迹太短(长度<100m)
+  FAILURE_TOO_LONG_TRAJ   = 152;        // alam stage 1, 轨迹太长(长度>50km)
+  FAILURE_ELEMENT_TOO_SPARSE  = 153;    // 地图元素太稀疏
+  FAILURE_ZERO_ON_ROAD_ELEMENT = 154;   // 地图无地面元素（比如车道线）
+  FAILURE_ZERO_OVER_ROAD_ELEMENT = 155; // 地图无地上元素（比如杆牌）
+  FAILURE_ZERO_SEMANTIC_ELEMENT = 156;  // 地图无语义要素
+  FAILURE_ELEMENT_PARTIALLY_LOST = 157; // 地图较长距离无语义要素
+  FAILURE_MAP_NOT_EXIST = 158;          // 地图不存在
+
+
+  FAILURE_PLANNING_MAPPER_INVALID_MODEL = 180;  //拓扑输入错误
+  FAILURE_PLANNING_MAPPER_TRAJ_TOO_SHORT = 181; //拓扑轨迹太短
+  FAILURE_PLANNING_MAPPER_BORDER_TOO_FEW = 182; //拓扑车道线太少
+  FAILURE_PLANNING_MAPPER_INVALID_MAP = 183;    //拓扑无效地图
+  FAILURE_PLANNING_MAPPER_SAVE_MAP = 184;       //拓扑地图保存错误
+
+  FAILURE_UNKNOWN = 255;
+}
+
+// 建图语义元素类型
+// 如SemanticElement[7] = 5 表示建图新增5个交通信号灯
+enum EnumSemanticElement {
+  SEMANTIC_LANE_LINE = 0;                // 普通车道线
+  SEMANTIC_CENTER_LINE = 1;              // 中心线
+  SEMANTIC_BORDER_LINE = 2;              // 边缘线
+  SEMANTIC_STOP_LINE = 3;                // 停止线
+  SEMANTIC_MARKER_ARROW = 4;             // 箭头
+  SEMANTIC_POLE = 5;                     // 杆
+  SEMANTIC_SIGN = 6;                     // 标志
+  SEMANTIC_TRAFFIC_LIGHT = 7;            // 交通信号灯
+  SEMANTIC_U_TURN = 8;                   // 掉头
+  SEMANTIC_DIVERSION_BELT = 9;           // 导流带
+  SEMANTIC_STRAIGHT_INTERSECTION = 10;   // 直行路口
+  SEMANTIC_RIGHT_TURN_INTERSECTION = 11; // 右转路口
+  SEMANTIC_LEFT_TURN_INTERSECTION = 12;  // 左转路口
+  SEMANTIC_CROSS_WALK = 13;              // 人性横道
+  SEMANTIC_DIVIDE_POINT = 14;            // 分流点
+  SEMANTIC_MERGE_POINT  = 15;            // 合流点
+  SEMANTIC_ENTRANCE_POINT = 16;          // 出口点
+  SEMANTIC_EXIT_POINT = 17;              // 入口点
+  SEMANTIC_VIRTUAL_STOP_LINE = 18;       // 虚拟停止线
+  SEMANTIC_MOST_POSSIBLE_PATH = 19;      // 最优路径推荐
+  SEMANTIC_RESERVED_1 =  60;
+  SEMANTIC_RESERVED_2 =  61;
+  SEMANTIC_RESERVED_3 =  62;
+  SEMANTIC_RESERVED_4 =  63;
+}

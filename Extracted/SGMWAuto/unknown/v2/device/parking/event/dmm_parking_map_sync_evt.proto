@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package v2.device.parking.event;
+option go_package = "v2/device/parking/event";
+
+import "v2/device/parking/event/dmm_parking_map_info_evt.proto";
+
+/**
+ * 地图同步（地图本地化）
+ * 结构体: sys_msgs::dmm::MapSyncRequest
+ * topic: /sys/dmm/map_sync_request/v1
+ */
+message MapSyncResp {
+  MapSyncRespType result = 1;  //DMM同步请求结果
+}
+
+enum MapSyncRespType {
+  kSuccess = 0;                //成功
+  kFail = 1;                   //失败
+  kUnavailable = 2;            //无法找到
+  kUnknown = 3;                //未知
+}
+
+message MapSyncReq {
+  MapSyncMode sync_mode = 1;   //DMM同步请求模式
+  DmmParkingInfoEvt info = 2;  //地图信息
+}
+
+enum MapSyncMode {
+  kSyncNone = 0;
+  kSyncCloud = 1;              //云端同步
+  kSyncTice = 2;               //车机同步
+}

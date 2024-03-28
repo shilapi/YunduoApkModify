@@ -1,0 +1,112 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.common.event;
+option go_package = "v1/message/device/vehicle/common/event";
+
+/**
+ * GPS信息
+ * 结构体 : sys_msgs::Gnss
+ * topic : /sys/fusion_gnss/v1
+ * 频率 : 5 Hz
+ */
+message FusionGnssInfoEvt {
+  /**
+   * UTC-time, seconds since the 01.01.1970 00:00
+   * unit: second
+   */
+  uint64 utc_time = 1;
+  /**
+   * GPS-time, seconds since TBD
+   * unit: second
+   */
+  uint64 gps_time = 2;
+  /**
+   * whether the longitude/latitude is biased in gcj02 coordinate
+   * 0: wgs84; 1: gcj02;
+   */
+  int32 coord_type = 3;
+  /**
+   * Solution status, gnss filter status
+   * 0: computed
+   * 1: insufficient observations
+   * 2: no convergence
+   * 3: singularity
+   */
+  int32 sol_stat = 4;
+  /**
+   * solution type
+   * 0: no solution
+   * 1: single solution
+   * 2: fixed solution(rtk)
+   * 3: float solution(rtk)
+   */
+  int32 sol_type = 5;
+  /**
+   * Longitude of positioning
+   * unit: rad
+   */
+  double longitude = 6;
+  /**
+   * Latitude of positioning
+   * unit: rad
+   */
+  double latitude = 7;
+  /**
+   * Altitude of positioning
+   * unit: meter
+   */
+  double altitude = 8;
+  /**
+   * lonitude standard deviation
+   */
+  double lon_std = 9;
+  /**
+   * latitude standar deviation
+   */
+  double lat_std = 10;
+  /**
+   * altitude standard deviation
+   */
+  double alt_std = 11;
+  /**
+   * HDOP
+   */
+  float hdop = 12;
+  /**
+   * VDOP
+   */
+  float vdop = 13;
+  /**
+   * TDOP
+   */
+  float tdop = 14;
+  /**
+   * Base station ID
+   */
+  int32 base_stnid = 15;
+  /**
+   * Latency between GNSS measurement and current distribution via CAN bus/Ethernet.
+   * unit: millisecond
+   */
+  int32 latency = 16;
+  /**
+   * number of satelite used
+   */
+  uint32 used_numsv = 17;
+  /**
+   * number of satelite visible
+   */
+  uint32 tracked_numsv = 18;
+  /**
+   * fault code
+   */
+  uint64 status = 19;
+  /**
+   * 单位 度，范围 【0.0， 360.0】
+   */
+  double bearing = 20;
+  /**
+   * vel[0]: 北向速度 vel[0]: 东向速度 vel[0]: 朝地向速度
+   */
+  repeated double velocity = 21;
+}

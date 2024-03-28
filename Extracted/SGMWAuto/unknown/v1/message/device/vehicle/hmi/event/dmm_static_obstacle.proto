@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+
+import "v1/message/device/vehicle/common.proto";
+
+/**
+ * 结构体: DmmStaticObstacleInfo
+ * Topic: /sys/dmm_static_obstacle_display/v1
+ * 频率: 5hz
+ */
+message DmmStaticObstacleInfoEvt {
+    repeated DmmStaticObstacle static_obstacle = 1;    
+    OdomPose3d pose = 2;         
+}
+
+
+message DmmStaticObstacle {
+    uint32 obstacle_id = 1;
+    uint32 obstacle_type = 2;
+    uint32 obstacle_color = 3;
+    repeated Point points = 4;
+}
+
+

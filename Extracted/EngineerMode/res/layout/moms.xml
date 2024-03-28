@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:textAppearance="?android:textAppearanceMedium" android:id="@id/disable_moms_for_cts" android:layout_width="200.0dip" android:layout_height="wrap_content" android:layout_marginTop="30.0dip" android:text="@string/disable_moms_for_cts" />
+    <Button android:textAppearance="?android:textAppearanceMedium" android:id="@id/reenable_moms" android:layout_width="200.0dip" android:layout_height="wrap_content" android:layout_marginTop="30.0dip" android:text="@string/reenable_moms" />
+</LinearLayout>

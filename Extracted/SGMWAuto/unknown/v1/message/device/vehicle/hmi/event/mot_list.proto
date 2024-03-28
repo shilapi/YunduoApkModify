@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+
+/**
+ * MOT数据
+ * 结构体: sys_msgs::mot::TrackedObjListApp
+ * topic : /sys/tracked_obj_list_app/v1
+ * 频率  : 5 Hz
+ */
+message MotListEvt {
+  repeated TrackedObjectApp mots = 1;
+}
+
+//坐标系：本车后轴中心为原点，x向前，y向右
+message TrackedObjectApp {
+  uint64 id = 1;
+  EnumObjType type = 2; //目标类型
+  float x = 3; //目标中心点x方向坐标
+  float y = 4; //目标中心点y方向坐标
+  float yaw = 5; //目标朝向(弧度)
+  float vx = 6; //x方向对地速度
+  float vy = 7; //y方向对地速度
+  float length = 8; //长(m)
+  float width = 9; //宽(m)
+  float height = 10; //高(m)
+}
+
+enum EnumObjType {
+  OBJ_UNKNOWN = 0;
+  OBJ_PEDESTRIAN = 1;
+  OBJ_CYCLIST = 2;
+  OBJ_CAR = 3;
+  OBJ_BUS = 4;
+  OBJ_TRUCK = 5;
+  OBJ_OTHER_VEHICLE = 6;
+  OBJ_TRAFFIC_CONE = 7;
+  OBJ_TRAFFIC_TRIPOD = 8;
+  OBJ_ANIMAL = 9;
+  OBJ_HYDRANT = 10;
+  OBJ_PARKING_LOCK = 11;
+  OBJ_SHOPPING_CARD = 12;
+  OBJ_SPECIAL_VEHICLE = 13;
+  OBJ_VEHICLE_WHEEL = 14;
+  OBJ_TRICYCLE = 15;
+  OBJ_ROUND_WATER_BARRIER = 16;
+  OBJ_TRAFFIC_PILLAR = 17;
+  OBJ_LICENSE_PLATE = 18;
+}

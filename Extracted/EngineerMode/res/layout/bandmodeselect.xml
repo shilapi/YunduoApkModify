@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TableLayout android:id="@id/TableLayout_GSM" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" android:text="@string/BandSel_GSM" />
+                <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            </TableLayout>
+            <TableLayout android:id="@id/TableLayout_UTMS" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <View android:background="#ff00ff00" android:layout_width="fill_parent" android:layout_height="3.0dip" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" android:text="@string/BandSel_UMTS" />
+                <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            </TableLayout>
+            <TableLayout android:id="@id/TableLayout_LTE" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <View android:background="#ff00ff00" android:layout_width="fill_parent" android:layout_height="3.0dip" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" android:text="@string/bandmodesim1_LTE" />
+                <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            </TableLayout>
+            <TableLayout android:id="@id/TableLayout_CDMA" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <View android:background="#ff00ff00" android:layout_width="fill_parent" android:layout_height="3.0dip" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" android:text="@string/BandSel_CDMA" />
+                <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            </TableLayout>
+            <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:id="@id/BandSel_Btn_Set" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/BandSel_SET" android:layout_weight="1.0" />
+        <Button android:id="@id/BandSel_Btn_Reset" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/BandSel_RESET" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

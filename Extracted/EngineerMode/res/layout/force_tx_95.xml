@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView android:layout_gravity="center" android:id="@id/Ant_switch_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/get_ant_index" />
+        <TableLayout android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/list_content_style">
+            <TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <RadioGroup android:layout_gravity="center" android:orientation="horizontal" android:id="@id/force_type" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <RadioButton android:id="@id/force_rat" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:text="@string/force_rat" />
+                    <RadioButton android:id="@id/force_band" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/force_band" android:inputType="numberDecimal" />
+                </RadioGroup>
+            </TableRow>
+            <ImageView android:contentDescription="@null" style="@style/list_spiner_style" />
+            <TableRow android:id="@id/TableRow01" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="4.0dip">
+                <TextView android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/force_ant_mode" android:layout_weight="1.0" />
+                <Spinner android:entries="@array/force_ant_on_off" android:id="@id/force_ant_mode" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+            </TableRow>
+            <ImageView android:contentDescription="@null" style="@style/list_spiner_style" />
+            <TableRow android:id="@id/TableRow02" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="4.0dip">
+                <TextView android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/tas_rat" android:layout_weight="1.0" />
+                <Spinner android:entries="@array/force_ant_tas_rat" android:id="@id/tas_rat" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+            </TableRow>
+            <ImageView android:contentDescription="@null" style="@style/list_spiner_style" />
+            <TableRow android:id="@id/TableRow03" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="4.0dip">
+                <TextView android:id="@id/tas_band_text" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/tas_band" android:layout_weight="1.0" />
+                <EditText android:id="@id/tas_band" android:background="@drawable/selector_edit_frame" android:layout_width="0.0dip" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0" />
+            </TableRow>
+            <ImageView android:contentDescription="@null" style="@style/list_spiner_style" />
+            <TableRow android:id="@id/TableRow04" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="4.0dip">
+                <TextView android:id="@id/tas_nvram_text" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/tas_nvram" android:layout_weight="1.0" />
+                <EditText android:id="@id/tas_nvram" android:background="@drawable/selector_edit_frame" android:layout_width="0.0dip" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0" />
+            </TableRow>
+            <ImageView android:contentDescription="@null" style="@style/list_spiner_style_bold" />
+            <TableRow android:id="@id/TableRow05" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="4.0dip">
+                <TextView android:id="@id/tas_ant_states_View" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/tas_ant_states" android:layout_weight="1.0" android:inputType="numberDecimal" />
+                <Spinner android:entries="@array/force_ant_states" android:id="@id/tas_ant_states" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+            </TableRow>
+            <ImageView android:contentDescription="@null" style="@style/list_spiner_style_bold" />
+            <TableRow android:id="@id/TableRow06" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/tas_ant_selecting" android:layout_weight="1.0" />
+            </TableRow>
+            <TableRow android:id="@id/TableRow07" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="4.0dip">
+                <TextView android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/tas_ant_tx_prx" android:layout_weight="1.0" />
+                <Spinner android:entries="@array/tas_ant_tx_prx" android:id="@id/tas_ant_tx_prx" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="2.0" />
+                <TextView android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/tas_ant_drx" android:layout_weight="1.0" />
+                <Spinner android:entries="@array/tas_ant_tx_prx" android:id="@id/tas_ant_drx" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="2.0" />
+            </TableRow>
+            <TableRow android:id="@id/TableRow08" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="2.0dip">
+                <TextView android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/tas_ant_drx1" android:layout_weight="1.0" />
+                <Spinner android:entries="@array/tas_ant_tx_prx" android:id="@id/tas_ant_drx1" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="2.0" />
+                <TextView android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/tas_ant_drx2" android:layout_weight="1.0" />
+                <Spinner android:entries="@array/tas_ant_tx_prx" android:id="@id/tas_ant_drx2" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="2.0" />
+            </TableRow>
+        </TableLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <Button android:id="@id/get_ant_index_states" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/get_ant_index" android:layout_weight="1.0" />
+            <Button android:id="@id/enable_ant_states" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/enable_ant_states" android:layout_weight="1.0" />
+        </LinearLayout>
+        <TextView android:id="@id/tas_ant_test" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>

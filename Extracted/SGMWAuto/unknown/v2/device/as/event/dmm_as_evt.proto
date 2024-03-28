@@ -1,0 +1,144 @@
+// From dmm/dji_dmm_city_assist.h
+
+syntax = "proto3";
+
+package v2.device.as.event;
+option go_package = "v2/device/as/event";
+
+/**
+ * Dmm Co-Driving消息
+ * 结构体:
+ * topic: /sys/dmm_co_driving_app/v3
+ */
+message DmmAsEvt {
+  AVMMode         avm_mode = 2;                /* AVM status */
+  SonarAlarmMode  sonar_alarm_mode = 3;        /* sonar alarm mode */
+
+  FuncSetStatus   aeb_set_status = 4;          /* aeb function set on/off status */
+  AEBLevel        aeb_level = 5;               /* aeb level */
+
+  FuncSetStatus   meb_set_status = 6;          /* meb function set on/off status */
+  MEBMode         meb_mode = 7;                /* meb_mode */
+
+  FuncSetStatus   ldw_set_status = 8;          /* LDW set on/off status */
+  LDWStatus       ldw_status = 9;              /* LDW warning status */
+  SteerCtrlDirect ldw_steer_ctrl_direct = 10;  /* LDW trigger direction */
+
+  FuncSetStatus   lka_set_status = 11;         /* LKA function set on/off status */
+  SteerCtrlDirect lka_steer_ctrl_direct = 12;  /* LKA trigger direction **/
+
+  FuncSetStatus   elk_set_status = 13;         /* ELK function set on/off status */
+  SteerCtrlDirect elk_steer_ctrl_direct = 14;  /* ELK trigger direction */
+
+  FuncSetStatus   bsd_set_status = 15;         /* BSD function set on/off status */
+  BSDAlarmLevel   bsd_left_alarm = 16;         /* BSD left alarm level  */
+  BSDAlarmLevel   bsd_right_alarm = 17;        /* BSD right alarm level */
+
+  FuncSetStatus   dow_set_status = 18;         /* DOW function set on/off status */
+  DOWAlarmLevel   dow_left_alarm = 19;         /* DOW left alarm level */
+  DOWAlarmLevel   dow_right_alarm = 20;        /* DOW right alarm level */
+
+  FuncSetStatus   hba_set_status = 21;         /* HBA function set on/off status */
+  LightCtrlCmd    hba_ctrl_cmd = 22;           /* HBA command */
+
+  FuncSetStatus   rcw_swset_sts = 23;          /* RCW function set on/off status */
+  FuncSetStatus   racw_swset_sts = 24;         /* RACW function set on/off status */
+  RCWLevel        rcw_alarm = 25;              /* RCW/RACW alarm level */
+
+  uint32          speed_limit = 28;            /* Speed limit unit:km/h  */
+  uint32          desire_speed = 29;           /* Desire speed unit:km/h */
+
+  uint32          plan_ca_command = 26;        /* planning CA command */
+  uint32          can_ca_command = 27;         /* CA releted CAN signal */
+
+  FuncSetStatus   fcw_swset_sts = 30;          /* FCW function set on/off status*/
+  FCWLevel        fcw_alarm = 31;              /* FCW alarm level*/
+}
+
+enum AVMMode {
+  AVM_MODE_OFF         = 0;
+  AVM_MODE_STANDBY     = 1;
+  AVM_MODE_ALL_NORMAL  = 2;
+  AVM_MODE_PART_NORMAL = 3;
+  AVM_MODE_DISABLE     = 4;
+  AVM_MODE_FAILED      = 5;
+};
+
+enum SonarAlarmMode {
+  SONAR_ALARM_MODE_OFF         = 0;
+  SONAR_ALARM_MODE_STANDBY     = 1;
+  SONAR_ALARM_MODE_ALL_NORMAL  = 2;
+  SONAR_ALARM_MODE_FPAS_NORMAL = 3;
+  SONAR_ALARM_MODE_RPAS_NORMAL = 4;
+  SONAR_ALARM_MODE_DISABLE     = 5;
+  SONAR_ALARM_MODE_FAILED      = 6;
+};
+
+enum MEBMode {
+  MEB_MODE_OFF     = 0;
+  MEB_MODE_STANDBY = 1;
+  MEB_MODE_ACTIVE  = 2;
+  MEB_MODE_DISABLE = 3;
+  MEB_MODE_FAILED  = 4;
+};
+
+enum FuncSetStatus {
+  FUNC_SETSTS_UNAVAIL = 0;
+  FUNC_SETSTS_OFF     = 1;
+  FUNC_SETSTS_ON      = 2;
+};
+
+enum AEBLevel {
+  AEB_LEVEL_OFF       = 0;
+  AEB_LEVEL_WARN      = 1;
+  AEB_LEVEL_TWO       = 2;
+  AEB_LEVEL_THREE     = 3;
+  AEB_LEVEL_FOUR      = 4;
+};
+
+enum BSDAlarmLevel {
+  BSD_LEVEL_OFF     = 0;
+  BSD_LEVEL_ONE     = 1;
+  BSD_LEVEL_TWO     = 2;
+};
+
+enum DOWAlarmLevel {
+  DOW_LEVEL_OFF     = 0;
+  DOW_LEVEL_ONE     = 1;
+  DOW_LEVEL_TWO     = 2;
+};
+
+enum LDWStatus {
+  LDW_STATUS_OFF     = 0;
+  LDW_STATUS_STANDBY = 1;
+  LDW_STATUS_ACTIVE  = 2;
+  LDW_STATUS_ERROR   = 3;
+};
+
+enum SteerCtrlDirect {
+  STEER_CTRL_NONE       = 0;
+  STEER_CTRL_LEFT       = 1;
+  STEER_CTRL_RIGHT      = 2;
+};
+
+enum LightCtrlCmd {
+  LIGHTCTRL_OFF                = 0;
+  LIGHTCTRL_LOW_BEAM_ON        = 1;
+  LIGHTCTRL_HIGH_BEAM_ON       = 2;
+};
+
+enum RCWLevel {
+  RCW_LEVEL_OFF       = 0;
+  RCW_LEVEL_ONE       = 1;
+  RCW_LEVEL_TWO       = 2;
+  RCW_LEVEL_THREE     = 3;
+  RCW_LEVEL_FOUR      = 4;
+};
+
+enum FCWLevel {
+  FCW_LEVEL_OFF       = 0;
+  FCW_LEVEL_ONE       = 1;
+  FCW_LEVEL_TWO       = 2;
+  FCW_LEVEL_THREE     = 3;
+  FCW_LEVEL_FOUR      = 4;
+}

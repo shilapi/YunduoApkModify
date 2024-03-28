@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:gravity="center" android:layout_width="@dimen/p160" android:layout_height="@dimen/p160" android:layout_margin="@dimen/p12"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:layout_width="@dimen/p160" android:layout_height="@dimen/p160">
+        <ImageView android:id="@id/img_icon" android:layout_width="@dimen/p76" android:layout_height="@dimen/p76" />
+        <TextView android:textSize="@dimen/p19" android:textColor="@color/font_main_color" android:ellipsize="end" android:gravity="center" android:id="@id/tv_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p12" android:text="App Name" android:maxLines="1" android:includeFontPadding="false" />
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,33 @@
+Manifest-Version: 1.0
+Created-By: 9 (Oracle Corporation)
+
+Name: AndroidManifest.xml
+SHA-256-Digest: AjkJQllgH01SNP2VGLoSTDXNrCPMgTzuXBJUoTxvvig=
+
+Name: classes.dex
+SHA-256-Digest: qlQNX7UZ5MRWV/9LV0Hp8j7er7oTKTJJj1jbLMFFiSg=
+
+Name: res/drawable-hdpi-v4/ic_launcher.png
+SHA-256-Digest: fBj8cw0GFdnxyz3V4MtX/HFnFKk7/UKmior9VVlAao4=
+
+Name: res/drawable-ldpi-v4/ic_launcher.png
+SHA-256-Digest: ChN+jtdvsTWv6fzL4Rlf/SQYVRAlRwGnUKnFqcBSXNc=
+
+Name: res/drawable-mdpi-v4/ic_launcher.png
+SHA-256-Digest: Y9yjo3hXArfdtlvOPQHDRioYYgoCngN7GmxtLiw1Vjk=
+
+Name: res/drawable-xhdpi-v4/ic_launcher.png
+SHA-256-Digest: i0XagvTwnaVSM1iTIQtOHPS78Wme3iP0PE139kR6Wek=
+
+Name: res/layout/usb_handler_row.xml
+SHA-256-Digest: E5lRGYYLDdcFsom8HDCnJFgQvNTyrBq2QnBLv4XEfks=
+
+Name: res/layout/usb_host.xml
+SHA-256-Digest: kPt2Z8dzi2B8aNcgvRGuhowzS6/8YcF4bymQ+jnpcGU=
+
+Name: res/xml/usb_manager_prefs.xml
+SHA-256-Digest: 8s/PwquCpURLicuTfCegON2KX4Eazhs3MT7D75+7bSE=
+
+Name: resources.arsc
+SHA-256-Digest: i3In8hsRClCVwNziJzFiY0jdgn9F0QY5kM6ZXEjU5iI=
+

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape android:shape="rectangle"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:radius="@dimen/dp_30" />
+    <gradient android:startColor="@color/shape_item_contact_photo_bg_start_color" android:endColor="@color/shape_item_contact_photo_bg_end_color" android:angle="0.0" android:type="radial" android:centerX="0.5" android:centerY="0.5" android:gradientRadius="@dimen/dp_60" />
+</shape>

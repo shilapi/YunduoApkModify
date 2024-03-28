@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout android:id="@id/root" android:tag="layout/layout_incall_state_and_time_0" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layoutDescription="@xml/layout_incall_state_and_time_xml_constraintlayout_scene"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="@dimen/s24" android:textColor="@color/general_99" android:id="@id/msg_state" android:tag="binding_1" android:layout_width="@dimen/p96" android:layout_height="wrap_content" android:includeFontPadding="false" android:fontFamily="@font/cn_regular" android:layout_marginStart="@dimen/p135" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <TextView android:textSize="@dimen/s21" android:textColor="@color/general_99" android:id="@id/cur_call_time" android:tag="binding_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p6" android:includeFontPadding="false" android:fontFamily="@font/mn_regular" android:layout_marginStart="@dimen/p250" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.motion.widget.MotionLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/lte_commands" />
+        <EditText android:id="@id/commands" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="false" android:inputType="textCapCharacters|textMultiLine|textNoSuggestions" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lte_inteval" />
+            <EditText android:id="@id/inteval" android:layout_width="fill_parent" android:layout_height="wrap_content" android:inputType="number" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <Button android:id="@id/send" android:layout_width="100.0dip" android:layout_height="wrap_content" android:text="@string/lte_send" />
+            <Button android:id="@id/stop" android:layout_width="100.0dip" android:layout_height="wrap_content" android:text="@string/lte_stop" />
+        </LinearLayout>
+        <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lte_history" />
+        <TextView android:id="@id/output" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>

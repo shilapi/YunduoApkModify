@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/common_color_app_launcher_bg_night" />
+        </shape>
+    </item>
+    <item android:gravity="end|bottom|center" android:bottom="102.0dip">
+        <bitmap android:gravity="center" android:src="@drawable/driving_launcher_bg_night" />
+    </item>
+</layer-list>

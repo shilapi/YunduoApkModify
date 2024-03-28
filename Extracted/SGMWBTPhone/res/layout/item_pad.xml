@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/parent" android:background="@mipmap/bg_pad_item_general" android:clickable="true" android:layout_width="@dimen/p128" android:layout_height="@dimen/p68"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textSize="@dimen/s21" android:textStyle="bold" android:textColor="@color/pad_number" android:id="@id/tv_pad_item_number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p13" android:includeFontPadding="false" android:fontFamily="@font/mn_regular" />
+        <TextView android:textSize="@dimen/s12" android:textStyle="bold" android:textColor="@color/pad_letter" android:id="@id/tv_pad_item_letter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p5" android:includeFontPadding="false" android:fontFamily="@font/mn_regular" />
+        <TextView android:textSize="@dimen/s21" android:textStyle="bold" android:textColor="@color/pad_symbol" android:id="@id/tv_pad_item_symbol" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p21" android:includeFontPadding="false" android:fontFamily="@font/mn_regular" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+import "v1/message/device/vehicle/common.proto";
+
+/**
+ * planning轨迹数据
+ * 结构体: sys_msgs::Trajectory
+ * topic : /sys/trajectory
+ */
+message PlanningTrajectoryEvt {
+  uint32 flag = 1;  /**<  bit0：trajectory valid status in autonomous driving 0—not */
+                    /**<  valid 1—valid; bit1:bit2 gear command 0—P 1—R 2—N 3—D; bit3: */
+                    /**<  replanning status 0—replanning not valid 1—replanning valid */
+  repeated TrajectoryPoint points = 2;
+}
+
+
+message TrajectoryPoint {
+  float time = 1;      /**<  [s] relative time relative to planning local time */
+  float length = 2;    /**<  [m] relative length of trajectory point */
+  Vector2d pos = 3;    /**<  [m] position of each point*/
+  Vector2d vel = 4;    /**<  [m/s] the velocity of the trajectory point */
+  Vector2d acc = 5;    /**<  [m/s^2] the acceleration of the trajectory point */
+  float heading = 6;   /**<  [rad] the heading angle of the trajectory point */
+  float curvature = 7; /**<  [m^-1] the curvature of the trajectory point*/
+  float curvature_rate = 8; /**<  [m^-2] curvature change */
+  float angle_pitch = 9;    /**<  the pitch angle of the trajectory point */
+  float angle_roll = 10;    /**<  the roll angle of the trajectory point */
+}

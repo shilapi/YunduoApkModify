@@ -1,0 +1,95 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.common.property;
+option go_package = "v1/message/device/vehicle/common/property";
+
+import "v1/message/common/common.proto";
+
+// 车辆状态信息
+message VehicleStatMessageEvt {
+  v1.message.common.MessageHeader header = 1;
+  VehicleStat stat = 2;
+  GpsStat gpsStat = 3;
+}
+
+message VehicleStat {
+  string deviceKey = 1; // 设备唯一标识key
+  float speed = 2; // 当前车速(km/h)
+  float acceleration = 3; // 当前加速度（m/s^2）
+  uint32 rpm = 4; // 发动机转速
+  float mileage = 5;  // 车辆表显里程
+  float direction = 6; // 车辆朝向
+  EnumGear gear = 7; // 车辆档位
+  EnumDriveMode driveMode = 8; // 驾驶模式
+  EnumEpbStatus epbStatus = 9; // 手刹状态
+  repeated SeatBelt seatBelts = 10;
+  repeated SideDoor doors = 11; // 车辆门关闭
+  bool doorLocked = 12; // 车门锁
+  repeated EnumLightType lights = 13; // 车辆灯光
+  uint32 leftEnergyPercent = 14; // 车内电池电量/油量剩余百分比
+}
+
+message GpsStat{
+    double longitude = 1; // 经度
+    double latitude = 2;  // 纬度
+    double altitude = 3;  // 海拔
+    uint32 signalStrength = 4; // 信号强度
+    uint32 satellitesInView = 5; // 可见卫星数
+    float  hDop = 6; //几何分布因子
+    EnumCooRdType  cooRdType = 7; // 车辆坐标系类型
+}
+
+
+message SeatBelt {
+  uint32 position = 1; // 每一行位置编号（自左往右）
+  uint32 line = 2; // 排数
+  bool fastened = 3;
+}
+
+// 车辆车门
+message SideDoor {
+  uint32 position = 1; // 每一行位置编号（自左往右）
+  uint32 line = 2; // 排数
+  bool closed = 3;
+}
+
+// 车辆灯光枚举值
+enum EnumLightType {
+  LEFT_TURN_LIGHT = 0; // 左转向灯
+  RIGHT_TURN_LIGHT = 1; // 右转向灯
+  WARN_BLINK_LIGHT = 2; // 警示灯
+  LOW_BEAM_LIGHT = 3;  // 近光灯
+  HIGH_BEAM_LIGHT = 4; // 远光灯
+  WIDTH_LIGHT = 5; // 示廓灯
+  FRONT_FOG_LIGHT = 6; // 前雾灯
+  REAR_FOG_LIGHT = 7; // 后雾灯
+}
+
+
+enum EnumEpbStatus {
+  STATUS_RELEASED = 0;
+  STATUS_ACTIVE = 1;
+  STATUS_CHANGING = 2;
+  STATUS_ERROR = 3;
+}
+
+// 车辆档位
+enum EnumGear{
+  GEAR_PARKING = 0; // P档
+  GEAR_REVERSE = 1; // R档
+  GEAR_NEUTRAL = 2; // N档
+  GEAR_DRIVING = 3; // D档
+}
+
+// 车辆驾驶模式
+enum EnumDriveMode{
+  MANUAL_DRIVING = 0; // 手动驾驶
+  AUTONOMOUS_DRIVING = 1; // 自动驾驶
+}
+
+
+// 车辆坐标系类型
+enum EnumCooRdType{
+    COO_RD_TYPE_WGS84 = 0;    // WGS84
+    COO_RD_TYPE_GCJ02 = 1;    // GCJ02
+}

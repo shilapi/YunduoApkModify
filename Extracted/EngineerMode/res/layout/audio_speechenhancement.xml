@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Spinner android:id="@id/Audio_SpEnhancement_ModeType" android:layout_width="240.0dip" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip" android:layout_marginTop="40.0dip" />
+        <Spinner android:id="@id/Audio_SpEnhancement_ParaType" android:layout_width="240.0dip" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip" android:layout_marginTop="20.0dip" />
+        <TextView android:id="@id/Audio_SpEnhancement_TextView" android:layout_width="240.0dip" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip" android:layout_marginTop="20.0dip" android:text="@string/Audio_SpEnhancement_TextView" />
+        <EditText android:id="@id/Audio_SpEnhancement_EditText" android:layout_width="240.0dip" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip" android:layout_marginTop="20.0dip" android:text="@string/Audio_SpEnhancement_EditText" android:singleLine="true" android:numeric="integer" />
+        <Button android:id="@id/Audio_SpEnhancement_Button" android:layout_width="240.0dip" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip" android:layout_marginTop="20.0dip" android:text="@string/Audio_SpEnhancement_Button" />
+    </LinearLayout>
+</ScrollView>

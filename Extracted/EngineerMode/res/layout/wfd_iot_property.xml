@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBox android:id="@id/checkBoxScena" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@string/wfd_iot_scenario_mode" />
+    <CheckBox android:id="@id/checkBoxDrop" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@string/wfd_iot_drop_dummy" />
+    <CheckBox android:id="@id/checkBoxAcSync" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@string/wfd_iot_av_sync" />
+    <Button android:layout_gravity="center_horizontal" android:id="@id/buttonSet" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wfd_iot_set" />
+</LinearLayout>

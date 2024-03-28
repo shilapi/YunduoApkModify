@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RadioGroup android:orientation="vertical" android:id="@id/Wfd_Power_Saving_Style" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip">
+        <RadioButton android:id="@id/Wfd_Power_Style_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wfd_power_saving_style_1" />
+        <RadioButton android:id="@id/Wfd_Power_Style_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wfd_power_saving_style_2" />
+    </RadioGroup>
+    <LinearLayout android:orientation="horizontal" android:id="@id/LinearLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip">
+        <TextView android:id="@id/Wfd_Power_Delay_Time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wfd_power_delay_time" />
+        <EditText android:id="@id/Wfd_Power_Delay_Time_Edit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLength="10" android:numeric="integer" />
+    </LinearLayout>
+    <CheckBox android:id="@id/wfd_power_saving_ext_display" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wfd_power_saving_ext_display" />
+    <Button android:id="@id/Wfd_Done" android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginLeft="80.0dip" android:layout_marginTop="10.0dip" android:text="@string/wfd_Done" />
+</LinearLayout>

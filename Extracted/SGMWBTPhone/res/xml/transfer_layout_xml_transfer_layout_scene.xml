@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:motion="http://schemas.android.com/apk/res-auto">
+    <Transition motion:constraintSetEnd="@id/third_call_holding" motion:constraintSetStart="@id/third_call_incoming" motion:duration="2000" motion:motionInterpolator="easeInOut">
+        <KeyFrameSet />
+        <OnClick motion:targetId="@id/transfer_between_calls" />
+    </Transition>
+    <ConstraintSet android:id="@id/third_call_incoming">
+        <Constraint android:id="@id/transfer_between_calls" android:layout_width="wrap_content" android:layout_height="wrap_content" motion:layout_constraintStart_toStartOf="parent" motion:layout_constraintTop_toTopOf="parent" />
+        <Constraint android:id="@id/transfer_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/dp_14" motion:layout_constraintStart_toStartOf="@id/transfer_between_calls" motion:layout_constraintTop_toBottomOf="@id/transfer_between_calls" />
+    </ConstraintSet>
+    <ConstraintSet android:id="@id/third_call_holding">
+        <Constraint android:id="@id/transfer_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:rotationY="360.0" android:layout_marginStart="@dimen/dp_14" motion:layout_constraintStart_toStartOf="@id/transfer_between_calls" motion:layout_constraintTop_toBottomOf="@id/transfer_between_calls" />
+        <Constraint android:id="@id/transfer_between_calls" android:layout_width="wrap_content" android:layout_height="wrap_content" android:rotationY="180.0" motion:layout_constraintStart_toStartOf="parent" motion:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+</MotionScene>

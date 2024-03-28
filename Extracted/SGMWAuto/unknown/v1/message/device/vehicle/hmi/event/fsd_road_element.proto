@@ -1,0 +1,87 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+
+import "v1/message/device/vehicle/common.proto";
+
+/**
+ * bev road element 消息发送了道路元素矢量化结果，例如车道线，道路边缘，路面标志等。
+ * 结构体: dji_msgs::euc::RoadElement
+ * topic: /euc/bev_id/v3
+ */
+message RoadElementsEvt {
+    float forward = 1;                      //前后左右方向的检测距离
+    float backward = 2;
+    float left = 3;
+    float right = 4;
+    repeated RoadElement elements = 5;      //道路元素的list
+}
+
+message RoadElement {
+    uint32 instance_id = 1;     //属于某个实例的id，一个实例可对应多个点
+    uint32 element_id = 2;      //每个点的id
+    OdomVector coord3d = 3;     //每个点在ego坐标系下的3D坐标
+    Vector2d coord2d = 4;       //每个点在图像下的2D坐标
+    EnumElementType type = 5;
+    uint32 sub_type1 = 6;       //定义每个店的子类别
+    uint32 sub_type2 = 7;       //定义每个店的子类别。预留
+    float angle = 8;            //每个点的朝向
+    float uncertainty = 9;      //每个点的不确定度
+    EnumSwitch is_divider = 10; //是否为路中分割线的点，分割线即线两边车辆行驶方向不一样
+    EnumSwitch is_visible = 11; //元素是否可见，指该元素是猜测的还是实际存在的
+}
+
+enum EnumElementType {
+    LANE_BORDER = 0;
+    ROAD_BORDER = 1;
+    ROAD_MARKER = 2;
+    AREA = 3;
+}
+
+enum EnumLaneBorderSubType {
+    SINGLE_DASHED_LINE = 0;
+    SINGLE_SOLID_LINE = 1;
+    DOUBLE_DASHED_LINE = 2;
+    DOUBLE_SOLID_LINE = 3;
+    DASHED_SOLID_LINE = 4;
+    SOLID_DASHED_LINE = 5;
+    VARIABLE_DIRECTION_LINE = 6;
+    CHANNELIZING_LINE = 7;
+    PARKING_LINE = 8;
+    DASHED_STOP_LINE = 9;
+    SOLID_STOP_LINE = 10;
+    SPEED_BUMP = 11;
+}
+
+enum EnumRoadBorderSubType {
+    ROAD_BORDER_TYPE = 0;
+    REFUGE_ISLAND_BORDER = 1;
+    ROUND_ABOUT_BORDER = 2;
+}
+
+enum EnumRoadMarkerSubType {
+    STRAIGHT = 0;
+    LEFT_TURN = 1;
+    RIGHT_TURN = 2;
+    U_TURN = 3;
+    STRAIGHT_LEFT = 4;
+    STRAIGHT_RIGHT = 5;
+    STRAIGHT_U_TURN = 6;
+    LEFT_U_TURN = 7;
+    LEFT_RIGHT = 8;
+    STRAIGHT_LEFT_RIGHT = 9;
+    STRAIGHT_LEFT_U_TURN = 10;
+    STRAIGHT_RIGHT_U_TURN = 11;
+    LEFT_MERGE = 12;
+    RIGHT_MERGE = 13;
+    BICYCLE = 14;
+    BUS = 15;
+    WHEEL_CHAIR = 16;
+    DIAMOND = 17;
+    INVERTED_TRIANGLE = 18;
+    STOP = 19;
+    CHARACTER = 20;
+    NUMBER = 21;
+    SPEED_LIMIT = 22;
+}

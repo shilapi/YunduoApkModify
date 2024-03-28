@@ -1,0 +1,19 @@
+syntax = "proto3";
+package v1.message.common;
+option go_package = "v1/message/common";
+
+message MessageHeader {
+    int64 timestamp = 1; // 消息时间戳（13位,单位毫秒）
+    string version = 2; // 消息版本号，默认:v1
+    EnumMessageType messageType = 3; // 消息类型
+    string messageId = 4; // 消息ID
+}
+
+enum EnumMessageType {
+    UNKNOWN  = 0;
+    PROPERTY = 1; // 状态，属性上报
+    SERVICE = 2; // 服务调用
+    EVENT = 3; // 事件上报
+    CLOUD_SERVICE = 4; // 云服务调用
+}
+

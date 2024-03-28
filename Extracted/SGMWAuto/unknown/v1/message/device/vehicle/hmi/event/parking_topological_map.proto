@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+
+import "v1/message/device/vehicle/common.proto";
+
+/**
+ * 拓扑图
+ * 结构体: sys_msgs::PsTopoMap (sys_msgs/schema/parking_topological_map.h)
+ * topic : /sys/ps_topo_map/v3
+ * 频率  : 5 Hz
+ */
+message ParkingTopologicalMapEvt {
+  uint32 topo_node_num = 1;         //topo_map中topo_node的数量
+  repeated PsTopoNode topo_map = 2; //所有的topo_node
+}
+
+message PsTopoNode {
+  OdomVector node_pt = 1;                             //topo_node的position
+  int32 topo_map_idx = 2;                             //topo_node的index
+  PsTopoNodeState state = 3;                          //topo_node的状态
+  double probability = 4;                             //topo_node可以通过的可能性（暂时没用），visited -> 1.0；collision -> 0.0；unexplore -> (0, 1)
+  int32 floor_id = 5;                                 //topo_node所属楼层（暂时没用）
+  uint32 neighbour_num = 6;                           //topo_node邻居数量
+  repeated int32 neighbours = 7;                      //topo_node的所有邻居index
+  PsTopoNeighbourDir neighbours_dir_info = 8;         //topo_node所有邻居按方向信息分类
+  int32 corresponding_topo_idx = 9;                   //abandon_node所对应的active_node
+  uint32 visited_cnt = 10;                            //topo_node的访问次数
+  uint32 semantic_info_num = 11;                      //topo_node绑定的语义信息数量
+  repeated PsTopoNodeSemanticInfo semantic_info = 12; //topo_node绑定的所有语义信息
+}
+
+message PsTopoNeighbourDir {
+  uint32 incoming_num = 1;     //从邻居到当前node的topo_node数量
+  uint32 outgoing_num = 2;     //从当前node到邻居的topo_node数量
+  repeated int32 incoming = 3; //从邻居到当前node的topo_node
+  repeated int32 outgoing = 4; //从当前node到邻居的topo_node
+}
+
+message PsTopoNodeSemanticInfo {
+  PsSemanticElementType semantic_type = 1; //语义类型
+  PsSemanticElementSrc src = 2;            //语义信息来源，如果来源是离线地图，需要在离线地图的语义信息中根据id查找，在线同理
+  int32 zone_id = 3;                       //语义信息所在的区域id
+  int32 id = 4;                            //语义信息id
+}
+
+enum PsTopoNodeState {
+  kInit = 0;       //topo_node的初始状态
+  kVisited = 1;    //已被访问过的topo_node
+  kCollision = 2;  //存在碰撞的topo_node：道路尽头、死胡同等
+  kUnexplored = 3; //未被探索过的topo_node
+  kAbandon = 4;    //丢弃或不再使用的topo_node
+}
+
+enum PsSemanticElementType {
+  kPoint = 0;           //点
+  kParkingSpace = 1;    //车位框
+  kElevator = 2;        //电梯
+  kChargingStation = 3; //充电桩
+  kTgp = 4;             //收费杆
+  kRamp = 5;            //斜坡
+  kSpeedBump = 6;       //减速带
+  kIntersection = 7;    //路口
+  kCorner = 8;          //转弯处
+  kTargetPt = 9;        //目标点
+  kTargetSlot = 10;     //目标车位
+}
+
+enum PsSemanticElementSrc{
+  kOfflineMap = 0;      //语义信息来源于离线地图
+  kPlnOnline = 1;       //语义信息来源于在线感知，且为planning处理过的，被planning所使用的
+}

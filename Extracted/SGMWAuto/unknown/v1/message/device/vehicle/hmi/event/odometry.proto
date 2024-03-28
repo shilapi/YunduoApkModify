@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+import "v1/message/device/vehicle/common.proto";
+
+/**
+ * 车辆位置
+ * 结构体: sys_msgs::Odometry
+ * topic : /sys/ego_pose/v3
+ * 频率  : 5 Hz
+ */
+message OdometryEvt {
+  OdomPose3d pose = 1;
+}

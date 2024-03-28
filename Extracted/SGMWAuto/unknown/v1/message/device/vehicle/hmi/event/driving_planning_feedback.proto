@@ -1,0 +1,141 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+
+/**
+ * 记忆行车建图和定位相关planning状态
+ * 结构体: sys_msgs::MemoryDrivingBehavior
+ * topic: /sys/memory_driving_behavior/v1
+ */
+message MemoryDrivingPlanningInfoEvt {
+  EnumMemoryDrivingBehaviorType type = 1;
+  float remaining_dist = 2;
+  float percent_dist_traveled = 3;
+  EnumMemoryDrivingRouteDirection route_direction = 4;
+  float route_direction_dist = 5;
+}
+
+/**
+ * Driving planning行为
+ * 结构体: dji_msg_planning_gui.h (dji_msgs::planning::Behavior)
+ * topic: /planning/behavior/v2
+ */
+message DrivingPlanningBehaviorEvt {
+  EnumDrivingBehavior behavior_type = 1;
+  EnumDrivingWarningType warning_type = 2;
+  int32 follow_car_id = 3;            /**< followed vehicle id */
+  int32 merge_front_car_id = 4;       /**< merged front car id */
+  int32 merge_back_car_id = 5;        /**< merged back car id */
+  double desired_distance = 6;          /**< desired distance */
+  double desired_speed = 7;             /**< desired speed */
+  double custom_speed = 8;            /**< custom speed */
+  uint32 auto_drive_mode = 9;          /**< auto driving mode: 1-true, 0-false */
+  uint32 cruise_follow_distance = 10;   /**< cruise follow distance: 1-5 */
+}
+
+enum EnumMemoryDrivingBehaviorType {
+  MapBuildingOnGoing = 0; //正在构建
+  MapBuildingFailed = 1; //构建失败
+  MapBuildingFinished = 2; //构建完成
+  MemoryDrivingStarted = 3; //开始记忆行车
+  MemoryDrivingOnGoing = 4; //正在记忆行车
+  MemoryDrivingFinished = 5; //记忆行车完成
+  MemoryDrivingFailed = 6; //记忆行车失败
+}
+
+enum EnumMemoryDrivingRouteDirection {
+  KeepStraight = 0;       //直行
+  LeftLaneChange = 1;     //向左变道
+  RightLaneChange = 2;    //向右变道
+  LeftTurn = 3;           //左转
+  RightTurn = 4;          //右转
+  LeftUTurn = 5;          //左侧掉头
+  RightUTurn = 6;         //右侧掉头
+  LeftMerge = 7;          //左侧合流
+  RightMerge = 8;         //右侧合流
+  LeftDiverge = 9;        //左侧分流
+  RightDiverge = 10;      //右侧分流
+}
+
+enum EnumDrivingBehavior {
+  BEHAVIOR_CC = 0;                /**< velocity keeping */
+  BEHAVIOR_FOLLOW = 1;            /**< distance keeping */
+  BEHAVIOR_LEFT_LANE_CHANGE = 2;  /**< left lane change */
+  BEHAVIOR_RIGHT_LANE_CHANGE = 3; /**< right lane change */
+  BEHAVIOR_EMERGENCY = 4;         /**< recommended takeover */
+  BEHAVIOR_STOPPING = 5;          /**< stopping */
+  BEHAVIOR_PASS = 6;              /**< bypassing */
+  BEHAVIOR_FIXED_PARKING = 7;     /**< fixed parking */
+  BEHAVIOR_PARKING = 8;           /**< parking */
+  BEHAVIOR_ARRIVE_LANE = 9;       /**< arrive lane */
+  BEHAVIOR_FINISH = 10;           /**< finish task */
+  BEHAVIOR_DIE = 11;              /**< task fail */
+  BEHAVIOR_PREPARE_PARKING = 12;  /**< prepare parking */
+  BEHAVIOR_PULLOVER_STOP = 13;    /**< pullover stop */
+}
+
+enum EnumDrivingWarningType {
+    WARNING_TYPE_NONE = 0;
+    TAKEOVER = 3;
+    LEFT_LC_SIGNAL = 4;
+    RIGHT_LC_SIGNAL = 5;
+    TARGET_LANE_UNAVAILABLE = 6;
+    GAP_NOT_SAFE = 7;
+    STATIC_OBS_EXIST = 9;
+    BORDER_INTRAVERSABLE = 11;
+    RADAR_NOT_CLEAR = 12;
+    LANE_NOT_DASHED = 13;
+    LEFT_LC_MANUAL = 14;
+    RIGHT_LC_MANUAL = 15;
+    LC_MANUAL_CANCELED = 16;
+    LEFT_LC_OVERTAKE = 21;
+    RIGHT_LC_OVERTAKE_RETURN = 22;
+    LEFT_LC_NAVI = 23;
+    RIGHT_LC_NAVI = 24;
+    LC_MOT_CANCELED = 28;
+    LC_TARGET_LANE_UNAVAILABLE_CANCELED = 29;
+    LC_SOLID_LANEMARK_CANCELED = 30;
+    RIGHT_LC_OVERTAKE = 31;
+    SUGGESTED_LEFT_LC_OVERTAKE = 32;
+    SUGGESTED_RIGHT_LC_OVERTAKE = 33;
+    SUGGESTED_LEFT_LC_NAVI = 34;
+    SUGGESTED_RIGHT_LC_NAVI = 35;
+    HEAVY_RAIN_TAKEOVER = 38;
+    // 地理围栏区域内切出类型
+    WITHIN_RAMP_TAKEOVER = 40;
+    WITHIN_TUNNEL_TAKEOVER = 41;
+    WITHIN_TOLLGATE_TAKEOVER = 42;
+    WITHIN_ROADWORKS_TAKEOVER = 43;
+    WITHIN_INTERSECTION_TAKEOVER = 44;
+    // 靠近地理围栏区域切出类型
+    APPROACH_RAMP_TAKEOVER = 45;
+    APPROACH_TUNNEL_TAKEOVER = 46;
+    APPROACH_TOLLGATE_TAKEOVER = 47;
+    APPROACH_ROADWORKS_TAKEOVER = 48;
+    APPROACH_INTERSECTION_TAKEOVER = 49;
+    MAYBE_APPROACH_RAMP_TAKEOVER = 50;
+    LON_OVERRIDING_PAY_ATTENTION = 51;
+    CANT_OVERRIDE_TAKEOVER = 52;
+    // 在地理围栏范围内切入失败
+    WITHIN_RAMP_CHECKIN_FAIL = 61;
+    WITHIN_TUNNEL_CHECKIN_FAIL = 62;
+    WITHIN_TOLLGATE_CHECKIN_FAIL = 63;
+    WITHIN_ROADWORKS_CHECKIN_FAIL = 64;
+    WITHIN_INTERSECTION_CHECKIN_FAIL = 65;
+    // 靠近地理围栏区域切入失败
+    APPROACH_GEOFENCE_CHECKIN_FAIL = 66;
+    LANE_TOO_WIDE_TOR = 200;
+    LANE_TOO_NARROW_TOR = 202;
+    LANE_NUM_INADEQUATE_TOR = 204;
+    LANE_TOO_SHORT_TOR = 206;
+    LANE_TOO_CURLY_TOR = 208;
+    LANE_DISORDERED_TOR = 210;
+    STEER_OVERRIDE = 213;
+    STEER_OVERRIDE_RECOVER = 214;
+    THROTTLE_OVERRIDE = 215;
+    THROTTLE_OVERRIDE_RECOVER = 216;
+    HIGH_SPEED_WARNING_IN_THROTTLE_OVERRIDE = 219;
+    NAVI_TO_LEFT_AT_FORWARD_1KM = 998;
+    NAVI_TO_RIGHT_AT_FORWARD_1KM = 999;
+}

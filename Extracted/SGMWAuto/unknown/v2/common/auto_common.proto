@@ -1,0 +1,144 @@
+syntax = "proto3";
+
+package v2.common;
+option go_package = "v2/common";
+
+enum EnumSwitch {
+    OFF = 0;
+    ON = 1;
+}
+
+enum EnumSurroundPosition {
+    POSITION_LEFT_FRONT = 0;
+    POSITION_LEFT_REAR = 1;
+    POSITION_RIGHT_FRONT = 2;
+    POSITION_RIGHT_REAR = 3;
+}
+
+//MOT类型
+enum EnumMotType {
+    MOT_CAR = 0;
+    MOT_PEDESTRAIN = 1;
+    MOT_CYCLIST = 2;
+    MOT_MOTORCYCLIST = 3;
+    MOT_ANIMAL = 4;
+    MOT_NONE = 99;
+}
+
+//车位框类型
+enum EnumParkingSlotType {
+    SLOT_TYPE_UNKNOWN = 0;
+    SLOT_TYPE_VERTICAL = 1;
+    SLOT_TYPE_PARALLEL = 2;
+    SLOT_TYPE_ANGLED = 3;
+}
+
+message ParkingSlot {
+    uint32 slotId = 1;                  //车位框ID
+    ParkingSlotStatus available = 2;    //车位可停状态
+    EnumParkingSlotType slotType = 3;   //车位框类型
+    uint32 entrance_stamp = 4;          //车位框入口边, 按bit取值，低四位分别表示 1，2边，2&3, 3&4, 4&1
+    repeated Coordinate list = 5;       // 车位框4个坐标xy，点1-4
+    bool private_slot = 6;              //是否收藏车位
+    bool has_stopper = 7;               //是否有限位器
+    Coordinate stopper_pose = 8;        //限位器坐标
+    EnumParkLocker has_park_locker = 9; //地锁
+    Coordinate park_locker_pose = 10;   //地锁坐标
+    EnumParkingSlotSource source = 11;  //车位数据来源
+    bool is_click = 12;                 //是否可点击
+}
+
+enum ParkingSlotStatus {
+    UNAVAILABLE_PARKED_CAR = 0;         //由于车辆不可停
+    AVAILABLE = 1;                      //可停
+    UNAVAILABLE_UNCLEAR = 2;            //由于未观测完全导致不可停
+    UNAVAILABLE_PARTIALLY_OCCUPIED = 3; //由于部分小障碍物占据导致不可停
+    UNAVAILABLE_EGO_OCCUPIED = 4;       //由于自车周围有障碍物，导致不可停
+    UNAVAILABLE_TOO_FAR = 5;            //由于太远，导致不可停
+}
+
+enum EnumParkLocker {
+    PL_NONE = 0;    //没有地锁
+    PL_LOCK = 1;    //有地锁，锁住状态
+    PL_UN_LOCK = 2; //有地锁，解锁状态
+}
+
+enum EnumParkingSlotSource {
+    VISION = 0; //视觉
+    SONAR = 1;  //雷达
+    FUSED = 2;  //融合数据
+}
+
+//fault code struct
+message FaultCode {
+    repeated uint64 fault_mask = 1; //fault mask of module id
+    uint32 module_id = 2; //module id of perception
+}
+
+// 坐标
+message Coordinate {
+    double x = 1;
+    double y = 2;
+    double z = 3;
+}
+
+message OdomVector {
+    double x = 1;  // 车辆当前 x 坐标值, 地图坐标系
+    double y = 2;  // 车辆当前 y 坐标值, 地图坐标系
+    double z = 3;  // 车辆当前 Yaw 角值 (deg), 地图坐标系
+}
+
+message OdomPose3d {
+    OdomVector position = 1;
+    OdomQuaternion orientation = 2;
+}
+
+message Velocity {
+    double x = 1;
+    double y = 2;
+    double z = 3;
+}
+
+message OdomQuaternion {
+    double x = 1;  // 车辆距离 A 点距离
+    double y = 2;  // 车辆距离 B 点距离
+    double z = 3;  // 车辆距离 C 点(召回点)距离
+    double w = 4;
+}
+
+message Gps {
+    double longitude = 1;  // Longitude
+    double latitude = 2;  // Latitude
+    double altitude = 3;  // Altitude
+}
+
+message Vector2d {
+    double x = 1;
+    double y = 2;
+}
+
+message Vector2f {
+    float x = 1;
+    float y = 2;
+}
+
+message Point {
+    float x = 1;
+    float y = 2;
+    float z = 3;
+}
+
+enum EnumParkingMode {
+    MODE_NONE = 0;
+    PARKING_EXPLORE = 1;  //探索
+    PARKING_AREA = 2;     //区域
+    PARKING_SINGLE = 3;   //指定车位
+    PARKING_PREVIEW = 4;  //预览
+}
+
+enum EnumParkingMapType {
+    MAP_PARK_IN = 0;        //泊入地图
+    MAP_PARK_OUT = 1;       //泊出地图
+    MAP_MERGE_PARK_IN = 2;  //泊入众包地图
+    MAP_MERGE_PARK_OUT = 3; //泊出众包地图
+}

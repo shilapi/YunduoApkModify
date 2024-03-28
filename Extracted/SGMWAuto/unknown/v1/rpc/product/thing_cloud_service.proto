@@ -1,0 +1,40 @@
+syntax = "proto3";
+package v1.rpc.product;
+option go_package = "v1/rpc/product";
+
+import "v1/message/product/thing/thing_cloud_service.proto";
+
+service ThingCloudServiceRpcService {
+	// adc-hub -> adc-server
+	rpc InvokeThingCloudService(InvokeThingCloudServiceReq) returns (InvokeThingCloudServiceRsp) {}
+
+}
+
+service ThingCloudServiceReplyRpcService{
+	// adc-server -> adc-hub
+	rpc ReplyAsyncInvokeThingCloudService(ReplyAsyncInvokeCloudThingServiceReq) returns (ReplyAsyncInvokeThingCloudServiceRsp){}
+}
+
+message InvokeThingCloudServiceReq {
+	string productKey = 1;
+	string deviceKey = 2;
+	bool sync = 3; // 是否同步调用
+	v1.message.product.thing.InvokeThingCloudServiceReqMsg data = 4; // 物模型云服务请求消息体
+}
+
+message InvokeThingCloudServiceRsp {
+	string code = 1; // rpc错误码
+	string message = 2; // rpc错误消息
+	v1.message.product.thing.InvokeThingCloudServiceRspMsg data =  3; // 物模型云服务响应消息体
+}
+
+message ReplyAsyncInvokeCloudThingServiceReq{
+	string deviceKey = 1;
+	string identifier = 2; // 服务名称唯一标识
+	v1.message.product.thing.InvokeThingCloudServiceRspMsg data =  3; // 物模型云服务响应消息体
+}
+
+message ReplyAsyncInvokeThingCloudServiceRsp{
+	string code = 1; // rpc错误码
+	string message = 2; // rpc错误消息
+}

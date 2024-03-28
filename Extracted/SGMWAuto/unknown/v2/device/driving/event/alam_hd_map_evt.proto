@@ -1,0 +1,187 @@
+syntax = "proto3";
+
+package v2.device.driving.event;
+option go_package = "v2/device/driving/event";
+
+import "v2/common/auto_common.proto";
+
+/**
+ * ALAM 高精地图
+ * 结构体:dji_msgs::mapserver::local_map::MapMessage
+ * Topic:/alam_server/map_server/v1
+ */
+message AlamHdMapEvt {
+  DrivingLocatorInfo driving_locator_info = 1;  //定位信息
+  uint32 num_arrows = 2;
+  repeated Arrow arrows = 3;                    //箭头
+  uint32 num_stop_lines = 4;
+  repeated StopLine stop_lines = 5;             //停止线
+  uint32 num_signs = 6;
+  repeated Sign signs = 7;                      //标志牌
+  uint32 num_lamps = 8;
+  repeated Lamp lamps = 9;                      //路灯杆
+  uint32 num_crosswalks = 10;
+  repeated CrossWalk crosswalks = 11;           //人行横道
+  uint32 num_traffic_signs = 12;
+  repeated TrafficSign traffic_signs = 13;      //红绿灯
+  uint32 num_borders = 14;
+  repeated Border borders = 15;                 //车道的左右边界
+  uint32 num_trajectory = 16;
+  repeated Trajectory trajectory = 17;          //轨迹线
+  uint32 num_lanes = 18;
+  repeated Lane lanes = 19;                     //车道
+}
+
+message DrivingLocatorInfo {
+  int64 map_id = 1;
+  EnumSourceType source_type = 2;               //地图类型
+  EnumDataStatus data_status = 3;               //定位状态（数据收敛程度）
+  .v2.common.OdomPose3d map_vins_transform = 4; //转换矩阵，vins系下的坐标转为map系坐标, map坐标 = transform * vins坐标
+  .v2.common.OdomPose3d map_pose = 5;           //地图轨迹文件
+  .v2.common.OdomVector llt = 6;                //pose llt
+  repeated double reserve = 7;
+}
+
+enum EnumSourceType {
+  ROAD_NET = 0;
+  MEMORY_MAP = 1;
+  THREE_MAP = 2;
+  CROWD_SOURCE_MAP = 3;
+  NONE = 4;
+}
+
+enum EnumDataStatus {
+  DATA_BAD = 0;
+  DATA_POOR = 1;
+  DATA_GOOD = 2;
+  DATA_AWESOME = 3;
+  GPS_NOT_VALID = 4;
+  GLOBAL_FUSION_NOT_VALID = 5;
+  OUT_OF_MAP = 6;
+  IN_INVERSE_LANE = 7;
+}
+
+//道路信息
+message Lane {
+  uint64 id = 1;
+  uint32 speed_limit = 2;                         //限速
+  EnumTurnOfLane turn_off_lane = 3;               //道路转弯方向
+  enum EnumTurnOfLane {
+    NO = 0;
+    LEFT = 1;   //左转道
+    RIGHT = 2;  //右转道
+    U_TURN = 3; //掉头道
+  }
+  uint64 left_border = 4;                         //左边线ID
+  uint64 right_border = 5;                        //右边线ID
+  uint64 left_neighbor_lane = 6;                  //相邻左车道ID
+  uint64 right_neighbor_lane = 7;                 //相邻右车道ID
+  uint64 bind_stop_line = 8;                      //停止线ID
+  uint32 num_prev = 9;
+  uint32 num_next = 10;
+  repeated uint64 prev_lanes = 11;                //前继车道
+  repeated uint64 next_lanes = 12;                //后继车道
+  uint32 num_center_pts = 13;
+  repeated .v2.common.Point center_line_pts = 14; //中心线
+}
+
+message Trajectory {
+  uint64 id = 1;
+  uint32 num_pts = 2;
+  repeated MapTrajectoryPoint trajectory_point = 3;
+}
+
+message MapTrajectoryPoint {
+  float x = 1;
+  float y = 2;
+  float z = 3;
+  float qw = 4;
+  float qx = 5;
+  float qy = 6;
+  float qz = 7;
+  float speed = 8;
+}
+
+//红绿灯
+message TrafficSign {
+  uint64 id = 1;
+  uint32 num_pts = 2;
+  repeated .v2.common.Point pts = 3;
+}
+
+//sign标示牌
+message Sign {
+  uint64 id = 1;
+  uint32 num_pts = 2;
+  repeated .v2.common.Point pts = 3;
+}
+
+//路灯杆
+message Lamp {
+  uint64 id = 1;
+  uint32 num_pts = 2;
+  repeated .v2.common.Point pts = 3;
+}
+
+//人行横道
+message CrossWalk {
+  uint64 id = 1;
+  uint32 num_pts = 2;
+  repeated .v2.common.Point pts = 3;
+}
+
+//停止线
+message StopLine {
+  uint64 id = 1;
+  uint32 num_pts = 2;
+  repeated .v2.common.Point pts = 3;
+}
+
+//车道的边界
+message Border {
+  uint64 id = 1;
+  uint32 num_pts = 2;
+  repeated .v2.common.Point pts = 3;
+  EnumBorderType border_type = 4;
+  enum EnumBorderType {
+    UNKNOWN = 0;
+    //VIRTUAL_CROSSABLE = 1;
+    DOTTED = 2;                   //虚线
+    //DECELERATION_DOTTED = 3;
+    DOTTED_SOLID = 11;            //虚实线
+    SOLID_DOTTED = 12;            //实虚线
+    //VIRTUAL_NON_CROSSABLE = 21;
+    SOLID = 22;                   //实线
+    //DECELERATION_SOLID = 23;
+    SOLID_SOLID = 24;             //双实线
+    //PHYSICAL_NON_CROSSABLE = 30;
+    CURB = 31;                    //道路边缘
+    FENCE = 32;
+  }
+}
+
+//箭头
+message Arrow {
+  uint64 id = 1;
+  uint32 num_pts = 2;
+  repeated .v2.common.Point pts = 3;
+  EnumTurnOffArrow turn_off_arrow = 4;  //转向类型
+  enum EnumTurnOffArrow {
+    FORWARD = 0;
+    LEFT = 1;
+    RIGHT = 2;
+    LEFT_RIGHT = 3;
+    LEFT_FORWARD = 4;
+    RIGHT_FORWARD = 5;
+    LEFT_RIGHT_FORWARD = 6;
+    U_TURN = 7;
+    U_TURN_LEFT = 8;
+    U_TURN_FORWARD = 9;
+    U_TURN_LEFT_FORWARD = 10;
+    HALF_LEFT = 11;
+    HALF_RIGHT = 12;
+  }
+}
+
+
+

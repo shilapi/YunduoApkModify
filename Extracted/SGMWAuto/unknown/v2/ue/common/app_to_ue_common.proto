@@ -1,0 +1,95 @@
+syntax = "proto3";
+
+package v2.ue.common;
+option go_package = "v2/ue/common";
+
+import "v2/common/auto_common.proto";
+
+/**
+ * 通用操作（to 3D）
+ */
+message CommonAppEvt {
+  Enum3DView view = 1;
+  EnumWindow window = 2;
+}
+
+/**
+ * 车辆模型
+ */
+message CarModelAppEvt {
+  EnumCarModel car_model = 1;
+}
+
+enum Enum3DView {
+  VIEW_RESUME = 0; //恢复正常视图
+  ZOOM_OUT = 1;    //放大
+  ZOOM_IN = 2;     //缩小
+}
+
+enum EnumWindow {
+  WINDOW_SMALL = 0;  //三分之一窗口
+  WINDOW_MIDDLE = 1; //三分之二窗口
+  WINDOW_LARGE = 2;  //全屏窗口
+  WINDOW_ATOM = 3;   //原子桌面窗口
+}
+
+enum EnumCarModel {
+  CAR_NONE = 0;
+  CAR_DJI = 1;
+  CAR_E300 = 2;
+  CAR_SVW = 3;
+  CAR_FAW = 4;
+}
+
+message DrivingModeAppEvt {
+    EnumDrivingModeTo3D mode = 1;
+}
+
+enum EnumDrivingModeTo3D {
+  MODE_MANUAL = 0;    //手动驾驶
+  MODE_AUTO = 1;      //自动驾驶
+}
+
+message DebugLogAppEvt {
+  .v2.common.EnumSwitch show_log = 1;
+}
+
+/**
+ * 主题切换
+ */
+message ThemeAppEvt {
+  EnumTheme theme = 1;
+}
+
+enum EnumTheme {
+  THEME_DAY = 0;    //白天
+  THEME_NIGHT = 1;  //黑夜
+}
+
+/**
+ * 3D可视化元素显示状态，bev、freespace、3D红绿灯、包络线
+ */
+message CommonElementEvt {
+  EnumSwitch bev_switch = 1;
+  EnumSwitch freespace_switch = 2;
+  EnumSwitch traffic_light_switch = 3;
+  EnumSwitch envelope_switch = 4;
+}
+
+/**
+ * 3D可视化元素显示状态，SHOW_ALL：全部展示、SHOW_SOME：部分展示、DISMISS_ALL：全部隐藏
+ */
+enum EnumSwitch {
+  SHOW_ALL = 0;
+  SHOW_SOME = 1;
+  DISMISS_ALL = 2;
+}
+
+message ScreenChangeAppEvt {
+  EnumScreenChangeAppAction action = 1;
+}
+
+enum EnumScreenChangeAppAction {
+  ScreenChangeAppStart = 0;
+  ScreenChangeAppEnd = 1;
+}

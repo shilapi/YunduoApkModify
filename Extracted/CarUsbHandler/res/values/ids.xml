@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="usb_handler_icon" />
+    <item type="id" name="usb_handler_title" />
+    <item type="id" name="usb_handlers_progress" />
+    <item type="id" name="usb_handlers_list" />
+</resources>

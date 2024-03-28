@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:height="50.0dip" android:width="50.0dip" android:viewportWidth="50.0" android:viewportHeight="50.0"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt">
+    <path android:fillColor="@drawable/$dashboard_ic_max_speed_active__0" android:pathData="M46.752,37.881L44.519,36.732C46.415,33.385 47.5,29.506 47.5,25.368C47.5,12.759 37.426,2.537 25,2.537C12.574,2.537 2.5,12.759 2.5,25.368C2.5,29.506 3.584,33.385 5.481,36.732L3.247,37.881C1.18,34.188 0,29.918 0,25.368C0,11.358 11.193,0 25,0C38.807,0 50,11.358 50,25.368C50,29.918 48.82,34.188 46.752,37.881ZM17.5,43.126L5.834,43.126L5.834,41.435L17.5,41.435L17.5,43.126ZM29.151,36.532L20.548,49L19.183,48.029L27.786,35.561L29.151,36.532ZM35.834,36.361L37.5,36.361L37.5,41.434L42.5,41.435L42.5,43.126L37.5,43.125L37.5,48.2L35.834,48.2L35.833,43.125L30.834,43.126L30.834,41.435L35.833,41.434L35.834,36.361Z" android:strokeColor="#00000000" android:strokeWidth="1.0" android:fillType="evenOdd" />
+</vector>

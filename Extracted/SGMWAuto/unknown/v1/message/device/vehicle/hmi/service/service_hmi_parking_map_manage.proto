@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.service;
+option go_package = "v1/message/device/vehicle/hmi/service";
+
+import "v1/message/device/vehicle/hmi/event/dmm_parking_map_info.proto";
+
+/**
+ * Parking地图请求（地图本地化）
+ * 结构体: sys_msgs::dmm::MapManageServiceRequest
+ * topic: /sys/dmm/map_manage_service/v1
+ */
+message MapManageServiceReq {
+  MapManageServiceType type = 1;   //地图请求类型
+  MapManageServiceInfo info = 2;   //地图请求信息
+}
+
+enum MapManageServiceType {
+  kNone = 0;
+  kDelete = 1;                      //地图删除
+  kStickTop = 2;                    //地图置顶
+  kStickBottom = 3;                 //地图置底
+  kCollect = 4;                     //地图采集
+  kClearHistory = 5;                //清除历史
+  kCancelStickTop = 6;              //取消置顶
+  kCancelStickBottom = 7;           //取消置底
+  kCancelCollect = 8;               //取消采集
+  kRename = 9;                      //地图重命名
+  kSearched = 10;                   //地图查找
+  kSyncPoseFile = 11;               //地图坐标同步
+  kUpdateMaps = 12;                 //地图更新
+}
+
+message MapManageServiceInfo {
+  repeated int64 delete_map_id = 1; //地图删除id列表
+  int64 selected_map_id = 2;        //选中地图（kStickTop、kStickBottom、kRename）
+  repeated string map_name = 3;      //地图名称列表
+}
+
+message MapManageServiceResp {
+  MapManageServiceRespType result = 1;                             //响应结果
+  .v1.message.device.vehicle.hmi.event.DmmParkingInfoEvt info = 2; //地图信息
+}
+
+enum MapManageServiceRespType {
+  kSuccess = 0;                     //成功
+  kFail = 1;                        //失败
+  kUnavailable = 2;                 //无法找到
+  kUnknown = 3;                     //未知
+}

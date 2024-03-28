@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <RadioGroup android:orientation="horizontal" android:id="@id/hqa_cardmode_rg_swio" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip">
+            <RadioButton android:id="@id/hqa_cardmode_rb_swio1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/hqa_nfc_swio1" />
+            <RadioButton android:id="@id/hqa_cardmode_rb_swio2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/hqa_nfc_swio2" />
+            <RadioButton android:id="@id/hqa_cardmode_rb_swio_se" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/hqa_nfc_swio_se" />
+        </RadioGroup>
+        <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="3.0pt" android:layout_marginRight="5.0pt" />
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip">
+            <CheckBox android:id="@id/hqa_cardmode_cb_typea" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/hqa_nfc_typea" />
+            <CheckBox android:id="@id/hqa_cardmode_cb_typeb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="165.0dip" android:text="@string/hqa_nfc_typeb" />
+            <CheckBox android:id="@id/hqa_cardmode_cb_typef" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="40.0dip" android:text="@string/hqa_nfc_typef" />
+            <CheckBox android:id="@id/hqa_cardmode_cb_typeb2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="165.0dip" android:layout_marginTop="40.0dip" android:text="@string/hqa_nfc_typeb2" />
+        </RelativeLayout>
+        <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="3.0pt" android:layout_marginRight="5.0pt" />
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+            <Button android:id="@id/hqa_cardmode_btn_select_all" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/hqa_nfc_select_all" android:width="100.0dip" />
+            <Button android:id="@id/hqa_cardmode_btn_clear_all" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="105.0dip" android:text="@string/hqa_nfc_clear_all" android:width="100.0dip" />
+            <Button android:id="@id/hqa_cardmode_btn_start_stop" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="210.0dip" android:text="@string/hqa_nfc_start" android:width="100.0dip" />
+            <Button android:id="@id/hqa_cardmode_btn_return" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="50.0dip" android:text="@string/hqa_nfc_return" android:width="100.0dip" />
+            <Button android:id="@id/hqa_cardmode_btn_run_back" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="105.0dip" android:layout_marginTop="50.0dip" android:text="@string/hqa_nfc_run_back" android:width="205.0dip" />
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

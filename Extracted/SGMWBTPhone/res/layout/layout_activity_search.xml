@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:tag="layout/layout_activity_search_0" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:id="@id/back" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p78" android:layout_marginStart="@dimen/p92">
+        <ImageView android:layout_width="@dimen/p40" android:layout_height="@dimen/p40" android:src="@mipmap/img_activity_search_back" android:scaleType="fitXY" />
+        <TextView android:textSize="@dimen/s21" android:textColor="@color/general_ff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p4" android:text="@string/search_back" android:includeFontPadding="false" android:fontFamily="@font/cn_regular" android:layout_marginStart="@dimen/p44" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p34">
+        <com.sgmw.lingos.btcall.view.widget.DrawableEditText android:textSize="@dimen/s19" android:textColor="@color/general_ff" android:textColorHint="@color/general_99" android:gravity="center_vertical" android:id="@id/search_in_contacts" android:background="@mipmap/bg_activity_search_edittext" android:layout_width="@dimen/p680" android:layout_height="@dimen/p56" android:hint="@string/hint_search" android:singleLine="true" android:includeFontPadding="false" android:drawablePadding="@dimen/p12" android:imeOptions="actionSearch|flagNoFullscreen" android:textCursorDrawable="@mipmap/img_activity_search_cursor" android:drawableStart="@mipmap/img_activity_search_search" android:drawableEnd="@mipmap/img_activity_search_delete" android:fontFamily="@font/cn_regular" android:paddingStart="@dimen/p8" android:paddingEnd="@dimen/p8" android:layout_marginStart="@dimen/p300" />
+    </LinearLayout>
+    <FrameLayout android:layout_width="@dimen/p752" android:layout_height="fill_parent" android:layout_marginStart="@dimen/p264">
+        <androidx.recyclerview.widget.RecyclerView android:scrollbarThumbVertical="@color/ssb_slider" android:scrollbarTrackVertical="@color/ssb_background" android:scrollbarStyle="insideInset" android:id="@id/recyclerView" android:tag="binding_1" android:background="@android:color/transparent" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="@dimen/p404" android:layout_marginTop="@dimen/p40" android:fadeScrollbars="false" android:overScrollMode="never" />
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/search_none" android:tag="binding_2" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/p84">
+            <ImageView android:layout_width="@dimen/p168" android:layout_height="@dimen/p168" android:src="@mipmap/img_activity_search_nothing" android:scaleType="fitXY" />
+            <TextView android:textSize="@dimen/s21" android:textColor="@color/general_ff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p8" android:text="@string/no_contact" android:includeFontPadding="false" android:fontFamily="@font/cn_regular" />
+        </LinearLayout>
+        <View android:background="@mipmap/bg_mask_bottom" android:layout_width="fill_parent" android:layout_height="@dimen/p119" android:layout_marginTop="@dimen/p393" />
+    </FrameLayout>
+</LinearLayout>

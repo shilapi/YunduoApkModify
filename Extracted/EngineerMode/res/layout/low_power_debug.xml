@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="200.0dip" android:text="@string/low_power_stop_txt" />
+        <Spinner android:entries="@array/low_battery_protect_stop" android:id="@id/low_power_stop_select" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="200.0dip" android:text="@string/low_power_ut_txt" />
+        <Spinner android:entries="@array/low_battery_protect_ut" android:id="@id/low_power_ut_select" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

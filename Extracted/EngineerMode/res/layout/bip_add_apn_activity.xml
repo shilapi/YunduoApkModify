@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip">
+        <TextView android:textAppearance="?android:textAppearanceLarge" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/bip_textView" />
+        <RadioGroup android:gravity="left" android:orientation="vertical" android:id="@id/bip_radio_group" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <RadioButton android:id="@id/bip_add_default_bip_radio" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/bip_add_default_bip_apn" />
+            <RadioButton android:id="@id/bip_add_bip_radio" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/bip_add_bip_apn" />
+            <RadioButton android:id="@id/bip_remove_all_added_radio" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/bip_remove_all_added" />
+        </RadioGroup>
+        <Button android:gravity="center" android:id="@id/bip_set_button" android:layout_width="60.0dip" android:layout_height="wrap_content" android:layout_marginLeft="200.0dip" android:text="@string/bip_ok" />
+    </LinearLayout>
+</LinearLayout>

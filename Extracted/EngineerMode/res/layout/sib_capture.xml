@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip">
+        <TextView android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/sib_capture_support_title" />
+        <RadioGroup android:gravity="left" android:orientation="vertical" android:id="@id/sib_radio_group" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <RadioButton android:id="@id/sib_capture_support_disabled" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sib_capture_support_disabled" />
+            <RadioButton android:id="@id/sib_capture_support_enabled" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sib_capture_support_enabled" />
+        </RadioGroup>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip" android:layout_marginTop="2.0dip" android:text="@string/allocate_storage_size_title" />
+            <Spinner android:entries="@array/allocate_storage_size_values" android:id="@id/allocate_storage_size" android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" />
+        </LinearLayout>
+        <Button android:gravity="center" android:id="@id/sib_capture_support_set_button" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginLeft="100.0dip" android:text="@string/sib_capture_support_set_button" />
+    </LinearLayout>
+</LinearLayout>

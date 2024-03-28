@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package v2.device.common.event;
+option go_package = "v2/device/common/event";
+
+import "v2/common/auto_common.proto";
+
+/**
+ * 本车ego系下周围某一范围内的occupancy信息
+ * 结构体: per_msgs::dle::Occupancy
+ * topic: /per/dle/bev_lane_hmi/v2
+ */
+message OccupancyEvt {
+    int32 height = 1;   //图的高
+    int32 width = 2;    //图的宽
+    int32 channel = 3;  //一共6通道：0为Road类别，1为Road概率，2为intersection类别，3为intersection概率，4为区域类别，5为区域概率
+    float height_step = 4;      //图中每个像素在实际世界中的对应大小
+    float width_step = 5;       //图中每个像素在实际世界中的对应大小
+    float height_offset = 6;    //本车在图中的位置
+    float width_offset = 7;     //本车在图中的位置
+    repeated int32 data = 8;    //字段废弃
+    .v2.common.OdomPose3d pose = 9;
+    bytes byte_data = 10;
+}

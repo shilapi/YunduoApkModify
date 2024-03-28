@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.common.property;
+option go_package = "v1/message/device/vehicle/common/property";
+
+import "v1/message/device/vehicle/common/property/vehicle_stat.proto";
+
+message VehicleInfoEvt {
+  MotionFdbk  info_chassis = 1; // 车辆运动信息
+  PartnerModule info_veh_partner = 2; // 车辆附件信息
+  uint64 data_status = 3; // ?
+}
+
+message PartnerModule {
+  bool valid_status = 1; // 是否有效
+  EnumWindshieldWiperStatus windshield_wiper_status = 2;
+  EnumHeadLightStatus EnumHeadLightStatus = 3;
+  float tire_pressure_level = 4; // tire pressure level
+}
+
+message WheelSpeed {
+  float left_front_speed  = 1; // 左前轮速度, m/s
+  float right_front_speed = 2; // 右前轮速度, m/s
+  float left_rear_speed   = 3; // 左后轮速度, m/s
+  float right_rear_spped  = 4; // 右后轮速度, m/s
+}
+
+enum EnumWheelDirect {
+  DIRECT_FORWARD    = 0;
+  DIRECT_BACKWARD   = 1;
+  DIRECT_STANDSTILL = 2;
+  DIRECT_INVALID    = 3;
+}
+
+message WheelDirection {
+  EnumWheelDirect left_front_direction  = 1;
+  EnumWheelDirect right_front_direction = 2;
+  EnumWheelDirect left_rear_direction   = 3;
+  EnumWheelDirect right_rear_direction  = 4;
+}
+
+message LonMotion {
+  bool           valid_status    = 1; // 是否有效
+  bool           tc_status       = 2; // 是否有效
+  bool           epb_status      = 3; // 是否有效
+  EnumGear       gear            = 4; // 档位
+  WheelSpeed     wheel_spped     = 5; // 轮速 m/s
+  WheelDirection wheel_direction = 6; // 轮旋转方向
+  float          accleration     = 7; // 纵向加速度反馈 m/s^2
+  uint32         veh_mileage     = 8; // 里程 m
+}
+
+message LatMotion {
+  bool  valid_status        = 1; // 是否有效
+  float steering_angle      = 2; // 方向盘转角 deg
+  float steering_angle_rate = 3; // 方向盘角速度 rad/s
+  float steering_torque     = 4; // 方向盘转矩 N.m
+  float accleration         = 5; // 横向加速度反馈 m/s^2
+}
+
+message MotionFdbk {
+  LonMotion motion_lon = 1; // 车辆纵向运动信息
+  LatMotion motion_lat = 2; // 车辆横向运动信息
+}
+
+enum EnumWindshieldWiperStatus {
+  WIPER_OFF = 0; // 关闭
+  SLOW_SPEED = 1; // 低速
+  INTERMEDIATE_SPEED = 2; // 中速
+  HIGH_SPEED = 3; // 高速
+}
+
+enum EnumHeadLightStatus {
+  LIGHT_OFF = 0; // 关闭
+  LIGHT_ON  = 1; // 打开
+}

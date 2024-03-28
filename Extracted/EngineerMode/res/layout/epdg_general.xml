@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout style="@style/info_layout">
+        <View android:background="#ff0000ff" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="10.0dip" />
+        <ListView android:id="@id/general_list" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/ike_algo_edit" />
+            <EditText android:id="@id/ike_algo_edit" android:layout_width="230.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/esp_algo_edit" />
+            <EditText android:id="@id/esp_algo_edit" android:layout_width="230.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/epdg_fqdn" />
+            <EditText android:id="@id/epdg_fgdn" android:layout_width="230.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/IDi" />
+            <Spinner android:entries="@array/epdg_log_idi" android:id="@id/IDi" android:layout_width="230.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/IDr" />
+            <Spinner android:entries="@array/epdg_log_idr" android:id="@id/IDr" android:layout_width="230.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/retrans_to" />
+            <EditText android:id="@id/retrans_to" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/seconds" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/retrans_tries" />
+            <EditText android:id="@id/retrans_tries" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/retrans_base" />
+            <EditText android:id="@id/retrans_base" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/cust_pcscf_4" />
+            <EditText android:id="@id/cust_pcscf_4" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/cust_pcscf_6" />
+            <EditText android:id="@id/cust_pcscf_6" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/cust_imei_cp" />
+            <EditText android:id="@id/cust_imei_cp" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/mtu" />
+            <EditText android:id="@id/mtu" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/bytes" />
+        </LinearLayout>
+        <Button android:id="@id/general_set" android:layout_width="120.0dip" android:layout_height="wrap_content" android:text="@string/epdg_set" />
+    </LinearLayout>
+</ScrollView>

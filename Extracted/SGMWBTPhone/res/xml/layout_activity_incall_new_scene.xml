@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ConstraintSet android:id="@id/one_open_pad">
+        <Constraint android:id="@id/hold_call_information" />
+        <Constraint android:id="@id/dp_incall" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p164" android:layout_marginStart="@dimen/p768" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+        <Constraint android:id="@id/call_anim_ripple" android:visibility="visible" android:layout_width="@dimen/p444" android:layout_height="@dimen/p444" android:layout_marginStart="@dimen/p160" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+        <Constraint android:id="@id/incall_ll_left" android:layout_width="@dimen/p480" android:layout_height="@dimen/p434" android:layout_marginTop="@dimen/p156" android:layout_marginStart="@dimen/p142" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+    <ConstraintSet android:id="@id/one_cls_pad">
+        <Constraint android:id="@id/hold_call_information" />
+        <Constraint android:id="@id/dp_incall" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p164" android:translationX="@dimen/p408" android:scaleX="0.1" android:scaleY="0.1" android:layout_marginStart="@dimen/p768" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+        <Constraint android:id="@id/call_anim_ripple" android:visibility="visible" android:layout_width="@dimen/p444" android:layout_height="@dimen/p444" android:translationX="@dimen/p258" android:layout_marginStart="@dimen/p160" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+        <Constraint android:id="@id/incall_ll_left" android:layout_width="@dimen/p480" android:layout_height="@dimen/p434" android:layout_marginTop="@dimen/p156" android:layout_marginStart="@dimen/p400" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+    <Transition app:constraintSetEnd="@id/one_cls_pad" app:constraintSetStart="@id/one_open_pad" app:duration="600" app:motionInterpolator="cubic(1,0,0,1)" />
+    <ConstraintSet android:id="@id/two_cls_pad" app:deriveConstraintsFrom="@id/one_cls_pad">
+        <Constraint android:id="@id/hold_call_information" android:visibility="visible" android:layout_width="@dimen/p412" android:layout_height="@dimen/p464" android:layout_marginTop="@dimen/p122" android:layout_marginStart="@dimen/p162" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+        <Constraint android:id="@id/dp_incall" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p164" android:translationX="@dimen/p408" android:scaleX="0.1" android:scaleY="0.1" android:layout_marginStart="@dimen/p768" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+        <Constraint android:id="@id/call_anim_ripple" android:visibility="visible" android:layout_width="@dimen/p444" android:layout_height="@dimen/p444" android:translationX="@dimen/p530" android:layout_marginStart="@dimen/p160" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+        <Constraint android:id="@id/incall_ll_left" android:layout_width="@dimen/p480" android:layout_height="@dimen/p434" android:layout_marginTop="@dimen/p156" android:layout_marginStart="@dimen/p672" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+    <Transition app:constraintSetEnd="@id/two_cls_pad" app:constraintSetStart="@id/one_cls_pad" app:duration="600" app:motionInterpolator="cubic(1,0,0,1)" />
+</MotionScene>

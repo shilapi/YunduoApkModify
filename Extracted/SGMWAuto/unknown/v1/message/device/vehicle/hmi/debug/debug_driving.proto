@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.debug;
+option go_package = "v1/message/device/vehicle/hmi/debug";
+import "v1/message/device/vehicle/common.proto";
+
+/**
+ * 调试数据（V2X）
+ */
+message DebugV2X {
+  EnumSwitch road_work = 1;          //道路施工
+  EnumSwitch accident_ahead = 2;     //前方事故
+  EnumSwitch congestion_ahead = 3;   //前方拥堵
+}
+
+message DebugTrafficLight {
+    EnumTrafficLight traffic_light = 1;
+}
+
+enum EnumTrafficLight {
+  NONE = 0;
+  RED = 1;
+  GREEN = 2;
+  YELLOW = 3;
+}

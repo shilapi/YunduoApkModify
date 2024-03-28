@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package rhp;
+
+option go_package = "rhp";
+
+message HmiMsgPoint {
+  float x = 1;
+  float y = 2;
+  float z = 3;
+}
+
+message LaneBorderInfo{
+  uint32 valid = 1;                       //lane border whether valid
+  uint32 valid_point_num = 2;             //valid point num in this lane 
+  repeated HmiMsgPoint points = 3;       //point position in ego coordinate
+}
+
+/**
+ * topic: /sys/dmm/lane_border_display/v1
+ */
+ message DmmLaneBorderInfo {
+  repeated LaneBorderInfo borders = 1; 
+}

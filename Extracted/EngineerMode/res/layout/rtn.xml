@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/Layout1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:baselineAligned="false" android:weightSum="1.0">
+        <TextView android:textSize="36.0sp" android:id="@id/textView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rtn_scrtn_main" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/Layout3" android:layout_width="fill_parent" android:layout_height="fill_parent" android:baselineAligned="false" android:weightSum="1.0" android:layout_below="@id/Layout1">
+        <Button android:textSize="30.0sp" android:id="@id/View_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rtn_view" android:layout_weight="0.11" />
+        <Button android:textSize="30.0sp" android:id="@id/Reset_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rtn_reset" android:layout_weight="0.11" />
+        <Button android:textSize="30.0sp" android:id="@id/Scrtn_reset" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/scrtn_reset" android:layout_weight="0.11" />
+        <Button android:textSize="30.0sp" android:id="@id/Uicc_update" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/uicc_update" android:layout_weight="0.11" />
+        <Button android:textSize="30.0sp" android:id="@id/Update_operation" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/update_menu" android:layout_weight="0.11" />
+        <Button android:textSize="30.0sp" android:id="@id/Profile_update" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/profile_update" android:layout_weight="0.11" />
+        <Button android:textSize="30.0sp" android:id="@id/Prl_update" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/prl_update" android:layout_weight="0.11" />
+    </LinearLayout>
+</RelativeLayout>

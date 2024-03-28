@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0sp" android:layout_marginTop="50.0sp" android:text="@string/desense_camera_txt" />
+    <Spinner android:entries="@array/desense_camera_items" android:id="@id/desense_camera_spinner" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0sp" android:layout_marginTop="50.0sp" android:layout_marginRight="50.0sp" />
+    <Button android:id="@id/desense_camera_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0sp" android:layout_marginTop="50.0sp" android:layout_marginRight="50.0sp" android:text="@string/desense_camera_btn" />
+</LinearLayout>

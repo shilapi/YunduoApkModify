@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.debug;
+option go_package = "v1/message/device/vehicle/hmi/debug";
+import "v1/message/device/vehicle/common.proto";
+
+/**
+ * 调试通用数据
+ */
+message DebugCommon {
+  int32 speed = 1;                 //仪表速度
+  int32 limit_speed = 2;           //限速
+  EnumVehicleGear gear = 3;        //档位
+  EnumSwitch new_package = 4;      //新的升级包
+}
+
+enum EnumVehicleGear {
+  GEAR_N = 0;
+  GEAR_D = 1;
+  GEAR_S = 2;
+  GEAR_R = 3;
+  GEAR_P = 4;
+}

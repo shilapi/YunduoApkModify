@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package v2.device.parking.event;
+option go_package = "v2/device/parking/event";
+
+import "v2/common/auto_common.proto";
+
+/**
+ * DMM车位框
+ * 结构体:
+ * topic :
+ */
+message DmmParkingSlotListEvt {
+  uint32 suggested_slot_id = 1;
+  repeated .v2.common.ParkingSlot slots = 2;
+}

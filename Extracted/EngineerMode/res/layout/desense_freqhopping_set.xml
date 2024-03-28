@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="10.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip">
+        <Spinner android:entries="@array/desense_freqhopping_plls" android:id="@id/desense_freqhopping_sp_plls" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        <TextView android:gravity="right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@string/desense_freqhopping_0x" />
+        <EditText android:id="@id/desense_freqhopping_et_dds" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/desense_freqhopping_hint_dds" android:maxLength="8" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/desense_freqhopping_0x" />
+        <EditText android:id="@id/desense_freqhopping_et_deltafreq" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/desense_freqhopping_hint_freq" android:maxLength="8" android:layout_weight="1.0" />
+        <TextView android:gravity="right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/desense_freqhopping_0x" />
+        <EditText android:id="@id/desense_freqhopping_et_deltatime" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/desense_freqhopping_hint_time" android:maxLength="8" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/desense_freqhopping_0x" />
+        <EditText android:id="@id/desense_freqhopping_et_upperlimit" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/desense_freqhopping_hint_upper" android:maxLength="8" android:layout_weight="1.0" />
+        <TextView android:gravity="right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/desense_freqhopping_0x" />
+        <EditText android:id="@id/desense_freqhopping_et_downlimit" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/desense_freqhopping_hint_down" android:maxLength="8" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip">
+        <Button android:id="@id/desense_freqhopping_btn_enable" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/desense_freqhopping_enable" android:layout_weight="1.0" />
+        <Button android:id="@id/desense_freqhopping_btn_disable" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/desense_freqhopping_disable" android:layout_weight="1.0" />
+        <Button android:id="@id/desense_freqhopping_btn_readall" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/desense_freqhopping_readall" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:orientation="vertical" android:layout_width="@dimen/p500" android:layout_height="@dimen/p280"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@mipmap/bg_numberpop" android:scaleType="fitXY" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textSize="@dimen/s24" android:textColor="@color/general_ff" android:layout_gravity="center_horizontal" android:id="@id/tv_num_pop_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p24" android:layout_marginBottom="@dimen/p12" android:text="@string/call" android:includeFontPadding="false" android:fontFamily="@font/cn_medium" />
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="@dimen/p25">
+            <androidx.recyclerview.widget.RecyclerView android:layout_gravity="center" android:id="@id/rv_num_pop_numbers" android:layout_width="fill_parent" android:layout_height="wrap_content" android:overScrollMode="never" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

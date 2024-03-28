@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/linearLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/textView" android:layout_alignParentLeft="true">
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/textView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="59.0dip" android:text="@string/channel_lock_lock_text" />
+        <RadioGroup android:orientation="horizontal" android:id="@id/radioLockGroup1" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <RadioButton android:id="@id/channel_lock_lock_enable_radio" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="false" android:text="@string/channel_lock_lock_enable" />
+            <RadioButton android:id="@id/channel_lock_lock_disable_radio" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:checked="true" android:text="@string/channel_lock_lock_disable" />
+        </RadioGroup>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/linearLayout5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/linearLayout" android:layout_alignParentLeft="true">
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/textView4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="65.0dip" android:text="@string/channel_lock_RAT" />
+        <RadioGroup android:orientation="horizontal" android:id="@id/radioRATGroup1" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <RadioButton android:id="@id/rat_gsm_radio" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="false" android:text="@string/channel_lock_RAT_gsm" />
+            <RadioButton android:id="@id/rat_umts_radio" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:checked="false" android:text="@string/channel_lock_RAT_umts" />
+            <RadioButton android:id="@id/rat_lte_radio" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:checked="true" android:text="@string/channel_lock_RAT_lte" />
+        </RadioGroup>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/linearLayout6" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/linearLayout5" android:layout_alignParentLeft="true">
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/textView5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="20.0dip" android:text="@string/channel_lock_GSM_ninehundred" />
+        <RadioGroup android:orientation="horizontal" android:id="@id/radioHIGSMGroup1" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <RadioButton android:id="@id/gsm1900_yes_radio" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="false" android:text="@string/channel_lock_GSM_ninehundred_yes" />
+            <RadioButton android:id="@id/gsm1900_no_radio" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:checked="true" android:text="@string/channel_lock_GSM_ninehundred_no" />
+        </RadioGroup>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/linearLayout7" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/linearLayout6" android:layout_alignParentLeft="true">
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/textView6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="45.0dip" android:text="@string/channel_lock_ARCFN" />
+        <EditText android:id="@id/channel_lock_ARCFN_number_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/channel_lock_ARCFN_number" android:ems="10" android:inputType="number" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/linearLayout8" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/linearLayout7" android:layout_alignParentLeft="true">
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/textView7" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="40.0dip" android:text="@string/channel_lock_cellid" />
+        <EditText android:id="@id/channel_lock_cellid_number_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/channel_lock_cellid_number" android:ems="10" android:inputType="number" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/linearLayout11" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/linearLayout8" android:layout_alignParentLeft="true">
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/textView4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:text="@string/channel_lock_lock_mode" />
+        <RadioGroup android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <RadioButton android:id="@id/lock_mode_unchanged" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:text="@string/channel_lock_mode_unchanged" />
+            <RadioButton android:id="@id/lock_mode_idle_only" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="false" android:text="@string/channel_lock_mode_idle_only" />
+            <RadioButton android:id="@id/lock_mode_idle_connected" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="false" android:text="@string/channel_lock_mode_idle_connected" />
+        </RadioGroup>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/linearLayout9" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/linearLayout11" android:layout_alignParentLeft="true">
+        <Button android:id="@id/channel_lock_apply_button" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/channel_lock_apply" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/linearLayout10" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:layout_below="@id/linearLayout9" android:layout_alignParentLeft="true">
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/textView8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/channel_lock_trigger_text" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/linearLayout10" android:layout_alignParentLeft="true">
+        <Button android:id="@id/channellock_reset_button" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/channel_lock_reset" style="?android:attr/buttonStyleSmall" />
+    </LinearLayout>
+</RelativeLayout>

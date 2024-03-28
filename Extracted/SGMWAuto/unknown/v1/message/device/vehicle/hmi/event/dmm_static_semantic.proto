@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+
+import "v1/message/device/vehicle/common.proto";
+
+/**
+ * 泊车静态语义
+ * 结构体 : sys_msgs::dmm::DmmSemanticInfoList
+ * topic : /sys/dmm/semantic_list/v1
+ * 频率 : 10 Hz
+ */
+message DmmStaticSemanticEvt {
+  repeated Semantic semantic = 1;
+  OdomPose3d vins_pose = 2;  
+}
+
+message Semantic {
+  uint32 id = 1;
+  repeated Coordinate pose = 2;             //位置
+  float yaw = 3;                            //方向
+  float size = 4;                           //大小
+  EnumSemanticType semantic_type = 5;       //类型
+  uint32 sub_type = 6;                      //子类型(具体值对应不同enum,如EnumArrowSubType)
+  EnumSemanticState semantic_state = 7;     //状态
+}
+
+enum EnumSemanticType {
+  SST_UNKNOWN = 0;
+  SST_ARROW = 1;              //箭头
+  SST_SPEED_BUMP = 2;         //减速带
+  SST_CROSS_WALK = 3;         //人行横道
+  SST_TOLLGATE_POLE = 4;      //收费站
+}
+
+// 地面箭头子类型
+enum EnumArrowSubType {
+  AST_STRAIGHT = 0;                            // straight
+  AST_LEFT = 1;                                // turn left
+  AST_RIGHT = 2;                               // turn right
+  AST_TURN = 3;                                // turn about
+  AST_STRAIGHT_LEFT = 4;                       // straight or left turn
+  AST_STRAIGHT_RIGHT = 5;                      // straight or right turn
+  AST_LEFT_TURN = 6;                           // l eft turn or turn about
+  AST_LEFT_RIGHT = 7;                          // left turn or right turn
+  AST_STRAIGHT_LEFT_RIGHT = 8;                 // straight or left turn or right turn
+  AST_MERGE_LEFT = 9;                          // left turn or merge left
+  AST_MERGE_RIGHT = 10;                        // right turn or merge right
+}
+
+enum EnumSemanticState {
+  SST_NONE = 0;      // No State,for arrow, speed bump, cross walk
+  SST_OFF = 1;       // tollgate pole：close
+  SST_ON = 2;        // tollgate pole：open
+}
+
+/**
+ * Driving场景收费杆检测
+ * 结构体: per_msgs::lane_fusion::PoleFusion
+ * topic: /per/map_fusion/tollgate_pole_driving/v1
+ * 频率：5hz
+ */
+message PolePromptEvt {
+  uint32 nums = 1; //点数，若为2，表示有收费杆，两个点分别为起点和终点，其他为无收费杆
+}

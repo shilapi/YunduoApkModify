@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TableLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:stretchColumns="1">
+        <TextView android:id="@id/text_sensor_ps_calibration_current_data" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:layout_marginBottom="3.0dip" android:text="@string/sensor_ps_calibration_current_data" />
+        <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:text="@string/sensor_ps_calibration_min_hint" />
+        <TableRow>
+            <TextView android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sensor_ps_calibration_min_value" />
+            <TextView android:layout_gravity="center_vertical" android:id="@id/text_sensor_ps_calibration_min_value" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <Button android:textSize="16.0sp" android:id="@id/button_sensor_ps_calibration_get_min" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sensor_ps_calibration_get_min" />
+        </TableRow>
+        <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:text="@string/sensor_ps_calibration_max_hint" />
+        <TableRow>
+            <TextView android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sensor_ps_calibration_max_value" />
+            <TextView android:layout_gravity="center_vertical" android:id="@id/text_sensor_ps_calibration_max_value" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <Button android:textSize="16.0sp" android:id="@id/button_sensor_ps_calibration_get_max" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sensor_ps_calibration_get_max" />
+        </TableRow>
+        <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <Button android:textSize="16.0sp" android:id="@id/button_sensor_ps_calibration_do_cali" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:text="@string/sensor_ps_calibration_do_cali" />
+        <Button android:textSize="16.0sp" android:id="@id/button_sensor_ps_calibration_clear_cali" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:text="@string/sensor_ps_calibration_clear_cali" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sensor_ps_calibration_result" />
+            <TextView android:id="@id/text_sensor_ps_calibration_result" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </TableLayout>
+</ScrollView>

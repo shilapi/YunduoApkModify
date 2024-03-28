@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+
+import "v1/message/device/vehicle/common.proto";
+
+/**
+ * dms分心检测反馈信息
+ * 结构体: dji_msgs::dms::DriverState
+ * 频率：5Hz
+ */
+message DmsPromptEvt {
+  EnumSwitch existence = 1;               //是否检测到驾驶员
+  uint32 eyes_off = 2;                    //视线（偏头）分心提醒，未分心：eyes_off < 2
+  uint32 hands_off = 3;                   //行为分心等级，0：持续分心动作小于1s，1：1-3s，2：3-5s，3：5s以上
+  EnumSwitch normal_driving = 4;          //正常驾驶
+  EnumSwitch phoning = 5;                 //打电话
+  EnumSwitch smoking = 6;                 //抽烟
+  EnumSwitch drinking = 7;                //喝水
+  EnumSwitch yawning = 8;                 //打哈欠
+  EnumSwitch eye_closed = 9;              //闭眼
+  repeated float relative_head_pose = 10; //头部姿势检测
+  uint64 error_code = 11;                 //错误码
+}

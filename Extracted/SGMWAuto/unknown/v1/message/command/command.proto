@@ -1,0 +1,17 @@
+syntax = "proto3";
+package v1.message.command;
+option go_package = "v1/message/command";
+//import "google/protobuf/any.proto";
+
+message CommandRequest {
+  string command_id = 1;
+  string command_name = 2;
+//  google.protobuf.Any command_param = 3;
+}
+
+message CommandResponse {
+  string command_id = 1;
+  uint64 code = 2;
+  string msg = 3;
+}
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout style="@style/info_layout">
+        <ListView android:id="@id/list" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="10.0dip" />
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rf_desense_button_duration_time" />
+            <EditText android:id="@id/test_duration" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="80.0dip" android:inputType="number" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rf_desense_button_time_count" />
+            <EditText android:id="@id/test_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="80.0dip" android:inputType="number" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:id="@id/check_limit_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rf_desense_button_check_limit" />
+            <EditText android:id="@id/check_limit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="50.0dip" android:inputType="number" />
+            <TextView android:id="@id/readback_interval_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rf_desense_button_readback_interval" />
+            <EditText android:id="@id/readback_interval" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="50.0dip" android:inputType="number" />
+        </LinearLayout>
+        <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="10.0dip" />
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <Button android:id="@id/button_start_total" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/rf_desense_button_start" android:layout_weight="1.0" />
+            <Button android:id="@id/button_stop_total" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/rf_desense_button_stop" android:layout_weight="1.0" />
+            <Button android:id="@id/button_exit_total" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/rf_desense_button_exit" android:layout_weight="1.0" />
+        </LinearLayout>
+        <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="10.0dip" />
+        <TextView android:id="@id/test_result" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>

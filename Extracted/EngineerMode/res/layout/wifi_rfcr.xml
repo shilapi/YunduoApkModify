@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/WiFi_RFCR_Text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" android:layout_marginTop="10.0dip" android:text="@string/wifi_item_rfcr" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/LinearLayout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:id="@id/WiFi_RFCR_Addr_Text" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" android:text="@string/wifi_rfcr_addr_text" />
+        <EditText android:id="@id/WiFi_RFCR_Addr_Content" android:layout_width="160.0dip" android:layout_height="wrap_content" android:singleLine="true" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/LinearLayout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:id="@id/WiFi_RFCR_Value_Text" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" android:text="@string/wifi_rfcr_value_text" />
+        <EditText android:id="@id/WiFi_RFCR_Value_Content" android:layout_width="160.0dip" android:layout_height="wrap_content" android:singleLine="true" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip">
+        <RadioGroup android:orientation="horizontal" android:id="@id/wifi_tx_nss" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <RadioButton android:id="@id/wifi_rfcr_wfx_0" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/wifi_wf0_text" android:layout_weight="1.0" />
+            <RadioButton android:id="@id/wifi_rfcr_wfx_1" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/wifi_wf1_text" android:layout_weight="1.0" />
+        </RadioGroup>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/LinearLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt">
+        <Button android:id="@id/WiFi_RFCR_ReadBtn" android:layout_width="120.0dip" android:layout_height="wrap_content" android:text="@string/wifi_rfcr_readbtn" />
+        <Button android:id="@id/WiFi_RFCR_WriteBtn" android:layout_width="120.0dip" android:layout_height="wrap_content" android:text="@string/wifi_rfcr_writebtn" />
+    </LinearLayout>
+</LinearLayout>

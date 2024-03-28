@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout style="@style/info_layout">
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <RadioGroup android:orientation="horizontal" android:id="@id/force_type" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <RadioButton android:id="@id/force_rat" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/force_rat" />
+                <RadioButton android:id="@id/force_band" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/force_band" />
+            </RadioGroup>
+            <RadioGroup android:orientation="horizontal" android:id="@id/force_dpdt" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <RadioButton android:id="@id/force_dpdt_single" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/force_dpdt_single" />
+                <RadioButton android:id="@id/force_dpdt_double" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/force_dpdt_double" />
+            </RadioGroup>
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="200.0dip" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/force_ant_mode" />
+            <Spinner android:entries="@array/force_ant_on_off" android:id="@id/force_ant1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="200.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/tas_ver" />
+            <Spinner android:entries="@array/force_ant_tas_version" android:id="@id/tas_ver1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="200.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/tas_rat" />
+            <Spinner android:entries="@array/force_ant_tas_rat" android:id="@id/tas_rat" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:id="@id/tas_band_text" android:layout_width="200.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/tas_band" />
+            <EditText android:id="@id/tas_band" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:id="@id/tas_nvram_text" android:layout_width="200.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/tas_nvram" />
+            <Spinner android:entries="@array/force_ant_tas_nvram" android:id="@id/tas_nvram" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <TextView android:id="@id/tas_ant_idx_View" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="5.0dip" android:text="@string/dpdt1_idx" />
+        <Spinner android:id="@id/dpdt1_idx" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="200.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/tas_ant_idx" />
+            <EditText android:id="@id/tas_ant_idx" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <Button android:id="@id/force_tx_set" android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginLeft="80.0dip" android:layout_marginTop="10.0dip" android:text="@string/force_tx_set" />
+    </LinearLayout>
+</ScrollView>

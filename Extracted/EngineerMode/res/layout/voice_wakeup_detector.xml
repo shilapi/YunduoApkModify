@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip">
+            <TextView android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/voice_settings_detector_par01" android:layout_weight="1.0" />
+            <Spinner android:id="@id/voice_detector_par01" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip">
+            <TextView android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/voice_settings_detector_par02" android:layout_weight="1.0" />
+            <Spinner android:id="@id/voice_detector_par02" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip">
+            <TextView android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/voice_settings_detector_par03" android:layout_weight="1.0" />
+            <Spinner android:id="@id/voice_detector_par03" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip">
+            <TextView android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/voice_settings_detector_par04" android:layout_weight="1.0" />
+            <Spinner android:id="@id/voice_detector_par04" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip">
+            <TextView android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/voice_settings_detector_par05" android:layout_weight="1.0" />
+            <Spinner android:id="@id/voice_detector_par05" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip">
+            <TextView android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/voice_settings_detector_par06" android:layout_weight="1.0" />
+            <Spinner android:id="@id/voice_detector_par06" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip">
+            <TextView android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/voice_settings_detector_par07" android:layout_weight="1.0" />
+            <Spinner android:id="@id/voice_detector_par07" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip">
+            <TextView android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/voice_settings_detector_par08" android:layout_weight="1.0" />
+            <Spinner android:id="@id/voice_detector_par08" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip">
+            <TextView android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/voice_settings_detector_par09" android:layout_weight="1.0" />
+            <Spinner android:id="@id/voice_detector_par09" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip">
+            <TextView android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/voice_settings_detector_par10" android:layout_weight="1.0" />
+            <Spinner android:id="@id/voice_detector_par10" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        </LinearLayout>
+        <Button android:layout_gravity="center_horizontal" android:id="@id/voice_detector_set_btn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/voice_settings_set" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip">
+            <TextView android:textAppearance="?android:textAppearanceLarge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/cfu_cur_textView" />
+            <TextView android:textAppearance="?android:textAppearanceLarge" android:textSize="15.0dip" android:id="@id/cfu_cur_ap_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/cfu_cur_ap_textView" />
+            <TextView android:textAppearance="?android:textAppearanceLarge" android:textSize="15.0dip" android:id="@id/cfu_cur_md_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/cfu_cur_md_textView" />
+            <TextView android:textAppearance="?android:textAppearanceLarge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/cfu_ap_textView" />
+            <RadioGroup android:gravity="left" android:orientation="vertical" android:id="@id/cfu_ap_radio_group" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <RadioButton android:id="@id/cfu_ap_default_radio" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cfu_ap_default" />
+                <RadioButton android:id="@id/cfu_ap_on_radio" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cfu_ap_turn_on" />
+                <RadioButton android:id="@id/cfu_ap_off_radio" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cfu_ap_turn_off" />
+                <RadioButton android:id="@id/cfu_ap_query_if_efcfis_invalid_radio" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cfu_ap_query_if_efcfis_invalid" />
+            </RadioGroup>
+            <Button android:gravity="center" android:id="@id/cfu_ap_set_button" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginLeft="200.0dip" android:text="@string/cfu_ok" />
+            <TextView android:textAppearance="?android:textAppearanceLarge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/cfu_textView" />
+            <RadioGroup android:gravity="left" android:orientation="vertical" android:id="@id/cfu_radio_group" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <RadioButton android:id="@id/cfu_default_radio" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cfu_default" />
+                <RadioButton android:id="@id/cfu_on_radio" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cfu_turn_on" />
+                <RadioButton android:id="@id/cfu_off_radio" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cfu_turn_off" />
+            </RadioGroup>
+            <Button android:gravity="center" android:id="@id/cfu_set_button" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginLeft="200.0dip" android:text="@string/cfu_ok" />
+            <TextView android:textAppearance="?android:textAppearanceLarge" android:textSize="15.0dip" android:id="@id/cfu_efcfis_status_description_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/cfu_efcfis_status_description" />
+            <TextView android:textAppearance="?android:textAppearanceLarge" android:textSize="25.0dip" android:textColor="#ffff0000" android:id="@id/cfu_efcfis_status_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" />
+            <Button android:id="@id/cfu_get_efcfis_button" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginLeft="200.0dip" android:text="@string/cfu_get_efcfis" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

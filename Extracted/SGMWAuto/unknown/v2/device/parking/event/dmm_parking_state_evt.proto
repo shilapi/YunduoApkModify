@@ -1,0 +1,426 @@
+syntax = "proto3";
+
+package v2.device.parking.event;
+option go_package = "v2/device/parking/event";
+
+/**
+ * 泊车状态
+ * 结构体: sys_msgs::dmm::DmmPsCloud
+ * topic: /sys/dmm_ps_upload_info/v5
+ * 频率: 5 Hz
+ */
+message DmmParkingStateEvt {
+  CarportPosition carport_position = 1;                    //车位信息
+  CarStatus car_status = 2;                                //车辆状态
+  TrainedParkingInStatus trained_parking_in = 3;           //APA+泊车
+  TrainedParkingOutStatus trained_parking_out = 4;         //APA+召唤
+  RemoteControlSummonStatus remote_control_summon = 5;     //远程控制车辆（暂时用不到，后续无用会删掉）
+  CarportPositionInTice carport_position_in_tice = 6;
+  GpsSummonStatus gps_summon = 7;                          //GPS召唤
+  ApaStatus apa = 8;                                       //APA泊车
+  ParkingOutStatus incar_parking_out = 9;                  //泊出(人在车内)
+  ParkingOutStatus outcar_parking_out = 10;                //泊出(人在车外)
+  MapCreateStatus map_create = 11;                         //建图
+  MapCreateStatus auto_map_create = 12;                    //自学习建图
+  TrainedParkingInStatus auto_locate = 13;                 //自定位
+  ApaStatus explore_parking_without_map = 14;              //无地图探索泊车
+  ParkingOutStatus explore_summon_with_previous_path = 15; //反向召唤
+  RemoteControlStatus remote_control = 16;                 //遥控车
+  SummonStatus  parking_out_summon = 17;                   //APA泊出
+  ReverseTrackingStatus reverse_tracking = 18;             //倒车循迹
+  ManeuverType maneuver_type = 19;                         //策略类型
+  ParkingStateInfo parking_state_info = 20;                //当前泊车选择状态及故障状态
+}
+
+message CarportPosition {
+  Position up_left_point = 1;  // 自身坐标 单位 m
+  Position up_right_point = 2;
+  Position bottom_left_point = 3;
+  Position bottom_right_point = 4;
+}
+
+message Position {
+  float x = 1;
+  float y = 2;
+}
+
+message CarStatus {
+  Position car_driving_track = 1;
+  float car_driving_angle = 2;
+  float front_probe_nearest_distance = 3;
+  float rear_probe_nearest_distance = 4;
+  EnumPowerState vehicle_power_status = 5;
+  EnumGearState vehicle_gear_status = 6;
+  float vehicle_average_speed = 7;
+  EnumObstacleType obstacle_type = 8;
+  Position obstacle_coordinate = 9;
+  EnumAppInterfaceSwitch app_interface_type = 10;
+
+  enum EnumPowerState {
+    NOT_READEY = 0;
+    READY = 1;
+  }
+  enum EnumGearState {
+    N = 0;
+    D = 1;
+    R = 2;
+    P = 3;
+  }
+  enum EnumObstacleType {
+    NONE_OBSTACLE = 0;
+    STATIC = 1;
+    PEDESTRIAN  = 2;
+    CAR = 3;
+  }
+
+  enum EnumAppInterfaceSwitch {
+    NONE_SWITCH = 0;
+    PARKING_IN = 1;
+    PARKING_OUT = 2;
+    TRAINED_PARKING_IN = 3;
+    TRAINED_PARKING_OUT = 4;
+    SUMMON = 5;
+    REMOTE_CONTROL = 6;
+  }
+}
+
+message TrainedParkingInStatus {
+  EnumOperationStatus operation_status = 1;
+  EnumFailureReason failure_reason = 2;
+
+  enum EnumOperationStatus {
+    NONE_OBERATION = 0;               //记忆泊车功能未进入
+    READY = 1;                        //记忆泊车已就绪，发送开始泊车即可控车
+    POSITIONING = 2;                  //定位中，未定位成功
+    TARGETED = 3;                     //定位成功
+    ONGOING = 4;                      //泊车巡航阶段
+    PAUSE = 5;                        //泊车暂停
+    PARKING_INTO_GARAGE = 6;          //泊车泊入车位阶段
+    SUCCESS = 7;                      //记忆泊车成功
+    FAIL = 8;                         //记忆泊车失败
+    ARTIFICIAL = 9;                   //人工接管
+    UNAVAILABLE = 10;                 //泊车功能不可用，1、内外部故障；2、车速、车门等车辆状态不允许进行记忆泊车
+    TARGETED_IN_SELF_ACTIVATION = 11; //自激活记忆泊车
+  }
+  enum EnumFailureReason {
+    NONE_REASON = 0;
+    //泊车退出原因
+    OBSTACLE = 1;                      //路径中有障碍物，且长时间（60s）无法避开，泊车退出
+    LOCATE_DEVIATION_OUT_OF_RANGE = 2; //定位误差过大
+    LOCATE_FAIL = 3;                   //定位失败
+    CARPORT_UNDETECTED = 4;            //未检测到指定车位
+    CARPORT_OCCUPIED = 5;              //指定车位被占用
+    SYSTEM_ERROR = 6;                  //系统故障，包含CECU外部故障和内部故障
+    USER_TERMINATION_REASON = 7;       //用户终止，例如1、方向盘P键；2、APPCtrlCmd，APP上按终止键终止记忆泊车；3、车机上终止记忆泊车
+    USER_TAKEOVER = 8;                 //用户接管，例如1、深踩刹车；2、拧方向盘；3、踩油门；4、换挡
+    PARKING_IN_TOO_MANY_TIMES = 9;     //入库次数过多（泊车多次尝试泊入车位，换挡）
+    PARKING_TIMEOUT = 10;              //记忆泊车超时（10min）
+    SCAM_COVERED = 11;                 //双目被遮挡
+    CCAM_COVERED = 12;                 //环视被遮挡
+    DOOR_OPEN = 13;                    //行驶中开门，退出泊车
+    LOW_SOC = 14;                      //电量过低
+    REAR_VIEW_MIRROR_FOLD = 15;        //后视镜折叠
+    PARKING_SUSPEND_TIMEOUT = 16;      //泊车暂停时间久（60s）
+    PARTY_EXCEPTION = 17;              //整车关联件故障（EBS、EPB等）
+    OVER_SPEED = 18;                   //泊车超速
+    //泊车暂停原因
+    SUSPEND_BY_USER_CMD = 50;          //用户手动暂停
+    SUSPEND_BY_EPB = 51;               //用户拉起EPB
+    SUSPEND_BY_BRAKING = 52;           //踩刹车
+    SUSPEND_BY_OBSTACLE = 53;          //车内记忆泊车，路径中有障碍物（保持5s）
+  }
+}
+
+message TrainedParkingOutStatus {
+  EnumOperationStatus operation_status = 1;
+  EnumFailureReason failure_reason = 2;
+
+  enum EnumOperationStatus {
+    NONE_OPERATION = 0;                //记忆召唤功能未进入
+    READY = 1;                         //记忆召唤功能就绪
+    ONGONING = 2;                      //记忆召唤控车过程
+    PAUSE = 3;                         //记忆召唤暂停
+    SUCCESS = 4;                       //记忆召唤成功
+    FAIL = 5;                          //记忆召唤失败
+    ARTIFICIAL = 6;                    //记忆召唤人工接管
+    UNAVAILABLE = 7;                   //记忆召唤功能不可用，1、内外部故障；2、车速、车门等车辆状态不允许进行记忆泊车
+  }
+  enum EnumFailureReason {
+    NONE_REASON = 0;
+    //泊车退出原因
+    OBSTACLE = 1;                      //路径中有障碍物，且长时间（60s）无法避开，控车暂停
+    LOCATE_DEVIATION_OUT_OF_RANGE = 2; //定位误差过大
+    LOCATE_FAIL = 3;                   //定位失败
+    SYSTEM_PRE_TIMEOUT = 4;            //车辆上电后系统长时间未就绪（60s）
+    VEHICLE_POWER_NOT_READY = 5;       //车辆高压未就绪，或者高压退出
+    SYSTEM_ERROR = 6;                  //系统故障，包含CECU外部故障和内部故障
+    USER_TERMINATION_REASON = 7;       //用户终止，例如1、方向盘P键；2、APPCtrlCmd，APP上按终止键终止记忆泊车；3、车机上终止记忆泊车
+    USER_TAKEOVER = 8;                 //用户接管，例如1、深踩刹车；2、拧方向盘；3、踩油门；4、换挡
+    PARKING_TIMEOUT = 9;               //记忆召唤超时（10min）
+    SCAM_COVERED = 10;                 //双目被遮挡
+    CCAM_COVERED = 11;                 //环视被遮挡
+    DOOR_OPEN = 12;                    //行驶中开门，退出泊车
+    LOW_SOC = 13;                      //电量过低
+    REAR_VIEW_MIRROR_FOLD = 14;        //后视镜折叠
+    PARKING_SUSPEND_TIMEOUT = 15;      //泊车暂停时间久（60s）
+    PARTY_EXCEPTION = 16;              //整车关联件故障（EBS、EPB等）
+    OVER_SPEED = 17;                   //泊车超速
+    GPS_INFO_NOT_READY = 18;           //GPS信息未就绪（无GPS信息无法进行地图推荐）
+    //泊车暂停原因
+    SUSPEND_BY_USER_CMD = 50;          //用户手动暂停
+    SUSPEND_BY_EPB = 51;               //用户拉起EPB
+    SUSPEND_BY_BRAKING = 52;           //踩刹车
+    SUSPEND_BY_OBSTACLE = 53;          //车内记忆泊车，路径中有障碍物（保持5s），记忆召唤没有这个
+  }
+}
+
+message RemoteControlSummonStatus {
+  EnumOperationStatus operation_status = 1;
+  EnumFailureReason failure_reason = 2;
+
+  enum EnumOperationStatus {
+    NONE_OPERATION = 0;   //远程控制车辆功能未进入
+    READY = 1;            //远程控制车辆功能就绪
+    ONGONING = 2;         //远程控制过程
+    PAUSE = 3;            //远程控制车辆暂停
+    SUCCESS = 4;          //远程控制车辆成功
+    FAIL = 5;             //远程控制车辆失败
+    ARTIFICIAL = 6;       //远程控制车辆人工接管
+    UNAVAILABLE = 7;      //远程控制车辆功能不可用
+  }
+  enum EnumFailureReason {
+    NONE_REASON = 0;
+    OBSTACLE = 1;         //路径中有障碍物，且长时间（60s）无法避开，控车暂停
+    WIRE_EXCEPTION = 2;   //底层线控异常，外部故障
+    CONFIRM_TIME_OUT = 3; //等待用户确认超时
+  }
+}
+
+message CarportPositionInTice {
+  double longitude = 1;
+  double latitude = 2;
+  int32 id = 3;
+  float car_angle = 4;
+}
+
+message GpsSummonStatus {
+  EnumOperationStatus operation_status = 1;
+  EnumFailureReason failure_reason = 2;
+
+  enum EnumOperationStatus {
+    NONE_OPERATION = 0; //GPS召唤功能未进入
+    READY = 1;          //GPS召唤功能就绪
+    ONGONING = 2;       //GPS召唤控车过程
+    PAUSE = 3;          //GPS召唤暂停
+    SUCCESS = 4;        //GPS召唤成功
+    FAIL = 5;           //GPS召唤失败
+    ARTIFICIAL = 6;     //GPS召唤人工接管
+    UNAVAILABLE = 7;    //GPS召唤功能不可用
+  }
+  enum EnumFailureReason {
+    NONE_REASON = 0;
+    OUT_SIDE = 1;
+    WEAK_GPS = 2;       //GPS信号弱
+    OBSTACLE = 3;       //路径中有障碍物，且长时间（60s）无法避开，控车暂停
+  }
+}
+
+message SummonStatus {
+  EnumOperationStatus operation_status = 1;
+  EnumFailureReason failure_reason = 2;
+
+  enum EnumOperationStatus {
+    NONE_OPERATION = 0;   //反向召唤功能未进入
+    READY = 1;            //反向召唤功能就绪
+    ONGONING = 2;         //反向召唤控车过程
+    PAUSE = 3;            //反向召唤暂停
+    SUCCESS = 4;          //反向召唤成功
+    FAIL = 5;             //反向召唤失败
+    ARTIFICIAL = 6;       //反向召唤人工接管
+    UNAVAILABLE = 7;      //反向召唤功能不可用
+  }
+  enum EnumFailureReason {
+    NONE_REASON = 0;
+    OBSTACLE = 1;         //路径中有障碍物，且长时间（60s）无法避开，控车暂停
+    WIRE_EXCEPTION = 2;   //底层线控异常，外部故障
+    CONFIRM_TIME_OUT = 3; //等待用户确认超时
+  }
+}
+
+message ApaStatus {
+  EnumOperationStatus operation_status = 1;
+  EnumFailureReason failure_reason = 2;
+
+  enum EnumOperationStatus {
+    NONE_OPERATION = 0;                   //辅助泊车功能未进入
+    CARPORT_DETECTING = 1;                //检测车位中
+    CARPORT_DETECTED = 2;                 //检测到车位
+    ONGONING = 3;                         //无地图探索过程中
+    PAUSE = 4;                            //辅助泊车暂停
+    SUCCESS = 5;                          //辅助泊车成功
+    FAIL = 6;                             //辅助泊车失败
+    ARTIFICIAL = 7;                       //辅助泊车人工接管
+    UNAVAILABLE = 8;                      //辅助泊车功能不可用
+    OUT_OF_CAR_PARKING_READY = 9;         //车外泊车就绪（未用到）
+    OUT_OF_CAR_PARKING_UNAVAILABLE = 10;  //车外泊车不可用（未用到）
+    IN_PARKING = 11;                      //泊车中
+    TARGETED_IN_SELF_ACTIVATION = 12;     //自激活记忆泊车
+    POSITIONING_IN_SELF_ACTIVATION = 13;  //自激活定位
+  }
+  enum EnumFailureReason {
+    NONE_REASON = 0;
+    OBSTACLE = 1;                         //路径中有障碍物，且长时间（60s）无法避开，控车暂停
+    WIRE_EXCEPTION = 2;                   //底层线控异常，外部故障
+    CONFIRM_TIME_OUT = 3;                 //等待用户确认超时
+    POSITION_FAILED = 4;                  //定位失败
+    NO_AVAILABLE_CARPORT_OR_SEL_AREA = 5; //无可停车位
+  }
+}
+
+message ParkingOutStatus {
+  EnumOperationStatus operation_status = 1;
+  EnumFailureReason failure_reason = 2;
+
+  enum EnumOperationStatus {
+    NONE_OPERATION = 0; //泊出功能未进入
+    READY = 1;          //泊出功能就绪
+    ONGONING = 2;       //泊出控车过程
+    PAUSE = 3;          //泊出暂停
+    SUCCESS = 4;        //泊出成功
+    FAIL = 5;           //泊出失败
+    ARTIFICIAL = 6;     //泊出人工接管
+    UNAVAILABLE = 7;    //泊出功能不可用
+  }
+  enum EnumFailureReason {
+    NONE_REASON = 0;
+    OBSTACLE = 1;         //路径中有障碍物，且长时间（60s）无法避开，控车暂停
+    WIRE_EXCEPTION = 2;   //底层线控异常，外部故障
+    CONFIRM_TIME_OUT = 3; //等待用户确认超时
+  }
+}
+
+message MapCreateStatus {
+  EnumOperationStatus operation_status = 1;
+  EnumFailureReason failure_reason = 2;
+
+  enum EnumOperationStatus {
+    NONE = 0;             //地图训练功能未进入
+    TRAINING = 1;         //地图训练中
+    BUILDING = 2;         //地图构建中
+    SUCCESS = 3;          //地图构建成功
+    FAIL = 4;             //地图构建失败
+    UNAVAILABLE = 5;      //功能不可用
+    USER_TERMINATION = 6; //用户取消
+    TRAIN_DONE = 10;      //图像采集完毕，等待用户确认是否建图
+    UPLOADING = 11;       //地图上传中
+  }
+
+  enum EnumFailureReason {
+    F_NONE = 0;
+    OVER_SPEED = 1;       //车速过快
+    LOW_SOC = 2;          //整车电量低
+    RAMP = 3;             //车辆处于坡道上
+    OPEN_DOOR = 4;        //因开车门切出
+    PATH_TOO_LONG = 5;    //地图学习路径过长
+    BUILD_TIMEOUT = 6;    //地图构建时间过长
+    CONFIRM_TIMEOUT = 7;  //等待用户确认超时
+  }
+}
+
+message RemoteControlStatus {
+  EnumOperationStatus operation_status = 1;
+  EnumFailureReason failure_reason = 2;
+
+  enum EnumOperationStatus {
+    NONE_OPERATION = 0;           //遥控车功能未进入
+    CONTROLLING = 1;              //控车中
+    CONTROL_SUSP = 2;             //暂停中
+    SUCCESS = 3;                  //控车成功
+    FAIL = 4;                     //控车失败
+    UNAVAILABLE = 5;              //功能不可用
+    USER_TERMINATION = 6;         //用户取消
+  }
+  enum EnumFailureReason {
+    NONE_REASON = 0;
+    NOT_IN_P_GEAR = 1;            //非P档状态
+    LOW_SOC = 2;                  //电量过低
+    RAMP = 3;                     //处于坡道上
+    OPEN_DOOR = 4;                //开门状态切入，或者因开门退出
+    OVER_SPEED = 5;               //超速（轮速范围）
+    OBSTACLE = 6;                 //路径中有障碍物，且长时间（5s）无法避开，控车暂停
+    SYSTEM_ERROR = 7;             //系统故障，包含CECU外部故障和内部故障
+    USER_TERMINATION_REASON = 8;  //用户终止，例如1、方向盘P键
+    USER_TAKEOVER = 9;            //用户接管，例如1、深踩刹车；2、拧方向盘；3、踩油门；4、换挡
+    CONTROL_TIMEOUT = 10;         //遥控车超时（10min）
+    SCAM_COVERED = 11;            //双目被遮挡
+    CCAM_COVERED = 12;            //环视被遮挡
+    REAR_VIEW_MIRROR_FOLD = 13;   //后视镜折叠
+    CONTROL_SUSPEND_TIMEOUT = 14; //泊车暂停时间久（60s）
+    PARTY_EXCEPTION = 15;         //整车关联故障（EBS、EPB等）
+  }
+}
+
+message ReverseTrackingStatus {
+  EnumOperationStatus operation_status = 1;
+  EnumFailureReason failure_reason = 2;
+
+  enum EnumOperationStatus {
+    NONE_OPERATION = 0; //倒车循迹功能未进入
+    PREPARE = 1;        //倒车循迹功能准备
+    READY = 2;          //倒车循迹功能就绪
+    ONGONING = 3;       //倒车循迹过程
+    PAUSE = 4;          //倒车循迹暂停
+    SUCCESS = 5;        //倒车循迹成功
+    FAIL = 6;           //倒车循迹失败
+    ARTIFICIAL = 7;     //倒车循迹人工接管
+    UNAVAILABLE = 8;    //倒车循迹功能不可用
+  }
+  enum EnumFailureReason {
+    NONE_REASON = 0;
+    //倒车循迹退出原因
+    NOT_IN_R_GEAR = 1;            //非R档状态
+    LOW_SOC = 2;                  //电量过低
+    RAMP = 3;                     //处于坡道上
+    OPEN_DOOR = 4;                //开门状态切入，或者因开门退出
+    OVER_SPEED = 5;               //超速（轮速范围）
+    OBSTACLE = 6;                 //路径中有障碍物，且长时间（5s）无法避开，控车暂停
+    SYSTEM_ERROR = 7;             //系统故障，包含CECU外部故障和内部故障
+    USER_TERMINATION_REASON = 8;  //用户终止，例如1、方向盘P键
+    USER_TAKEOVER = 9;            //用户接管，例如1、深踩刹车；2、拧方向盘；3、踩油门；4、换挡
+    CONTROL_TIMEOUT = 10;         //遥控车超时（10min）
+    SCAM_COVERED = 11;            //双目被遮挡
+    CCAM_COVERED = 12;            //环视被遮挡
+    REAR_VIEW_MIRROR_FOLD = 13;   //后视镜折叠
+    CONTROL_SUSPEND_TIMEOUT = 14; //泊车暂停时间久（60s）
+    PARTY_EXCEPTION = 15;         //整车关联故障（EBS、EPB等）
+    //倒车循迹暂停原因
+    SUSPEND_BY_USER_CMD = 50;     //用户手动暂停
+    SUSPEND_BY_EPB = 51;          //用户拉起EPB
+    SUSPEND_BY_BRAKING = 52;      //踩刹车
+    SUSPEND_BY_OBSTACLE = 53;     //车内记忆泊车，路径中有障碍物（保持5s），记忆召唤没有这个
+  }
+}
+
+enum ManeuverType {
+  CRUISING = 0;    //巡航
+  BY_PASSING = 1;  //通过
+  PRE_PARKING = 2; //准备
+  PARK_IN = 3;     //泊入
+  PARK_OUT = 4;    //泊出
+  UNTANGLE = 5;    //脱困
+}
+
+message ParkingStateInfo {
+  ParkingPoseRaw parking_pose_raw = 1; //推荐泊出车辆姿态信息
+  uint32 parking_out_direction = 2;    //泊出方向选择
+  uint32 parking_in_direction = 3;     //泊入方向选择
+  uint32 parking_state_result = 4;     //泊车当前故障状态
+  uint32 parking_reserve = 5;          //预留位
+}
+
+message ParkingPoseRaw {
+  float x = 1;
+  float y = 2;
+  float z = 3;
+  float yaw = 4;
+}

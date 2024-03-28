@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package v2.device.driving.event;
+option go_package = "v2/device/driving/event";
+
+import "v2/device/driving/event/planning_driving_trajectory_evt.proto";
+import "v2/device/driving/event/planning_driving_mpp_evt.proto";
+import "v2/device/common/event/dmm_bev_road_element_evt.proto";
+
+/**
+ * DMM Driving道路可视化元素：车道线、mpp、轨迹线
+ * 结构体:  sys_msgs::dmm::DmmDrivingStaticElement
+ * topic: /sys/dmm/driving_static_element/v1
+*/
+
+
+message DmmDrivingStaticElementEvt {
+  .v2.device.common.event.DmmRoadElementsEvt dmm_road_element =1;  //车道线
+  .v2.device.driving.event.HmiMppEvt hmi_mpp =2; //mpp
+  .v2.device.driving.event.PlanningDrivingTrajectoryEvt driving_trajectory =3; //轨迹线
+}
+ 

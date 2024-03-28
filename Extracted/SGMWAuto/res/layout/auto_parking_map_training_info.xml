@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:background="@drawable/auto_parking_create_map_parking_info_bg" android:layout_width="wrap_content" android:layout_height="52.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:id="@id/auto_cl_parking_message" android:layout_width="wrap_content" android:layout_height="fill_parent" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <TextView android:textSize="@dimen/common_text_size_small" android:textColor="@color/parking_message_text" android:gravity="center" android:layout_gravity="center" android:id="@id/auto_tv_parking_training_distance_desc" android:background="@color/trans" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sgmw_pad_vpa_create_route_distance_tittle" android:fontFamily="sans-serif-condensed" android:layout_marginStart="20.0dip" />
+        <TextView android:textSize="@dimen/common_text_size_middle" android:textColor="@color/parking_message_distance_text" android:gravity="center" android:layout_gravity="center" android:id="@id/auto_tv_parking_training_distance" android:background="@color/trans" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sgmw_pad_ipa_gear_info_number_content" android:fontFamily="sans-serif-condensed" android:layout_marginStart="8.0dip" android:layout_marginEnd="20.0dip" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

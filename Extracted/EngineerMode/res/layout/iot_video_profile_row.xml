@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBox android:gravity="center" android:layout_gravity="center" android:id="@id/video_profile_check" android:layout_width="50.0dip" android:layout_height="wrap_content" />
+    <TextView android:gravity="center" android:layout_gravity="center" android:id="@id/video_quality" android:layout_width="60.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@id/quality" android:singleLine="true" />
+    <TextView android:gravity="center" android:layout_gravity="center" android:id="@id/video_profile_name" android:layout_width="50.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@id/name" android:singleLine="true" />
+    <TextView android:gravity="center" android:layout_gravity="center" android:id="@id/video_profile_profile" android:layout_width="50.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@id/profile" android:singleLine="true" />
+    <TextView android:gravity="center" android:layout_gravity="center" android:id="@id/video_profile_level" android:layout_width="50.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@id/level" android:singleLine="true" />
+    <TextView android:gravity="center" android:layout_gravity="center" android:id="@id/video_profile_width" android:layout_width="50.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@id/width" android:singleLine="true" />
+    <TextView android:gravity="center" android:layout_gravity="center" android:id="@id/video_profile_height" android:layout_width="50.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@id/height" android:singleLine="true" />
+    <TextView android:gravity="center" android:layout_gravity="center" android:id="@id/video_profile_framerate" android:layout_width="80.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@id/framerate" android:singleLine="true" />
+    <TextView android:gravity="center" android:layout_gravity="center" android:id="@id/video_profile_Iinterval" android:layout_width="80.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@id/Iinterval" android:singleLine="true" />
+    <TextView android:gravity="center" android:layout_gravity="center" android:id="@id/video_profile_minBitRate" android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@id/minBitRate" android:singleLine="true" />
+    <TextView android:gravity="center" android:layout_gravity="center" android:id="@id/video_profile_maxBitRate" android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@id/maxBitRate" android:singleLine="true" />
+</LinearLayout>

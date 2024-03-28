@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout style="@style/info_layout">
+        <View android:background="#ff0000ff" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="10.0dip" />
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/cert_used" />
+            <Spinner android:entries="@array/epdg_menu" android:id="@id/cert_used" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/urlcert" />
+            <Spinner android:entries="@array/epdg_menu" android:id="@id/urlcert" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/ocsp" />
+            <Spinner android:entries="@array/epdg_menu" android:id="@id/ocsp" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/nocert" />
+            <Spinner android:entries="@array/epdg_menu" android:id="@id/nocert" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/debug_skipcert" />
+            <Spinner android:entries="@array/epdg_menu" android:id="@id/debug_skipcert" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/no_id" />
+            <Spinner android:entries="@array/epdg_menu" android:id="@id/no_id_check" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <Button android:id="@id/certificate_set" android:layout_width="120.0dip" android:layout_height="wrap_content" android:text="@string/epdg_set" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:height="64.0dip" android:width="64.0dip" android:viewportWidth="64.0" android:viewportHeight="64.0"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt">
+    <path android:fillColor="#ff00aeff" android:pathData="M2,32a30,30 0,1 0,60 0a30,30 0,1 0,-60 0z" />
+    <path android:fillColor="@drawable/$toast_ic_timegap3_blue__0" android:pathData="M41.718,20.75L22.282,20.75L23.563,13.25L40.438,13.25L41.718,20.75ZM21.802,23.563L20.521,31.063L43.479,31.063L42.198,23.563L21.802,23.563ZM47,51.688L17,51.688L18.28,44.188L45.72,44.188L47,51.688ZM45.239,41.375L18.761,41.375L20.041,33.875L43.959,33.875L45.239,41.375Z" android:fillType="evenOdd" />
+</vector>

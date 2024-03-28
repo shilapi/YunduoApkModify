@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package v1.message.device.connect;
+option go_package = "v1/message/device/connect";
+
+
+// DeviceRegisterReply 设备注册成功消息发布结构体
+message DeviceRegisterReply {
+    string deviceKey = 1; //设备Key
+    string deviceSecret = 2; //设备Secret
+}

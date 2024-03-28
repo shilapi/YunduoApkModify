@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:id="@id/autoanswer_enable" android:layout_width="120.0dip" android:layout_height="wrap_content" android:text="@string/vilte_support_enable" />
+    <Button android:id="@id/autoanswer_disable" android:layout_width="120.0dip" android:layout_height="wrap_content" android:text="@string/vilte_support_disable" />
+</LinearLayout>

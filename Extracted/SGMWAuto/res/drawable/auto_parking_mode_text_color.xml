@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="false" android:color="@color/parking_status_mode_switch_checked_false_text" />
+    <item android:state_checked="true" android:color="@color/parking_status_mode_switch_checked_true_text" />
+</selector>

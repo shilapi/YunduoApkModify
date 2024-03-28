@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.three_d.event;
+option go_package = "v1/message/device/vehicle/three_d/event";
+import "v1/message/device/vehicle/common.proto";
+
+/**
+ * 记忆行车建图
+ */
+message MemoryDrivingTrainingAppEvt {
+  EnumMemoryDrivingTrainingState state = 1; //记忆行车建图状态
+}
+
+/**
+ * 基于地图行车
+ */
+message DrivingMapAppEvt {
+  EnumDrivingMapState state = 1;//地图行车状态          
+  Point map_end_pos = 2;       //地图终点位置
+  int32 map_end_dist = 3;       //地图剩余距离（米）
+  float map_going_percent = 4;  //行车进度百分比（0.0-1.0）
+  string map_path = 5;          //本地地图路径
+}
+
+/**
+ * 高德导航
+ */
+message AmapStateAppEvt {
+    EnumAmapState state = 1;
+}
+
+enum EnumMemoryDrivingTrainingState {
+  MEMORY_DRIVING_TRAINING_START = 0;    //开始记忆行车建图
+  MEMORY_DRIVING_TRAINING_PAUSE = 1;
+  MEMORY_DRIVING_TRAINING_START_BUILD = 2; //开始记忆行车地图构建
+  MEMORY_DRIVING_TRAINING_FINISHED = 3; //完成记忆行车建图整个流程
+  MEMORY_DRIVING_TRAINING_CANCEL = 4;   //取消记忆行车建图
+}
+
+enum EnumDrivingMapState {
+  DRIVING_MAP_START = 0;      //开始地图行车
+  DRIVING_MAP_GOING = 1;      //正在地图行车
+  DRIVING_MAP_TAKEOVER = 2;   //手动接管
+  DRIVING_MAP_EXIT = 3;       //退出地图行车
+}
+
+enum EnumAmapState {
+  AMAP_START = 0;   //高德导航开始
+  AMAP_END = 1;     //高德导航结束
+}

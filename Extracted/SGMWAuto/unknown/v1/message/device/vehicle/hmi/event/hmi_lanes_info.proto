@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+
+import "v1/message/device/vehicle/common.proto";
+
+/**
+ * 泊车车道线数据
+ * 结构体 : sys_msgs::dmm::HmiLaneInfo
+ * topic : /sys/dmm/semantic_list/v1
+ * 频率  : 5 Hz
+ */
+message HmiLanesInfoEvt {
+  repeated HmiLaneBorder lanes = 1;
+}
+
+message HmiLaneBorder {
+  uint32 id = 1;
+  LaneColor color = 2;
+  LaneType type = 3;
+  uint32 num_type = 4;
+  repeated uint32 type_end_point = 5;
+  repeated uint32 sub_type = 6; //车道语义类型，0：地面；1：虚线；2：实线；3：实虚线；4：虚实线；5：导流线。车道点链，0：十字路口；1：T字路口；2：人行横道；3：重叠区域
+  uint32 num_samples = 7;
+  repeated Coordinate sample_position = 8;
+}
+
+enum LaneColor {
+  kGray = 0;
+  kBlue = 1;
+  kYellow = 2;
+  kRed = 3;
+}
+
+enum LaneType {
+  kLane = 0;     //车道线
+  kPolygon = 1;  //车道点链
+  kSemantic = 2; //车道语义
+  kOther = 3;    //其它
+}

@@ -1,0 +1,22 @@
+syntax = "proto3";
+package v1.rpc.product;
+option go_package = "v1/rpc/product";
+
+import "v1/message/product/thing/thing_event.proto";
+
+service ThingEventRpcService {
+	// adc-hub -> adc-server
+	rpc PostThingEvent(PostThingEventReq) returns (PostThingEventRsp) {}
+
+}
+
+message PostThingEventReq {
+	string productKey = 1;
+	string deviceKey = 2;
+	v1.message.product.thing.PostThingEventReqMsg data = 3; // 物模型服务请求消息体
+}
+
+message PostThingEventRsp {
+	string code = 1; // rpc错误码
+	string message = 2; // rpc错误消息
+}

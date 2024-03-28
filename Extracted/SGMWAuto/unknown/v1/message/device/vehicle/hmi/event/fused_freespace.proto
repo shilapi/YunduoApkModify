@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+import "v1/message/device/vehicle/common.proto";
+
+/**
+ * 静态障碍物
+ * 结构体 : sys_msgs::map_fusion::FusedFreespace
+ * topic : /sys/fused_freespace/v3
+ */
+message FusedFreespaceEvt {
+  FaultCode fault_code = 1;
+  EnumFreespaceMode mode = 2;
+  repeated FreespacePoint data = 3;
+}
+
+enum EnumFreespaceMode {
+  kStereo = 0; //Mode of Freespace
+}
+
+message FreespacePoint {
+  EnumPointLabel type = 1;
+  float confidence = 2;
+  float height_to_ground = 3;
+  OdomVector position = 4;
+}
+
+enum EnumPointLabel {
+  kPointLabelFree = 0;  /**< Label of Point */
+  kPointLabelObstacle = 200;  /**< Label of Point */
+  kPointLabelUnknown = 253;  /**< Label of Point */
+}

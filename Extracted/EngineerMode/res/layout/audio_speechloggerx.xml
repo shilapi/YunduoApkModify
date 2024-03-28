@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <TableLayout android:id="@id/TableLayout01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" android:layout_marginTop="3.0pt" android:text="@string/Audio_SpeechLogger_FileText" />
+            <TableRow android:id="@id/TableRow01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <CheckBox android:id="@id/Audio_SpeechLogger_Enable" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/Audio_SpeechLogger_Enable" />
+            </TableRow>
+            <TableRow android:id="@id/TableRow01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <RadioGroup android:id="@id/RadioGroup1" android:layout_marginLeft="60.0dip">
+                    <RadioButton android:id="@id/Audio_SpeechLogger_EPL" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/Audio_Enable_EPL" />
+                    <RadioButton android:id="@id/Audio_SpeechLogger_Normalvm" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/Audio_Enable_Normalvm" />
+                </RadioGroup>
+            </TableRow>
+            <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="5.0pt" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" android:layout_marginTop="3.0pt" android:text="@string/Audio_EPLDebug_FileText" />
+            <TableRow android:id="@id/TableRow01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <CheckBox android:id="@id/Audio_EPLDebug_Enable" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/Audio_EPLDebug_Enable" />
+            </TableRow>
+            <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="5.0pt" />
+            <TextView android:id="@id/Audio_CTM4WAYLogger_EnableText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" android:layout_marginTop="3.0pt" android:text="@string/Audio_CTM4WAYLogger_EnableText" />
+            <TableRow android:id="@id/TableRow01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <CheckBox android:id="@id/Audio_CTM4WAYLogger_Enable" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/Audio_CTM4WAYLogger_Enable" />
+            </TableRow>
+            <View android:id="@id/Audio_View1" android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="5.0pt" />
+            <TextView android:id="@id/Audio_AncLogger_FileText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" android:layout_marginTop="3.0pt" android:text="@string/Audio_AncLogger_FileText" />
+            <TableRow android:id="@id/TableRow01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <CheckBox android:id="@id/Audio_AncLogger_Enable" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/Audio_AncLogger_Enable" />
+            </TableRow>
+            <TableRow android:id="@id/TableRow01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <RadioGroup android:id="@id/RadioGroup2" android:layout_marginLeft="60.0dip">
+                    <RadioButton android:id="@id/Audio_AncLogger_Down" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/Audio_Enable_Down" />
+                    <RadioButton android:id="@id/Audio_AncLogger_NoDown" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/Audio_Enable_NoDown" />
+                </RadioGroup>
+            </TableRow>
+            <View android:id="@id/Audio_View3" android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="5.0pt" />
+            <TextView android:id="@id/Audio_MagiConference_EnableText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" android:layout_marginTop="3.0pt" android:text="@string/Audio_MagiConference_EnableText" />
+            <TableRow android:id="@id/TableRow01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <CheckBox android:id="@id/Audio_MagiConference_Enable" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/Audio_MagiConference_Enable" />
+            </TableRow>
+        </TableLayout>
+        <View android:id="@id/Audio_View2" android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="5.0pt" />
+        <Button android:id="@id/Dump_Speech_DbgInfo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0pt" android:text="@string/Audio_Dump_SpeechDbgInfo" />
+    </LinearLayout>
+</ScrollView>

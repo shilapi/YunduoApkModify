@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="?android:textAppearanceLarge" android:id="@id/desense_pll_detail_title_textview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="30.0dip" />
+    <EditText android:id="@id/desense_pll_detail_edit" android:layout_width="220.0dip" android:layout_height="wrap_content" android:singleLine="true" />
+    <Button android:textAppearance="?android:textAppearanceMedium" android:id="@id/desense_pll_detail_set_btn" android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginTop="30.0dip" android:text="@string/desense_text_set" />
+</LinearLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="horizontal" android:id="@id/LinearLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip">
+            <TextView android:id="@id/WiFi_Channel_Text" android:paddingTop="10.0dip" android:layout_width="130.0dip" android:layout_height="wrap_content" android:text="@string/wifi_channel_text" />
+            <Spinner android:id="@id/WiFi_RX_Channel_Spinner" android:layout_width="320.0dip" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/LinearLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip">
+            <TextView android:textSize="13.0sp" android:id="@id/WiFi_Bandwidth" android:paddingTop="10.0dip" android:layout_width="130.0dip" android:layout_height="wrap_content" android:text="@string/wifi_bandwidth" />
+            <Spinner android:id="@id/WiFi_Bandwidth_Spinner" android:layout_width="320.0dip" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/wifi_bandwidth_advanced_ll" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip">
+            <LinearLayout android:orientation="horizontal" android:id="@id/wifi_bandwidth_advanced_cbw_ll" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="12.0sp" android:id="@id/wifi_bandwidth_cbw" android:layout_width="70.0dip" android:layout_height="wrap_content" android:text="@string/wifi_bw_advanced_cbw" />
+                <Spinner android:textSize="12.0sp" android:id="@id/wifi_bandwidth_cbw_spn" android:layout_width="120.0dip" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/wifi_bandwidth_advanced_dbw_ll" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="12.0sp" android:id="@id/wifi_bandwidth_dbw" android:layout_width="70.0dip" android:layout_height="wrap_content" android:text="@string/wifi_bw_advanced_dbw" />
+                <Spinner android:textSize="12.0sp" android:id="@id/wifi_bandwidth_dbw_spn" android:layout_width="120.0dip" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/wifi_bandwidth_advanced_prim_ch_ll" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="12.0sp" android:id="@id/wifi_bandwidth_prim_ch" android:layout_width="70.0dip" android:layout_height="wrap_content" android:text="@string/wifi_bw_advanced_prim_ch" />
+                <Spinner android:textSize="12.0sp" android:id="@id/wifi_bandwidth_prim_ch_spn" android:layout_width="120.0dip" android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/LinearLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip">
+            <TextView android:id="@id/WiFi_FCS_Text" android:layout_width="130.0dip" android:layout_height="30.0dip" android:text="@string/wifi_fcs_text" />
+            <TextView android:id="@id/WiFi_FCS_Content" android:layout_width="250.0dip" android:layout_height="30.0dip" android:text="@string/wifi_fcs_content" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/LinearLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip">
+            <TextView android:id="@id/WiFi_Rx_Text" android:layout_width="130.0dip" android:layout_height="30.0dip" android:text="@string/wifi_rx_text" />
+            <TextView android:id="@id/WiFi_Rx_Content" android:layout_width="250.0dip" android:layout_height="30.0dip" android:text="@string/wifi_rx_content" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/LinearLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip">
+            <TextView android:id="@id/WiFi_PER_Text" android:layout_width="130.0dip" android:layout_height="30.0dip" android:text="@string/wifi_per_text" />
+            <TextView android:id="@id/WiFi_PER_Content" android:layout_width="250.0dip" android:layout_height="30.0dip" android:text="@string/wifi_per_content" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/LinearLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="60.0dip">
+            <Button android:id="@id/WiFi_Go_Rx" android:layout_width="130.0dip" android:layout_height="wrap_content" android:text="@string/wifi_go" />
+            <Button android:id="@id/WiFi_Stop_Rx" android:layout_width="130.0dip" android:layout_height="wrap_content" android:text="@string/wifi_stop" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

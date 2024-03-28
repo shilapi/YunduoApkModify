@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+import "v1/message/device/vehicle/common.proto";
+
+/**
+ * dmm行车规划轨迹/路径
+ * 结构体: sys_msgs::dmm::DmmTrajectoryInfo
+ * topic : /sys/dmm_driving_trajectory/v1 
+ */
+message DmmDrivingTrajectoryEvt {
+  OdomPose3d pose = 1;                 //Vins位置
+  DmmDrivingTrajectory trajectory = 2; //行车planning轨迹
+  DmmDrivingPath path = 3;             //行车path轨迹
+}
+
+message DmmDrivingTrajectory {
+  EnumSwitch track_visibility_flag = 1;   //轨迹显示标志位，0-不显示，1-显示
+  repeated OdomVector points = 2;
+}
+
+message DmmDrivingPath {
+  EnumSwitch path_visibility_flag = 1;    //path显示标志位，0-不显示，1-显示
+  repeated OdomVector points = 2;
+}
+

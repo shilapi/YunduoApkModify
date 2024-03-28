@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:id="@id/LinearLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="5.0dip" android:text="@string/Audio_ModeSetting_Title" />
+            <Spinner android:id="@id/Audio_ModeSetting" android:layout_width="240.0dip" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip" android:layout_marginTop="20.0dip" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="5.0dip" android:text="@string/Audio_Level_Text" />
+            <Spinner android:id="@id/Audio_Level" android:layout_width="240.0dip" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip" android:layout_marginTop="20.0dip" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+                <TextView android:gravity="center" android:id="@id/Audio_ModeSetting_TextView" android:layout_width="100.0dip" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:text="@string/Audio_ModeSetting_TextView" />
+                <EditText android:id="@id/Audio_ModeSetting_EditText" android:layout_width="80.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="10.0dip" android:text="@string/Audio_ModeSetting_EditText" android:singleLine="true" android:numeric="integer" />
+                <Button android:id="@id/Audio_ModeSetting_Button" android:layout_width="80.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:text="@string/Audio_ModeSetting_Button" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+            <TextView android:gravity="center" android:id="@id/Audio_MaxVol_Tv_Max" android:layout_width="100.0dip" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:text="@string/Audio_MaxVol_Text_headset" />
+            <EditText android:id="@id/Audio_MaxVol_Edit_headset" android:layout_width="80.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="10.0dip" android:singleLine="true" android:numeric="integer" />
+            <Button android:id="@id/Audio_MaxVol_Set_headset" android:layout_width="80.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:text="@string/Audio_MaxVol_Set" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/Audio_MaxVol_Dual_Set" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+            <TextView android:gravity="center" android:layout_width="100.0dip" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:text="@string/Audio_MaxVol_Text_speaker" />
+            <EditText android:id="@id/Audio_MaxVol_Edit_speaker" android:layout_width="80.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="10.0dip" android:singleLine="true" android:numeric="integer" />
+            <Button android:id="@id/Audio_MaxVol_Set_speaker" android:layout_width="80.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:text="@string/Audio_MaxVol_Set" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

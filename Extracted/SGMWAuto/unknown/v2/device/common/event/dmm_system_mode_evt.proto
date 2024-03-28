@@ -1,0 +1,82 @@
+syntax = "proto3";
+
+package v2.device.common.event;
+option go_package = "v2/device/common/event";
+
+/**
+ * 系统模式
+ * 结构体: sys_msgs::SystemMode
+ * topic: /sys/system_mode/v1
+ * 频率: 5 Hz
+ */
+message DmmSystemModeEvt {
+  EnumSystemMainMode system_main_mode = 1;                //车辆系统模式
+  EnumDegradationSpd degradation_spd = 2;                 //限速升降级
+  EnumDegradationLaneChange degradation_lane_change = 3;  //是否支持拨杆变道
+  EnumDegradationHandsOn degradation_hands_on = 4;        //脱手降级
+}
+
+enum EnumSystemMainMode {
+  NONE_MODE = 0;          //占位
+  STANDBY = 1;            //不能切入自动驾驶（手动驾驶）
+  READY   = 2;            //可以切自动驾驶(手动驾驶)
+  MAIN_MODE_OFF = 3;      //自驾功能被关闭（手动驾驶）
+  ERROR   = 4;            //自动驾驶错误
+  ACTIVE  = 5;            //TJA（RHP用到，E300用TJA=13）
+  LON_OVERRIDE = 6;       //自动驾驶横向override
+  LAT_OVERRIDE = 7;       //自动驾驶纵向override
+  ESCALATING1 = 8;        //自动驾驶不加速
+  ESCALATING2 = 9;        //自动驾驶小减速
+  ESCALATING3 = 10;       //自动驾驶大减速
+  STANDSTILL = 11;        //自动驾驶刹停
+  CALIBRATION = 12;       //标定模式（手动驾驶）
+  TJA = 13;               //TJA（E300）
+  CA = 14;                //速度较高的TJA
+  ACC = 15;               //ACC
+  MEB = 16;               //低速AEB
+  AEB = 17;               //AEB
+  LKA = 18;               //车道保持辅助(手动驾驶)
+  ELK = 19;               //紧急车道保持(手动驾驶)
+  CO_OVERRIDE = 20;       //自动驾驶双向override
+  ACC_LON_OVERRIDE = 21;  //acc纵向
+  PARKING = 30;                 //无效
+  PARKING_IN_PREPARE = 31;      //APA
+  PARKING_IN = 32;
+  PARKING_OUT_PREPARE = 33;     //泊出
+  PARKING_OUT = 34;
+  MAP_TRAIN = 35;               //记忆建图
+  MAP_BUILD = 36;               //记忆构建
+  TRAIN_PARKING_IN_PREPARE = 37;//记忆泊车
+  TRAIN_PARKING_IN = 38;
+  GPS_SUMMON_PREPARE = 39;      //GPS召唤
+  GPS_SUMMON = 40;
+  EXPLORE_PARKING_WITHOUT_MAP_PREPARE = 41;          //无地图探索泊车
+  EXPLORE_PARKING_WITHOUT_MAP = 42;
+  EXPLORE_SUMMON_WITH_PREVIOUS_PATH_PREPARE = 43;    //反向召唤
+  EXPLORE_SUMMON_WITH_PREVIOUS_PATH = 44;
+  TRAIN_PARKING_OUT_PREPARE = 45;                    //记忆泊出
+  TRAIN_PARKING_OUT = 46;
+  REMOTE_CONTROL_PREPARE = 47;                       //遥控车
+  REMOTE_CONTROL = 48;
+  REVERSE_TRACKING_PREPARE = 49;                     //倒车循迹
+  REVERSE_TRACKING = 50;
+}
+
+enum EnumDegradationSpd {
+  NONE_SPD = 0; //占位
+  FULL_SPEED_80_KPH = 1;    //限速80km/h
+  LIMITED_SPEED_60_KPH = 2; //限速60km/h
+  LIMITED_SPEED_30_KPH = 3; //限速30km/h
+  LIMITED_SPEED_10_KPH = 4; //限速10km/h
+}
+
+enum EnumDegradationLaneChange {
+  SUPPORT_LC = 0; //支持拨杆变道
+  NO_LC = 1;      //不支持拨杆变道
+}
+
+enum EnumDegradationHandsOn {
+  HANDS_OFF = 0;    //脱手
+  REQ_HANDS_ON = 1; //脱手报警
+  HANDS_ON = 2;     //已接管
+}

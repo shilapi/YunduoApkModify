@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:background="@color/common_color_cancel_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/settings_iv_close" android:layout_width="52.0dip" android:layout_height="52.0dip" android:layout_marginTop="20.0dip" android:src="@drawable/common_ic_exit" android:layout_marginStart="20.0dip" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <TextView android:textSize="@dimen/common_text_size_big" android:textColor="@color/white" android:id="@id/settings_tv_date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="200.0dip" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="50.0dip" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/settings_tv_date">
+        <EditText android:id="@id/settings_et_password" android:layout_width="200.0dip" android:layout_height="wrap_content" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+        <Button android:id="@id/settings_btn_log" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="确认" android:layout_marginStart="40.0dip" app:layout_constraintBottom_toBottomOf="@id/settings_et_password" app:layout_constraintStart_toEndOf="@id/settings_et_password" app:layout_constraintTop_toTopOf="@id/settings_et_password" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

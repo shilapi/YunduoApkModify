@@ -1,0 +1,91 @@
+syntax = "proto3";
+package  v1.rpc.device;
+
+import "v1/message/device/connect/device_connector.proto";
+
+option go_package = "v1/rpc/device";
+
+service DeviceRpcService {
+    rpc ListDevicePage(ListDevicePageReq) returns (ListDevicePageRsp) {}
+    rpc GetDeviceInfo(GetDeviceInfoReq) returns (GetDeviceInfoRsp) {}
+    rpc RegisterDevice(RegisterDeviceReq) returns (RegisterDeviceRsp) {}
+    rpc ListDeviceInfo(ListDeviceInfoReq) returns (ListDeviceInfoRsp) {}
+}
+
+service DeviceRegisterRpcService {
+    // adc-server --> adc-hub
+    rpc PushRegisterDeviceToMqtt(PushRegisterDeviceToMqttReq) returns (PushRegisterDeviceToMqttRsp) {}
+}
+
+message ListDevicePageReq {
+    string deviceName = 1;
+    int64 productId = 2;
+    string ipAddress = 3;
+    int32 productType = 4;
+    int32 status = 5;
+    int32 page = 6;
+    int32 size = 7;
+}
+
+message ListDevicePageRsp {
+    int64 total = 1;
+    repeated DeviceDTO list = 2;
+}
+
+message DeviceDTO {
+    int64 id = 1;
+    string deviceKey = 2;
+    string deviceSecret = 3;
+    string deviceName = 4;  // 设备名称
+    string productKey = 5;  // 产品Key
+    int64  productId = 6;   // 产品ID
+    int32  productType = 7; // 产品类型
+    string ipAddress = 8;  // 设备IP
+    int32 status = 9;       // 设备状态 unactive:未激活;online:在线;offline:设备离线;disable:设备禁用
+    string createTime = 10;
+    string modifyTime = 11;
+    int32 oemType = 12;
+}
+
+message GetDeviceInfoReq {
+    string deviceKey = 1;
+}
+
+message GetDeviceInfoRsp {
+    int32 code = 1;
+    string msg = 2;
+    DeviceDTO device = 3;
+}
+
+message RegisterDeviceReq {
+    string sn = 1;
+    string productKey = 2;
+    string productSecret = 3;
+    string vinMappingId = 4;     //vin码映射值Id(五菱提供)
+}
+
+message RegisterDeviceRsp {
+    int32 code = 1;
+    string msg = 2;
+    DeviceDTO device = 3;
+}
+message PushRegisterDeviceToMqttReq {
+    string sn = 1;
+    string productKey = 2;
+    v1.message.device.connect.DeviceRegisterReply device = 3;
+}
+
+message PushRegisterDeviceToMqttRsp {
+    int32 code = 1;
+    string msg = 2;
+}
+
+message ListDeviceInfoReq {
+    repeated string deviceKeys = 1;
+}
+
+message ListDeviceInfoRsp {
+    int32 code = 1;
+    string msg = 2;
+    repeated DeviceDTO list = 3;
+}

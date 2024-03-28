@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.service;
+option go_package = "v1/message/device/vehicle/hmi/service";
+
+import "v1/message/device/vehicle/common.proto";
+
+//App人脸登陆、注册
+message HmiFaceIdReq {
+  EnumHmiFaceIdReqState state = 1;
+}
+
+enum EnumHmiFaceIdReqState {
+  FACE_ID_REGISTER = 0; //注册
+  FACE_ID_LOGIN = 1; //登陆
+}
+
+message HmiFaceIdRsp {
+  uint32 uid = 1;                       // 用户id
+  EnumSwitch existence = 2;             // 是否检测到用户
+  repeated EnumSwitch head_posture = 3; // 头部姿态偏转情况，0：正常 1: 偏转过大, 长度为 4， 分别表示左/右/上/下，也可以出现两个表示 左上/右上/左下/右下
+  EnumSwitch face_living = 4;           // 是否为活体
+  EnumSwitch wearing_hat = 5;           // 是否戴帽子
+  EnumSwitch wearing_glasses = 6;       // 是否戴眼镜
+  EnumSwitch wearing_respirator = 7;    // 是否戴口罩
+  EnumSwitch face_occlusion = 8;        // 面部是否被遮挡
+  uint32 result = 9;                    // 状态码; 0为操作成功, 1为未检测到人脸，2为头部姿势无效, 3为非活体, 4为人脸遮挡,
+                                        // 100为重复注册, 101为匹配失败, 102为人脸删除失败
+}

@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+
+import "v1/message/device/vehicle/common.proto";
+
+/**
+ * 3D镜头切换
+ * 结构体 : DmmSceneDirection
+ * topic : /sys/dmm/ue4_visualization/v3
+ */
+message DmmSceneDirectionEvt {
+    SceneType scene_type = 1;
+    SceneDirectionType side_view = 2;           //侧写。0-无视角切换，1-左侧，2-右侧
+    SceneDirectionType lane_change_view = 3;    //变道。0-无视角切换，1-左侧，2-右侧
+    EnumSwitch track_visibility_flag = 4;   //轨迹显示标志位。0-不显示，1-显示
+    EnumSwitch path_visibility_flag = 5;    //path显示标志位。0-不显示，1-显示
+    Vector2f lc_target_position = 6;        //变道车位框的位置
+}
+
+enum SceneType {
+    SHORT_VIEW = 0;     //中景
+    LONG_VIEW = 1;      //远景
+    CLOSE_VIEW = 2;     //近景
+    CROSSING_VIEW = 3;  //过路口
+}
+
+enum SceneDirectionType {
+    DIRECTION_NONE = 0;
+    DIRECTION_LEFT = 1;
+    DIRECTION_RIGHT = 2;
+}

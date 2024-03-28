@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/root" android:tag="layout/adapter_contact_0" android:layout_width="@dimen/width_item_contact" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <View android:id="@id/sp_empty" android:layout_width="fill_parent" android:layout_height="@dimen/p20" />
+    <TextView android:textSize="@dimen/s20" android:textColor="@color/general_99" android:gravity="start|center" android:layout_gravity="center_vertical" android:id="@id/tv_contact_label" android:tag="binding_1" android:layout_width="wrap_content" android:layout_height="@dimen/p30" android:includeFontPadding="false" android:fontFamily="@font/mn_regular" android:layout_marginStart="@dimen/p20" />
+    <RelativeLayout android:id="@id/content" android:tag="binding_2" android:layout_width="fill_parent" android:layout_height="@dimen/p108">
+        <FrameLayout android:id="@id/fl_photo" android:layout_width="@dimen/p56" android:layout_height="@dimen/p56" android:layout_marginTop="@dimen/p30" android:layout_centerVertical="true" android:layout_marginStart="@dimen/p20">
+            <com.sgmw.lingos.btcall.view.widget.headerview.CircleImageView android:layout_gravity="center" android:id="@id/iv_contact_photo" android:tag="binding_3" android:layout_width="@dimen/p56" android:layout_height="@dimen/p56" />
+        </FrameLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/contact_info_layout" android:layout_width="@dimen/width_item_contact_number" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginStart="@dimen/p20" android:layout_toEndOf="@id/fl_photo">
+            <TextView android:textSize="@dimen/s21" android:textColor="@color/general_ff" android:ellipsize="end" android:id="@id/tv_contact_name" android:tag="binding_4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:singleLine="true" android:includeFontPadding="false" android:fontFamily="@font/cn_regular" />
+            <com.sgmw.lingos.btcall.view.widget.PaoMaDengView android:textSize="@dimen/s19" android:id="@id/tv_contact_numbers" android:tag="binding_5" android:layout_width="fill_parent" android:layout_height="@dimen/p30" android:layout_marginTop="@dimen/p5" />
+        </LinearLayout>
+        <View android:id="@id/sp_line" android:background="@drawable/shape_adapter_contact_line" android:layout_width="@dimen/width_item_contact_sp_line" android:layout_height="@dimen/p1" android:layout_marginTop="@dimen/p20" android:layout_below="@id/contact_info_layout" android:layout_marginStart="@dimen/p20" />
+    </RelativeLayout>
+</LinearLayout>

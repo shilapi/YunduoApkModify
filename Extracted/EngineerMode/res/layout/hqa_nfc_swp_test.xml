@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:id="@id/hqa_swp_btn_start_stop" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="58.0dip" android:layout_marginTop="40.0dip" android:text="@string/hqa_nfc_start" android:width="200.0dip" />
+    <Button android:id="@id/hqa_swp_btn_return" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="58.0dip" android:layout_marginTop="40.0dip" android:text="@string/hqa_nfc_return" android:width="200.0dip" />
+</LinearLayout>

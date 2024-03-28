@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="15.0sp" android:layout_gravity="left" android:id="@id/display_mccmnc" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@id/label" android:layout_weight="1.0" />
+</LinearLayout>

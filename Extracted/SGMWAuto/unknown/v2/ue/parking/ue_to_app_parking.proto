@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package v2.ue.parking;
+option go_package = "v2/ue/parking";
+
+import "v2/common/auto_common.proto";
+
+/**
+ * 泊车
+ */
+message ParkingUECmd {
+  .v2.common.EnumParkingMode mode = 1;
+  .v2.common.ParkingSlot slot = 2; //泊入车位框（或者区域四个点）
+  EnumDirection direction = 3;     //设置泊入方向
+  uint32 slot_flag = 4;            //选择车位框设置来源，0：感知车位；1：地图车位
+}
+
+/**
+ * 建图
+ */
+message TrainingUECmd {
+  .v2.common.ParkingSlot slot = 1; //收藏车位框
+}
+
+/**
+ * 建图Image
+ */
+message TrainingMapImageUECmd {
+  bytes image = 1;
+}
+
+/**
+ * 召唤
+ */
+message SummonUECmd {
+  .v2.common.OdomVector summon_pos = 1;
+}
+
+enum EnumDirection {
+  PARKING_IN_FORWARD = 0;
+  PARKING_IN_BACK = 1;
+}

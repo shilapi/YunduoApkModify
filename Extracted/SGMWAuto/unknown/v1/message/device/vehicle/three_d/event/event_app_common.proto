@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.three_d.event;
+option go_package = "v1/message/device/vehicle/three_d/event";
+import "v1/message/device/vehicle/common.proto";
+
+/**
+ * 通用操作（to 3D）
+ */
+message CommonAppEvt {
+    Enum3DView view = 1;
+}
+
+/**
+ * 车辆模型
+ */
+message CarModelAppEvt {
+  EnumCarModel car_model = 1;
+}
+
+enum Enum3DView {
+  VIEW_RESUME = 0; //恢复正常视图
+  ZOOM_OUT = 1;    //放大
+  ZOOM_IN = 2;     //缩小
+}
+
+enum EnumCarModel {
+  CAR_NONE = 0;
+  CAR_DJI = 1;
+  CAR_E300 = 2;
+  CAR_SVW = 3;
+  CAR_FAW = 4;
+}
+
+message DrivingModeAppEvt {
+    EnumDrivingModeTo3D mode = 1;
+}
+
+enum EnumDrivingModeTo3D {
+  MODE_MANUAL = 0;    //手动驾驶
+  MODE_AUTO = 1;      //自动驾驶
+}
+
+message DebugLogAppEvt {
+  EnumSwitch show_log = 1;
+}
+
+/**
+ * 主题切换
+ */
+message ThemeAppEvt {
+  EnumTheme theme = 1;
+}
+
+enum EnumTheme {
+  THEME_DAY = 0;    //白天
+  THEME_NIGHT = 1;  //黑夜
+}

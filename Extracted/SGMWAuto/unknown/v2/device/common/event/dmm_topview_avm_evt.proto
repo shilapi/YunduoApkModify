@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package v2.device.common.event;
+option go_package = "v2/device/common/event";
+
+import "v2/common/auto_common.proto";
+
+/**
+ * TopView AVM
+ * 结构体 :
+ * topic : /sys/dmm/vision_3d_avm/v1
+ */
+message DmmTopViewAVMEvt {
+  repeated uint32 region_occupancy = 1;   //绕车一圈共14个区域，0默认，1告警
+  repeated EnvelopePoint avm_points = 2;  //包络点集
+  repeated WallPoint wall_points = 3;     //墙点集
+  .v2.common.OdomPose3d pose = 4;
+}
+
+message EnvelopePoint {
+  float x = 1;            //ego坐标系x
+  float y = 2;            //ego坐标系y
+  float distance = 3;     //包络点距离车身最近位置距离
+  TPVPointType type = 4;  //点类型
+}
+
+enum TPVPointType {
+    kUnknownVal = 0;
+    kFreespaceVal = 130;
+    kCarStopperVal = 160;
+    kNoParkingVal = 180;
+    kCurbVal = 200;
+    kStereoFreespaceVal = 220;
+    kObstacleVal = 250;
+    kSpecialLabel = 10;
+}
+
+message WallPoint {
+  float x = 1;            //ego坐标系x
+  float y = 2;            //ego坐标系y
+  uint32 line_id = 3;     //id
+}

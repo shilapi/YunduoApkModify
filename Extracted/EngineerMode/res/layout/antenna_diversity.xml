@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView style="@style/info_layout"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/antenna_diversity_3g" />
+        <View android:background="#fff39a1e" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ToggleButton android:textSize="14.0sp" android:id="@id/antenna_diversity_3g_prx" android:layout_width="0.0dip" android:layout_height="wrap_content" android:textOn="@string/antenna_diversity_prx" android:textOff="@string/antenna_diversity_prx" android:layout_weight="1.0" />
+            <ToggleButton android:textSize="14.0sp" android:id="@id/antenna_diversity_3g_drx" android:layout_width="0.0dip" android:layout_height="wrap_content" android:textOn="@string/antenna_diversity_drx" android:textOff="@string/antenna_diversity_drx" android:layout_weight="1.0" />
+            <ToggleButton android:textSize="14.0sp" android:id="@id/antenna_diversity_3g_prx_drx" android:layout_width="0.0dip" android:layout_height="wrap_content" android:textOn="@string/antenna_diversity_prx_drx" android:textOff="@string/antenna_diversity_prx_drx" android:layout_weight="1.0" />
+        </LinearLayout>
+        <TableLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip">
+            <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0dip">
+                <TextView android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+                <TextView android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/antenna_diversity_ant0" android:layout_weight="1.0" />
+                <TextView android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/antenna_diversity_ant1" android:layout_weight="1.0" />
+                <TextView android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/antenna_diversity_combined" android:layout_weight="1.0" />
+            </TableRow>
+            <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip">
+                <TextView android:textColor="#ffff0000" android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/antenna_diversity_rscp" android:layout_weight="1.0" />
+                <TextView android:textColor="#ffff0000" android:gravity="center" android:id="@id/antenna_diversity_rscp_ant0" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/antenna_diversity_default" android:layout_weight="1.0" />
+                <TextView android:textColor="#ffff0000" android:gravity="center" android:id="@id/antenna_diversity_rscp_ant1" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/antenna_diversity_default" android:layout_weight="1.0" />
+                <TextView android:textColor="#ffff0000" android:gravity="center" android:id="@id/antenna_diversity_rscp_combined" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/antenna_diversity_default" android:layout_weight="1.0" />
+            </TableRow>
+            <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip">
+                <TextView android:textColor="#ff00ff00" android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/antenna_diversity_pssi" android:layout_weight="1.0" />
+                <TextView android:textColor="#ff00ff00" android:gravity="center" android:id="@id/antenna_diversity_pssi_ant0" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/antenna_diversity_default" android:layout_weight="1.0" />
+                <TextView android:textColor="#ff00ff00" android:gravity="center" android:id="@id/antenna_diversity_pssi_ant1" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/antenna_diversity_default" android:layout_weight="1.0" />
+                <TextView android:textColor="#ff00ff00" android:gravity="center" android:id="@id/antenna_diversity_pssi_combined" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/antenna_diversity_default" android:layout_weight="1.0" />
+            </TableRow>
+        </TableLayout>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/antenna_diversity_4g" />
+        <View android:background="#fff39a1e" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ToggleButton android:textSize="14.0sp" android:id="@id/antenna_diversity_4g_prx" android:layout_width="0.0dip" android:layout_height="wrap_content" android:textOn="@string/antenna_diversity_prx" android:textOff="@string/antenna_diversity_prx" android:layout_weight="1.0" />
+            <ToggleButton android:textSize="14.0sp" android:id="@id/antenna_diversity_4g_drx" android:layout_width="0.0dip" android:layout_height="wrap_content" android:textOn="@string/antenna_diversity_drx" android:textOff="@string/antenna_diversity_drx" android:layout_weight="1.0" />
+            <ToggleButton android:textSize="14.0sp" android:id="@id/antenna_diversity_4g_prx_drx" android:layout_width="0.0dip" android:layout_height="wrap_content" android:textOn="@string/antenna_diversity_prx_drx" android:textOff="@string/antenna_diversity_prx_drx" android:layout_weight="1.0" />
+        </LinearLayout>
+        <TableLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip">
+            <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0dip">
+                <TextView android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+                <TextView android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/antenna_diversity_ant0" android:layout_weight="1.0" />
+                <TextView android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/antenna_diversity_ant1" android:layout_weight="1.0" />
+                <TextView android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/antenna_diversity_combined" android:layout_weight="1.0" />
+            </TableRow>
+            <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip">
+                <TextView android:textColor="#ffff0000" android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/antenna_diversity_rsrp" android:layout_weight="1.0" />
+                <TextView android:textColor="#ffff0000" android:gravity="center" android:id="@id/antenna_diversity_rsrp_ant0" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/antenna_diversity_default" android:layout_weight="1.0" />
+                <TextView android:textColor="#ffff0000" android:gravity="center" android:id="@id/antenna_diversity_rsrp_ant1" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/antenna_diversity_default" android:layout_weight="1.0" />
+                <TextView android:textColor="#ffff0000" android:gravity="center" android:id="@id/antenna_diversity_rsrp_combined" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/antenna_diversity_default" android:layout_weight="1.0" />
+            </TableRow>
+            <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip">
+                <TextView android:textColor="#ff00ff00" android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/antenna_diversity_rsrq" android:layout_weight="1.0" />
+                <TextView android:textColor="#ff00ff00" android:gravity="center" android:id="@id/antenna_diversity_rsrq_ant0" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/antenna_diversity_default" android:layout_weight="1.0" />
+                <TextView android:textColor="#ff00ff00" android:gravity="center" android:id="@id/antenna_diversity_rsrq_ant1" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/antenna_diversity_default" android:layout_weight="1.0" />
+                <TextView android:textColor="#ff00ff00" android:gravity="center" android:id="@id/antenna_diversity_rsrq_combined" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/antenna_diversity_default" android:layout_weight="1.0" />
+            </TableRow>
+            <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip">
+                <TextView android:textColor="#ff00ffff" android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/antenna_diversity_rssi" android:layout_weight="1.0" />
+                <TextView android:textColor="#ff00ffff" android:gravity="center" android:id="@id/antenna_diversity_rssi_ant0" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/antenna_diversity_default" android:layout_weight="1.0" />
+                <TextView android:textColor="#ff00ffff" android:gravity="center" android:id="@id/antenna_diversity_rssi_ant1" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/antenna_diversity_default" android:layout_weight="1.0" />
+                <TextView android:textColor="#ff00ffff" android:gravity="center" android:id="@id/antenna_diversity_rssi_combined" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/antenna_diversity_default" android:layout_weight="1.0" />
+            </TableRow>
+            <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip">
+                <TextView android:textColor="#ffffff00" android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/antenna_diversity_sinr" android:layout_weight="1.0" />
+                <TextView android:textColor="#ffffff00" android:gravity="center" android:id="@id/antenna_diversity_sinr_ant0" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/antenna_diversity_default" android:layout_weight="1.0" />
+                <TextView android:textColor="#ffffff00" android:gravity="center" android:id="@id/antenna_diversity_sinr_ant1" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/antenna_diversity_default" android:layout_weight="1.0" />
+                <TextView android:textColor="#ffffff00" android:gravity="center" android:id="@id/antenna_diversity_sinr_combined" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/antenna_diversity_default" android:layout_weight="1.0" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+</ScrollView>

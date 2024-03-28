@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.service;
+option go_package = "v1/message/device/vehicle/hmi/service";
+
+/**
+ * Topic: /sys/dmm/noa_cmd_service/v1
+ */
+message HmiDrivingSettingsReq { //如果参数值是0会没意义，无法发送到gateway
+  EnumLaneChangeStyle lane_change_style = 1;
+  EnumTripleSwitch pass_by_settings = 2;                          //绕行功能开关
+  EnumTripleSwitch pass_by_cross_line_settings = 3;               //绕行是否允许越线
+  int32 pass_by_allow_dis = 4;                              //允许绕行距离
+  EnumPassTrafficLight pass_traffic_light_settings = 5;     //红绿灯功能设置
+  EnumTripleSwitch virtual_teaching = 6;                          //虚拟教学开关
+}
+
+//绕行设置
+message PassBySettingsReq {
+  EnumTripleSwitch pass_by_settings = 1;
+  EnumTripleSwitch pass_by_cross_line_settings = 2;
+}
+
+//NOD设置
+message NODSettingsReq {
+  EnumTripleSwitch nod_enable = 1;          //NOD功能激活开关
+}
+
+//MOD设置
+message MODSettingsReq {
+  EnumTripleSwitch mod_enable = 1;          //MOD功能激活开关
+  EnumTripleSwitch silent_mapping = 2;      //静默建图开关
+  EnumTripleSwitch recommend_route = 3;     //智能推荐路线开关
+}
+
+enum EnumLaneChangeStyle {
+  LC_STYLE_NONE = 0;
+  LC_STYLE_RADICLA = 1;      //激进
+  LC_STYLE_MODERATE = 2;     //温和
+  LC_STYLE_CONSERVATIVE = 3; //保守
+}
+
+enum EnumPassTrafficLight {
+  PASS_TRAFFIC_NONE = 0;
+  PASS_TRAFFIC_LIGHT_OFF = 1;
+  PASS_TRAFFIC_LIGHT_ON = 2;
+  PASS_TRAFFIC_LIGHT_ALERT_ONLY = 3;
+}
+
+enum EnumTripleSwitch {
+  NONE = 0;
+  OFF = 1;
+  ON = 2;   
+}

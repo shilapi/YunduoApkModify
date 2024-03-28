@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+
+/**
+ * DMM Parking信息（地图本地化）
+ * 结构体 : DmmMapInfoList
+ * topic : /sys_msgs/dmm/driving_hmi_info/v1
+ */
+message DmmParkingInfoEvt {
+  repeated MapSummaryInfo maps = 1;                //地图信息
+}
+
+message MapSummaryInfo {
+  uint64 map_id = 1;                               //地图id
+  uint64 create_time = 2;                          //创建时间
+  uint64 update_time = 3;                          //更新时间
+  ParkingMapType type = 4;                         //地图类型
+  string name = 5;                                 //地图名称
+  uint32 private_slot = 6;                         //收藏车位
+  float distance = 7;                              //地图长度，m
+  uint32 used_times = 8;                           //使用次数
+  uint64 last_used_time = 9;                       //最后使用时间
+  MemoryParkingMode last_used_mode = 10;           //最后使用模式（选位、区域、探索）
+  uint32 used_times_in_slot = 11;                  //选位模式使用次数
+  uint32 used_times_in_region = 12;                //区域模式使用次数
+  uint32 used_times_by_explore = 13;               //探索模式使用次数
+  uint32 is_top = 14;                              //是否置顶
+  uint32 map_end_floor = 15;                       //地图最底层
+  repeated uint32 map_check_code = 16;             //轻量化地图文件MD5码
+}
+
+enum ParkingMapType {
+  kMemoryParkingIn = 0;                            //泊入地图
+  kMemoryParkingOut = 1;                           //泊出地图
+}
+
+enum MemoryParkingMode {
+  kModeNone = 0;
+  kInSelectedSlot = 1;                             //选位模式
+  kInRegion = 2;                                   //区域模式
+  kAutoSearch = 3;                                 //探索模式
+}

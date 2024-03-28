@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="recording_current_shot_text">#ffffffff</color>
+    <color name="gray">#ffd3d3d3</color>
+    <color name="black">#ff000000</color>
+    <color name="help_title">@android:color/holo_blue_light</color>
+    <color name="gray_black">#ff282828</color>
+    <color name="white">#ffffffff</color>
+    <color name="theme_red">#fff08080</color>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:motion="http://schemas.android.com/apk/res-auto">
+    <Transition motion:constraintSetEnd="@id/third_call_holding" motion:constraintSetStart="@id/third_call_incoming" motion:duration="600" motion:motionInterpolator="cubic(1,0,0,1)">
+        <KeyFrameSet />
+    </Transition>
+    <ConstraintSet android:id="@id/third_call_incoming">
+        <Constraint android:id="@id/transfer" android:visibility="invisible" android:layout_width="@dimen/p96" android:layout_height="@dimen/p68" android:layout_marginBottom="@dimen/p41" android:layout_marginStart="@dimen/p158" motion:layout_constraintBottom_toBottomOf="parent" motion:layout_constraintStart_toStartOf="parent" />
+        <Constraint android:id="@id/state_and_time" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p219" motion:layout_constraintStart_toStartOf="parent" motion:layout_constraintTop_toTopOf="parent" />
+        <Constraint android:id="@id/number" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p281" motion:layout_constraintStart_toStartOf="parent" motion:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+    <ConstraintSet android:id="@id/third_call_holding">
+        <Constraint android:id="@id/transfer" android:visibility="visible" android:layout_width="@dimen/p96" android:layout_height="@dimen/p68" android:layout_marginBottom="@dimen/p41" android:layout_marginStart="@dimen/p158" motion:layout_constraintBottom_toBottomOf="parent" motion:layout_constraintStart_toStartOf="parent" />
+        <Constraint android:id="@id/state_and_time" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p273" motion:layout_constraintStart_toStartOf="parent" motion:layout_constraintTop_toTopOf="parent" />
+        <Constraint android:id="@id/number" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p239" motion:layout_constraintStart_toStartOf="parent" motion:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+</MotionScene>

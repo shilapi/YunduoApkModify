@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+import "v1/message/device/vehicle/common.proto";
+
+/**
+ * planning 记忆行车轨迹数据
+ * 结构体: sys_msgs::planning::Trajectory
+ * topic : /sys/memory_driving_trajectory
+ */
+message DrivingTrajectoryEvt {
+  DrivingPath path = 1;
+  DrivingTrajectory trajectory = 2;
+}
+
+message DrivingTrajectoryPoint {
+  double timestamp = 1;
+  OdomVector pos = 2;
+  OdomVector vel = 3;
+}
+
+message DrivingTrajectory {
+  EnumSwitch is_valid = 1;
+  double timestamp = 2;
+  repeated DrivingTrajectoryPoint trajectory_points = 3;
+}
+
+message DrivingPathPoint {
+  double timestamp = 1;
+  OdomVector pos = 2;
+}
+
+message DrivingPath {
+  EnumSwitch is_valid = 1;
+  double timestamp = 2;
+  repeated DrivingPathPoint path_points = 3;
+}
+

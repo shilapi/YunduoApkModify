@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.service;
+option go_package = "v1/message/device/vehicle/hmi/service";
+
+//App任务状态切换
+message HmiModeReq {
+  EnumHmiMode mode = 1;
+  ExtendedParameters parameters = 2;
+}
+
+enum EnumHmiMode {
+  MODE_STANDBY = 0;
+  //1-10 driving
+  MODE_DRIVING = 1;             //TJA
+  MODE_DRIVING_TRAINING = 2;    //记忆行车建图
+  MODE_MEMORY_DRIVING = 3;      //记忆行车
+  MODE_DRIVING_NOA = 4;         //领航辅助
+  //10-20 parking
+  MODE_APA = 10;                //APA泊车
+  MODE_PARKING_EXPLORE = 11;    //无地图探索泊车
+  MODE_IN_CAR_PARK_OUT = 12;    //泊出(人在车内)
+  MODE_OFF_CAR_PARK_OUT = 13;   //泊出(人在车外)
+  MODE_BV_PARKING = 14;         //指位泊车(BV泊车)
+  MODE_PARKING_MAP = 15;        //基于地图泊车
+  MODE_TRAINING = 16;           //停车场建图
+  MODE_SUMMON_MAP = 17;         //基于地图召唤
+  MODE_SUMMON_GPS = 18;         //GPS召唤
+  MODE_SUMMON_PATH = 19;        //无地图反向召唤
+  MODE_REMOTE = 20;             //遥控车
+  MODE_REVERSE_TRACKING = 21;   //倒车循迹
+}
+
+message ExtendedParameters {
+  uint64 mapid = 1;
+  float direction = 2;
+  float step = 3;
+}

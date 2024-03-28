@@ -1,0 +1,127 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.service;
+option go_package = "v1/message/device/vehicle/hmi/service";
+
+/**
+ * APP设置
+ * 结构体：AppCmdRequest
+ * Topic: /sys/dmm/app_cmd_service/v2
+ */
+message HmiDrivingSettingReq {
+  EnumHmiDrivingSettingType app_request_setting_type = 1;
+  uint32 app_request_setting_value = 2;
+}
+
+message HmiDrivingSettingRsp {
+  uint32 app_response_setting_value = 1;
+}
+
+//变道风格设置
+enum EnumLcStyle {
+  VIRTUAL_DRIVER_LC_STYLE_NONE = 0;
+  VIRTUAL_DRIVER_LC_STYLE_CONSERVATIVE = 1;  //保守
+  VIRTUAL_DRIVER_LC_STYLE_MODERATE = 2;      //适中
+  VIRTUAL_DRIVER_LC_STYLE_RADICAL = 3;       //激进
+}
+
+//红绿灯功能设置
+enum EnumTrafficLight {
+  VIRTUAL_DRIVER_TRAFFIC_LIGHT_NONE = 0;        //默认值
+  VIRTUAL_DRIVER_TRAFFIC_LIGHT_OFF = 1;         //关闭
+  VIRTUAL_DRIVER_TRAFFIC_LIGHT_ALERT_ONLY = 2;  //打开，仅包含交互提醒，不能使用启停功能
+  VIRTUAL_DRIVER_TRAFFIC_LIGHT_ON = 3;          //打开
+}
+
+//绕行功能设置
+enum EnumByPassFunSet {
+  BY_PASS_NONE = 0;               //默认值
+  BY_PASS_OFF = 1;                //关闭
+  BY_PASS_ON_NOCROSS_LINE = 2;    //开启，单不允许越界
+  BY_PASS_ON_CROSS_LINE = 3;      //开启，允许越界
+}
+
+//Switch开关设置
+enum EnumSwitchSet {
+  VIRTUAL_DRIVER_SWITCH_SET_NONE = 0;
+  VIRTUAL_DRIVER_SWITCH_SET_OFF = 1;
+  VIRTUAL_DRIVER_SWITCH_SET_ON = 2;
+}
+
+//驾驶风格设置
+enum EnumDrivingStyle {
+  DRIVING_STYLE_NONE = 0;           //默认值
+  DRIVING_STYLE_CONSERVATIVE = 1;   //保守
+  DRIVING_STYLE_MODERATE = 2;       //适中
+  DRIVING_STYLE_RADICLA = 3;        //激进
+}
+
+//车道辅助设置
+enum EnumLaneAssistStyle {
+  LD_STYLE_NONE = 0;        //默认值
+  LD_STYLE_OFF = 1;         //LDW和LKA功能关闭
+  LD_STYLE_LDW = 2;         //LDW功能打开，车道偏离时，仅报警
+  LD_STYLE_LKA = 3;         //LKA功能打开，车道偏离时，报警且辅助车辆转向
+}
+
+//车道辅助灵敏度设置
+enum EnumLaneAssistSnstvty {
+  LANE_ASSIST_SNSTVTY_NONE = 0;     //默认值
+  LANE_ASSIST_SNSTVTY_LOW = 1;      //低灵敏度
+  LANE_ASSIST_SNSTVTY_MODERATE = 2; //中灵敏度
+  LANE_ASSIST_SNSTVTY_HIGH = 3;     //高灵敏度
+}
+
+//LDW报警方式
+enum EnumLDWWarnStyle {
+  LDW_WARN_STYLE_NONE = 0;        //默认值
+  LDW_WARN_STYLE_SOUND = 1;       //声音报警
+  LDW_WARN_STYLE_STEERSHAKE = 2;  //方向盘震动报警
+  LDW_WARN_STYLE_ALL = 3;         //声音报警 + 方向盘震动报警
+}
+
+//限速源
+enum EnumSpdLimitSource {
+  SPD_LIMIT_SOURCE_NONE = 0;    //默认值
+  SPD_LIMIT_SOURCE_MAP = 1;     //Map
+  SPD_LIMIT_SOURCE_TLR = 2;     //识别
+  SPD_LIMIT_SOURCE_FUSION = 3;  //融合
+}
+
+//App setting index（只支持一个个设置）
+enum EnumHmiDrivingSettingType {
+  APP_NONE = 0;
+  TJA_SWITCH = 1;                             //TJA开关设置
+  DTLC_SWITCH = 2;                            //拨杆变道开关
+  LC_SUGGEST_SWITCH = 3;                      //建议变道开关
+  LC_STYLE = 4;                               //变道风格设置
+  PASS_BY_SWITCH = 5;                         //绕行功能开关
+  PASS_BY_ALLOW_DIST = 6;                     //允许绕行的距离，需定义精度，协议不传输浮点数，暂定factor为100
+  TRAFFIC_LIGHT = 7;                          //红绿灯功能设置
+  TJA_RECOM_SWITCH = 8;                       //主动推荐开关
+  OBSTACLE_WARN_SWITCH = 9;                   //障碍物报警开关
+  FSD_SWITCH = 10;                            //FSD功能开关
+  NOD_ACTIVE_SWITCH = 11;                     //NOD功能允许激活开关
+  MOD_ACTIVE_SWITCH = 12;                     //MOD功能允许激活开关
+  SILENT_TRAINING_MAP_SWITCH = 13;            //允许静默建图激活开关
+  INTELLIGENT_RECOMMEND_ROUTE_SWITCH = 14;    //MOD允许智能推荐路线开关
+  DRIVING_STYLE_SET = 15;                     //驾驶风格设置
+  LANE_ASSIST_STYLE_SET = 16;                 //车道辅助设置
+  LANE_ASSIST_SENSITIVITY_SET = 17;           //车道灵敏度设置
+  LDW_WARN_STYLE_SET = 18;                    //LDW报警方式设置
+  BSD_SWITCH = 19;                            //BSD功能开关
+  FCW_SWITCH = 20;                            //FCW功能开关
+  AEB_SWITCH = 21;                            //AEB功能开关
+  DOW_SWITCH = 22;                            //DOW功能开关
+  RCW_SWITCH = 23;                            //RCW功能开关
+  RACW_SWITCH = 24;                           //RACW功能开关
+  ELK_SWITCH = 25;                            //ELK功能开关
+  HBA_SWITCH = 26;                            //HBA功能开关
+  AUTO_WIPER = 27;                            //自动雨刮功能开关
+  ISA_SWITCH = 28;                            //ISA功能开关
+  SPD_LIMIT_ADAPTVIE_SWITCH = 29;             //限速自适应功能开关
+  SPD_LIMIT_SOURCE_SET = 30;                  //限速源选择
+  SPD_LIMIT_WARN_TOLERANCE_SET = 31;          //限速报警上浮参数上浮
+  VIRTUAL_TEACHING_SWITCH = 32;               //虚拟教学开关
+}
+

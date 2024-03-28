@@ -1,0 +1,147 @@
+syntax = "proto3";
+
+package v2.device.parking.service;
+option go_package = "v2/device/parking/service";
+
+import "v2/common/auto_common.proto";
+import "v2/device/common/service/hmi_mode_req.proto";
+
+/**
+ * 泊车系统服务
+ * 结构体: sys_msgs::dmm::ParkingTaskInfo
+ * topic: /sys/dmm/parking_system_service/v1
+ * 频率: 非定频，有操作请求时发送
+ */
+
+/**
+  泊车
+  MODE_APA = 10; //APA泊车
+  MODE_PARKING_EXPLORE = 11; //无地图探索泊车
+  MODE_BV_PARKING = 14; //指位泊车(BV泊车)
+  MODE_PARKING_MAP = 15; //基于地图泊车
+ */
+message ParkingReq {
+  .v2.device.common.service.EnumHmiMode mode = 1;
+  EnumParkingState state = 2;
+  .v2.common.ParkingSlot slot = 3;
+  .v2.common.EnumParkingMode parking_mode = 4;
+  repeated int32 floors = 5;                     //选中楼层，数组只有一个0代表选中所有楼层（B1->-1, B2->-2, L1-1, ...）；无地图探索中表示探索楼层数，指定是赋值，未指定时赋值为0
+  float explore_range = 6;                       //无地图探索模式使用，设置探索范围，0：不设定范围；<0：无效；>0：有效；未指定时发送-1
+  uint32 point_of_interest = 7;                  //无地图探索模式使用，POI类型，例如电梯口、停车场出口等语义元素类型，0：无效，具体类型赋值待定
+  int32 selected_slot = 8;                       //无地图探索模式使用，检测到车位时，用户指定泊入车位，>0：指定泊入车位；0：不泊入、继续探索；不需要赋值时为-1
+  .v2.common.Coordinate explore_summon_pose = 9; //无地图探索模式使用，设置召唤点坐标
+  EnumDirection direction = 10;                  //设置泊入方向
+  uint32 slot_flag = 11;                         //选择车位框设置来源，0：感知车位；1：地图车位
+}
+
+/**
+  召唤
+  MODE_IN_CAR_PARK_OUT = 12; //泊出(人在车内)
+  MODE_OFF_CAR_PARK_OUT = 13; //泊出(人在车外)
+  MODE_SUMMON_MAP = 17; //基于地图召唤
+  MODE_SUMMON_GPS = 18; //GPS召唤
+  MODE_SUMMON_PATH = 19; //无地图反向召唤
+ */
+message SummonReq {
+  .v2.device.common.service.EnumHmiMode mode = 1;
+  EnumParkingState state = 2;
+  .v2.common.OdomVector summon_pos = 3;
+  EnumDirection direction = 4;
+}
+
+//建图
+message TrainingReq {
+  EnumTrainingState state = 1;
+  EnumTrainingType type = 2;   //建图类型
+  .v2.common.ParkingSlot slot = 4;
+}
+
+enum EnumTrainingType {
+  TRAINING_PARK_IN = 0;        //泊入地图
+  TRAINING_PARK_OUT = 1;       //泊出地图
+}
+
+//定位
+message LocateReq {
+  EnumParkingState state = 1;
+  int64 mapid = 2;
+}
+
+//遥控车
+message RemoteActionReq {
+    EnumParkingState state = 1;
+    float direction = 2;
+    float step = 3;
+}
+
+//AVM模式
+message AvmViewReq {
+  EnumAvmView avm_view = 1; //单视图视角
+  EnumAvmMode avm_mode = 2; //AVM模式(2D/3D)
+  .v2.common.EnumSwitch avm_trans = 3; //透明地盘
+  EnumCmsMode cms_mode = 4; //CMS模式
+}
+
+enum EnumAvmView {
+  AVM_VIEW_NONE = 0;
+  AVM_FRONT = 1;  //前视
+  AVM_REAR = 2;   //后视
+  AVM_LEFT = 3;   //左视
+  AVM_RIGHT = 4;  //右视
+}
+
+enum EnumAvmMode {
+  AVM_NONE = 0;
+  AVM_OFF = 1;
+  AVM_2D = 2;    //2D
+  AVM_3D = 3;    //3D
+  AVM_PARK = 4;
+  AVM_WHEEL = 5;
+  AVM_MERGE = 6; //(BV+front/rear/left/right)
+}
+
+enum EnumCmsMode {
+  CMS_NONE = 0;
+  CMS_OFF = 1;
+  CMS_ON = 2;
+}
+
+enum EnumDirection {
+  DIRECTION_FORWARD = 0;
+  DIRECTION_LEFT = 1;
+  DIRECTION_RIGHT = 2;
+  DIRECTION_BACK = 3;
+  
+  PARKING_IN_FORWARD = 4;
+  PARKING_IN_BACK = 5;
+
+  PARKING_OUT_FORWARD_FULL = 6;
+  PARKING_OUT_FORWARD_PART = 7;
+  PARKING_OUT_FORWARD_LEFT_FULL = 8;
+  PARKING_OUT_LEFT = 9;
+  PARKING_OUT_FORWARD_LEFT_PART = 10;
+  PARKING_OUT_FORWARD_RIGHT_FULL = 11;
+  PARKING_OUT_RIGHT = 12;
+  PARKING_OUT_FORWARD_RIGHT_PART = 13;
+  PARKING_OUT_BACKWARD_FULL = 14;
+  PARKING_OUT_BACKWARD_PART = 15;
+  PARKING_OUT_BACKWARD_LEFT_FULL = 16;
+  PARKING_OUT_BACKWARD_LEFT_PART = 17;
+  PARKING_OUT_BACKWARD_RIGHT_FULL = 18;
+  PARKING_OUT_BACKWARD_RIGHT_PART = 19;
+}
+
+enum EnumTrainingState {
+  TRAINING_START = 0;
+  TRAINING_SAVE_SLOT = 1;
+  TRAINING_START_BUILD = 2;
+  TRAINING_FINISH = 3;
+  TRAINING_CANCEL = 4;
+}
+
+enum EnumParkingState {
+  PARKING_SELECT_SLOT = 0; //选择车位
+  PARKING_START = 1;
+  PARKING_PAUSE = 2;
+  PARKING_CANCEL = 3;
+}

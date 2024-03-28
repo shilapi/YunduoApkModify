@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package v2.device.driving.event;
+option go_package = "v2/device/driving/event";
+
+import "v2/common/auto_common.proto";
+
+/**
+ * 静态障碍物
+ * 结构体: sys_msgs::dmm::DmmStaticObstacleInfo
+ * Topic: /sys/dmm_static_obstacle_display/v3
+ * 频率: 5hz
+ */
+message DmmStaticObstacleEvt {
+    repeated DmmStaticObstacle static_obstacle = 1;
+    .v2.common.OdomPose3d pose = 2;
+}
+
+
+message DmmStaticObstacle {
+    uint32 obstacle_id = 1;
+    uint32 obstacle_type = 2;
+    uint32 obstacle_color = 3;
+    repeated .v2.common.Point points = 4;
+}
+
+

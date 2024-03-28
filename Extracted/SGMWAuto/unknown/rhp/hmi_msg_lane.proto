@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package rhp;
+
+option go_package = "rhp";
+
+message Vector2f {
+  float x = 1;
+  float y = 2;
+}
+
+message FusedLaneInfo{
+  uint32 lane_id = 1;                       //lane id
+  uint32 lane_type = 2;                     //lane type
+  uint32 lane_color = 3;                    //lane color
+  uint32 valid = 4;                         //lane whether valid
+  uint32 valid_point_num = 5;               //valid point num in this lane
+  repeated Vector2f points = 6;             //point position in ego coordinate
+}
+
+/**
+ * topic: /sys/dmm/fused_lane_display/v1
+ */
+ message DmmFusedLaneInfo {
+  repeated FusedLaneInfo lanes = 1;         //left2,left1,right1,right2
+}

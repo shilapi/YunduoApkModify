@@ -1,0 +1,35 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+SHA-256-Digest-Manifest: aRdRr6GizVdkovvsQFqFGrLVwg1o8Ta4RXVpmOI/W1o=
+X-Android-APK-Signed: 2, 3
+
+Name: AndroidManifest.xml
+SHA-256-Digest: r5XUoQJfOEtRNGAcRmVs2DNqjsfOH0JitrcC5E9wfY0=
+
+Name: classes.dex
+SHA-256-Digest: hOtIxSrEi7CybwM/TBzmxrwuslQ4kLKo15ZHuEOjB+s=
+
+Name: res/drawable-hdpi-v4/ic_launcher.png
+SHA-256-Digest: IYFiosTKv6IGgN6sEXR6V4Qe90J2Lzjyy05DE7cqzQo=
+
+Name: res/drawable-ldpi-v4/ic_launcher.png
+SHA-256-Digest: BTHxCTkUlSMopLnUHYZT2bYA6arDWPqe40OUMTxEZKY=
+
+Name: res/drawable-mdpi-v4/ic_launcher.png
+SHA-256-Digest: I+8OZH4fwai6qCW7I7OWulbP8keUxDjFBfF9ydjqifE=
+
+Name: res/drawable-xhdpi-v4/ic_launcher.png
+SHA-256-Digest: AoTntYY0381h/EhjfJqy97ZmMlOG8hIcTQeETc4KWAM=
+
+Name: res/layout/usb_handler_row.xml
+SHA-256-Digest: 97OlUFMVbLgMepFmiFBiJLIi93aG5qXoDMasaAtpyls=
+
+Name: res/layout/usb_host.xml
+SHA-256-Digest: e68O6RgIpMmX84wXzFXOj80gdjJz016IZ1BGIvo+3OA=
+
+Name: res/xml/usb_manager_prefs.xml
+SHA-256-Digest: sdVuZxeDdzsUs8+6NQZACyhrZAx3n80raWcrbo8l7gg=
+
+Name: resources.arsc
+SHA-256-Digest: s9Jaf+AWSkq5wuJ9L56XAIKFC0cKNBvNz/h4DvAMfzc=
+

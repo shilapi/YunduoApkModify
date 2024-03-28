@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Spinner android:id="@id/Audio_SpEnhancement_ModeType" android:layout_width="240.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" />
+    <Spinner android:id="@id/Audio_SpEnhancement_ParaType" android:visibility="gone" android:layout_width="240.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" />
+    <Spinner android:id="@id/Audio_SpEnhancement_Vol_spin" android:visibility="gone" android:layout_width="240.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" />
+    <ListView android:id="@id/Audio_SpEnhancement_ListView" android:layout_width="240.0dip" android:layout_height="0.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_weight="1.0" />
+    <Button android:id="@id/Audio_SpEnhancement_Button" android:layout_width="240.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:text="@string/Audio_SpEnhancement_Button" />
+</LinearLayout>

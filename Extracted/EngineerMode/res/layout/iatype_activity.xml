@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip">
+        <TextView android:textSize="16.0sp" android:id="@id/iatype_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/iatype_name_text" />
+        <TextView android:textSize="16.0sp" android:id="@id/iatype_apn" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/iatype_apn_text" />
+        <TextView android:textSize="16.0sp" android:id="@id/iatype_type" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/iatype_type_text" />
+        <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="10.0dip" />
+        <TextView android:textSize="16.0sp" android:id="@id/iatype_protocol" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/iatype_protocol_text" />
+        <RadioGroup android:gravity="left" android:orientation="vertical" android:id="@id/iatype_radio_group" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <RadioButton android:id="@id/iatype_ip_radio" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/iatype_ip" />
+            <RadioButton android:id="@id/iatype_ipv6_radio" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/iatype_ipv6" />
+            <RadioButton android:id="@id/iatype_ipv4v6_radio" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/iatype_ipv4v6" />
+        </RadioGroup>
+        <Button android:id="@id/iatype_set_button" android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/iatype_set" />
+    </LinearLayout>
+</LinearLayout>

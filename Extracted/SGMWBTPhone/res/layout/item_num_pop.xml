@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:tag="layout/item_num_pop_0" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/s21" android:textColor="@color/general_99" android:gravity="center" android:id="@id/tv_item_num_pop_num" android:tag="binding_1" android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="@dimen/p26" android:layout_marginTop="@dimen/p20" android:includeFontPadding="false" android:fontFamily="@font/mn_regular" />
+</FrameLayout>

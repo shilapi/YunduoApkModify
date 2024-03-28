@@ -1,0 +1,129 @@
+// From sys_msgs/schema/hmi/hmi_msg_udp_rhp03.h
+
+syntax = "proto3";
+
+package rhp;
+
+option go_package = "rhp";
+
+/**
+ * topic：/sys/interactor/hmi03/v2
+ */
+message HmiMsgRhp03 {
+  uint32 rhp_hmi_zoomstufeaktiv = 1;
+  float  rhp_hmi_zoomstufe = 2;
+  float  rhp_hmi_obj_01_dx = 3; //mot纵向位置（米）
+  float  rhp_hmi_obj_01_dy = 4; //mot横向位置（米）
+  /**
+   * mot颜色
+   * 0x1 : 灰色
+   * 0x2 : 蓝色
+   * 0x3 : 红色
+   */
+  uint32 rhp_hmi_obj_01_regelung = 5;
+  /**
+   * mot在车道线的分配
+   * 0x1 : left
+   * 0x2 : right
+   * 0x3 : ego（本车道）
+   */
+  uint32 rhp_hmi_obj_01_spurzuordnung = 6;
+  /**
+   * mot类型(0代表没有mot显示)
+    0. invalid
+    1. pedestrian (行人)
+    2. non-passenger car（bus/卡车...）
+    3. passenger car (小汽车)
+    4. motorcycle(摩托车)
+    5. bicycle (自行车)
+    6. unknown
+    7. tri-cycle (三轮车)
+    8. obstacle (障碍物)
+   */
+  uint32 rhp_hmi_obj_01_typ = 7;
+  float  rhp_hmi_obj_02_dx = 8;
+  float  rhp_hmi_obj_02_dy = 9;
+  uint32 rhp_hmi_obj_02_regelung = 10;
+  uint32 rhp_hmi_obj_02_spurzuordnung = 11;
+  uint32 rhp_hmi_obj_02_typ = 12;
+  float  rhp_hmi_obj_03_dx = 13;
+  float  rhp_hmi_obj_03_dy = 14;
+  uint32 rhp_hmi_obj_03_regelung = 15;
+  uint32 rhp_hmi_obj_03_spurzuordnung = 16;
+  uint32 rhp_hmi_obj_03_typ = 17;
+  float  rhp_hmi_obj_04_dx = 18;
+  float  rhp_hmi_obj_04_dy = 19;
+  uint32 rhp_hmi_obj_04_regelung = 20;
+  uint32 rhp_hmi_obj_04_spurzuordnung = 21;
+  uint32 rhp_hmi_obj_04_typ = 22;
+  float  rhp_hmi_obj_05_dx = 23;
+  float  rhp_hmi_obj_05_dy = 24;
+  uint32 rhp_hmi_obj_05_regelung = 25;
+  uint32 rhp_hmi_obj_05_spurzuordnung = 26;
+  uint32 rhp_hmi_obj_05_typ = 27;
+  float  rhp_hmi_obj_06_dx = 28;
+  float  rhp_hmi_obj_06_dy = 29;
+  uint32 rhp_hmi_obj_06_regelung = 30;
+  uint32 rhp_hmi_obj_06_spurzuordnung = 31;
+  uint32 rhp_hmi_obj_06_typ = 32;
+  float  rhp_hmi_obj_07_dx = 33;
+  float  rhp_hmi_obj_07_dy = 34;
+  uint32 rhp_hmi_obj_07_regelung = 35;
+  uint32 rhp_hmi_obj_07_spurzuordnung = 36;
+  uint32 rhp_hmi_obj_07_typ = 37;
+  float  rhp_hmi_obj_08_dx = 38;
+  float  rhp_hmi_obj_08_dy = 39;
+  uint32 rhp_hmi_obj_08_regelung = 40;
+  uint32 rhp_hmi_obj_08_spurzuordnung = 41;
+  uint32 rhp_hmi_obj_08_typ = 42;
+  float  rhp_hmi_obj_09_dx = 43;
+  float  rhp_hmi_obj_09_dy = 44;
+  uint32 rhp_hmi_obj_09_regelung = 45;
+  uint32 rhp_hmi_obj_09_spurzuordnung = 46;
+  uint32 rhp_hmi_obj_09_typ = 47;
+  float  rhp_hmi_obj_10_dx = 48;
+  float  rhp_hmi_obj_10_dy = 49;
+  uint32 rhp_hmi_obj_10_regelung = 50;
+  uint32 rhp_hmi_obj_10_spurzuordnung = 51;
+  uint32 rhp_hmi_obj_10_typ = 52;
+  float  rhp_hmi_obj_11_dx = 53;
+  float  rhp_hmi_obj_11_dy = 54;
+  uint32 rhp_hmi_obj_11_regelung = 55;
+  uint32 rhp_hmi_obj_11_spurzuordnung = 56;
+  uint32 rhp_hmi_obj_11_typ = 57;
+  float  rhp_hmi_seg1_gierwinkel = 58; //第1回旋线段的偏航角（弧度）
+  int32  rhp_hmi_seg1_kruemmung = 59; //第1回旋曲线段的曲率 。收到的值x=0-4096，计算方式：(x-2047)*2的-16次方
+  float  rhp_hmi_seg2_beginn = 60; //第2回旋线段的开始（坐标x）
+  int32  rhp_hmi_seg2_kruemmung = 61; //第2回旋曲线段的曲率
+  uint32 rhp_hmi_spurwechsel_li = 62; //0/1 左变道提示(变道过程的目标车道，控制变道框显示)
+  uint32 rhp_hmi_spurwechsel_re = 63; //0/1 右变道提示(变道过程的目标车道，控制变道框显示)
+  float  rhp_hmi_trajektseg1_gierwinkel = 64;
+  int32  rhp_hmi_trajektseg1_kruemmung = 65;
+  float  rhp_hmi_trajektseg1_querabst = 66;
+  uint32 rhp_hmi_trajektseg1_valid = 67;
+  float  rhp_hmi_trajektseg2_beginn = 68;
+  int32  rhp_hmi_trajektseg2_kruemmung = 69;
+  float  rhp_hmi_trajektvorausschau = 70;
+  float  rhp_hmi_obj_01_yaw = 71;
+  uint32 rhp_hmi_obj_01_id = 72;
+  float  rhp_hmi_obj_02_yaw = 73;
+  uint32 rhp_hmi_obj_02_id = 74;
+  float  rhp_hmi_obj_03_yaw = 75;
+  uint32 rhp_hmi_obj_03_id = 76;
+  float  rhp_hmi_obj_04_yaw = 77;
+  uint32 rhp_hmi_obj_04_id = 78;
+  float  rhp_hmi_obj_05_yaw = 79;
+  uint32 rhp_hmi_obj_05_id = 80;
+  float  rhp_hmi_obj_06_yaw = 81;
+  uint32 rhp_hmi_obj_06_id = 82;
+  float  rhp_hmi_obj_07_yaw = 83;
+  uint32 rhp_hmi_obj_07_id = 84;
+  float  rhp_hmi_obj_08_yaw = 85;
+  uint32 rhp_hmi_obj_08_id = 86;
+  float  rhp_hmi_obj_09_yaw = 87;
+  uint32 rhp_hmi_obj_09_id = 88;
+  float  rhp_hmi_obj_10_yaw = 89;
+  uint32 rhp_hmi_obj_10_id = 90;
+  float  rhp_hmi_obj_11_yaw = 91;
+  uint32 rhp_hmi_obj_11_id = 92;
+}

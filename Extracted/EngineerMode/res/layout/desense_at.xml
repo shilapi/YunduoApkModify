@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:textSize="16.0sp" android:id="@id/desense_at_test_items" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/desense_at_test_items" android:layout_weight="1.0" />
+        <Button android:textSize="16.0sp" android:id="@id/desense_at_sv_ids" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/desense_at_gnss_band" android:layout_weight="1.0" />
+    </LinearLayout>
+    <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <TextView android:textSize="16.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@string/desense_at_test_modes" />
+    <TableLayout android:id="@id/desense_at_test_modes" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" />
+    <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:id="@id/desense_at_start" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/desense_at_start" android:layout_weight="1.0" android:onClick="onClick" />
+        <Button android:id="@id/desense_at_stop" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/desense_at_stop" android:layout_weight="1.0" android:onClick="onClick" />
+    </LinearLayout>
+    <include layout="@layout/desense_at_result_format" />
+</LinearLayout>

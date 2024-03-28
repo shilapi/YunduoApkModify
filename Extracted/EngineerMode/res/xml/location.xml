@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference android:persistent="false" android:title="@string/auto_dialer" android:key="auto_dialer">
+        <intent android:targetPackage="com.example" android:action="android.intent.action.MAIN" android:targetClass="com.example.AutoDialerActivity" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/clk_quality_at" android:key="clk_quality_at">
+        <intent android:targetPackage="com.mediatek.engineermode" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.engineermode.clkqualityat.ClkQualityAtActivity" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/cw_test" android:key="cw_test">
+        <intent android:targetPackage="com.mediatek.engineermode" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.engineermode.cwtest.CWTest" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/fused_location_provider" android:key="fused_location_provider">
+        <intent android:targetPackage="com.mediatek.flp.em" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.flp.em.FlpTabActivity" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/desense_at" android:key="desense_at">
+        <intent android:targetPackage="com.mediatek.engineermode" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.engineermode.desenseat.DesenseAtActivity" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/location_basedservice" android:key="location_basedservice">
+        <intent android:targetPackage="com.mediatek.lbs.em2.ui" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.lbs.em2.ui.MyTabActivity" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/YGPS" android:key="ygps">
+        <intent android:targetPackage="com.mediatek.ygps" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.ygps.YgpsActivity" />
+    </Preference>
+</PreferenceScreen>

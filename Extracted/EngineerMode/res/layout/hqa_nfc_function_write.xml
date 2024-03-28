@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/hqa_nfc_title_type" />
+        <RadioGroup android:orientation="vertical" android:id="@id/hqa_write_rg_tag_type" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <RadioButton android:id="@id/hqa_write_rb_type_uri" android:text="@string/hqa_nfc_type_uri" />
+            <RadioButton android:id="@id/hqa_write_rb_type_text" android:text="@string/hqa_nfc_type_text" />
+        </RadioGroup>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/hqa_nfc_type_lang" />
+            <Spinner android:entries="@array/nfc_lang" android:id="@id/hqa_write_sp_lang" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="5.0dip" />
+        <TableLayout android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip">
+            <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:id="@id/hqa_write_tv_company" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/hqa_nfc_company" />
+                <EditText android:id="@id/hqa_write_et_company" android:layout_width="190.0dip" android:layout_height="wrap_content" />
+            </TableRow>
+            <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:id="@id/hqa_write_tv_url" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/hqa_nfc_url_pre" />
+                <EditText android:id="@id/hqa_write_et_url" android:layout_width="190.0dip" android:layout_height="wrap_content" />
+            </TableRow>
+            <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:id="@id/hqa_write_tv_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/hqa_nfc_type_text" />
+                <EditText android:id="@id/hqa_write_et_text" android:layout_width="215.0dip" android:layout_height="wrap_content" />
+            </TableRow>
+        </TableLayout>
+        <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="5.0dip" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="30.0dip">
+            <Button android:id="@id/hqa_write_btn_write" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/hqa_nfc_rw_write" android:layout_weight="1.0" />
+            <Button android:id="@id/hqa_write_btn_cancel" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/hqa_nfc_rw_cancel" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

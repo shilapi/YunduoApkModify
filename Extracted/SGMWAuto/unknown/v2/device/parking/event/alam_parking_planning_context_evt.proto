@@ -1,0 +1,136 @@
+syntax = "proto3";
+
+package v2.device.parking.event;
+option go_package = "v2/device/parking/event";
+
+import "v2/common/auto_common.proto";
+import "v2/device/parking/event/alam_parking_topological_map_evt.proto";
+
+/**
+ * 拓扑图
+ * 结构体: sys_msgs::PsPlanContext (sys_msgs/schema/parking_plan_context.h)
+ * topic : /sys/ps_plan_context/v1
+ * 频率  : 5 Hz
+ */
+message PsPlanContextEvt {
+  PsTopoMapCoord coord_type = 1;                            //拓扑节点所在的坐标系
+  PsLocalRouteInfo local_route_info = 2;                    //local route信息
+  PsGlobalTopoRouteInfo global_route_info = 3;              //全局路径信息
+  PsTopoMapBasicInfo topo_map_basic_info = 4;               //拓扑图基本信息
+  repeated PsSemanticElement pln_online_semantic_eles = 5;  //planning处理过后的在线语义信息，暂时未使用
+  repeated PsTopoNode topo_nodes = 6;                       //planning拓扑节点信息
+}
+
+enum PsOptPathType{
+  Init = 0;      //初始化
+  Cruising = 1;  //巡航
+  Bypass = 2;    //绕行
+  Park = 3;		//停车
+  Untangle = 4;  //脱困
+  Backup = 5;	//倒车
+}
+
+enum PsPathExplain{
+  init = 0;	//None
+  TurnLeft = 1;	//左转
+  TurnRight = 2; //右转
+  Straight = 3; //直线
+  TurnBack = 4;  //返回
+  StraightReverse = 5; //直线反向
+  LeftReverse = 6;  //左倒车
+  RightReverse = 7; //右倒车
+}
+
+message PsOptPathInfo {
+  PsOptPathType type = 1;	//轨迹线类型
+  PsPathExplain explain = 2;	//轨迹线用途
+  repeated PsGlbRouteSeg route_segs = 3;	//起点&终点Index信息;
+}
+
+message PsOptLocalPaths{
+  repeated .v2.common.OdomVector pt = 1;		//所有轨迹点信息
+  repeated PsOptPathInfo paths_info = 2;  //各种类型的轨迹段
+}
+
+
+message PsLocalTopoRoute {
+  bool is_valid = 1;                                    //local route有效标志位
+  int32 local_first_global_route_idx = 2;                //local route开始点所对应的全局路径vector index
+  int32 local_last_global_route_idx = 3;                //local route结束点所对应的全局路径vector index
+  int32 cur_vins_corresponding_global_route_idx = 4;    //当前本车位置所关联的全局路径vector index
+}
+
+message PsLocalRouteInfo {
+  bool is_valid = 1;
+  uint64 time_stamp_usec = 2;                                       //时间戳，单位为usec
+  bool is_reach_to_goal = 3;                                        //是否到达终点，目前未赋值
+  PsLocalTopoRoute local_topo_route = 4;                            //局部路径信息
+  repeated PsNextResponseSemanticInfo next_response_semantics = 5;  //本车即将遇见的语义区域实时信息
+  PsOptLocalPaths opt_paths = 6;										//探索轨迹线信息
+}
+
+enum PsTopoMapCoord{
+  None = 0;         //结点坐标系为默认值(未被赋值)
+  Vins = 1;         //结点坐标系为当前vins系，如无地图探索任务
+  OfflineMap = 2;   //结点坐标为离线地图坐标系，如记忆泊车任务
+}
+
+enum PsEgoToRegionState{
+  kEgoIgnore = 0;          //车辆前方无特定语义区域
+  kEgoCloseToRegion = 1;   //车辆正在靠近特定语义区域
+  kEgoInRegion = 2;        //车辆正行驶在特定语义区域中
+};
+
+message PsTopoMapBasicInfo {
+  bool is_valid = 1;          //拓扑图有效标志位
+  bool is_update = 2;         //拓扑图是否更新的标志位
+  bool is_node_in_seq = 3;    //拓扑图的结点是否按顺序排列，记忆泊车非众包地图模式结点即按顺序排序
+  uint32 map_id = 4;          //拓扑地图id， 记忆泊车中与alam地图id统一
+}
+
+message PsGlbRouteSemanticRegion {
+  PsSemanticElementType semantic_type = 1;    //语义类型
+  int32 region_start_glb_route_idx = 2;       //语义区域开始的全局路径vector的idx
+  int32 region_end_glb_route_idx = 3;         //语义区域结束的全局路径vector的idx
+}
+
+message PsGlbRouteSeg {
+  int32 seg_start_global_route_idx = 1;       //segment开始的全局路径vector的idx
+  int32 seg_end_global_route_idx = 2;         //segment结束的全局路径vector的idx
+}
+
+message PsGlobalTopoRouteInfo {
+  bool is_valid = 1;                                      //全局拓扑路径有效标志位
+  bool is_updated = 2;                                    //全局拓扑路径是否更新
+  uint32 related_map_id = 3;                              //全局拓扑路径对应的地图id
+  repeated int32 global_topo_route = 4;                   //全局拓扑路径：有序的拓扑结点id的序列
+  repeated PsGlbRouteSeg segs = 5;                        //全局拓扑路径segment
+  repeated PsGlbRouteSemanticRegion semantic_regions = 6; //全局路径上所有的语义区域信息
+}
+
+message PsRealTimeRegionInfo {
+  bool is_on_mode = 1;                      //实时语义区域有效标志位
+  PsEgoToRegionState state = 2;             //本车与语义区域的相对位置关系
+  double s_to_forward_region_bound = 3;     //本车到本车前方语义区域边界的距离：如果本车在靠近该区域，s为本车到区域入口的距离；如果本车在区域中，s为本车到区域出口的距离；
+  double region_s = 4;                      //语义区域长度
+}
+
+message PsNextResponseSemanticInfo {
+  PsSemanticElementType semantic_type = 1;          //语义类型
+  PsRealTimeRegionInfo region_info = 2;             //本车相对语义区域的实时信息
+  bool has_element = 3;                             //是否存在具体语义元素， 如收费杆区域对应一个收费杆，则该标志位为true
+  PsTopoNodeSemanticInfo related_semantic_ele = 4;  //语义元素的检索信息
+}
+
+message PsSemanticElement {
+  PsSemanticElementType semantic_type = 1;          //语义类型
+  int32 id = 2;                                     //语义信息本身的id
+  int32 zone_id = 3;                                //语义信息所在的区域id
+  PsPlnKeyPose key_pose = 4;                        //关键点位姿
+  repeated .v2.common.OdomVector semantic_pts = 5;  //描述语义信息的点
+}
+
+message PsPlnKeyPose {
+  .v2.common.OdomVector pt = 1;          //3d点
+  .v2.common.Vector2d yaw_dir_vec = 2;   //yaw角的方向向量
+}

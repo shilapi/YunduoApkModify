@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+
+/**
+ * 本地化地图推荐信息
+ * 结构体 : CDMapRecommendInfo
+ * topic : /sys/dmm/cd_map_recom_info/v2
+ * 频率 : 每次推荐时固定发送3次
+ */
+message CDMapRecommendInfoEvt {
+    uint32 mod_recom_flag = 1;                      //MOD自推荐有效标志位
+    EnumRecomMapType mod_recom_map_type = 2;        //MOD自推荐地图类型
+    CDMapRecommendMapInfo map_info = 3;             //MOD自推荐地图id
+}
+
+message CDMapRecommendMapInfo {
+    uint64 map_id = 1;
+    uint64 map_size = 2;
+    uint64 map_create_time = 3;
+    uint32 distance = 4;
+    float start_longitude = 5;
+    float start_latitude = 6;
+    float end_longitude = 7;
+    float end_latitude = 8;
+    string map_name = 9;
+    string map_version = 10;
+    string map_owner_name = 11;
+    string map_tag = 12;
+    string device_key = 13;
+    string device_name = 14;
+    string map_description = 15;
+    bytes pose_file = 16;
+    string start_point = 17;    //起点名称
+    string end_point = 18;      //终点名称
+    uint32 map_short_id = 19;   //地图短ID
+}
+
+enum EnumRecomMapType {
+    TYPE_HDMap = 0;    //高精地图
+    TYPE_CSM = 1;      //记忆行车
+    TYPE_ThirdMap = 2; //三方地图
+}

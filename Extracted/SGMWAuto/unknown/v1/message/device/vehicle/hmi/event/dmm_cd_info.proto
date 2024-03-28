@@ -1,0 +1,128 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+
+/**
+ * DMM CD信息（NOD、MOD）
+ * 结构体 : DmmDrivingHMIInfo
+ * topic : /sys/dmm/noa_hmi_info/v1
+ */
+message DmmCDInfoEvt {
+  NODStatusInfo nod_status_info = 1;
+  MODStatusInfo mod_status_info = 2;
+  CDMapWarning cd_map_warning = 3;
+  EnumTemperateSwitchDisplay temperate_switch_display = 4;  //NOD和MOD临时控件显示状态
+}
+
+message NODStatusInfo {
+  EnumNodStatus nod_status = 1;                   //NOD状态
+  EnumCDStatusExplain nod_no_active_explain = 2;  //无法激活NOD原因
+  EnumCDStatusExplain nod_deactive_explain = 3;   //NOD退出原因
+  EnumCDPrompt nod_prompt = 4;                    //NOD相关提示
+  repeated uint32 reserved = 5;                   //预留
+}
+
+message MODStatusInfo {
+  EnumModMappingStatus mod_mapping_status = 1;            //驾驶员激发的MOD建图状态
+  EnumModStatus mod_status = 2;                           //MOD状态
+  EnumCDStatusExplain mod_mapping_no_active_explain = 3;  //MOD建图无法激活原因
+  EnumCDStatusExplain mod_mapping_deactive_explain = 4;   //MOD建图退出原因
+  EnumCDStatusExplain mod_no_active_explain = 5;          //MOD无法原因
+  EnumCDStatusExplain mod_deactive_explain = 6;           //MOD退出原因
+  EnumCDPrompt mod_prompt = 7;                            //MOD相关提示
+  repeated uint32 reserved = 8;
+  EnumModMappingStatus auto_mod_mapping_status = 9;        //车辆自动激发的MOD建图状态
+  MODRecomMapInfo mod_recom_map_info = 10;                 //MOD自推荐地图信息
+}
+
+message CDMapWarning {
+  MapWarning mis_ramp_warning = 1;    //错过匝道提醒
+  MapWarning merge_warning = 2;       //合流点提醒
+  MapWarning split_warning = 3;       //分流点提醒
+  MapWarning near_destination = 4;    //靠近终点提醒
+  MapWarning none_odd_warning = 5;    //靠近非ODD提醒
+}
+
+enum EnumCDPrompt {
+  CD_PROMPT_DEFAULT = 0;
+  CD_PROMPT_GENERAL_ALERT_LEVEL1 = 1;   //通用报警1
+  CD_PROMPT_GENERAL_ALERT_LEVEL2 = 2;   //通用报警2
+  CD_PROMPT_TAKEOVER_LEVEL1 = 3;        //接管报警1
+  CD_PROMPT_TAKEOVER_LEVEL2 = 4;        //接管报警2
+  CD_PROMPT_RESERVE_LEVEL1 = 5;         //预留报警1
+  CD_PROMPT_RESERVE_LEVEL2 = 6;         //预留报警2
+  CD_PROMPT_TSK_LEVEL1 = 101;           //TSK=6,7报警
+  CD_PROMPT_TSK_LEVEL2 = 102;           //TSK=0,1报警
+  CD_PROMPT_STEER_ANG_RATE_LEVEL1 = 111;//角速度过大报警1
+  CD_PROMPT_LEFT_LAMP_LEVEL1 = 121;     //左转向灯报警1
+  CD_PROMPT_RIGHT_LAMP_LEVEL1 = 122;    //右转向灯报警1
+}
+
+enum EnumTemperateSwitchDisplay {
+  NOD_TEMP_NOT_DISPLAY = 0;
+  NOD_TEMP_DISPLAY = 1;
+  MOD_TEMP_NOT_DISPLAY = 2;
+  MOD_TEMP_DISPLAY = 3;
+}
+
+enum EnumNodStatus {
+  NOD_NONE = 0;
+  NOD_STANDBY = 1;
+  NOD_READY = 2;
+  NOD_ACTIVE = 3;
+  NOD_FAILED = 4;
+  NOD_DISABLE = 5;
+}
+
+enum EnumModMappingStatus {
+  MOD_MAPPING_NONE = 0;
+  MOD_MAPPING_STANDBY = 1;
+  MOD_MAPPING_TRAINING = 2;
+  MOD_MAPPING_MAPPING = 3;
+  MOD_MAPPING_SUCCESS = 4;
+  MOD_MAPPING_FAILED = 5;
+  MOD_MAPPING_DISABLE = 6;
+}
+
+enum EnumModStatus {
+    MOD_NONE = 0;
+    MOD_STANDBY = 1;
+    MOD_READY = 2;
+    MOD_ACTIVE = 3;
+    MOD_FAILED = 4;
+    MOD_DISABLE = 5;
+}
+
+enum EnumCDStatusExplain {
+  CD_STATUS_DEFAULT = 0;                      //默认值
+  CD_STATUS_LOCATION_ABNORMAL = 1;            //定位异常
+  CD_STATUS_NO_NAVIGATION = 2;                //无导航
+  CD_STATUS_NO_HDMAP = 3;                     //无高精地图
+  CD_STATUS_NOT_NAVI_PATH = 4;                //车辆不在导航路径
+  CD_STATUS_NEAR_DESTINATION = 5;             //靠近终点
+  CD_STATUS_MIS_RAMP = 6;                     //车辆在错过匝道场景
+  CD_STATUS_NEAR_NONE_ODD_RAMP = 7;           //车辆在非ODD场景--道路结构或道路构成不满足
+  CD_STATUS_NEAR_NONE_ODD_TOLL_GATE = 8;      //车辆在非ODD场景--收费站或检查站
+  CD_STATUS_NEAR_NONE_ODD_LONG_TUNNEL = 9;    //车辆在非ODD场景--DMM需要区分长隧道短隧道场景
+  CD_STATUS_NEAR_NONE_ODD_TRAFFIC_LIGHT = 10; //车辆在非ODD场景--交通灯区域
+  CD_STATUS_NEAR_NONE_ODD_SIDE_WALK = 11;     //车辆在非ODD场景--人行道场景
+  CD_STATUS_MIS_INTERSECTION = 12;            //车辆错过路口(包含左转、右转、掉头)
+}
+
+message MapWarning {
+  uint32 warning_flag = 1;    //报警标志位，0无报警，1有报警
+  float distance = 2;         //距离地图元素距离
+}
+
+message MODRecomMapInfo {
+  uint32 mod_recom_flag = 1;                //MOD自推荐有效标志位
+  EnumMODRecomMapType mod_recom_map_type = 2;   //MOD自推荐地图类型
+  int64 map_id = 3;                         //MOD自推荐地图id
+}
+
+enum EnumMODRecomMapType {
+  HDMap = 0;    //高精地图
+  CSM = 1;      //记忆行车
+  ThirdMap = 2; //三方地图
+}

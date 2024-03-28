@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/content_iot_apn" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:layout_gravity="center_horizontal" android:id="@id/detail_title_mdm" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/strMCCMNC" />
+        <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <Spinner android:id="@id/spinnernp1" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="30.0dip" android:drawSelectorOnTop="true" android:prompt="@string/strInputMode" android:layout_weight="3.0" />
+            <com.mediatek.engineermode.iotconfig.IotConfigEditText android:textSize="20.0sp" android:id="@id/input_mccmnc" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="20.0dip" android:singleLine="true" android:layout_weight="2.0" android:contentDescription="@string/strMCCMNC" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginEnd="10.0dip">
+            <Button android:textSize="20.0sp" android:id="@id/btn_confirm" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/strConfirm" android:layout_weight="1.0" />
+            <Button android:textSize="20.0sp" android:id="@id/btn_cancel" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/strCancel" android:layout_weight="1.0" />
+        </LinearLayout>
+        <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <FrameLayout android:id="@id/detail_frame_apn" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </LinearLayout>
+</LinearLayout>

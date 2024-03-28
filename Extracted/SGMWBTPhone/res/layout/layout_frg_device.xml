@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/iv_not_connect" android:layout_width="@dimen/p168" android:layout_height="@dimen/p168" android:layout_marginTop="@dimen/p162" android:src="@mipmap/img_frg_device_not_connect" android:scaleType="fitXY" />
+    <TextView android:textSize="@dimen/s21" android:textColor="@color/frg_device_state" android:id="@id/tv_not_connect" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p8" android:text="@string/bt_not_connect_device" android:includeFontPadding="false" android:fontFamily="@font/cn_regular" />
+    <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/s16" android:textColor="@color/frg_device_no_permission" android:id="@id/tv_not_connect_hint" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p8" android:text="@string/bt_not_connect_device_hint" android:includeFontPadding="false" android:fontFamily="@font/cn_regular" />
+        <TextView android:textSize="@dimen/s19" android:textColor="@color/frg_device_2_setting" android:gravity="center" android:id="@id/iv_go_to_setting" android:background="@mipmap/bg_frag_device_2_setting" android:layout_width="@dimen/p208" android:layout_height="@dimen/p56" android:layout_marginTop="@dimen/p36" android:text="@string/bt_to_connect" android:includeFontPadding="false" android:fontFamily="@font/cn_regular" />
+    </FrameLayout>
+</LinearLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TableLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:stretchColumns="1">
+        <TableRow>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sensor_ps_threshold_high" />
+            <EditText android:id="@id/edit_sensor_ps_threshold_high" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLength="5" android:inputType="number" />
+        </TableRow>
+        <TableRow android:layout_marginTop="10.0dip">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sensor_ps_threshold_low" />
+            <EditText android:id="@id/edit_sensor_ps_threshold_low" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLength="5" android:inputType="number" />
+        </TableRow>
+        <Button android:id="@id/button_sensor_ps_change_threshold" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:text="@string/sensor_ps_change_threshold_set" />
+    </TableLayout>
+</ScrollView>

@@ -1,0 +1,152 @@
+syntax = "proto3";
+
+package v2.device.parking.event;
+option go_package = "v2/device/parking/event";
+
+import "v2/common/auto_common.proto";
+
+/**
+ * planning泊车信息反馈
+ * 结构体: sys_msgs::ParkingPlanFeedback
+ * topic : /sys/parking_plan_feedback/v2
+ * 频率  : 5 Hz
+ */
+message PlanningParkingFeedbackEvt {
+  PlannedManeuver maneuver = 1;
+  EnvironmentMot env_mots = 2;
+  EnvironmentStaticObs env_static_obs = 3;
+  .v2.common.ParkingSlot attached_slot = 4; //关联车位框，ego坐标系
+  Progress progress = 5; //规划任务进度
+  Route route = 6;
+  repeated int32 reserve = 7;
+}
+
+message PlannedManeuver {
+  EnumTaskType task_type = 1;
+  EnumTaskStatus task_status = 2;
+  EnumManeuverType maneuver_type = 3; //
+  EnumSuggestionType suggestion = 4; //建议
+  float desired_speed = 5;  //期望速度
+}
+
+message EnvironmentMot {
+  MotOfInterest most_dangerous = 1; //危险mot
+  MotOfInterest special_treated = 2; //特殊对待mot
+}
+
+message EnvironmentStaticObs {
+  StaticObsOfInterest closest_obs = 1; //最近的静态障碍物
+  StaticObsOfInterest blocking_obs = 2;//阻碍障碍物
+}
+
+message StaticObsOfInterest {
+  EnumStaticObsType static_obs_type = 1;
+  float x = 2;
+  float y = 3;
+}
+
+message Progress {
+  uint32 current_seg_idx = 1; //当前在那一段路径
+  float s_on_current_seg = 2; //这段路径多少米位置处 //m
+  float local_progress = 3; //这段路径已走比例 //0-1
+  float overall_progress = 4; //整体进度 0-1
+  uint32 steps_elapsed = 5; //换了多少次档
+  uint32 steps_remaining = 6; //还剩多少次换挡
+  float time_total_elapsed = 7; //任务开始到现在经过了多长时间
+  float time_parking_elapsed = 8; //泊车已经过多长时间
+  float time_suspending = 9; //暂停时间
+  float time_remaining = 10; //剩余时间
+}
+
+message Route {
+  uint32 route_seg_num = 1; //路径一共多少段
+  repeated RouteSeg route_segs = 2;
+  repeated .v2.common.OdomVector waypoints = 3; //所有路径点
+}
+
+message RouteSeg {
+  uint32 start_idx = 1; //每段开始index
+  uint32 end_idx = 2; //每段结束index
+  uint32 way_pt_num = 3; //每段的点的数量
+  float length = 4; //每段长度 m
+}
+
+message MotOfInterest {
+  uint32 id = 1;
+  .v2.common.EnumMotType mot_type = 2;
+  float x = 3;
+  float y = 4;
+}
+
+enum EnumStaticObsType {
+  kDefault = 0;
+  kTrafficCone = 1; //雪糕筒
+  kNoParkingSign = 2; //禁停标志
+  kParkingLock = 3; //车位锁
+  kFence = 4; //栅栏
+  kNone = 99;
+}
+
+enum EnumTaskType {
+  kOnSilence = 0;
+  kOnIntelligentPark = 1;
+  kOnIntelligentSummon = 2;
+  kOnGpsSummon = 3;
+  kOnParkOut = 4;
+  kOnParkAssist = 5;
+  kOnRemoteCtrl = 6;
+}
+
+enum EnumTaskStatus {
+  kOngoing = 0;
+  kPaused = 1;
+  kStucked = 3;
+  kFinish = 4;
+  kFailed = 5;
+}
+
+enum EnumManeuverType {
+  kCruising = 0;  //巡航
+  kByPassing = 1; //绕行
+  kPreParking = 2; //准备泊车
+  kParkIn = 3; //正在泊车
+  kParkOut = 4; //正在泊出
+  kUntangle = 5; //无地图探索脱困
+}
+
+enum EnumSuggestionType {
+  TYPE_NONE = 0; //占位
+  // 0 - 9 normal
+  kLeftTurn = 1; //即将左转
+  kRightTurn = 2; //即将右转
+  kGearChangeRequest = 3; //需要切换档位
+  kNearParkingGoal = 4; //靠近停车位
+  // 10 - 19 Caution for environmental reason
+  kCautionForStaticObs = 10; //小心静态障碍物
+  kCautionForPedestrain = 11; //小心行人
+  kCautionForCars = 12; //小心来往车辆
+  kCautionForIntersections = 13; //接近路口
+  // 20 - 29 Fail due to some reason
+  kFailDueToStucked = 20; //失败原因：卡住
+  kFailDueToNoParkingSlot = 21; //失败原因：没有车位框
+  kFailDueToLocalization = 22; //失败原因：定位失败
+  kFailDueToParkPlanFail = 23; //失败原因：规划失败
+  kFailDueToPlanError = 24; //失败原因：规划崩溃
+  kSummonWithPreviousPathAvailable = 38; //反向召唤可用
+   // 40 - 49 Untangle
+  kNormalUntangle = 41;  //普通脱困
+  kTurnBackUntangle = 42; //掉头脱困
+  kStraightReverseUntangle = 43; //直线倒车脱困
+  kLeftReverseUntangle = 44; //倒车向左方脱困
+  kRightReverseUntangle = 45; //倒车向右方脱困
+  // 50 - 59 Region related suggestion
+  kApproachingBoundary = 51; //探索到达最大范围
+  kApproachingUpstairs = 52;
+  kApproachingDownstairs = 53;
+  kGoingUpstairs = 54;
+  kGoingDownstairs = 55;
+  // 60 - 69 Explore without map
+  kFindAvailableParkingSlot = 61; //找到车位
+  // no reason
+  kNoSuggestion = 99;
+}

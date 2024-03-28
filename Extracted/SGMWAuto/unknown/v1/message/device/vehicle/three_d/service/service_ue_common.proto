@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.three_d.service;
+option go_package = "v1/message/device/vehicle/three_d/service";
+
+message Common3DCmd {
+    string ue_version = 1;     //3D 版本号
+}

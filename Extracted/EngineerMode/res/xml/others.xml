@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference android:persistent="false" android:title="@string/carrier_express_title" android:key="carrier_express">
+        <intent android:targetPackage="com.mediatek.engineermode" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.engineermode.cxp.CarrierExpressActivity" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/cip_title" android:key="cip">
+        <intent android:targetPackage="com.mediatek.engineermode" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.engineermode.cip.CipPropContentActivity" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/mdm_config" android:key="mdm_config">
+        <intent android:targetPackage="com.mediatek.mdmconfig" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.mdmconfig.MdmConfig" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/mdml_sample" android:key="mdml_sample">
+        <intent android:targetPackage="com.mediatek.mdmlsample" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.mdmlsample.MainActivity" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/moms_title" android:key="moms">
+        <intent android:targetPackage="com.mediatek.engineermode" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.engineermode.moms.MoMs" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/rsc_title" android:key="rsc">
+        <intent android:targetPackage="com.mediatek.engineermode" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.engineermode.rsc.RuntimeSwitchConfig" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/swla" android:key="swla">
+        <intent android:targetPackage="com.mediatek.engineermode" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.engineermode.swla.SwlaActivity" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/system_update" android:key="system_update">
+        <intent android:targetPackage="com.mediatek.systemupdate" android:action="com.mediatek.systemupdate.UPDATE_TYPE_OPTION" android:targetClass="com.mediatek.systemupdate.UpdateOption" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/usbacm" android:key="usbacm">
+        <intent android:targetPackage="com.mediatek.engineermode" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.engineermode.usbacm.UsbAcm" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/usb_checker_enabler" android:key="usb_checker_enabler">
+        <intent android:targetPackage="com.mediatek.usbchecker" android:targetClass="com.mediatek.usbchecker.EnablerActivity" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/voice_settings_title" android:key="voice_settings">
+        <intent android:targetPackage="com.mediatek.engineermode" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.engineermode.voicesettings.VoiceList" />
+    </Preference>
+</PreferenceScreen>

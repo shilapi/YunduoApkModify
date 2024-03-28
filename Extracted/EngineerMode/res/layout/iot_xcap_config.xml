@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="10.0dip">
+        <com.mediatek.engineermode.iotconfig.IotConfigListView android:id="@id/xcap_list" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="10.0dip">
+            <Button android:id="@id/btnSave" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/iot_save" android:layout_weight="1.0" />
+            <Button android:id="@id/btnCancel" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/iot_cancel" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+import "v1/message/device/vehicle/common.proto";
+
+/**
+ * DMM Driving静态语义信息
+ * 结构体 : dji_msgs::dmm::DmmDrivingSemantic
+ * topic : /sys/dmm/driving_semantic_display/v1
+ */
+
+message DmmDrivingStaticSemanticEvt {
+  uint32 num_traffic_sign = 1;              //交通标志的数量
+  repeated DmmTrafficSign traffic_sign = 2; //交通标志具体描述
+  OdomPose3d pose = 3;  
+}
+
+message  DmmTrafficSign {
+  uint32 traffic_sign_id = 1;           //交通标志ID
+  EnumSignType sign_type = 2;           //交通标志类型
+  EnumPatternType pattern_type = 3;     //交通灯图案类型
+  EnumShapeType shape_type = 4;         //交通标志形状类型
+  float sign_yaw = 5;                   //交通标志相对于ego车的yaw角，单位：弧度
+  repeated OdomVector sign_points = 6;  //交通标志相对于ego车的四个角点位置，单位：米
+}
+
+enum EnumSignType {
+  SIGN_TYPE_NONE = 0;
+  RED_TRAFFIC_LIGHT = 1;    //红灯
+  YELLOW_TRAFFIC_LIGHT = 2; //黄灯
+  GREEN_TRAFFIC_LIGHT = 3;  //绿灯
+}
+
+enum  EnumPatternType {
+  ARROW_UP = 0;         //箭头向上灯
+  ARROW_DOWN = 1;       //箭头向下灯
+  ARROW_LEFT = 2;       //箭头向左灯
+  ARROW_RIGHT = 3;      //箭头向右灯
+  ARROW_TURN_AROUND = 4;//箭头掉头灯
+  CIRCLE = 5;           //圆饼灯
+  NUMBER_TYPE = 6;      //数字灯
+  NON_MOTOR = 7;        //非机动车灯
+  OTHERS = 8;           //其他
+}
+
+//交通标志形状类型
+enum EnumShapeType {
+  HORIZONTAL = 0;       //横向
+  VERTICAL = 1;         //纵向
+  SQUARE = 2;           //方形
+}

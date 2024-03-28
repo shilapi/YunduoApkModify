@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:id="@id/LinearLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="10.0dip">
+            <TextView android:textStyle="bold" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/fd_text_screen_on" />
+            <View android:id="@id/SpacerTop" android:background="#ff0000ff" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/fd_screen_on_r8fd_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip">
+            <TextView android:id="@id/fd_text_screen_on_r8fd" android:layout_width="100.0dip" android:layout_height="wrap_content" android:text="@string/fd_text_r8" />
+            <EditText android:id="@id/fd_edit_screen_on_r8fd" android:layout_width="120.0dip" android:layout_height="wrap_content" android:digits="\ 0123456789" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="1.0dip" android:text="@string/fd_text_unit" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/fd_screen_on_legacy_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip">
+            <TextView android:id="@id/fd_text_screen_on_legacy" android:layout_width="100.0dip" android:layout_height="wrap_content" android:text="@string/fd_text_legacy" />
+            <EditText android:id="@id/fd_edit_screen_on_legacy" android:layout_width="120.0dip" android:layout_height="wrap_content" android:digits="\ 0123456789" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="1.0dip" android:text="@string/fd_text_unit" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/fd_ap_sol_on_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip">
+            <EditText android:id="@id/fd_edit_screen_on_ap" android:layout_width="120.0dip" android:layout_height="wrap_content" android:digits="\ 0123456789" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="1.0dip" android:text="@string/fd_text_unit_ap" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/LinearLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="10.0dip">
+            <TextView android:textStyle="bold" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/fd_text_screen_off" />
+            <View android:background="#ff0000ff" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/fd_screen_off_r8fd_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip">
+            <TextView android:id="@id/fd_text_screen_off_r8fd" android:layout_width="100.0dip" android:layout_height="wrap_content" android:text="@string/fd_text_r8" />
+            <EditText android:id="@id/fd_edit_screen_off_r8fd" android:layout_width="120.0dip" android:layout_height="wrap_content" android:digits="0123456789." />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="1.0dip" android:text="@string/fd_text_unit" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/fd_screen_off_legacy_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip">
+            <TextView android:id="@id/fd_text_screen_off_legacy" android:layout_width="100.0dip" android:layout_height="wrap_content" android:text="@string/fd_text_legacy" />
+            <EditText android:id="@id/fd_edit_screen_off_legacy" android:layout_width="120.0dip" android:layout_height="wrap_content" android:digits="0123456789." />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="1.0dip" android:text="@string/fd_text_unit" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/fd_ap_sol_off_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip">
+            <EditText android:id="@id/fd_edit_screen_off_ap" android:layout_width="120.0dip" android:layout_height="wrap_content" android:digits="0123456789." />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="1.0dip" android:text="@string/fd_text_unit_ap" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/LinearLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip">
+            <Button android:id="@id/fd_btn_set" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/fd_text_set" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/LinearLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip">
+            <TextView android:textStyle="bold" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/fd_text_config" />
+            <View android:id="@id/SpacerTop" android:background="#ff0000ff" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/LinearLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip">
+            <Button android:id="@id/fd_btn_send" android:layout_width="240.0dip" android:layout_height="wrap_content" android:text="@string/fd_text_send" />
+            <Button android:id="@id/fd_btn_config" android:layout_width="240.0dip" android:layout_height="wrap_content" android:text="@string/fd_text_config_fd" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

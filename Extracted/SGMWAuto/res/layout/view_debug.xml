@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:background="@color/trans_30_black" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Button android:id="@id/btn_debug_exit" android:layout_width="150.0px" android:layout_height="60.0px" android:text="close" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <TextView android:gravity="left" android:id="@id/tv_debug_sdk_info" android:layout_marginTop="20.0dip" android:text="版本:" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/btn_debug_exit" style="@style/TextMiddle" />
+    <TextView android:gravity="left" android:id="@id/tv_debug_radar" android:layout_marginTop="10.0dip" android:text="雷达:" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/tv_debug_sdk_info" style="@style/TextMiddle" />
+    <TextView android:id="@id/tv_debug_radar_distance" android:layout_marginTop="10.0dip" android:text="最近距离:" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/tv_debug_radar" style="@style/TextMiddle" />
+    <TextView android:id="@id/tv_debug_wheel_angle" android:layout_marginTop="10.0dip" android:text="方向盘转角:" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/tv_debug_radar_distance" style="@style/TextMiddle" />
+    <TextView android:id="@id/tv_debug_camera_status" android:layout_marginTop="10.0dip" android:text="摄像头状态:" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/tv_debug_wheel_angle" style="@style/TextMiddle" />
+    <TextView android:id="@id/tv_debug_gear" android:layout_marginTop="10.0dip" android:text="档位:" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/tv_debug_camera_status" style="@style/TextMiddle" />
+    <TextView android:id="@id/tv_debug_lvds_output" android:layout_marginTop="10.0dip" android:text="LVDS输出:" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/tv_debug_gear" style="@style/TextMiddle" />
+</androidx.constraintlayout.widget.ConstraintLayout>

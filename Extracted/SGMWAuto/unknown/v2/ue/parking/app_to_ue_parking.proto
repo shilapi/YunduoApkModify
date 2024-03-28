@@ -1,0 +1,91 @@
+syntax = "proto3";
+
+package v2.ue.parking;
+option go_package = "v2/ue/parking";
+
+import "v2/common/auto_common.proto";
+
+/**
+ * APA+泊车前操作(选择泊车模式和楼层)
+ */
+message PreParkingAppEvt {
+  .v2.common.EnumParkingMode mode = 1;
+    repeated int32 floors = 2; //选中楼层，数组只有一个0代表选中所有楼层（B1->-1, B2->-2, L1-1, ...）
+}
+
+/**
+ * APA泊出前操作（根据泊出方向发送车头方位）
+ */
+message PreParkingOutAppEvt {
+  EnumParkingOutDirection direction = 1; //设置泊出车头方位
+}
+
+/**
+ * 泊车
+ */
+message ParkingAppEvt {
+  EnumAppParkingState state = 1;
+}
+
+/**
+ * 建图
+ */
+message TrainingAppEvt {
+  EnumAppTrainingState state = 1;
+}
+
+/**
+ * 召唤
+ */
+message SummonAppEvt {
+  EnumAppParkingState state = 1;
+}
+
+/**
+ * 无地图探索
+ */
+message ExploreAppEvt {
+  EnumAppExploreState state = 1;
+}
+
+/**
+ * 车位状态
+ */
+message SlotStateEvt {
+  EnumSlotState state = 1;
+}
+
+enum EnumAppTrainingState {
+  APP_TRAINING_START = 0;       //建图开始
+  APP_TRAINING_SAVE_SLOT = 1;   //保存车位
+  APP_TRAINING_START_BUILD = 2; //结束建图，开始构建
+  APP_TRAINING_FINISH = 3;      //完成建图整个流程
+  APP_TRAINING_CANCEL = 4;      //取消建图
+}
+
+enum EnumAppParkingState {
+  APP_PARKING_SELECT_SLOT = 0; //选择车位
+  APP_PARKING_START = 1;       //泊车开始
+  APP_PARKING_PAUSE = 2;       //泊车暂停
+  APP_PARKING_COMPLETE = 3;    //泊车完成
+  APP_PARKING_CANCEL = 4;      //泊车取消
+  APP_PARKING_CRUISING = 5;    //泊车巡航
+}
+
+enum EnumAppExploreState {
+  APP_EXPLORE_ADD_SUMMON_POINT = 0;     //添加召唤点
+  APP_EXPLORE_REPLACE_SUMMON_POINT = 1; //替换召唤点
+}
+
+enum EnumParkingOutDirection {
+  PARKING_OUT_FORWARD = 0;
+  PARKING_OUT_BACK = 1;
+  PARKING_OUT_LEFT = 2;
+  PARKING_OUT_RIGHT = 3;
+}
+
+enum EnumSlotState {
+  APP_PARKING_SLOT_UNAVAILABLE = 0;   //无可停车位
+  APP_PARKING_MOBILE_UNAVAILABLE = 1; //流动车位不可用
+  APP_PARKING_MOBILE_AVAILABLE = 2;   //流动车位可用
+}

@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package v1.message.product.thing;
+option go_package = "v1/message/product/thing";
+
+import "v1/message/common/common.proto";
+
+// ThingEventPostMsg 单个事件上报请求消息[device->cloud]
+// Topic:/sys/$productKey/$deviceKey/thing/event/($functionBlock:)$identifier/post
+message ThingEventPostMsg {
+    common.MessageHeader header = 1;
+    ThingEvent event = 2; // 事件
+}
+
+
+// PostThingEventReqMsg 批量事件上报请求消息[device->cloud]
+// Topic:/sys/$productKey/$deviceKey/thing/event/post
+message PostThingEventReqMsg {
+    common.MessageHeader header = 1;
+    repeated ThingEvent events = 2;
+}
+
+message ThingEvent {
+    string identifier = 2; // 事件唯一标识
+    int64 time = 3; // 事件发生时间戳(毫秒)
+    bytes inputParams = 4; // 输入参数消息体
+}

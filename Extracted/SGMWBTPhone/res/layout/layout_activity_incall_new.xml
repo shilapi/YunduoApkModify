@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout android:id="@id/motion_base" android:tag="layout/layout_activity_incall_new_0" android:background="@mipmap/theme" android:layout_width="fill_parent" android:layout_height="fill_parent" bind:layoutDescription="@xml/layout_activity_incall_new_scene"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <include android:id="@id/hold_call_information" android:visibility="invisible" android:layout_width="@dimen/p412" android:layout_height="@dimen/p464" android:layout_marginTop="@dimen/p122" android:layout_marginStart="@dimen/p162" bind:layout_constraintStart_toStartOf="parent" bind:layout_constraintTop_toTopOf="parent" layout="@layout/layout_third_infomation" />
+    <com.sgmw.lingos.btcall.view.widget.FrameImageView android:id="@id/call_anim_ripple" android:visibility="visible" android:layout_width="@dimen/p444" android:layout_height="@dimen/p444" android:scaleType="centerInside" android:layout_marginStart="@dimen/p160" bind:layout_constraintStart_toStartOf="parent" bind:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout android:orientation="vertical" android:id="@id/incall_ll_left" android:clipChildren="false" android:layout_width="@dimen/p480" android:layout_height="@dimen/p434" android:layout_marginTop="@dimen/p156" android:layout_marginStart="@dimen/p142" bind:layout_constraintStart_toStartOf="parent" bind:layout_constraintTop_toTopOf="parent">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:tag="binding_1" android:clipChildren="false" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/s21" android:textColor="@color/general_ff" android:id="@id/net_call" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/net_calling" android:includeFontPadding="false" android:fontFamily="@font/cn_regular" />
+            <ImageView android:id="@id/header_exit" android:tag="binding_2" android:layout_width="@dimen/p112" android:layout_height="@dimen/p112" android:layout_marginTop="@dimen/p24" />
+            <TextView android:textSize="@dimen/s21" android:textColor="@color/general_ff" android:id="@id/name" android:tag="binding_3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p24" android:includeFontPadding="false" android:fontFamily="@font/cn_regular" />
+            <include android:id="@id/layout_state_and_time" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p9" layout="@layout/layout_incall_state_and_time" />
+            <TextView android:textSize="@dimen/s21" android:textColor="@color/general_ff" android:id="@id/number" android:tag="binding_4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p27" android:includeFontPadding="false" android:fontFamily="@font/mn_regular" />
+        </LinearLayout>
+        <FrameLayout android:id="@id/fl_btn" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p47">
+            <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:id="@id/msg_btn" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <ImageView android:id="@id/mute" android:tag="binding_5" android:layout_width="@dimen/p96" android:layout_height="@dimen/p68" android:src="@mipmap/img_incall_mute_pre" />
+                <ImageView android:id="@id/transfer" android:tag="binding_6" android:layout_width="@dimen/p96" android:layout_height="@dimen/p68" android:src="@mipmap/img_incall_phone_pre" android:layout_marginStart="@dimen/p32" />
+                <ImageView android:id="@id/hangup_active_one" android:tag="binding_7" android:layout_width="@dimen/p96" android:layout_height="@dimen/p68" android:src="@mipmap/img_hangup" android:layout_marginStart="@dimen/p32" />
+                <ImageView android:id="@id/dial_pad" android:tag="binding_8" android:layout_width="@dimen/p96" android:layout_height="@dimen/p68" android:src="@mipmap/img_incall_keyboard_pre" android:layout_marginStart="@dimen/p32" />
+            </LinearLayout>
+            <ImageView android:layout_gravity="center_horizontal" android:id="@id/hangup" android:tag="binding_9" android:visibility="gone" android:layout_width="@dimen/p96" android:layout_height="@dimen/p68" android:src="@mipmap/img_hangup" android:scaleType="fitXY" />
+            <LinearLayout android:gravity="center_horizontal" android:id="@id/btn_dial_or_hangup" android:tag="binding_10" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <include android:id="@id/motion_acc" layout="@layout/layout_btn_acc" />
+                <ImageView android:id="@id/btn_hangup" android:tag="binding_11" android:layout_width="@dimen/p96" android:layout_height="@dimen/p68" android:src="@mipmap/img_hangup" android:scaleType="fitXY" android:layout_marginStart="@dimen/p96" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center_horizontal" android:id="@id/btn_third_coming" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <ImageView android:id="@id/btn_acc_terminal" android:tag="binding_12" android:layout_width="@dimen/p96" android:layout_height="@dimen/p68" android:src="@mipmap/img_incall_acc_terminal" android:scaleType="fitXY" android:layout_marginStart="@dimen/p32" />
+                <ImageView android:id="@id/btn_acc_hold" android:tag="binding_13" android:layout_width="@dimen/p96" android:layout_height="@dimen/p68" android:src="@mipmap/img_incall_acc_hold" android:scaleType="fitXY" android:layout_marginStart="@dimen/p64" />
+                <ImageView android:id="@id/btn_reject" android:tag="binding_14" android:layout_width="@dimen/p96" android:layout_height="@dimen/p68" android:src="@mipmap/img_hangup" android:scaleType="fitXY" android:layout_marginStart="@dimen/p64" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+    <com.sgmw.lingos.btcall.view.widget.dialpad.DialPad android:id="@id/dp_incall" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p164" android:layout_marginStart="@dimen/p768" bind:dialog_pad_type="in_call_dialog" bind:layout_constraintStart_toStartOf="parent" bind:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.motion.widget.MotionLayout>

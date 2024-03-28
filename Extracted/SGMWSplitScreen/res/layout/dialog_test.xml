@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:paddingRight="@dimen/p20" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Button android:id="@id/btn_open_split" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="打开分屏" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <Button android:id="@id/btn_close_split" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p20" android:text="关闭分屏回首页" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintTop_toBottomOf="@id/btn_open_split" />
+    <Button android:id="@id/btn_1_3_full" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p20" android:text="1/3全屏" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintTop_toBottomOf="@id/btn_close_split" />
+    <Button android:id="@id/btn_2_3_full" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p20" android:text="2/3全屏" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintTop_toBottomOf="@id/btn_1_3_full" />
+    <Button android:id="@id/btn_factory" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p20" android:text="工厂模式" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintTop_toBottomOf="@id/btn_2_3_full" />
+</androidx.constraintlayout.widget.ConstraintLayout>

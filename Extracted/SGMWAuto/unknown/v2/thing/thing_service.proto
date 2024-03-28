@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package v2.thing;
+option go_package = "v2/thing";
+
+import "common/message_header.proto";
+
+// InvokeThingServiceReqMsg 物模型服务调用请求MQTT消息[cloud->device]
+// 同步调用Topic:/sys/$productKey/$deviceKey/thing/service/($functionBlock:)$identifier/$requestId/request
+// 异步调用Topic:/sys/$productKey/$deviceKey/thing/service/($functionBlock:)$identifier
+message InvokeThingServiceReqMsg {
+    .common.MessageHeader header = 1;
+    string requestId = 2; // 云端请求ID
+    string identifier = 3; // 服务名称唯一标识
+    bytes inputParams = 4; // 输入参数消息体
+}
+
+// InvokeThingServiceRspMsg 物模型服务调用响应MQTT消息[device->cloud]
+// 同步调用Topic:/sys/$productKey/$deviceKey/thing/service/($functionBlock:)$identifier/$requestId/response
+// 异步调用Topic:/sys/$productKey/$deviceKey/thing/service/($functionBlock:)$identifier/reply
+message InvokeThingServiceRspMsg {
+    .common.MessageHeader header = 1;
+    string requestId = 2; // 云端请求ID
+    string errCode = 3; // 服务调用错误码
+    string errMessage = 4; // 服务调用错误信息
+    bytes outputParams = 5; // 输出参数消息体
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="31" android:compileSdkVersionCodename="12" android:sharedUserId="android.uid.system" package="com.sgmw.lingos.splitscreen" platformBuildVersionCode="31" platformBuildVersionName="12">
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+    <uses-permission android:name="android.car.permission.CAR_VENDOR_EXTENSION"/>
+    <uses-permission android:name="com.desaysv.usercenter.provider.READ_WRITE"/>
+    <application android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:dataExtractionRules="@xml/data_extraction_rules" android:extractNativeLibs="false" android:fullBackupContent="@xml/backup_rules" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:name="com.sgmw.lingos.splitscreen.SplitScreenApplication" android:persistent="true" android:resizeableActivity="true" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true">
+        <activity android:exported="true" android:launchMode="singleInstance" android:name="com.sgmw.lingos.splitscreen.PrimaryScreenActivity" android:theme="@style/Theme.SGMWSplitScreen.Host"/>
+        <activity android:exported="true" android:launchMode="singleInstance" android:name="com.sgmw.lingos.splitscreen.SecondaryScreenActivity" android:theme="@style/Theme.SGMWSplitScreen.Guest"/>
+        <service android:exported="true" android:name="com.sgmw.lingos.splitscreen.SplitScreenService">
+            <intent-filter>
+                <action android:name="com.sgmw.lingos.splitscreen.SplitScreenService"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="true" android:name="com.sgmw.lingos.splitscreen.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.sgmw.lingos.splitscreen.SensorsDataContentProvider" android:enabled="true" android:exported="false" android:name="com.sensorsdata.analytics.android.sdk.data.SensorsDataContentProvider"/>
+        <meta-data android:name="com.sensorsdata.analytics.android.MainProcessName" android:value="com.sgmw.lingos.splitscreen"/>
+        <provider android:authorities="com.sgmw.lingos.splitscreen.lifecycle-process" android:exported="false" android:multiprocess="true" android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"/>
+    </application>
+</manifest>

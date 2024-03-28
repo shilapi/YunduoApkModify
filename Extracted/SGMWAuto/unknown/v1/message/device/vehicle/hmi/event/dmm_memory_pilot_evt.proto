@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+
+/**
+ * 记忆行泊信息
+ * 结构体 : dji_msgs::CDHMIInfo
+ * topic : /sys/dmm/mp_hmi_info/v1
+ */
+message DmmMemoryPilotEvt {
+  EnumMpStatus mp_status = 1;   //记忆行泊状态
+  uint32 mp_prompt = 2;         //记忆行泊相关提示
+  repeated uint32 reserved = 3;
+}
+
+enum EnumMpStatus {
+  MP_OFF = 0;       //关闭
+  MP_READY = 1;     //记忆行泊可用
+  MP_PARK_OUT = 2;  //记忆泊出
+  MP_MOD = 3;       //记忆行车
+  MP_PARK_IN = 4;   //记忆泊入
+}
+
+
+
+
+

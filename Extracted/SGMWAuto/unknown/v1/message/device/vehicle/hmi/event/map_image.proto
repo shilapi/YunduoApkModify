@@ -1,0 +1,296 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+
+/**
+ * 地图缩略图
+ * 结构体: sys_msgs::Image
+ * topic : /alam/ipa/map_image
+ */
+message ParkingMapImageEvt {
+  uint32 camera_id = 1;
+  uint32 width = 2;
+  uint32 height = 3;
+  uint32 channel = 4;
+  uint32 width_step = 5; //the length of a row
+  uint32 exp_time = 6; //camera exposure time
+  EnumImageFormat format = 7;
+  uint64 data_status = 8;
+  repeated uint32 data = 9; //the pointer to data, length = height × width × width_step
+}
+
+enum EnumImageFormat {
+  /**
+     * @brief YUV: 0~100
+     * @brief YUV 420 Semi-Planar NV12
+     *   Y Y Y Y Y Y
+     *   Y Y Y Y Y Y
+     *   Y Y Y Y Y Y
+     *   Y Y Y Y Y Y
+     *   Y Y Y Y Y Y
+     *   Y Y Y Y Y Y
+     *   U V U V U V
+     *   U V U V U V
+     *   U V U V U V
+     */
+  kNV12 = 0;
+  /**
+   * @brief YUV 420 Semi-Planar NV21
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   V U V U V U
+   *   V U V U V U
+   *   V U V U V U
+   */
+  kNV21 = 1;
+  /**
+   * @brief YUV 420 Planar YU12
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   U U U
+   *   U U U
+   *   U U U
+   *   V V V
+   *   V V V
+   *   V V V
+   */
+  kYU12 = 2;
+  /**
+   * @brief YUV 420 Planar YV12
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   V V V
+   *   V V V
+   *   V V V
+   *   U U U
+   *   U U U
+   *   U U U
+   */
+  kYV12 = 3;
+  /**
+   * @brief YUV 422 Plannar I422
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   U U U U U U
+   *   U U U U U U
+   *   U U U U U U
+   *   V V V V V V
+   *   V V V V V V
+   *   V V V V V V
+   */
+  kI422 = 4;
+  /**
+   * @brief YUV 422 Plannar YV16
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   V V V V V V
+   *   V V V V V V
+   *   V V V V V V
+   *   U U U U U U
+   *   U U U U U U
+   *   U U U U U U
+   */
+  kYV16 = 5;
+  /**
+   * @brief YUV 422 Semi-Planar NV61
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   V U V U V U
+   *   V U V U V U
+   *   V U V U V U
+   *   V U V U V U
+   *   V U V U V U
+   *   V U V U V U
+   */
+  kNV61 = 6;
+  /**
+   * @brief YUV 422 Semi-Planar NV16
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   U V U V U V
+   *   U V U V U V
+   *   U V U V U V
+   *   U V U V U V
+   *   U V U V U V
+   *   U V U V U V
+   */
+  kNV16 = 7;
+  /**
+   * @brief YUV 422 Interleaved VYUY
+   *   V Y U Y   V Y U Y   V Y U Y
+   *   V Y U Y   V Y U Y   V Y U Y
+   *   V Y U Y   V Y U Y   V Y U Y
+   *   V Y U Y   V Y U Y   V Y U Y
+   *   V Y U Y   V Y U Y   V Y U Y
+   *   V Y U Y   V Y U Y   V Y U Y
+   */
+  kVYUY = 8;
+  /**
+   * @brief YUV 422 Interleaved YUVY
+   *   Y U V Y   Y U V Y   Y U V Y
+   *   Y U V Y   Y U V Y   Y U V Y
+   *   Y U V Y   Y U V Y   Y U V Y
+   *   Y U V Y   Y U V Y   Y U V Y
+   *   Y U V Y   Y U V Y   Y U V Y
+   *   Y U V Y   Y U V Y   Y U V Y
+   */
+  kYUVY = 9;
+  /**
+   * @brief YUV 422 Interleaved UYVY
+   *   U Y V Y   U Y V Y   U Y V Y
+   *   U Y V Y   U Y V Y   U Y V Y
+   *   U Y V Y   U Y V Y   U Y V Y
+   *   U Y V Y   U Y V Y   U Y V Y
+   *   U Y V Y   U Y V Y   U Y V Y
+   *   U Y V Y   U Y V Y   U Y V Y
+   */
+  kUYVY = 10;
+  /**
+   * @brief 	YUV 444 Planar I444
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   U U U U U U
+   *   U U U U U U
+   *   U U U U U U
+   *   U U U U U U
+   *   U U U U U U
+   *   U U U U U U
+   *   V V V V V V
+   *   V V V V V V
+   *   V V V V V V
+   *   V V V V V V
+   *   V V V V V V
+   *   V V V V V V
+   */
+  kI444 = 11;
+  /**
+   * @brief YUV 444 Planar YV24
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   V V V V V V
+   *   V V V V V V
+   *   V V V V V V
+   *   V V V V V V
+   *   V V V V V V
+   *   V V V V V V
+   *   U U U U U U
+   *   U U U U U U
+   *   U U U U U U
+   *   U U U U U U
+   *   U U U U U U
+   *   U U U U U U
+   */
+  kYV24 = 12;
+  /**
+   * @brief YUV 444 Semi Planar NV24
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   U V U V U V U V U V U V
+   *   U V U V U V U V U V U V
+   *   U V U V U V U V U V U V
+   *   U V U V U V U V U V U V
+   *   U V U V U V U V U V U V
+   *   U V U V U V U V U V U V
+   */
+  kNV24 = 13;
+  /**
+   * @brief YUV 444 Semi Planar NV42
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   V U V U V U V U V U V U
+   *   V U V U V U V U V U V U
+   *   V U V U V U V U V U V U
+   *   V U V U V U V U V U V U
+   *   V U V U V U V U V U V U
+   *   V U V U V U V U V U V U
+   */
+  kNV42 = 14;
+  /**
+   * @brief YUV 444 Packed YUV444
+   *   Y U V   Y U V   Y U V   Y U V   Y U V   Y U V
+   *   Y U V   Y U V   Y U V   Y U V   Y U V   Y U V
+   *   Y U V   Y U V   Y U V   Y U V   Y U V   Y U V
+   *   Y U V   Y U V   Y U V   Y U V   Y U V   Y U V
+   *   Y U V   Y U V   Y U V   Y U V   Y U V   Y U V
+   *   Y U V   Y U V   Y U V   Y U V   Y U V   Y U V
+   */
+  kYUV444 = 15;
+  /**
+   * @brief Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   *   Y Y Y Y Y Y
+   */
+  kY = 16;
+  kRGB = 100;
+  /**
+   * @brief RGB: 101~200
+   */
+  kARGB = 101;
+  kRGBA = 102;
+  kRGBP = 103;
+  /**
+   * @brief RGB planar
+   *   R R R R R R
+   *   R R R R R R
+   *   G G G G G G
+   *   G G G G G G
+   *   B B B B B B
+   *   B B B B B B
+   */
+  /**
+   * @brief other: 200+
+   */
+  kDisparity = 201;
+  /**
+   * @brief Disparity map, int16_t
+   */
+}

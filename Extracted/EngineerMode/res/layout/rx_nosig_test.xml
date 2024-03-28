@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <TableLayout android:id="@id/TableLayout01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TableRow android:id="@id/TableRow01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" android:text="@string/NSRX_StrPattern" />
+                <Spinner android:id="@id/NSRX_PatternSpinner" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </TableRow>
+            <TableRow android:id="@id/TableRow04" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" android:text="@string/NSRX_StrPocketType" />
+                <Spinner android:id="@id/NSRX_PocketTypeSpinner" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </TableRow>
+            <TableRow android:id="@id/TableRow03" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" android:text="@string/NSRX_StrFrequency" />
+                <EditText android:id="@id/NSRX_editFrequency" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:numeric="integer" />
+            </TableRow>
+            <TableRow android:id="@id/TableRow05" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" android:text="@string/NSRX_StrAddress" />
+                <EditText android:id="@id/NSRX_editTesterAddr" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:maxLength="8" />
+            </TableRow>
+        </TableLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <Button android:id="@id/NSRX_StartTest" android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginLeft="80.0dip" android:layout_marginTop="10.0dip" android:text="@string/NSRX_StartTest" />
+        </LinearLayout>
+        <TableLayout android:id="@id/TableLayout01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TableRow android:id="@id/TableRow01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" android:text="@string/NSRX_StrPackCnt" />
+                <TextView android:id="@id/NSRX_StrPackCnt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" />
+            </TableRow>
+            <TableRow android:id="@id/TableRow01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" android:text="@string/NSRX_StrPackErrRate" />
+                <TextView android:id="@id/NSRX_StrPackErrRate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" />
+            </TableRow>
+            <TableRow android:id="@id/TableRow01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" android:text="@string/NSRX_StrPackByteCnt" />
+                <TextView android:id="@id/NSRX_StrPackByteCnt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" />
+            </TableRow>
+            <TableRow android:id="@id/TableRow01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" android:text="@string/NSRX_StrBitErrRate" />
+                <TextView android:id="@id/NSRX_StrBitErrRate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+</ScrollView>

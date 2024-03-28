@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+
+import "v1/message/device/vehicle/common.proto";
+
+/**
+ * DMM车道线数据
+ * 结构体 :
+ * topic : /sys/dmm_line_info/v1
+ */
+message DmmLineInfoEvt {
+  repeated LineInfo line_info = 1;
+  repeated LineInfo map_line_info = 2;
+  repeated LaneInfo lane_info = 3;
+  repeated LaneInfo map_lane_info = 4;
+  OdomPose3d pose = 5;   
+}
+
+message LineInfo {
+  uint64 line_id = 1;
+  EnumLineType line_type = 2;
+  EnumLineColor line_color = 3;
+  float end_point = 4;
+  float curve_param_a = 5;
+  float curve_param_b = 6;
+  float curve_param_c = 7;
+  float curve_param_d = 8;
+  float start_point = 9;
+}
+
+message LaneInfo {
+  uint64 lane_id = 1;
+  EnumLanePosition lane_pos = 2;  //车道位置
+  EnumLineColor lane_color = 3;   //车道颜色
+  uint64 left_line_id = 4;
+  uint64 right_line_id = 5;
+}
+
+enum EnumLineType {
+  LINE_NO = 0;    //没有检测到车道线
+  LINE_REAL = 1;  //实线
+  LINE_DASH = 2;  //虚线
+}
+
+enum EnumLanePosition {
+  EGO_LANE = 0;
+  LEFT_LANE = 1;
+  RIGHT_LANE = 2;
+}
+
+enum EnumLineColor {
+  LINE_GRAY = 0;
+  LINE_BLUE = 1;
+  LINE_YELLOW = 2;
+  LINE_RED = 3;
+}

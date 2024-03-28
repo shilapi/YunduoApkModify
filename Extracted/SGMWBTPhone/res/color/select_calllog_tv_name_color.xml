@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="false" android:color="@color/calllog_name_tv_color" />
+    <item android:state_selected="true" android:color="@color/calllog_name_tv_select_color" />
+</selector>

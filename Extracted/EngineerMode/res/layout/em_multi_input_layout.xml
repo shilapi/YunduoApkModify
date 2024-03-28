@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="15.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/rsrp_sinr_strong_config" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip">
+        <EditText android:textSize="14.0sp" android:id="@id/strong_point1_x_edit" android:layout_width="90.0dip" android:layout_height="wrap_content" />
+        <EditText android:textSize="14.0sp" android:id="@id/strong_point1_y_edit" android:layout_width="90.0dip" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip">
+        <EditText android:textSize="14.0sp" android:id="@id/strong_point2_x_edit" android:layout_width="90.0dip" android:layout_height="wrap_content" />
+        <EditText android:textSize="14.0sp" android:id="@id/strong_point2_y_edit" android:layout_width="90.0dip" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip">
+        <EditText android:textSize="14.0sp" android:id="@id/strong_point3_x_edit" android:layout_width="90.0dip" android:layout_height="wrap_content" />
+        <EditText android:textSize="14.0sp" android:id="@id/strong_point3_y_edit" android:layout_width="90.0dip" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <TextView android:textSize="15.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/rsrp_sinr_mediumweak_config" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip">
+        <EditText android:textSize="14.0sp" android:id="@id/mediumweak_point1_x_edit" android:layout_width="90.0dip" android:layout_height="wrap_content" />
+        <EditText android:textSize="14.0sp" android:id="@id/mediumweak_point1_y_edit" android:layout_width="90.0dip" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip">
+        <EditText android:textSize="14.0sp" android:id="@id/mediumweak_point2_x_edit" android:layout_width="90.0dip" android:layout_height="wrap_content" />
+        <EditText android:textSize="14.0sp" android:id="@id/mediumweak_point2_y_edit" android:layout_width="90.0dip" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip">
+        <EditText android:textSize="14.0sp" android:id="@id/mediumweak_point3_x_edit" android:layout_width="90.0dip" android:layout_height="wrap_content" />
+        <EditText android:textSize="14.0sp" android:id="@id/mediumweak_point3_y_edit" android:layout_width="90.0dip" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <TextView android:textSize="15.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/rsrp_sinr_weak_config" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip">
+        <EditText android:textSize="14.0sp" android:id="@id/weak_point1_x_edit" android:layout_width="90.0dip" android:layout_height="wrap_content" />
+        <EditText android:textSize="14.0sp" android:id="@id/weak_point1_y_edit" android:layout_width="90.0dip" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip">
+        <EditText android:textSize="14.0sp" android:id="@id/weak_point2_x_edit" android:layout_width="90.0dip" android:layout_height="wrap_content" />
+        <EditText android:textSize="14.0sp" android:id="@id/weak_point2_y_edit" android:layout_width="90.0dip" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip">
+        <EditText android:textSize="14.0sp" android:id="@id/weak_point3_x_edit" android:layout_width="90.0dip" android:layout_height="wrap_content" />
+        <EditText android:textSize="14.0sp" android:id="@id/weak_point3_y_edit" android:layout_width="90.0dip" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <View android:background="@android:color/darker_gray" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginRight="12.0dip">
+        <Button android:id="@id/em_multi_input_ok_btn" android:layout_width="110.0dip" android:layout_height="wrap_content" android:text="@android:string/ok" />
+        <Button android:id="@id/em_multi_input_cancel_btn" android:layout_width="110.0dip" android:layout_height="wrap_content" android:text="@android:string/cancel" />
+    </LinearLayout>
+</LinearLayout>

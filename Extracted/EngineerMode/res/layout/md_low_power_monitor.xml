@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip">
+        <Button android:id="@id/md_low_power_monitor_disabled" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/md_low_power_monitor_disabled" />
+        <Button android:id="@id/md_low_power_monitor_enabled" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/md_low_power_monitor_enabled" />
+        <TextView android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/md_low_power_monitor_config" />
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="@string/md_low_power_monitor_sampling_rate" />
+            <Spinner android:entries="@array/sampling_rate_values_md_low_power" android:id="@id/sampling_rate_values_md_low_power" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="@string/md_low_power_monitor_sampling_rate_sec" />
+            <Button android:gravity="center" android:id="@id/md_low_power_monitor_set_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:text="@string/md_low_power_monitor_set_button" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

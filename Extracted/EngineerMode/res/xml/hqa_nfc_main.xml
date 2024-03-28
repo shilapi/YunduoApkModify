@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference android:persistent="false" android:title="@string/hqa_nfc_always_reader_mode" android:key="always_reader_mode">
+        <intent android:targetPackage="com.mediatek.engineermode" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.engineermode.hqanfc.ReaderMode" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/hqa_nfc_always_p2p_mode" android:key="always_p2p_mode">
+        <intent android:targetPackage="com.mediatek.engineermode" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.engineermode.hqanfc.PeerToPeerMode" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/hqa_nfc_always_card_emulation_mode" android:key="always_card_emulation_mode">
+        <intent android:targetPackage="com.mediatek.engineermode" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.engineermode.hqanfc.CardEmulationMode" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/hqa_nfc_polling_loop_mode" android:key="polling_loop_mode">
+        <intent android:targetPackage="com.mediatek.engineermode" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.engineermode.hqanfc.PollingLoopMode" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/hqa_nfc_tx_carrier_signal" android:key="tx_carrier_signal">
+        <intent android:targetPackage="com.mediatek.engineermode" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.engineermode.hqanfc.TxCarrierSignal" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/hqa_nfc_virtual_card_function" android:key="virtual_card_function">
+        <intent android:targetPackage="com.mediatek.engineermode" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.engineermode.hqanfc.VirtualCardFunction" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/hqa_nfc_pnfc_command" android:key="pnfc_command">
+        <intent android:targetPackage="com.mediatek.engineermode" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.engineermode.hqanfc.PnfcCommand" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/hqa_nfc_version_query" android:key="version_query">
+        <intent android:targetPackage="com.mediatek.engineermode" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.engineermode.hqanfc.VersionQuery" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/hqa_nfc_option" android:key="option">
+        <intent android:targetPackage="com.mediatek.engineermode" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.engineermode.hqanfc.Option" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/hqa_nfc_loopback_test" android:key="loopback_test">
+        <intent android:targetPackage="com.mediatek.engineermode" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.engineermode.hqanfc.LoopBackTest" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/hqa_nfc_swp_test" android:key="swp_test">
+        <intent android:targetPackage="com.mediatek.engineermode" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.engineermode.hqanfc.SwpTest" />
+    </Preference>
+</PreferenceScreen>

@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package v2.device.driving.event;
+option go_package = "v2/device/driving/event";
+
+import "v2/common/auto_common.proto";
+
+/**
+ * planning 记忆行车轨迹数据
+ * 结构体: sys_msgs::planning::Trajectory
+ * topic : /sys/memory_driving_trajectory
+ */
+message PlanningDrivingTrajectoryEvt {
+  DrivingPath path = 1;               //规划路径
+  DrivingTrajectory trajectory = 2;   //规划轨迹
+}
+
+message DrivingTrajectoryPoint {
+  double timestamp = 1;               //相对planning本地的时间
+  .v2.common.OdomVector pos = 2;      //点的位置
+  .v2.common.OdomVector vel = 3;      //点的速度
+}
+
+message DrivingTrajectory {
+  .v2.common.EnumSwitch is_valid = 1;
+  double timestamp = 2;
+  repeated DrivingTrajectoryPoint trajectory_points = 3;  //轨迹点
+}
+
+message DrivingPathPoint {
+  double timestamp = 1;
+  .v2.common.OdomVector pos = 2;
+}
+
+message DrivingPath {
+  .v2.common.EnumSwitch is_valid = 1;
+  double timestamp = 2;
+  repeated DrivingPathPoint path_points = 3;    //路径点
+}
+

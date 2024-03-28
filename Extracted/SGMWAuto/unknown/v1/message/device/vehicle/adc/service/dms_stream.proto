@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.adc.service;
+option go_package = "v1/message/device/vehicle/adc/service";
+
+// 流模式(命令)
+message DmsViewReq {
+  EnumStreamMode streamMode = 1;
+}
+
+
+enum EnumStreamMode {
+  STREAM_OFF = 0;   //关闭
+  STREAM_ON = 1;    //开启
+}

@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.service;
+option go_package = "v1/message/device/vehicle/hmi/service";
+
+/**
+ * mod地图列表
+ * 结构体: sys_msgs::dmm::CDMapSyncResponse
+ * topic: /sys/dmm/cd_map_sync_service/v5
+ */
+message CDMapSyncResp {
+    repeated CDModMapInfo map_list = 1; //地图列表信息
+    uint32 num_per_page = 2;            //每一页地图张数
+    int64 resp_checksum = 3;           //返回的地图页校验和（下一页第一张地图id），下一次请求时可用
+}
+
+message CDModMapInfo {
+    uint64 map_id = 1;
+    uint64 map_size = 2;
+    uint64 map_create_time = 3;
+    uint32 distance = 4;
+    uint32 map_top_flag = 5;
+    uint32 map_collect_flag = 6;
+    float start_longitude = 7;
+    float start_latitude = 8;
+    float end_longitude = 9;
+    float end_latitude = 10;
+    string map_name = 11;
+    string map_version = 12;
+    string map_owner_name = 13;
+    string map_tag = 14;
+    string device_key = 15;
+    string device_name = 16;
+    string map_description = 17;
+    bytes pose_file = 18;
+    bytes thumbnail = 19;
+    uint32 map_display_order = 20;
+    uint32 map_usability = 21;
+    string start_point_name = 22;
+    string end_point_name = 23;
+    uint32 map_short_id = 24;   //地图短ID
+}
+
+message CDMapSyncReq {
+    EnumCDMapSyncReqType req_type = 1;  //请求地图同步的类型
+    uint32 num_per_page = 2;            //请求一次返回的地图张数
+    int64 req_checksum = 3;            //地图页的校验和（下一页第一张地图的id）
+}
+
+enum EnumCDMapSyncReqType {
+    SYNC_NONE = 0;
+    SYNC_CLOUD = 1;
+    SYNC_LOCAL = 2;
+}

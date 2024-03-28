@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.three_d.service;
+option go_package = "v1/message/device/vehicle/three_d/service";
+
+import "v1/message/device/vehicle/common.proto";
+
+message HdmapStateUECmd {
+    EnumSwitch load_succ = 1; //高精地图是否记载成功
+}

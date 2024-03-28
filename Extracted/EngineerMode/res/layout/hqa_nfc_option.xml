@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBox android:id="@id/hqa_option_force_download" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/hqa_nfc_option_force_download" />
+    <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="3.0pt" android:layout_marginRight="5.0pt" />
+    <CheckBox android:id="@id/hqa_option_auto_check" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/hqa_nfc_option_auto_check" />
+    <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="3.0pt" android:layout_marginRight="5.0pt" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+        <Button android:id="@id/hqa_option_btn_set" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/hqa_nfc_set" android:width="100.0dip" />
+        <Button android:id="@id/hqa_option_btn_return" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/hqa_nfc_return" android:width="100.0dip" />
+    </LinearLayout>
+</LinearLayout>

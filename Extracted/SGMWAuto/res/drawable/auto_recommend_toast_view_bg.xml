@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <stroke android:width="1.0dip" android:color="@color/map_cancel_bg" />
+    <solid android:color="@color/common_color_mask_phone_sort" />
+</shape>

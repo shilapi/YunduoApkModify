@@ -1,0 +1,14 @@
+syntax = "proto3";
+package v1.message.device.vehicle.common.property;
+option go_package = "v1/message/device/vehicle/common/property";
+
+message VehicleDms {
+  uint32 eyesOff = 1; // 眼睛离开前方检测
+  uint32 handsOff = 2; // 双手离开方向盘检测
+  uint32 driving = 3; // 驾驶检测
+  uint32 drinking = 4; // 喝酒检测
+  uint32 phoning = 5; // 电话通话检测
+  uint32 smoking = 6; // 抽烟检测
+  uint32 yamning = 7; // 打哈欠检测
+  uint32 eyeClosed = 8; // 眼睛合闭检测
+}

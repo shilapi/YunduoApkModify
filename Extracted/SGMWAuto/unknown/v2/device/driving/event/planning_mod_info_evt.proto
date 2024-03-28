@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package v2.device.driving.event;
+option go_package = "v2/device/driving/event";
+
+/**
+ * 记忆行车建图和定位相关planning状态
+ * 结构体: sys_msgs::MemoryDrivingBehavior
+ * topic: /sys/memory_driving_behavior/v1
+ */
+message PlanningModInfoEvt {
+  EnumModBehaviorType type = 1;             //MOD当前状态
+  float remaining_dist = 2;                 //MOD剩余行驶距离
+  float percent_dist_traveled = 3;          //MOD已行驶距离百分比
+  EnumModRouteDirection route_direction = 4;//下一路口路线方向
+  float route_direction_dist = 5;           //当前路段剩余距离
+}
+
+enum EnumModBehaviorType {
+  MapBuildingOnGoing = 0; //正在构建
+  MapBuildingFailed = 1; //构建失败
+  MapBuildingFinished = 2; //构建完成
+  MemoryDrivingStarted = 3; //开始记忆行车
+  MemoryDrivingOnGoing = 4; //正在记忆行车
+  MemoryDrivingFinished = 5; //记忆行车完成
+  MemoryDrivingFailed = 6; //记忆行车失败
+}
+
+enum EnumModRouteDirection {
+  KeepStraight = 0;       //直行
+  LeftLaneChange = 1;     //向左变道
+  RightLaneChange = 2;    //向右变道
+  LeftTurn = 3;           //左转
+  RightTurn = 4;          //右转
+  LeftUTurn = 5;          //左侧掉头
+  RightUTurn = 6;         //右侧掉头
+  LeftMerge = 7;          //左侧合流
+  RightMerge = 8;         //右侧合流
+  LeftDiverge = 9;        //左侧分流
+  RightDiverge = 10;      //右侧分流
+}
+
+

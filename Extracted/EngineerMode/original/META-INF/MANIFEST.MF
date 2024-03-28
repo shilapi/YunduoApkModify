@@ -1,0 +1,945 @@
+Manifest-Version: 1.0
+Created-By: 9 (Oracle Corporation)
+
+Name: AndroidManifest.xml
+SHA1-Digest: e6mrA1pJV7cbUdCiIjKPKVwmS9g=
+
+Name: assets/vilte_media_profiles_opxx.xml
+SHA1-Digest: 2V8uM/qIZTnNvTninjNcuKc2M3o=
+
+Name: classes.dex
+SHA1-Digest: Th2FAnMB79AL1w3hPYrHzdJCGy8=
+
+Name: res/drawable-hdpi-v4/border_view_finder.9.png
+SHA1-Digest: RAx2+GWb/2GMpb+fDApKs0I/PB0=
+
+Name: res/drawable-hdpi-v4/btn_shot_photo_repeat.png
+SHA1-Digest: XKVRp5hQu/e8aCX5IzBrpPEAe7Q=
+
+Name: res/drawable-hdpi-v4/fm_unknown.png
+SHA1-Digest: oC18VwcSDaYiTOc6oRieu4P28Rg=
+
+Name: res/drawable-hdpi-v4/ic_b.png
+SHA1-Digest: c8sWLqgOi+QdjKE8e1lNgqLZyr0=
+
+Name: res/drawable-hdpi-v4/ic_d.png
+SHA1-Digest: j/Wz0ut2E4DRER9VYqgyc66S/fU=
+
+Name: res/drawable-hdpi-v4/ic_em_camera.png
+SHA1-Digest: XKVRp5hQu/e8aCX5IzBrpPEAe7Q=
+
+Name: res/drawable-hdpi-v4/ic_face_detection_failed.9.png
+SHA1-Digest: TE4DiESELYEF5To78llUkBCx3B8=
+
+Name: res/drawable-hdpi-v4/ic_face_detection_focused.9.png
+SHA1-Digest: aPNOts1TyXn0CAnyQARMb40OUNc=
+
+Name: res/drawable-hdpi-v4/ic_face_detection_focusing.9.png
+SHA1-Digest: pEYmUIk04RQHiuz+E20Lyu5OR54=
+
+Name: res/drawable-hdpi-v4/ic_focus_failed.9.png
+SHA1-Digest: 3lCKwzEhSEQPJmDFULuGw8FDLMo=
+
+Name: res/drawable-hdpi-v4/ic_focus_focused.9.png
+SHA1-Digest: DhG6tbQ1L//+ghznOHL7E+w8QUQ=
+
+Name: res/drawable-hdpi-v4/ic_focus_focusing.9.png
+SHA1-Digest: BckGSQ7FGDe2DUqEOwEdBPMCjwc=
+
+Name: res/drawable-hdpi-v4/ic_m.png
+SHA1-Digest: dL6YmcfBAVbFPv9njAqXlZ/pvS8=
+
+Name: res/drawable-mdpi-v4/border_view_finder.9.png
+SHA1-Digest: BIUdb0jXe6l6/KmWAbWhqLUJznU=
+
+Name: res/drawable-mdpi-v4/btn_shot_photo_repeat.png
+SHA1-Digest: 9nm5Gq96LSnzAz/sfoAn6OxuN2w=
+
+Name: res/drawable-mdpi-v4/fm_unknown.png
+SHA1-Digest: f5efvxxp0psidB079jbGE9EWITw=
+
+Name: res/drawable-mdpi-v4/ic_em_camera.png
+SHA1-Digest: 9nm5Gq96LSnzAz/sfoAn6OxuN2w=
+
+Name: res/drawable-mdpi-v4/ic_face_detection_failed.9.png
+SHA1-Digest: 7sDnnOXvOWhRdd5OyhF21KaM+vE=
+
+Name: res/drawable-mdpi-v4/ic_face_detection_focused.9.png
+SHA1-Digest: IsSiedXTboBVIW606nK/jWwzJv8=
+
+Name: res/drawable-mdpi-v4/ic_face_detection_focusing.9.png
+SHA1-Digest: Z6DvSveFfy4Tt/VZJxOe3NSyQM4=
+
+Name: res/drawable-mdpi-v4/ic_focus_failed.9.png
+SHA1-Digest: MhEXur3pWgrim60bkk4c+P884V8=
+
+Name: res/drawable-mdpi-v4/ic_focus_focused.9.png
+SHA1-Digest: W2QmSYHZ5wxh82LIK9jc3DxsYnI=
+
+Name: res/drawable-mdpi-v4/ic_focus_focusing.9.png
+SHA1-Digest: 3HiGAf7z8weZG5FURxSf+BQmJ7s=
+
+Name: res/drawable/cross.png
+SHA1-Digest: UMCRp8WvcVkPW6Qswj9iqtpC3eQ=
+
+Name: res/drawable/dialog_btn_selector.xml
+SHA1-Digest: WmHsaExX5MWhgC36modH1GdWF9M=
+
+Name: res/drawable/edittext_background.xml
+SHA1-Digest: WsnEC2keX5AU/hZ4dTvKh9kWNKQ=
+
+Name: res/drawable/ic_em_camera.png
+SHA1-Digest: 9nm5Gq96LSnzAz/sfoAn6OxuN2w=
+
+Name: res/drawable/ic_face_detection_failed.9.png
+SHA1-Digest: 7sDnnOXvOWhRdd5OyhF21KaM+vE=
+
+Name: res/drawable/ic_face_detection_focused.9.png
+SHA1-Digest: IsSiedXTboBVIW606nK/jWwzJv8=
+
+Name: res/drawable/ic_face_detection_focusing.9.png
+SHA1-Digest: Z6DvSveFfy4Tt/VZJxOe3NSyQM4=
+
+Name: res/drawable/ic_focus_failed.9.png
+SHA1-Digest: MhEXur3pWgrim60bkk4c+P884V8=
+
+Name: res/drawable/ic_focus_focused.9.png
+SHA1-Digest: W2QmSYHZ5wxh82LIK9jc3DxsYnI=
+
+Name: res/drawable/ic_focus_focusing.9.png
+SHA1-Digest: 3HiGAf7z8weZG5FURxSf+BQmJ7s=
+
+Name: res/drawable/list_corner.xml
+SHA1-Digest: vFmCoywpNoydqH2lgc7BgZ4LxJ0=
+
+Name: res/drawable/listview_btn_selector.xml
+SHA1-Digest: BjVwvEbomG+w6gHla4tfF6N5x4E=
+
+Name: res/drawable/point.png
+SHA1-Digest: nM9sS5Av1Q2tYCc84e43AgVS5PI=
+
+Name: res/drawable/selector_button.xml
+SHA1-Digest: +EznigleND9jnFHfQ39nXK1yZ7k=
+
+Name: res/drawable/selector_edit_frame.xml
+SHA1-Digest: pxJrjURm3kRkmdP9yKBeILHYfRk=
+
+Name: res/drawable/shape_edit_focus.xml
+SHA1-Digest: ms1hnNCv21SFl1zAQfK9+K50lFg=
+
+Name: res/drawable/shape_edit_normal.xml
+SHA1-Digest: sYNvnKwqReLobGgANu61NY2af6c=
+
+Name: res/layout-v11/clk_quality_at_curve.xml
+SHA1-Digest: 4UHpRpmG6DjPlbn60MaEIdfTK1U=
+
+Name: res/layout-v11/desense_at_curve.xml
+SHA1-Digest: Oet9IXqGTy9u1PJBRvW6dIQ2VyY=
+
+Name: res/layout-v11/mdm_diagnostic_info_curve.xml
+SHA1-Digest: epeNHeR3TjX7xgdGxR+XYGl3rfU=
+
+Name: res/layout-v11/mdm_diagnostic_info_curveex.xml
+SHA1-Digest: 0NspgtEIOIyori5SwnuSvOG92sA=
+
+Name: res/layout-v11/mdm_em_info_curve.xml
+SHA1-Digest: jQnQ7RhG1al6nZVnbtyOs5XBo6o=
+
+Name: res/layout-v11/mdm_em_info_curveex.xml
+SHA1-Digest: rdxTNlqZQN/WMLqTWpHsQH63siY=
+
+Name: res/layout-v13/mcf_adapter_fileinfos.xml
+SHA1-Digest: cekiF9BAcnH6DNRh7X71QTJtzCI=
+
+Name: res/layout-v17/apc_feature.xml
+SHA1-Digest: WY0+e9lS31x8hWUomGg2OWvlEvo=
+
+Name: res/layout-v17/bypass_settings.xml
+SHA1-Digest: yVLLMmLLPHa3Lp9h6tHG8NgpsS8=
+
+Name: res/layout-v17/iot_apn_config.xml
+SHA1-Digest: xBqP3WTcoMRgQ8BojWmL8LoWdrg=
+
+Name: res/layout-v17/mcf_adapter_fileinfos.xml
+SHA1-Digest: /kIN7E8nd6cBw7uENQZ18yvlCtw=
+
+Name: res/layout-v17/rtn.xml
+SHA1-Digest: GCxC1Z0dwwXozJRpgXgxmZvB+vA=
+
+Name: res/layout-v17/wificalling_config.xml
+SHA1-Digest: ws2WbSC15bBN9QFRpJsgGDOO6lc=
+
+Name: res/layout/aal_setting.xml
+SHA1-Digest: /p71P1ck8GA/wyHi4KZgbyflCJo=
+
+Name: res/layout/amr_wb.xml
+SHA1-Digest: kRSa75iwsqa7/6r91pDKxntEx7Y=
+
+Name: res/layout/ant_tuner_debug_bpi.xml
+SHA1-Digest: QZ739wWVxUfB4hJGY2bQfTOlIGc=
+
+Name: res/layout/ant_tuner_debug_bpi_row.xml
+SHA1-Digest: qqn9LmB8vrc+/PCvvE8Awk5xou4=
+
+Name: res/layout/ant_tuner_debug_dat.xml
+SHA1-Digest: WEGIofuGRomgo4WE2/VmbJabdX4=
+
+Name: res/layout/ant_tuner_debug_interface.xml
+SHA1-Digest: RgvIAJIv6JDpY+b83qWd7zna5ZM=
+
+Name: res/layout/ant_tuner_debug_mipi.xml
+SHA1-Digest: knUO/LT2kS6FEuKuPWozdQAdvVA=
+
+Name: res/layout/antena_test.xml
+SHA1-Digest: 4sJxfIjCT+pYQuvgcWzX4z0cIkM=
+
+Name: res/layout/antenna_diversity.xml
+SHA1-Digest: Cwb0Qw64ivlVbWumHT/CiwIkfj8=
+
+Name: res/layout/apc_fake_info.xml
+SHA1-Digest: yvR0yWMl0CLaEHSTT8SFLV/Z0kA=
+
+Name: res/layout/apc_feature.xml
+SHA1-Digest: FnVS0tRnxwgXv35t3GUSjuEnsOA=
+
+Name: res/layout/apc_feature_sim_type.xml
+SHA1-Digest: mqheHPDuIXrM2Q533S+8zExTVJI=
+
+Name: res/layout/atci.xml
+SHA1-Digest: XiqIzGDKdxOXmsejBXU6JdMVBXE=
+
+Name: res/layout/audio.xml
+SHA1-Digest: 0gkCZWmNhFPj9TU2MzM/6cTWyV4=
+
+Name: res/layout/audio_audiologger.xml
+SHA1-Digest: CU5YytIHddaLnEydQ5qKzLNMenY=
+
+Name: res/layout/audio_debuginfo.xml
+SHA1-Digest: HR/mObaHD6c9zf8NtpRpXQhPkS4=
+
+Name: res/layout/audio_debugsession.xml
+SHA1-Digest: 86Mwu6l3ISjcp7Ni4N/hRe5WUd4=
+
+Name: res/layout/audio_modesetting.xml
+SHA1-Digest: MDITwGsATe1OmWLh0w8O2C/W/rA=
+
+Name: res/layout/audio_modesetting_enhance.xml
+SHA1-Digest: 3o+UuRG8QEVrf4zi7P3Nr+14pUQ=
+
+Name: res/layout/audio_speechenhancement.xml
+SHA1-Digest: FBnIkF284F+/RcLcZRG/Hxy/LO0=
+
+Name: res/layout/audio_speechenhancement_entry.xml
+SHA1-Digest: 60iU5xlZQWjkSrmeXd4uHyIuXQ8=
+
+Name: res/layout/audio_speechenhancement_new.xml
+SHA1-Digest: zkl5LW2UZfHY3mBJ3A1i4AWX+xg=
+
+Name: res/layout/audio_speechloggerx.xml
+SHA1-Digest: RbfiD+wMrsrp/PF6n2gm5HRiQtY=
+
+Name: res/layout/audio_volume.xml
+SHA1-Digest: xTdRY2MWXWKagvqOLnbj52ORNg0=
+
+Name: res/layout/audio_volume_item.xml
+SHA1-Digest: alwqgVIJaN/UqsMrcNPGAdRJLmw=
+
+Name: res/layout/auto_answer.xml
+SHA1-Digest: HDPcL8y47hBHvmpJ/KTWxXV3OuE=
+
+Name: res/layout/bandmodeselect.xml
+SHA1-Digest: uQ9QE0KLHI4BSPKltDQFJuxrnz8=
+
+Name: res/layout/bandmodesimselect.xml
+SHA1-Digest: x7L7YCocf34Iu81vTBJnXeqItuU=
+
+Name: res/layout/battery_charge.xml
+SHA1-Digest: UY8UYSvj0IJ7lMLGty3Z+9KxCNc=
+
+Name: res/layout/battery_log.xml
+SHA1-Digest: 6aPrrF+MHhq4fOBsFEpuVjX0DVE=
+
+Name: res/layout/bip_add_apn_activity.xml
+SHA1-Digest: VxzDni4zxNGLco9xHQO8Z+vt5/8=
+
+Name: res/layout/ble_enhanced_test_mode.xml
+SHA1-Digest: sgcKzc12C/+ZDVdEdoXZkUgSlJE=
+
+Name: res/layout/ble_test_mode.xml
+SHA1-Digest: X7qFnvseiZ2Y30F6r5xNRp1lQkk=
+
+Name: res/layout/bt_relayer_mode.xml
+SHA1-Digest: v/+IuEXZonYvRtkwg0ulgVGPcS0=
+
+Name: res/layout/bt_test_mode.xml
+SHA1-Digest: RezZjppIJcOfqCZwYnUIvUYH2s4=
+
+Name: res/layout/bt_test_tool.xml
+SHA1-Digest: LqmBfINtD2N0DAPQATJad7FCbUQ=
+
+Name: res/layout/btlist.xml
+SHA1-Digest: xTdRY2MWXWKagvqOLnbj52ORNg0=
+
+Name: res/layout/bypass_settings.xml
+SHA1-Digest: 2tFp6n2WuHv3KnKSYat3SWnavDs=
+
+Name: res/layout/carrier_express_content.xml
+SHA1-Digest: olik0LdqlLzcxpJM4MFLb8gYG/s=
+
+Name: res/layout/cdma_info_entry.xml
+SHA1-Digest: 8GP7VYM28wis7M7QZaJTQkPpX+A=
+
+Name: res/layout/cfu_activity.xml
+SHA1-Digest: m7BqV9Agy/9f72PJrpW6PojgunM=
+
+Name: res/layout/channel_lock.xml
+SHA1-Digest: /GtZpQ0YvkdDUNnVn2GzawcnGb4=
+
+Name: res/layout/cip_prop_content.xml
+SHA1-Digest: 9DhwFt/TkRrQefkfxXqamSJ54+k=
+
+Name: res/layout/clk_quality_at.xml
+SHA1-Digest: HbbqYynqDflOPrmOwII78vnYXaY=
+
+Name: res/layout/clk_quality_at_curve.xml
+SHA1-Digest: bkfEhd7rMPOgKQ7rzh4agbYaEwY=
+
+Name: res/layout/clk_quality_at_password.xml
+SHA1-Digest: u354t6tMG5payCz05gJmhFPVVl8=
+
+Name: res/layout/clk_quality_at_result_entry.xml
+SHA1-Digest: LdIXRlSothdamw2rFXPbaSbPT+w=
+
+Name: res/layout/clk_quality_at_result_format.xml
+SHA1-Digest: +gThEBi10/sylu49wwvoSNX0c4M=
+
+Name: res/layout/component_detail.xml
+SHA1-Digest: nCDNAhsnYR9GT/0GxektJmFmY4o=
+
+Name: res/layout/component_select.xml
+SHA1-Digest: y9bKCTHbpVjZTzqX86Fu+QnyhAU=
+
+Name: res/layout/conference.xml
+SHA1-Digest: UMTYZlguztfDy8rpVdAHJPXSilM=
+
+Name: res/layout/connsys_patch_info.xml
+SHA1-Digest: O/jJy0iHSzDo9PxjuL6Y2oJwH6A=
+
+Name: res/layout/ctiasetting.xml
+SHA1-Digest: pSOR9m0VFHFNTDDVA8FqivaAYzU=
+
+Name: res/layout/cw_test.xml
+SHA1-Digest: erRcacLtTEe8TvfQQ4WN8Xryqkc=
+
+Name: res/layout/debug_log.xml
+SHA1-Digest: Jgnlh3gsezsiqWSW+76kr04nTwA=
+
+Name: res/layout/desense_activity.xml
+SHA1-Digest: LEStRqMRRCi7jKCZxUjycQ6lGt8=
+
+Name: res/layout/desense_at.xml
+SHA1-Digest: OZi4Wy3AWHVEfVN6NUM5QITIaIA=
+
+Name: res/layout/desense_at_api_test.xml
+SHA1-Digest: Xl369/K74jrg1Xmr8CMrFRoW2Cw=
+
+Name: res/layout/desense_at_api_test_result_entry.xml
+SHA1-Digest: VlhjgvE3nfdCsO7ju9dxcdL9lAA=
+
+Name: res/layout/desense_at_band_detail.xml
+SHA1-Digest: UHUDooMgD+4ML84XQVIVGwHNJZ8=
+
+Name: res/layout/desense_at_band_entry.xml
+SHA1-Digest: E6NMgXA1/s+w2fkq4SCyLmELx60=
+
+Name: res/layout/desense_at_curve.xml
+SHA1-Digest: osIvIqtMccECJ6+l1q3rrmlGRO0=
+
+Name: res/layout/desense_at_history_data.xml
+SHA1-Digest: WFhMAr7PMxhzISVHmypRcXJhkV0=
+
+Name: res/layout/desense_at_history_list.xml
+SHA1-Digest: eXZDkDerGM+tlrTSwLCONVEp6aE=
+
+Name: res/layout/desense_at_result_entry.xml
+SHA1-Digest: a83NqZgSz99AiGMCB72xy/KIGmA=
+
+Name: res/layout/desense_at_result_format.xml
+SHA1-Digest: +ZJaTkOYOE5m8PE4pLRiypn9Hug=
+
+Name: res/layout/desense_at_rf_config.xml
+SHA1-Digest: FhRT+pi+ehDEs8QAUcvdOoGnwtA=
+
+Name: res/layout/desense_at_surface_view.xml
+SHA1-Digest: 8twoYZbSC9Evutg1S8FvuvIHeRU=
+
+Name: res/layout/desense_at_sv_id.xml
+SHA1-Digest: Y7VLOdgT6h2Q7iIIcbxdIMXoVvU=
+
+Name: res/layout/desense_camera.xml
+SHA1-Digest: Ksj2jZcfX9z7cf7FmJIkZmYze9A=
+
+Name: res/layout/desense_freqhopping_set.xml
+SHA1-Digest: yuAmcvJoFM8f/zCVHqYX0994ze0=
+
+Name: res/layout/desense_mempll_set.xml
+SHA1-Digest: F/oUU8tkmiglMf1mYFoODNCtgFY=
+
+Name: res/layout/desense_pll_detail_activity.xml
+SHA1-Digest: UFB/VygpTVG2NTbG0/VujH4tGLM=
+
+Name: res/layout/desense_plls_activity.xml
+SHA1-Digest: fc4kkE+z5Bx6t5P4jxYK+hP8LtQ=
+
+Name: res/layout/device_register.xml
+SHA1-Digest: 9T7yQRIjwxHQZt/JcCODtasO+7I=
+
+Name: res/layout/dualtalk_networkinfo.xml
+SHA1-Digest: 3A5bVb5tRhd2xQvr9IfhHEVNVVk=
+
+Name: res/layout/ecc_num.xml
+SHA1-Digest: fLK22dwH1vJwL7zhQweLAANAg9E=
+
+Name: res/layout/ehrpd_bg_data.xml
+SHA1-Digest: 1fONhQeVW1Hq8bVd+M1MStoM9yA=
+
+Name: res/layout/em_info_entry.xml
+SHA1-Digest: 8grgPdv6CHXMb04VFOXJvX16OpQ=
+
+Name: res/layout/em_mcf_config.xml
+SHA1-Digest: g/2LiVvsUaJj3tA9oNFWGbIOg9c=
+
+Name: res/layout/em_multi_input_layout.xml
+SHA1-Digest: ojt4S0qTFOL40cKe5GTWp4N2cco=
+
+Name: res/layout/em_muti_info_entry.xml
+SHA1-Digest: XXG95RF/H6ouBHYTbma03EW2CRQ=
+
+Name: res/layout/em_simple_list_item_layout.xml
+SHA1-Digest: eLUZh5lRm5HRMsTu4JWV8A775zU=
+
+Name: res/layout/em_single_input_layout.xml
+SHA1-Digest: abXqheeluOMOR08my+pte4AypEg=
+
+Name: res/layout/epdg_certificate.xml
+SHA1-Digest: BntIN9IJmmecl2CaNg3HOBwtWWU=
+
+Name: res/layout/epdg_config.xml
+SHA1-Digest: yrFg1fCtO1CCwsibzpGAGxU8D90=
+
+Name: res/layout/epdg_emergency.xml
+SHA1-Digest: AJpITUyRQdRoGviHpNANTpXEaKc=
+
+Name: res/layout/epdg_general.xml
+SHA1-Digest: Rs3Y5wycgwZJqpaRmfETsuNK2As=
+
+Name: res/layout/epdg_general_dialog.xml
+SHA1-Digest: 8+oCWHo4s+wMenUqq9AJR/mPRi0=
+
+Name: res/layout/epdg_other.xml
+SHA1-Digest: WrfunMgBXsYxCHdib5GVJT+GB/A=
+
+Name: res/layout/epdg_reset.xml
+SHA1-Digest: cirpvR8uQuu/qtL/FYcL1SStuL0=
+
+Name: res/layout/epdg_sim_select.xml
+SHA1-Digest: mqheHPDuIXrM2Q533S+8zExTVJI=
+
+Name: res/layout/epdg_timer.xml
+SHA1-Digest: y3edybcvNQJCswFatYkG8rRbLA0=
+
+Name: res/layout/fastdormancy.xml
+SHA1-Digest: yx8sZ6+ZbNsNILrQ/e/7sriFsbA=
+
+Name: res/layout/fastdormancy_config.xml
+SHA1-Digest: AY3evDkXQ4v3JNr/KlXL9AjhiQU=
+
+Name: res/layout/force_tx.xml
+SHA1-Digest: SPUt6rBUt/tH/Vt09u23ebNydK4=
+
+Name: res/layout/force_tx_95.xml
+SHA1-Digest: /yC8uN6kPuqIWfzL2hCcng1XEDE=
+
+Name: res/layout/gprs.xml
+SHA1-Digest: O2daFgvuCAaEu8hsXbk9q3Qdq/Q=
+
+Name: res/layout/help_page.xml
+SHA1-Digest: lTtjk4sdidXawghnk3B88chKUbk=
+
+Name: res/layout/hqa_nfc_card_emulation_mode.xml
+SHA1-Digest: GzByQmN9JJ4XDsLiZ8t+OJZCfDY=
+
+Name: res/layout/hqa_nfc_function_read.xml
+SHA1-Digest: o/e5OW9imTfiBZHbpo1Shon+NhM=
+
+Name: res/layout/hqa_nfc_function_write.xml
+SHA1-Digest: U1JXN5VTfg07gs8fKCOCMMdzRSk=
+
+Name: res/layout/hqa_nfc_loopback_test.xml
+SHA1-Digest: qsRA7eVVKDCIg2s9tE7QPKKb3/Q=
+
+Name: res/layout/hqa_nfc_option.xml
+SHA1-Digest: sB0kYfc0hiW6qpFd+6YmxLp2VoA=
+
+Name: res/layout/hqa_nfc_p2p_mode.xml
+SHA1-Digest: eAzawLp3gthLuMfhwo/sy1cxI7Q=
+
+Name: res/layout/hqa_nfc_pnfc_command.xml
+SHA1-Digest: dV+Q8fUY1/e5bJa9GSalqyYA3BY=
+
+Name: res/layout/hqa_nfc_pollingloop_mode.xml
+SHA1-Digest: LKsTM3MPeb4RhZU2dQyfN2Gj9ls=
+
+Name: res/layout/hqa_nfc_reader_mode.xml
+SHA1-Digest: OUWAMZGLgXFevPyGR9eyDI0P9MA=
+
+Name: res/layout/hqa_nfc_rw_function.xml
+SHA1-Digest: bwgvwRvwRtKdq1+FuGaFvGkzat8=
+
+Name: res/layout/hqa_nfc_swp_test.xml
+SHA1-Digest: lcCDsXilN9AFfSKyTMwhORNn/FI=
+
+Name: res/layout/hqa_nfc_tx_carrier_signal.xml
+SHA1-Digest: DiMC/FU/D2DZDN5Z1mayzlU4gMo=
+
+Name: res/layout/hqa_nfc_version_query.xml
+SHA1-Digest: smsFTzybX4Snd7kC3PuDW8o7cBE=
+
+Name: res/layout/hqa_nfc_virtualcard_function.xml
+SHA1-Digest: 4MHF1lYgIBsYzEAZcctPMoKEtZ4=
+
+Name: res/layout/hspa_info.xml
+SHA1-Digest: OITmw1WblPyH7oEzEgkgafQAHPw=
+
+Name: res/layout/iatype_activity.xml
+SHA1-Digest: 0INYP+ksK0aTNS3ElAaETh/cc0I=
+
+Name: res/layout/ims.xml
+SHA1-Digest: KR0aGUMae3bJ3HRo6IXpncB22tQ=
+
+Name: res/layout/ims_config.xml
+SHA1-Digest: TIEX+2vEn4U+x3y1BiiDb4Kp9AY=
+
+Name: res/layout/ims_config_view.xml
+SHA1-Digest: IzYVNfJmwwFp3ywsIGO83bq93Ds=
+
+Name: res/layout/ims_dialog_config.xml
+SHA1-Digest: t781L3VuQ2b1kOHuHqqHDsxxuYY=
+
+Name: res/layout/ims_setting.xml
+SHA1-Digest: 6iaGx3xOXqCKgrJmkWkoqMc4jmo=
+
+Name: res/layout/io.xml
+SHA1-Digest: owqo6ZcMMbGFA724/mzErYd/VLc=
+
+Name: res/layout/iot_apn_config.xml
+SHA1-Digest: k1RbuVsaBnKQ6U6mtlb41FR9rac=
+
+Name: res/layout/iot_config.xml
+SHA1-Digest: FZrBGzKS7elEEzgelwLlXNm4MlQ=
+
+Name: res/layout/iot_et_dialog.xml
+SHA1-Digest: Kv62xM30mvoKxk1pT8dLMy6kXx4=
+
+Name: res/layout/iot_spinner_dialog.xml
+SHA1-Digest: qUd8myZG2zUjTiC/KzQpfLgIeHg=
+
+Name: res/layout/iot_video_profile_row.xml
+SHA1-Digest: arZQsVKHYgL9Bl4n8Rl/eD6uUgE=
+
+Name: res/layout/iot_video_quality_row.xml
+SHA1-Digest: Ned7Rb/BvcUoC8tPk6X6Bn6PiTE=
+
+Name: res/layout/iot_vilte_config.xml
+SHA1-Digest: 7xxydq7zd59u8UN26q/OkVvXanM=
+
+Name: res/layout/iot_vilte_quality_row.xml
+SHA1-Digest: xNkNt3S4qy3osUMwaUilr6lWi30=
+
+Name: res/layout/iot_wfc_config.xml
+SHA1-Digest: ZlKJMVvz4mHv2XQrw1Hj6QL5VBE=
+
+Name: res/layout/iot_wfc_row.xml
+SHA1-Digest: wbRs19nYRHCb0FPO7JTRACIj4YU=
+
+Name: res/layout/iot_xcap_config.xml
+SHA1-Digest: sflNZpYd0qCg9Qk4rKDPvysnFBM=
+
+Name: res/layout/iot_xcap_row.xml
+SHA1-Digest: GxUF5l0j7bjmKUg3rqL3kugbGIM=
+
+Name: res/layout/ir_settings.xml
+SHA1-Digest: bLRNHRvhd9gw1M3AsbTON4vk9nQ=
+
+Name: res/layout/low_power_debug.xml
+SHA1-Digest: cNaz0zr9ZL2CTJW8EOrjS4Uf/mY=
+
+Name: res/layout/lte_ca_config_activity.xml
+SHA1-Digest: c+p1IqVLLdN0AhC0/cAc/Ijj8FQ=
+
+Name: res/layout/lte_networkinfo.xml
+SHA1-Digest: y9bKCTHbpVjZTzqX86Fu+QnyhAU=
+
+Name: res/layout/lte_networkinfo_detail.xml
+SHA1-Digest: IeEyDFtnB6b1QQ6ZDa4AC6C2QDE=
+
+Name: res/layout/lte_rx_mimo_configure.xml
+SHA1-Digest: Gcoy5rayKZ81lmuxHwk6vUbJDy8=
+
+Name: res/layout/lte_tool_edit.xml
+SHA1-Digest: ohY84X4Cb5eKR3H2ZLgQ5SlwBHE=
+
+Name: res/layout/main.xml
+SHA1-Digest: OxrUqELRW3IgHAlhCFA8NQnPdNE=
+
+Name: res/layout/mcf_adapter_fileinfos.xml
+SHA1-Digest: wnY98nx62ItYf1tsdwmCtSu7O9Q=
+
+Name: res/layout/md_em_filter.xml
+SHA1-Digest: PXZOtUCX3c4fKb3cWSt0CXUYB1c=
+
+Name: res/layout/md_em_notification.xml
+SHA1-Digest: bVLRILrhmIRc08AeRxN5TScmgKE=
+
+Name: res/layout/md_log_filter.xml
+SHA1-Digest: Ts4ApWMiQ9gOavYIrwqZXRP9f60=
+
+Name: res/layout/md_low_power_monitor.xml
+SHA1-Digest: jpgoOFIfKHgoFJ/QFFiK+6a6WOE=
+
+Name: res/layout/mdm_component_detail.xml
+SHA1-Digest: MbAe/zPt267ykj+b1iSl6slES7w=
+
+Name: res/layout/mdm_diagnostic_info_curve.xml
+SHA1-Digest: a0kQuBSgqxVOS5Ka2NF6b2PbP60=
+
+Name: res/layout/mdm_diagnostic_info_curveex.xml
+SHA1-Digest: C3qQCK/UkKhLuizz7ZG/HdVAy9M=
+
+Name: res/layout/mdm_em_info_curve.xml
+SHA1-Digest: ORJ/1VRPRPnBxzm6jyC81yMXYBU=
+
+Name: res/layout/mdm_em_info_curveex.xml
+SHA1-Digest: dw1EZ0aVtO6V8T6imDuEWj7m8BQ=
+
+Name: res/layout/memory.xml
+SHA1-Digest: DPXbqCNoXRzYEIEXenTejD6Rxh8=
+
+Name: res/layout/memory_tabs.xml
+SHA1-Digest: rc3d/Pkh3NViGg81aqUk/kma3Ws=
+
+Name: res/layout/modem_debug.xml
+SHA1-Digest: Q4NM57Yh/YfJrCcZrgMjdCiNI5k=
+
+Name: res/layout/modem_switch.xml
+SHA1-Digest: KcgX1S3pGM39wd9APfYc9o9igkU=
+
+Name: res/layout/modem_test_activity.xml
+SHA1-Digest: LFio5RTsJMYLdR4HWK71PUyresY=
+
+Name: res/layout/modem_test_activity_6589.xml
+SHA1-Digest: fk4K/3ykBBUuBtbPa2M9Mie6su8=
+
+Name: res/layout/moms.xml
+SHA1-Digest: ID8LsYR/Zw/rUZYnn1dX7kmYcBU=
+
+Name: res/layout/msdc_driving_set.xml
+SHA1-Digest: 0tIImtMxVxijleAVdxy8e+/dWL0=
+
+Name: res/layout/msdc_select.xml
+SHA1-Digest: i2mYVfoFhNZICamwPuMrnnobJYk=
+
+Name: res/layout/network_select_sim_type.xml
+SHA1-Digest: mqheHPDuIXrM2Q533S+8zExTVJI=
+
+Name: res/layout/networkinfo.xml
+SHA1-Digest: vLI3owKAKFw23aV8BXFeB2Cv8N0=
+
+Name: res/layout/networkinfo_info.xml
+SHA1-Digest: 4ThhDIHeYbQ1N39og37pgtCE21I=
+
+Name: res/layout/networkmode_switching.xml
+SHA1-Digest: cKi4hX7FJrm0zvqHDpzOi+VYJKQ=
+
+Name: res/layout/non_sleep_mode.xml
+SHA1-Digest: 2plU2AzzE5YlNRPQur9x6D+3oHw=
+
+Name: res/layout/ota_airplane_mode.xml
+SHA1-Digest: lgUhe33paENrox/QkGxDKltKeqA=
+
+Name: res/layout/power.xml
+SHA1-Digest: +vXOJX8QdFHuDwjWZXJMWwfzZh4=
+
+Name: res/layout/power_pmu6575_tabs.xml
+SHA1-Digest: sX01EbLGPdt2ORT//e6do+2uR18=
+
+Name: res/layout/presence_set.xml
+SHA1-Digest: DIKbrlbiuCmyLcWOcC3vDpNBHBM=
+
+Name: res/layout/rat_config_ps2.xml
+SHA1-Digest: CteWMCoI5hRyocp+KlbUS3PR96k=
+
+Name: res/layout/rf_desense_gsm_power_control.xml
+SHA1-Digest: 3KSTEpX9Bbd2n1iax5DvJA9bZoc=
+
+Name: res/layout/rf_desense_rat_list.xml
+SHA1-Digest: 0RShTB9aKxNcMmb4OIVk1PlKSM0=
+
+Name: res/layout/rf_desense_test.xml
+SHA1-Digest: d5N4OyIAfWakzL/bgO4nje/a4v4=
+
+Name: res/layout/rf_desense_tx_test.xml
+SHA1-Digest: hyiTK3v7NxBUGaJGIKbBJOT9Adg=
+
+Name: res/layout/rf_desense_tx_test_cdma.xml
+SHA1-Digest: kR7a2GM7LWGCjJKnmYuXUONZq5E=
+
+Name: res/layout/rf_desense_tx_test_gsm.xml
+SHA1-Digest: Ez0ai4gyiXW011lLdUnFa2iajsM=
+
+Name: res/layout/rf_desense_tx_test_lte.xml
+SHA1-Digest: cqY+K8WYltG2eLs5tN585NoTaHI=
+
+Name: res/layout/rf_desense_tx_test_lte_ca.xml
+SHA1-Digest: RCRrLAIlQrg6aP/M0p60Xq4OyKs=
+
+Name: res/layout/rtn.xml
+SHA1-Digest: 3aMaaUR9POCvvuDkvB7LjoOqJs0=
+
+Name: res/layout/rtn_info.xml
+SHA1-Digest: Lc8Mix1YXrTCajG3SoGw+yLZUPc=
+
+Name: res/layout/runtime_switch_config.xml
+SHA1-Digest: 3uNRP/Ok7zQwdVw/I/KerVxX4DM=
+
+Name: res/layout/rx_nosig_test.xml
+SHA1-Digest: VImFNDuDLvBnBYbJRoPZ3inV0/8=
+
+Name: res/layout/sbp.xml
+SHA1-Digest: hEyRQN2Pf/6sHWuuL3hDqRUHS8s=
+
+Name: res/layout/security_status.xml
+SHA1-Digest: XRqF3IEcnAm5PikQK+NVot8CtoY=
+
+Name: res/layout/select_file_main.xml
+SHA1-Digest: v3cAuPh9gWOA0t4wqNpK2Ygvlog=
+
+Name: res/layout/sensor_cali_new.xml
+SHA1-Digest: dIM8JXSV24Qeb3JbpPQ49DmU1qM=
+
+Name: res/layout/sensor_calibration_select.xml
+SHA1-Digest: /6BW4MMxks1UsD5QiB9x5Xl5WuU=
+
+Name: res/layout/sensor_mag_curve.xml
+SHA1-Digest: fNR8joHApZQWcyIIY8fH2nngsXU=
+
+Name: res/layout/sensor_ps_calibration.xml
+SHA1-Digest: x4WRsBQGEC36yvuKPoN041XZm4M=
+
+Name: res/layout/sensor_ps_change_threshold.xml
+SHA1-Digest: boGFWPAyRmgWkTRliHFoZgFkTFk=
+
+Name: res/layout/sensor_ps_collection.xml
+SHA1-Digest: 6t8nWEEjnX8dIOYtSQPNSmyN8GQ=
+
+Name: res/layout/sib_capture.xml
+SHA1-Digest: 7kPjAQ8E42oJf3JC03LQbKys7C0=
+
+Name: res/layout/sim_switch.xml
+SHA1-Digest: UbVOXBflG+/rMQ6+sQ9V1DOo9rE=
+
+Name: res/layout/siminfo.xml
+SHA1-Digest: qblFr8WoCVlh1zgnGiR55gs0l8o=
+
+Name: res/layout/spc_send.xml
+SHA1-Digest: Fm/MGIOkpMMx/o02osOcrOOXkzs=
+
+Name: res/layout/swla_activity.xml
+SHA1-Digest: sgHL+geD++E3xVf+ASupmMKi7ho=
+
+Name: res/layout/telephony_log_setting.xml
+SHA1-Digest: VV/zj9w6/tt1yRkxX1w6azeEKpA=
+
+Name: res/layout/testsimswitch.xml
+SHA1-Digest: LzA6ZCqSA2apdZT82a9JYMlhCbA=
+
+Name: res/layout/touch_settings.xml
+SHA1-Digest: pnp+k3IzbOOfOQFrvefxRXEAXHA=
+
+Name: res/layout/touchscreen.xml
+SHA1-Digest: PaJguFWhvR5PH1NH3W5dVDP8r0E=
+
+Name: res/layout/touchscreen_verification.xml
+SHA1-Digest: apOV8hDJ0mB+rnbvth8Y3uzmIck=
+
+Name: res/layout/tx_only_test.xml
+SHA1-Digest: x0vkcOojcDCMMtB8XX73pezxQMU=
+
+Name: res/layout/u3_phy_switch.xml
+SHA1-Digest: 0ubnCoaOTw4XcjkLeTggZr+yIJk=
+
+Name: res/layout/uart_usb_switch.xml
+SHA1-Digest: G1LmYa0tluMVB8e0Og7pbeAw6NQ=
+
+Name: res/layout/usb.xml
+SHA1-Digest: im7xArFVIKQdFz3oFi80ruMqprQ=
+
+Name: res/layout/usb_acm.xml
+SHA1-Digest: PLWjPr3ESfO7APHid/NtiY/kx6Q=
+
+Name: res/layout/usb_otg20_test.xml
+SHA1-Digest: legAejv68+t2zF228sPe1ZwuSdQ=
+
+Name: res/layout/usb_otg_switch.xml
+SHA1-Digest: k+qY5XyFHs9ej2YGJCyjMxW8hvc=
+
+Name: res/layout/usb_phy_tuning.xml
+SHA1-Digest: 6MfoZfkm6WUo5lB1PhVErPXrxfg=
+
+Name: res/layout/usb_test.xml
+SHA1-Digest: atD6HhcRnF2S+Z2YLgrIm2AwoqQ=
+
+Name: res/layout/usb_test_ex.xml
+SHA1-Digest: s6FSAb+2u7w3NOphvHYmdxUvTuw=
+
+Name: res/layout/usb_tethering.xml
+SHA1-Digest: dMbbYf41cnsLsH8uafSRKm0O7fA=
+
+Name: res/layout/video_log.xml
+SHA1-Digest: MaKmDyklnW4t/eLvatVKLG2gjE8=
+
+Name: res/layout/vilte_menu_codec.xml
+SHA1-Digest: 9N9KeCVGjVpg6Qymu9CP3l19DnY=
+
+Name: res/layout/vilte_menu_common.xml
+SHA1-Digest: sbVo3HJMuke9WMjGNCUrKN/JruE=
+
+Name: res/layout/vilte_menu_media.xml
+SHA1-Digest: LvCmXU3UxYzYbJlqcgRtAtrGXJE=
+
+Name: res/layout/vilte_menu_operator.xml
+SHA1-Digest: Kv4RJ1q/ESQ5TtAAxcy5gE9nf1k=
+
+Name: res/layout/vilte_menu_operator_entry.xml
+SHA1-Digest: 1+G2a/+jHMlFG7PM5VdtAgOepxU=
+
+Name: res/layout/vilte_menu_select.xml
+SHA1-Digest: 0Wrv/isStnE5h2LIivc3CeNVITs=
+
+Name: res/layout/vilte_menu_vt_service.xml
+SHA1-Digest: 34Re3HDDSji0+HLIcc147RTKenw=
+
+Name: res/layout/voice_common_setting.xml
+SHA1-Digest: o5egqe8ZqaQ5GIn7c1g9y+y5QqQ=
+
+Name: res/layout/voice_list.xml
+SHA1-Digest: xTdRY2MWXWKagvqOLnbj52ORNg0=
+
+Name: res/layout/voice_wakeup.xml
+SHA1-Digest: f1VMHOlVUX0T5a/qlJdkG+6cGVk=
+
+Name: res/layout/voice_wakeup_detector.xml
+SHA1-Digest: MsIfj3IXJhOU1CHTwpd7wRvZyoI=
+
+Name: res/layout/wcn_core_dump.xml
+SHA1-Digest: giC07bSw04VvYrmeR2Rvl7+FLSo=
+
+Name: res/layout/wfd_iot_property.xml
+SHA1-Digest: pYZVSfB9XLDl+ZYLVuVcfdha4SI=
+
+Name: res/layout/wfd_latency_profiling.xml
+SHA1-Digest: WmxQyH9uaskqcXXo9kKHWLyR0P4=
+
+Name: res/layout/wfd_list.xml
+SHA1-Digest: xTdRY2MWXWKagvqOLnbj52ORNg0=
+
+Name: res/layout/wfd_power_saving.xml
+SHA1-Digest: oBBseJ/m+PMd9vEsdQZoR66LL3Q=
+
+Name: res/layout/wfd_quality.xml
+SHA1-Digest: N1JL48OUQe2mMUNgCQd5zz2R1aM=
+
+Name: res/layout/wfd_vdo_capability.xml
+SHA1-Digest: bo7jM2x3rJoHLrA2zGxBGrgESTQ=
+
+Name: res/layout/wifi.xml
+SHA1-Digest: 4IeWTm1m36ppY8yCzd/xSg+OVXE=
+
+Name: res/layout/wifi_dbdc_mode.xml
+SHA1-Digest: iDo7ogSp+QhpdwgemBtiIh5hQtY=
+
+Name: res/layout/wifi_eeprom.xml
+SHA1-Digest: OOhmcDQZ58ul0ozMNBeWHfYoFRU=
+
+Name: res/layout/wifi_log_switch.xml
+SHA1-Digest: pUXIuDUycOHkaZEXx0A3A85cmrM=
+
+Name: res/layout/wifi_mcr.xml
+SHA1-Digest: J5z/Wb1kuD5GVqc0QpnCXtTrgnw=
+
+Name: res/layout/wifi_rfcr.xml
+SHA1-Digest: VmYE9n05C/lK0W3IpXN2fiquSoA=
+
+Name: res/layout/wifi_rx_6620.xml
+SHA1-Digest: 3Q6gFmmbWsKern253Cfs1NwxV94=
+
+Name: res/layout/wifi_rx_6632.xml
+SHA1-Digest: 1LbxVnTUQv0HxCjCmAyi9/2QAsI=
+
+Name: res/layout/wifi_tx_6620.xml
+SHA1-Digest: Vp7m5IMwNJTB+eRQL0sk6v40UJA=
+
+Name: res/layout/wifi_tx_6632.xml
+SHA1-Digest: HHTXC4JJznSp07/XEb9v5JZT5DQ=
+
+Name: res/layout/wificalling_config.xml
+SHA1-Digest: xpipa3wyYZSYGsby5eNNjfPsERI=
+
+Name: res/layout/world_mode.xml
+SHA1-Digest: DBrLBprg9b2hmsG6OXLEROBftLA=
+
+Name: res/menu/menu_show.xml
+SHA1-Digest: 8f0U0Hs9rwtsCZhunoZoV3QeI6k=
+
+Name: res/raw/point1.data
+SHA1-Digest: PriRCg2HR9gm0cRHkh2tUCuHFXw=
+
+Name: res/xml/connectivity.xml
+SHA1-Digest: QwZTKGp1BTKmSy+pmvohfmaCa80=
+
+Name: res/xml/gsm_umts_options.xml
+SHA1-Digest: vTylFM8j4obX39s6sgoV/WVGWJY=
+
+Name: res/xml/hardware_testing.xml
+SHA1-Digest: WWBod1zaviDvdUFRVPcYGkcE5+w=
+
+Name: res/xml/hqa_nfc_main.xml
+SHA1-Digest: 8mPq5k2X3jzJVZJ5zz+Tcrhw7aU=
+
+Name: res/xml/ims_config.xml
+SHA1-Digest: J2y3r23DL8cnXE5N+87N4RkWYlU=
+
+Name: res/xml/location.xml
+SHA1-Digest: ZkFQDHfep49paRSpy0QIwSbQy40=
+
+Name: res/xml/log_and_debugging.xml
+SHA1-Digest: YJ8VRK0iMUnyFtAFAv7ZKRl+mVI=
+
+Name: res/xml/misc.xml
+SHA1-Digest: RRG4p4oGaGX411nU57FXVYG6QS8=
+
+Name: res/xml/modem_warning.xml
+SHA1-Digest: IUTCHBBPbjh/b9VDeKRE/BZrrVM=
+
+Name: res/xml/others.xml
+SHA1-Digest: cqSgNFLfWMlcbYVLmxaj1izR9Qo=
+
+Name: res/xml/telephony.xml
+SHA1-Digest: /oQgrPrTCOiXPKXftX1wytW30s0=
+
+Name: res/xml/wifi_test_setting.xml
+SHA1-Digest: He5wCRkYWo1O7GhbL3BcJd296h4=
+
+Name: resources.arsc
+SHA1-Digest: KrtJcCqCPFnCUGGD6y1BlZiDnJA=
+

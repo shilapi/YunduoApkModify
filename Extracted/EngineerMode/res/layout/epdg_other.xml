@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout style="@style/info_layout">
+        <View android:background="#ff0000ff" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="10.0dip" />
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/ikev2if" />
+            <EditText android:id="@id/ikev2if" android:layout_width="220.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/port" />
+            <EditText android:id="@id/port" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/port_natt" />
+            <EditText android:id="@id/port_natt" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/cpa_nm" />
+            <EditText android:id="@id/cpa_nm" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/cpa_dns4" />
+            <EditText android:id="@id/cpa_dns4" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/cpa_dns6" />
+            <EditText android:id="@id/cpa_dns6" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/no_ic" />
+            <Spinner android:entries="@array/epdg_menu" android:id="@id/no_ic" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/no_eap" />
+            <Spinner android:entries="@array/epdg_menu" android:id="@id/no_eap" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/fragment" />
+            <Spinner android:entries="@array/epdg_menu" android:id="@id/fragment" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/mobike" />
+            <Spinner android:entries="@array/epdg_menu" android:id="@id/mobike" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/dns_type" />
+            <Spinner android:entries="@array/epdg_dns_type_menu" android:id="@id/dns_type" android:layout_width="220.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/mss4_off" />
+            <EditText android:id="@id/mss4_off" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/bytes" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/mss6_off" />
+            <EditText android:id="@id/mss6_off" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/bytes" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/leftauth" />
+            <Spinner android:entries="@array/epdg_leftauth_menu" android:id="@id/leftauth" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/eap" />
+            <Spinner android:entries="@array/epdg_eap_menu" android:id="@id/eap" android:layout_width="220.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/fastreauth" />
+            <Spinner android:entries="@array/epdg_fastreauth_menu" android:id="@id/fastreauth" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/force_tsi_64" />
+            <Spinner android:entries="@array/epdg_menu" android:id="@id/force_tsi_64" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/force_tsi_full" />
+            <Spinner android:entries="@array/epdg_menu" android:id="@id/force_tsi_full" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/use_cfg_vip" />
+            <Spinner android:entries="@array/epdg_menu" android:id="@id/use_cfg_vip" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/reauth_addr" />
+            <Spinner android:entries="@array/epdg_menu" android:id="@id/reauth_addr" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/wdrv_keep_alive" />
+            <Spinner android:entries="@array/epdg_menu" android:id="@id/wdrv_keep_alive" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:id="@id/key_display_view" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/key_display" />
+            <Spinner android:entries="@array/epdg_menu" android:id="@id/key_display" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:id="@id/key_dump_view" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/key_dump" />
+            <Spinner android:entries="@array/epdg_menu" android:id="@id/key_dump" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:id="@id/debug_dpd_view" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/debug_dpd" />
+            <Spinner android:entries="@array/epdg_menu" android:id="@id/debug_dpd" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/log_level" />
+            <Spinner android:entries="@array/epdg_log_level_menu" android:id="@id/log_level" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:id="@id/pre_post_ping_text" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/pre_post_ping" />
+            <Spinner android:entries="@array/epdg_menu" android:id="@id/pre_post_ping" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:id="@id/dns_cache_text" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/dns_cache" />
+            <Spinner android:entries="@array/epdg_menu" android:id="@id/dns_cache" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:id="@id/dns_max_count_text" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/dns_max_count" />
+            <EditText android:id="@id/dns_max_count" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:id="@id/pcscf_restore_text" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/pcscf_restore" />
+            <Spinner android:entries="@array/epdg_menu" android:id="@id/pcscf_restore" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:id="@id/emergency_ind_text" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/emergency_ind" />
+            <Spinner android:entries="@array/epdg_menu" android:id="@id/emergency_ind" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:id="@id/liveness_check_text" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/liveness_check" />
+            <Spinner android:entries="@array/epdg_menu" android:id="@id/liveness_check" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:id="@id/device_identity_text" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/device_identity" />
+            <Spinner android:entries="@array/epdg_menu" android:id="@id/device_identity" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:id="@id/select_info_text" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/select_info" />
+            <EditText android:id="@id/select_info" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:id="@id/epdg_ident_text" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/epdg_ident" />
+            <EditText android:id="@id/epdg_ident" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:id="@id/retry_vector_text" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/retry_vector" />
+            <EditText android:id="@id/retry_vector" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/max_redirects" />
+            <EditText android:id="@id/max_redirects" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/redirect_loop_detect" />
+            <EditText android:id="@id/redirect_loop_detect" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/ike_dscp" />
+            <EditText android:id="@id/ike_dscp" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/redirect" />
+            <Spinner android:entries="@array/epdg_menu" android:id="@id/redirect" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/abort_mode" />
+            <Spinner android:entries="@array/epdg_menu" android:id="@id/abort_mode" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/ho_ip_disc" />
+            <Spinner android:entries="@array/epdg_menu" android:id="@id/ho_ip_disc" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/visited_epdg" />
+            <Spinner android:entries="@array/epdg_menu" android:id="@id/visited_epdg" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/try_epdg_policy" />
+            <Spinner android:entries="@array/epdg_menu" android:id="@id/try_epdg_policy" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/leave_standby_dpd" />
+            <Spinner android:entries="@array/epdg_menu" android:id="@id/leave_standby_dpd" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/fdpd_retrans_to" />
+            <EditText android:id="@id/fdpd_retrans_to" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/fdpd_retrans_tries" />
+            <EditText android:id="@id/fdpd_retrans_tries" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/fdpd_retrans_base" />
+            <EditText android:id="@id/fdpd_retrans_base" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <Button android:id="@id/other_set" android:layout_width="120.0dip" android:layout_height="wrap_content" android:text="@string/epdg_set" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

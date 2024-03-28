@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package v2.ue.driving;
+option go_package = "v2/ue/driving";
+
+import "v2/common/auto_common.proto";
+
+message HdmapStateUECmd {
+    .v2.common.EnumSwitch load_succ = 1; //高精地图是否记载成功
+}

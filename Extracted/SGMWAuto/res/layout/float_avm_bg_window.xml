@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/view_avm_bg" android:background="@drawable/avm_float_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginStart="102.0dip" />
+    <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/view_model_bg" android:background="@color/trans" android:layout_width="538.0dip" android:layout_height="fill_parent" android:layout_marginStart="102.0dip" app:layout_constraintStart_toStartOf="parent">
+        <TextView android:textSize="@dimen/common_text_size_middle" android:textColor="@color/avm_model_text_toast" android:id="@id/tv_avm_tip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="128.0dip" android:text="@string/sgmw_pad_avm_model_attention_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" />
+        <ImageView android:id="@id/iv_avm_model" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/img_car_model" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

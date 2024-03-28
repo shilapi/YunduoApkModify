@@ -1,0 +1,182 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+import "v1/message/device/vehicle/common.proto";
+
+/**
+ * ALAM 高精地图
+ */
+message AlamHdMapEvt {
+  DrivingLocatorInfo driving_locator_info = 1;
+  uint32 num_arrows = 2;
+  repeated Arrow arrows = 3;
+  uint32 num_stop_lines = 4;
+  repeated StopLine stop_lines = 5;
+  uint32 num_signs = 6;
+  repeated Sign signs = 7;
+  uint32 num_lamps = 8;
+  repeated Lamp lamps = 9;
+  uint32 num_crosswalks = 10;
+  repeated CrossWalk crosswalks = 11;
+  uint32 num_traffic_signs = 12;
+  repeated TrafficSign traffic_signs = 13;
+  uint32 num_borders = 14;
+  repeated Border borders = 15;
+  uint32 num_trajectory = 16;
+  repeated Trajectory trajectory = 17;
+  uint32 num_lanes = 18;
+  repeated Lane lanes = 19;
+}
+
+message DrivingLocatorInfo {
+  int64 map_id = 1;
+  EnumSourceType source_type = 2;
+  EnumDataStatus data_status = 3;
+  OdomPose3d map_vins_transform = 4;
+  OdomPose3d map_pose = 5;
+  OdomVector llt = 6;
+  repeated double reserve = 7;
+}
+
+enum EnumSourceType {
+  ROAD_NET = 0;
+  MEMORY_MAP = 1;
+  THREE_MAP = 2;
+  CROWD_SOURCE_MAP = 3;
+  NONE = 4;
+}
+
+enum EnumDataStatus {
+  DATA_BAD = 0;
+  DATA_POOR = 1;
+  DATA_GOOD = 2;
+  DATA_AWESOME = 3;
+  GPS_NOT_VALID = 4;
+  GLOBAL_FUSION_NOT_VALID = 5;
+  OUT_OF_MAP = 6;
+  IN_INVERSE_LANE = 7;
+}
+
+message Lane {
+  uint64 id = 1;
+  uint32 speed_limit = 2;
+  EnumTurnOffLane turn_off_lane = 3;
+  enum EnumTurnOffLane {
+    NO = 0;
+    LEFT = 1;
+    RIGHT = 2;
+    U_TURN = 3;
+  }
+  uint64 left_border = 4;
+  uint64 right_border = 5;
+  uint64 left_neighbor_lane = 6;
+  uint64 right_neighbor_lane = 7;
+  uint64 bind_stop_line = 8;
+  uint32 num_prev = 9;
+  uint32 num_next = 10;
+  repeated uint64 prev_lanes = 11;
+  repeated uint64 next_lanes = 12;
+  uint32 num_center_pts = 13;
+  repeated Point center_line_pts = 14;
+}
+
+message Trajectory {
+  uint64 id = 1;
+  uint32 num_pts = 2;
+  repeated MapTrajectoryPoint trajectory_point = 3;
+}
+
+message MapTrajectoryPoint {
+  float x = 1;
+  float y = 2;
+  float z = 3;
+  float qw = 4;
+  float qx = 5;
+  float qy = 6;
+  float qz = 7;
+  float speed = 8;
+}
+
+//红绿灯
+message TrafficSign {
+  uint64 id = 1;
+  uint32 num_pts = 2;
+  repeated Point pts = 3;
+}
+
+//sign标示牌
+message Sign {
+  uint64 id = 1;
+  uint32 num_pts = 2;
+  repeated Point pts = 3;
+}
+
+//路灯杆
+message Lamp {
+  uint64 id = 1;
+  uint32 num_pts = 2;
+  repeated Point pts = 3;
+}
+
+message CrossWalk {
+  uint64 id = 1;
+  uint32 num_pts = 2;
+  repeated Point pts = 3;
+}
+
+//停止线
+message StopLine {
+  uint64 id = 1;
+  uint32 num_pts = 2;
+  repeated Point pts = 3;
+}
+
+//停止线
+message Border {
+  uint64 id = 1;
+  uint32 num_pts = 2;
+  repeated Point pts = 3;
+  EnumBorderType border_type = 4;
+  enum EnumBorderType {
+    UNKNOWN = 0;
+    //VIRTUAL_CROSSABLE = 1;
+    DOTTED = 2;
+    //DECELERATION_DOTTED = 3;
+    DOTTED_SOLID = 11;
+    SOLID_DOTTED = 12;
+    //VIRTUAL_NON_CROSSABLE = 21;
+    SOLID = 22;
+    //DECELERATION_SOLID = 23;
+    SOLID_SOLID = 24;
+    //PHYSICAL_NON_CROSSABLE = 30;
+    CURB = 31;
+    FENCE = 32;
+  }
+}
+
+//箭头
+message Arrow {
+  uint64 id = 1;
+  uint32 num_pts = 2;
+  repeated Point pts = 3;
+  EnumTurnOffArrow turn_off_arrow = 4;
+  enum EnumTurnOffArrow {
+    FORWARD = 0;
+    LEFT = 1;
+    RIGHT = 2;
+    LEFT_RIGHT = 3;
+    LEFT_FORWARD = 4;
+    RIGHT_FORWARD = 5;
+    LEFT_RIGHT_FORWARD = 6;
+    U_TURN = 7;
+    U_TURN_LEFT = 8;
+    U_TURN_FORWARD = 9;
+    U_TURN_LEFT_FORWARD = 10;
+    HALF_LEFT = 11;
+    HALF_RIGHT = 12;
+  }
+}
+
+
+

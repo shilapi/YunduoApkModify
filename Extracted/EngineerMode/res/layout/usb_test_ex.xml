@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TableLayout android:id="@id/TableLayout01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" android:text="@string/USB_Ex_Test_Text" />
+        <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <TableRow android:id="@id/TableRow01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" android:text="@string/USB_EX_ITEM1_Text" />
+            <Button android:id="@id/USB_EX_ITEM1_Start_ID" android:layout_width="100.0dip" android:layout_height="wrap_content" android:text="@string/USB_IF_START_Text" />
+            <Button android:id="@id/USB_EX_ITEM1_Stop_ID" android:layout_width="100.0dip" android:layout_height="wrap_content" android:text="@string/USB_IF_STOP_Text" />
+        </TableRow>
+        <TableRow android:id="@id/TableRow01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" android:text="@string/USB_EX_ITEM2_Text" />
+            <Button android:id="@id/USB_EX_ITEM2_Start_ID" android:layout_width="100.0dip" android:layout_height="wrap_content" android:text="@string/USB_IF_START_Text" />
+            <Button android:id="@id/USB_EX_ITEM2_Stop_ID" android:layout_width="100.0dip" android:layout_height="wrap_content" android:text="@string/USB_IF_STOP_Text" />
+        </TableRow>
+        <TableRow android:id="@id/TableRow01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" android:text="@string/USB_EX_ITEM3_Text" />
+            <Button android:id="@id/USB_EX_ITEM3_Start_ID" android:layout_width="100.0dip" android:layout_height="wrap_content" android:text="@string/USB_IF_START_Text" />
+            <Button android:id="@id/USB_EX_ITEM3_Stop_ID" android:layout_width="100.0dip" android:layout_height="wrap_content" android:text="@string/USB_IF_STOP_Text" />
+        </TableRow>
+        <TableRow android:id="@id/TableRow01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" android:text="@string/USB_EX_ITEM4_Text" />
+            <Button android:id="@id/USB_EX_ITEM4_Start_ID" android:layout_width="100.0dip" android:layout_height="wrap_content" android:text="@string/USB_IF_START_Text" />
+            <Button android:id="@id/USB_EX_ITEM4_Stop_ID" android:layout_width="100.0dip" android:layout_height="wrap_content" android:text="@string/USB_IF_STOP_Text" />
+        </TableRow>
+        <TableRow android:id="@id/TableRow01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" android:text="@string/USB_EX_ITEM5_Text" />
+            <Button android:id="@id/USB_EX_ITEM5_Start_ID" android:layout_width="100.0dip" android:layout_height="wrap_content" android:text="@string/USB_IF_START_Text" />
+            <Button android:id="@id/USB_EX_ITEM5_Stop_ID" android:layout_width="100.0dip" android:layout_height="wrap_content" android:text="@string/USB_IF_STOP_Text" />
+        </TableRow>
+        <TableRow android:id="@id/TableRow01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" android:text="@string/USB_EX_ITEM6_Text" />
+            <Button android:id="@id/USB_EX_ITEM6_Start_ID" android:layout_width="100.0dip" android:layout_height="wrap_content" android:text="@string/USB_IF_START_Text" />
+            <Button android:id="@id/USB_EX_ITEM6_Stop_ID" android:layout_width="100.0dip" android:layout_height="wrap_content" android:text="@string/USB_IF_STOP_Text" />
+        </TableRow>
+        <TableRow android:id="@id/TableRow01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0pt" android:text="@string/USB_EX_ITEM7_Text" />
+            <Button android:id="@id/USB_EX_ITEM7_Start_ID" android:layout_width="100.0dip" android:layout_height="wrap_content" android:text="@string/USB_IF_START_Text" />
+            <Button android:id="@id/USB_EX_ITEM7_Stop_ID" android:layout_width="100.0dip" android:layout_height="wrap_content" android:text="@string/USB_IF_STOP_Text" />
+        </TableRow>
+    </TableLayout>
+    <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+</LinearLayout>

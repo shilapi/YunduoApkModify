@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/root" android:background="@android:color/transparent" android:paddingBottom="@dimen/p25" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/call_type" android:layout_width="@dimen/p28" android:layout_height="@dimen/p29" android:layout_marginTop="@dimen/p10" android:src="@mipmap/img_calllog_item_in" android:scaleType="fitXY" android:layout_marginStart="@dimen/p22" />
+    <TextView android:textSize="@dimen/s19" android:textColor="@color/general_ff" android:ellipsize="end" android:id="@id/call_name" android:layout_width="@dimen/p180" android:layout_height="wrap_content" android:text="林汾榕" android:maxLines="1" android:includeFontPadding="false" android:fontFamily="@font/cn_regular" android:layout_marginStart="@dimen/p8" android:layout_toEndOf="@id/call_type" />
+    <TextView android:textSize="@dimen/s16" android:textColor="@color/general_99" android:id="@id/call_number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p29" android:text="\ 17718182237" android:includeFontPadding="false" android:fontFamily="@font/mn_regular" android:layout_marginStart="@dimen/p8" android:layout_toEndOf="@id/call_type" />
+    <TextView android:textSize="@dimen/s16" android:textColor="@color/general_ff" android:id="@id/call_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p13" android:text="刚刚" android:includeFontPadding="false" android:fontFamily="@font/cn_regular" android:layout_marginEnd="@dimen/p22" android:layout_alignParentEnd="true" />
+</RelativeLayout>

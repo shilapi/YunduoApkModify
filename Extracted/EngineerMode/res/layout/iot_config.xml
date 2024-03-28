@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/activity_main" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.mediatek.engineermode.iotconfig.IotViewPager android:id="@id/viewpager" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <android.support.v4.view.PagerTitleStrip android:id="@id/pagertitle" android:layout_width="fill_parent" android:layout_height="20.0dip" />
+    </com.mediatek.engineermode.iotconfig.IotViewPager>
+</LinearLayout>

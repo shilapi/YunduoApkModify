@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="28" android:compileSdkVersionCodename="9" android:sharedUserId="android.uid.phone" package="com.mediatek.engineermode" platformBuildVersionCode="28" platformBuildVersionName="9">
+    <permission android:label="WiFi log control" android:name="com.mediatek.engineermode.permission.WIFI_LOG" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_BLUETOOTH_SHARE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="com.google.android.gm.permission.WRITE_GMAIL"/>
+    <uses-permission android:name="com.google.android.gm.permission.READ_GMAIL"/>
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_STACK"/>
+    <uses-permission android:name="android.permission.NFC"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH"/>
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.MANAGE_USB"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER"/>
+    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+    <uses-permission android:name="com.mediatek.em.permission.LAUNCH_APP"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.NETWORK_SETTINGS"/>
+    <uses-permission android:name="android.permission.FORCE_STOP_PACKAGES"/>
+    <uses-permission android:name="android.permission.INJECT_EVENTS"/>
+    <uses-permission android:name="android.permission.MASTER_CLEAR"/>
+    <uses-permission android:name="android.permission.ACCESS_SURFACE_FLINGER"/>
+    <protected-broadcast android:name="com.mediatek.atci.service.startup"/>
+    <protected-broadcast android:name="com.mediatek.engineermode.clkqualityat.atc_send"/>
+    <protected-broadcast android:name="com.mediatek.engineermode.desenseat.atc_done"/>
+    <protected-broadcast android:name="com.mediatek.engineermode.desenseat.atc_send"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.100"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.101"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.102"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.103"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.104"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.105"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.106"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.107"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.108"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.109"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.110"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.111"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.112"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.113"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.114"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.115"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.116"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.117"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.118"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.119"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.120"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.127"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.128"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.129"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.130"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.131"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.132"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.135"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.201"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.202"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.203"/>
+    <protected-broadcast android:name="com.mediatek.hqanfc.204"/>
+    <protected-broadcast android:name="com.mediatek.mtklogger.bypass"/>
+    <protected-broadcast android:name="com.mediatek.nfc.handover.ACTION_QUERY_HANDOVER_MODE"/>
+    <protected-broadcast android:name="com.mediatek.nfc.handover.ACTION_SET_HANDOVER_MODE"/>
+    <protected-broadcast android:name="com.via.bypass.action.getbypass"/>
+    <protected-broadcast android:name="com.via.bypass.action.getbypass_result"/>
+    <protected-broadcast android:name="com.via.bypass.action.setbypass"/>
+    <protected-broadcast android:name="com.via.bypass.action.setbypass_result"/>
+    <protected-broadcast android:name="com.via.bypass.action.setfunction"/>
+    <protected-broadcast android:name="com.via.bypass.action.settetherfunction"/>
+    <protected-broadcast android:name="via.cdma.action.ets.dev.changed.c2klogger"/>
+    <protected-broadcast android:name="via.cdma.action.ets.dev.changed"/>
+    <protected-broadcast android:name="via.cdma.action.set.ets.dev"/>
+    <protected-broadcast android:name="com.mediatek.engineermode.tellog.enable.start"/>
+    <protected-broadcast android:name="com.mediatek.engineermode.tellog.enable.done"/>
+    <protected-broadcast android:name="android.intent.presence.RESET_ETAG"/>
+    <protected-broadcast android:name="android.intent.presence.RESET_489_STATE"/>
+    <protected-broadcast android:name="com.mediatek.channellock.ACTION_CONFIG_CHANGE_RESULT"/>
+    <protected-broadcast android:name="com.mediatek.channellock.ACTION_CONFIG_QUERY_RESPONSE"/>
+    <protected-broadcast android:name="com.mediatek.engineermode.rfdesenseServiceResult"/>
+    <protected-broadcast android:name="android.intent.action.TETHERING_CHANGED"/>
+    <protected-broadcast android:name="com.mediatek.intent.action.TETHERING_CHANGED"/>
+    <application android:allowBackup="false" android:label="@string/app_name" android:name="com.mediatek.engineermode.EmApplication" android:theme="@android:style/ThemeOverlay.Material.ActionBar">
+        <activity android:exported="true" android:label="@string/app_name" android:name=".EngineerMode" android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <service android:name=".wifi.WifiStateListener"/>
+        <activity android:label="@string/help" android:name="FeatureHelpPage" android:screenOrientation="landscape"/>
+        <activity android:label="@string/BatteryLog" android:name=".BatteryLog" android:screenOrientation="landscape"/>
+        <activity android:label="@string/GPRS" android:name=".GPRS" android:process="com.android.phone" android:screenOrientation="landscape" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="@string/TouchScreen" android:name=".touchscreen.TouchScreenList" android:screenOrientation="landscape"/>
+        <activity android:label="@string/TouchScreen_HandWriting" android:name=".touchscreen.TsHandWriting" android:screenOrientation="landscape"/>
+        <activity android:label="@string/TouchScreen_HandWriting" android:name=".touchscreen.TsRateReport" android:screenOrientation="landscape"/>
+        <activity android:label="@string/TouchScreen_Verification" android:name=".touchscreen.TsVerifyList" android:screenOrientation="landscape"/>
+        <activity android:label="@string/TouchScreen_VerificationLine" android:name=".touchscreen.TsVerifyLine" android:screenOrientation="landscape" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+        <activity android:label="@string/TouchScreen_VerificationShaking" android:name=".touchscreen.TsVerifyShakingPoint" android:screenOrientation="landscape" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+        <activity android:label="@string/TouchScreen_MultiTouch" android:name=".touchscreen.TsMultiTouch" android:screenOrientation="landscape"/>
+        <activity android:label="@string/TouchScreen_Settings" android:name=".touchscreen.TouchScreenSettings" android:screenOrientation="landscape"/>
+        <activity android:label="@string/non_sleep_mode" android:name=".nonsleep.NonSleepMode" android:screenOrientation="landscape"/>
+        <activity android:label="@string/memory" android:name=".memory.Memory" android:screenOrientation="landscape"/>
+        <activity android:label="@string/memory_title_flash" android:name=".memory.Flash" android:screenOrientation="landscape"/>
+        <activity android:label="@string/memory_title_emi" android:name=".memory.EmiRegister" android:screenOrientation="landscape"/>
+        <activity android:label="@string/io" android:name=".io.IoList" android:screenOrientation="landscape"/>
+        <activity android:label="@string/MSDC_Driving" android:name=".io.MsdcDrivSet" android:screenOrientation="landscape"/>
+        <activity android:label="@string/MSDC_Select" android:name=".io.MsdcSelect" android:screenOrientation="landscape"/>
+        <activity android:label="@string/desense_activity" android:name=".desense.DesenseActivity" android:screenOrientation="landscape"/>
+        <activity android:label="@string/desense_plls_activity" android:name=".desense.DesensePllsActivity" android:screenOrientation="landscape"/>
+        <activity android:label="@string/desense_plls_detail" android:name=".desense.PllDetailActivity" android:screenOrientation="landscape"/>
+        <activity android:label="@string/desense_freqhopping" android:name=".desense.FreqHoppingSet" android:screenOrientation="landscape"/>
+        <activity android:label="@string/desense_mempll" android:name=".desense.MemPllSet" android:screenOrientation="landscape"/>
+        <activity android:label="@string/Power" android:name=".power.Power" android:screenOrientation="landscape"/>
+        <activity android:label="@string/PMU" android:name=".power.PMU" android:screenOrientation="landscape"/>
+        <activity android:label="@string/PMU" android:name=".power.PMU6575" android:screenOrientation="landscape"/>
+        <activity android:label="@string/ChargeBattery" android:name=".power.ChargeBattery" android:screenOrientation="landscape"/>
+        <activity android:label="@string/debug_log" android:name=".power.DebugLog" android:screenOrientation="landscape"/>
+        <activity android:label="@string/Audio" android:name=".audio.Audio" android:screenOrientation="landscape"/>
+        <activity android:label="@string/Audio_ModeSetting" android:name=".audio.AudioModeSetting" android:screenOrientation="landscape"/>
+        <activity android:label="@string/Audio_SpeechEnhancement" android:name=".audio.AudioSpeechEnhancementV1" android:screenOrientation="landscape"/>
+        <activity android:label="@string/Audio_SpeechEnhancement" android:name=".audio.AudioSpeechEnhancementV2" android:screenOrientation="landscape" android:windowSoftInputMode="adjustPan"/>
+        <activity android:label="@string/Audio_DebugInfo" android:name=".audio.AudioDebugInfo" android:screenOrientation="landscape"/>
+        <activity android:label="@string/Audio_DebugSession" android:name=".audio.AudioDebugSession" android:screenOrientation="landscape"/>
+        <activity android:label="@string/Audio_SpeechLogger" android:name=".audio.AudioSpeechLoggerXV1" android:screenOrientation="landscape"/>
+        <activity android:label="@string/Audio_SpeechLogger" android:name=".audio.AudioSpeechLoggerXV2" android:screenOrientation="landscape"/>
+        <activity android:label="@string/Audio_AudioLogger" android:name=".audio.AudioAudioLogger" android:screenOrientation="landscape" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:label="@string/audio_volume_title" android:name=".audio.AudioVolume" android:screenOrientation="landscape"/>
+        <activity android:label="@string/audio_volume_voice" android:name=".audio.AudioVolumeVoice" android:screenOrientation="landscape"/>
+        <activity android:label="@string/audio_volume_voip" android:name=".audio.AudioVolumeVoIP" android:screenOrientation="landscape"/>
+        <activity android:label="@string/audio_volume_record" android:name=".audio.AudioVolumeRecord" android:screenOrientation="landscape"/>
+        <activity android:label="@string/audio_volume_playback" android:name=".audio.AudioVolumePlayback" android:screenOrientation="landscape"/>
+        <activity android:label="@string/wifi" android:name=".wifi.WiFi" android:screenOrientation="landscape"/>
+        <activity android:label="@string/wifi_eeprom" android:name=".wifi.WiFiEeprom" android:screenOrientation="landscape"/>
+        <activity android:label="@string/wifi_mcr" android:name=".wifi.WiFiMcr" android:screenOrientation="landscape"/>
+        <activity android:label="@string/wifi_tx" android:name=".wifi.WiFiTx6620" android:screenOrientation="landscape"/>
+        <activity android:label="@string/wifi_rx" android:name=".wifi.WiFiRx6620" android:screenOrientation="landscape"/>
+        <activity android:label="@string/wifi_ctia" android:name=".wifi.WifiTestSetting" android:screenOrientation="landscape"/>
+        <activity android:label="@string/wifi_tx" android:name=".wifi.WiFiTx6632" android:screenOrientation="landscape"/>
+        <activity android:label="@string/wifi_rx" android:name=".wifi.WiFiRx6632" android:screenOrientation="landscape"/>
+        <activity android:label="@string/wifi_item_dbdc_mode" android:name=".wifi.WiFiDBDC" android:screenOrientation="landscape"/>
+        <activity android:label="@string/wifi_item_rfcr" android:name=".wifi.WiFiRFCR" android:screenOrientation="landscape"/>
+        <activity android:label="@string/wifi_log_switch" android:launchMode="singleInstance" android:name=".wifi.WifiLogSwitchActivity" android:permission="com.mediatek.engineermode.permission.WIFI_LOG" android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="mediatek.intent.action.engineermode.wifilogswitch"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <service android:name=".wifi.WifiWatchService"/>
+        <activity android:label="@string/NetworkInfo" android:name=".networkinfo.NetworkInfoSimType" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/NetworkInfo" android:name=".networkinfo.NetworkInfo" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/NetworkInfo" android:name=".networkinfo.CdmaNetworkInfo" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/NetworkInfo_Info" android:name=".networkinfo.NetworkInfoInfomation" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/AutoAnswer" android:name=".AutoAnswer" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/ChannelLock" android:name=".channellock.channelSimSelectActivity" android:screenOrientation="landscape"/>
+        <activity android:label="@string/ChannelLock" android:name=".channellock.ChannelLock" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <receiver android:name=".channellock.ChannelLockReceiver" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="com.mediatek.channellock.ACTION_CONFIG_CHANGE"/>
+                <action android:name="com.mediatek.channellock.ACTION_CONFIG_QUERY"/>
+            </intent-filter>
+        </receiver>
+        <activity android:label="@string/BluetoothTitle" android:name=".bluetooth.BtList" android:screenOrientation="landscape"/>
+        <activity android:label="@string/BT_RelayerModeTitle" android:name=".bluetooth.BtRelayerModeActivity" android:screenOrientation="landscape"/>
+        <activity android:label="@string/BTTXTitle" android:name=".bluetooth.TxOnlyTestActivity" android:screenOrientation="landscape"/>
+        <activity android:label="@string/BTNSRXTitle" android:name=".bluetooth.NoSigRxTestActivity" android:screenOrientation="landscape"/>
+        <activity android:label="@string/BTTMTitle" android:name=".bluetooth.TestModeActivity" android:screenOrientation="landscape"/>
+        <activity android:label="@string/BLETestMode" android:name=".bluetooth.BleTestMode" android:screenOrientation="landscape"/>
+        <activity android:label="@string/ble_eh_test" android:name=".bluetooth.BleEnhancedTestMode" android:screenOrientation="landscape"/>
+        <activity android:label="@string/bt_test_tool" android:name=".bluetooth.BtTestTool" android:screenOrientation="landscape"/>
+        <service android:name=".bluetooth.BtWatchService"/>
+        <activity android:label="ModemTestActivity" android:name=".modemtest.ModemTestActivity" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/modem_warning_title" android:name=".modemwarning.ModemWarning" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="USB_TEST" android:name=".usb.UsbList" android:screenOrientation="landscape"/>
+        <activity android:label="@string/USB_IF_TEST" android:name=".usb.UsbTest" android:screenOrientation="landscape"/>
+        <activity android:label="@string/usb_phy_tuning" android:name=".usb.UsbPhyTuning" android:screenOrientation="landscape"/>
+        <activity android:label="@string/usb_otg_switch" android:name=".usb.UsbOtgSwitch" android:screenOrientation="landscape"/>
+        <activity android:label="@string/BandSelect" android:name=".bandselect.BandSelect" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/BandModeSIMSelect" android:name=".bandselect.BandModeSimSelect" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="Fast Dormancy" android:name=".fastdormancy.FastDormancy" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="Config Fast Dormancy" android:name=".fastdormancy.ConfigFD" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="CFU" android:name=".cfu.CfuActivity" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="RTN" android:name=".rttn.Rtnmain" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="RtnInfo" android:name=".rttn.RtnInfo" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="BIP" android:name=".bip.BipAddApnActivity" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="SWLA" android:name=".swla.SwlaActivity" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/nfc" android:name=".hqanfc.NfcMainPage" android:screenOrientation="landscape"/>
+        <activity android:label="@string/hqa_nfc_always_reader_mode" android:name=".hqanfc.ReaderMode" android:screenOrientation="landscape"/>
+        <activity android:label="@string/hqa_nfc_rw_function" android:name=".hqanfc.RwFunction" android:screenOrientation="landscape"/>
+        <activity android:label="@string/hqa_nfc_always_p2p_mode" android:name=".hqanfc.PeerToPeerMode" android:screenOrientation="landscape"/>
+        <activity android:label="@string/hqa_nfc_always_card_emulation_mode" android:name=".hqanfc.CardEmulationMode" android:screenOrientation="landscape"/>
+        <activity android:label="@string/hqa_nfc_polling_loop_mode" android:name=".hqanfc.PollingLoopMode" android:screenOrientation="landscape"/>
+        <activity android:label="@string/hqa_nfc_tx_carrier_signal" android:name=".hqanfc.TxCarrierSignal" android:screenOrientation="landscape"/>
+        <activity android:label="@string/hqa_nfc_virtual_card_function" android:name=".hqanfc.VirtualCardFunction" android:screenOrientation="landscape"/>
+        <activity android:label="@string/hqa_nfc_pnfc_command" android:name=".hqanfc.PnfcCommand" android:screenOrientation="landscape"/>
+        <activity android:label="@string/hqa_nfc_rw_read" android:name=".hqanfc.FunctionRead" android:screenOrientation="landscape"/>
+        <activity android:label="@string/hqa_nfc_rw_write" android:name=".hqanfc.FunctionWrite" android:screenOrientation="landscape"/>
+        <activity android:label="@string/hqa_nfc_version_query" android:name=".hqanfc.VersionQuery" android:screenOrientation="landscape"/>
+        <activity android:label="@string/hqa_nfc_option" android:name=".hqanfc.Option" android:screenOrientation="landscape"/>
+        <activity android:label="@string/hqa_nfc_loopback_test" android:name=".hqanfc.LoopBackTest" android:screenOrientation="landscape"/>
+        <activity android:label="@string/hqa_nfc_swp_test" android:name=".hqanfc.SwpTest" android:screenOrientation="landscape"/>
+        <activity android:label="@string/rf_desense_test" android:name=".rfdesense.RfDesenseTest" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/rf_desense_tx_test" android:name=".rfdesense.RfDesenseTxTest" android:process="com.android.phone" android:screenOrientation="landscape" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="@string/rf_desense_tx_test" android:name=".rfdesense.RfDesenseTxTestGsm" android:process="com.android.phone" android:screenOrientation="landscape" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="@string/rf_desense_tx_test" android:name=".rfdesense.RfDesenseTxTestTd" android:process="com.android.phone" android:screenOrientation="landscape" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="@string/rf_desense_tx_test" android:name=".rfdesense.RfDesenseTxTestLte" android:process="com.android.phone" android:screenOrientation="landscape" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="@string/rf_desense_tx_test" android:name=".rfdesense.RfDesenseTxTestLteCA" android:process="com.android.phone" android:screenOrientation="landscape" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="@string/rf_desense_tx_test" android:name=".rfdesense.RfDesenseTxTestCdma" android:process="com.android.phone" android:screenOrientation="landscape" android:windowSoftInputMode="stateHidden"/>
+        <receiver android:name=".rfdesense.RfDesenseBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.mediatek.engineermode.rfdesenseServiceStart"/>
+                <action android:name="com.mediatek.engineermode.rfdesenseServiceStop"/>
+            </intent-filter>
+        </receiver>
+        <service android:name=".rfdesense.RfDesenseService" android:process="com.android.phone"/>
+        <activity android:label="@string/rf_desense_gsm_control" android:name=".rfdesense.RfDesenseGsmPowerControl" android:process="com.android.phone" android:screenOrientation="landscape" android:windowSoftInputMode="stateHidden"/>
+        <receiver android:exported="true" android:name=".EngineerModeReceiver" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE"/>
+                <data android:host="3646633" android:scheme="android_secret_code"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE"/>
+                <data android:host="3626271" android:scheme="android_secret_code"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE"/>
+                <data android:host="3626270" android:scheme="android_secret_code"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE"/>
+                <data android:host="3626271" android:scheme="android_secret_code"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE"/>
+                <data android:host="3626270" android:scheme="android_secret_code"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="locale|mcc|mnc" android:label="Network Selecting" android:name=".networkselect.NetworkSelectActivity93" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:configChanges="locale|mcc|mnc" android:label="Network Selecting" android:name=".networkselect.NetworkSelectActivity" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="SIM Select" android:name=".networkselect.NetworkSelectSimType" android:screenOrientation="landscape"/>
+        <activity android:label="@string/hspa_info_title" android:name=".hspainfo.HspaInfo" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <service android:name=".nonsleep.EMWakeLockService"/>
+        <activity android:label="@string/uart_usb_switch" android:name=".UartUsbSwitch"/>
+        <activity android:label="@string/wfd_quality" android:name=".wfdsettings.WfdQuality" android:screenOrientation="landscape"/>
+        <activity android:label="@string/wfd_settings" android:name=".wfdsettings.WfdList" android:screenOrientation="landscape"/>
+        <activity android:label="@string/wfd_video_capability" android:name=".wfdsettings.WfdVdoCapability" android:screenOrientation="landscape"/>
+        <activity android:label="@string/wfd_power_saving" android:name=".wfdsettings.WfdPowerSaving" android:screenOrientation="landscape"/>
+        <activity android:label="@string/wfd_latency_profiling" android:name=".wfdsettings.WfdLatency" android:screenOrientation="landscape"/>
+        <activity android:label="@string/wfd_iot_property" android:name=".wfdsettings.WfdIotProperty" android:screenOrientation="landscape"/>
+        <activity android:label="@string/world_phone" android:name=".worldphone.ModemSwitch" android:process="com.android.phone" android:screenOrientation="landscape" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="@string/sensor" android:name=".sensor.Sensor" android:screenOrientation="landscape"/>
+        <activity android:label="@string/sensor_calibration_gsensor" android:name=".sensor.SensorCalibrationNew" android:screenOrientation="landscape"/>
+        <activity android:label="@string/msensor_current_data" android:name=".sensor.MSensorCurrentActivity" android:screenOrientation="landscape"/>
+        <activity android:label="@string/sensor_data" android:name=".sensor.MSensor" android:screenOrientation="landscape"/>
+        <activity android:label="@string/psensor_data_collection" android:name=".sensor.PSensorCollection" android:screenOrientation="landscape"/>
+        <activity android:label="@string/sensor_ps" android:name=".sensor.PSensor" android:screenOrientation="landscape"/>
+        <activity android:label="@string/psensor_calibration" android:name=".sensor.PSensorCalibration" android:screenOrientation="landscape"/>
+        <activity android:label="@string/psensor_change_threshold" android:name=".sensor.PSensorChangeThreshold" android:screenOrientation="landscape"/>
+        <activity android:label="@string/psensor_calibration_select" android:name=".sensor.PSensorCalibrationSelect" android:screenOrientation="landscape"/>
+        <activity android:label="@string/usbacm" android:name=".usbacm.UsbAcm" android:screenOrientation="landscape"/>
+        <activity android:label="@string/cdma_network_select" android:name=".cdmanetworkselect.NetworkSelectActivity" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/ct_device_register" android:name=".DeviceRegister" android:screenOrientation="landscape"/>
+        <activity android:label="@string/cw_test" android:name=".cwtest.CWTest" android:screenOrientation="landscape"/>
+        <activity android:label="@string/lte_tool" android:name=".lte.CommandTool" android:process="com.android.phone"/>
+        <activity android:label="@string/lte_tool" android:name=".lte.CommandToolEdit" android:process="com.android.phone"/>
+        <service android:configChanges="keyboardHidden|orientation|screenSize" android:name=".lte.CommandToolService" android:process="com.android.phone"/>
+        <activity android:label="@string/cip_prop_content" android:name=".cip.CipPropContentActivity" android:screenOrientation="landscape"/>
+        <activity android:label="@string/preferred_phone_configuration_title" android:name=".cxp.CarrierExpressActivity" android:screenOrientation="landscape"/>
+        <activity android:label="@string/modem_reset_debug" android:name=".modemresetdelay.ModemResetDelay" android:screenOrientation="landscape"/>
+        <activity android:label="@string/antenna_title" android:name=".antenna.AntennaActivity" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/voice_settings_title" android:name=".voicesettings.VoiceList" android:screenOrientation="landscape"/>
+        <activity android:label="@string/voice_settings_wakeup" android:name=".voicesettings.VoiceWakeup" android:screenOrientation="landscape"/>
+        <activity android:label="@string/voice_wakeup_recognition" android:name=".voicesettings.VoiceWakeupRecognition" android:screenOrientation="landscape"/>
+        <activity android:label="@string/voice_wakeup_detector" android:name=".voicesettings.VoiceWakeupDetector" android:screenOrientation="landscape"/>
+        <activity android:label="@string/low_power_debug" android:name=".power.LowPowerDebug" android:screenOrientation="landscape"/>
+        <activity android:label="@string/misc_config" android:name=".misc.MiscConfig" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/ATCI_title" android:name=".atci.atciActivity" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/amr_wb" android:name=".amrwb.AmrWbActivity" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/aal_title" android:name="AalSetting" android:screenOrientation="landscape"/>
+        <activity android:label="@string/c2k_ir_setting" android:name=".irsettings.IRSettings" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <receiver android:name=".c2klogger.C2KLogReceiver" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="via.cdma.action.set.ets.dev.c2klogger"/>
+                <action android:name="via.cdma.action.set.ets.dev"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name=".boot.EmBootupReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name=".boot.EmBootStartService"/>
+        <activity android:label="@string/sbp_title" android:name=".sbp.SbpActivity" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/u3_phy_switch_title" android:name=".u3phy.U3PhySwitch" android:screenOrientation="landscape"/>
+        <activity android:label="@string/bypass_settings_title" android:name=".bypass.BypassSettings" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <service android:name=".bypass.BypassService"/>
+        <activity android:label="@string/world_mode" android:name=".worldmode.WorldModeActivity" android:process="com.android.phone" android:screenOrientation="landscape" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="@string/sim_switch" android:name=".simswitch.SimSwitch" android:screenOrientation="landscape"/>
+        <activity android:label="moms" android:name=".moms.MoMs" android:screenOrientation="landscape"/>
+        <activity android:label="Send SPC" android:name=".spc.SendSpc" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="Emergency Numbers" android:name=".ecc.EmergencyNumbersActivity" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/md_em_filter" android:name=".modemfilter.ModemFilterActivity" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/desense_at" android:name=".desenseat.DesenseAtActivity" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/desense_at_camera_test" android:name=".desenseat.CameraTest" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/desense_at_api_test" android:name=".desenseat.ApiTestActivity" android:screenOrientation="landscape"/>
+        <activity android:label="@string/desense_at_rf_band_config" android:name=".desenseat.RfBandConfigActivity" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/desense_at_band_settings" android:name=".desenseat.BandDetailActivity" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/desense_at_show_history" android:name=".desenseat.HistoryListActivity" android:screenOrientation="landscape"/>
+        <activity android:name=".desenseat.HistoryDetailActivity" android:screenOrientation="landscape"/>
+        <receiver android:exported="false" android:name=".desenseat.ATCSenderReceiver" android:process="com.android.phone">
+            <intent-filter>
+                <action android:name="com.mediatek.engineermode.desenseat.atc_send"/>
+            </intent-filter>
+        </receiver>
+        <activity android:label="@string/ehrpd_bg_data" android:name=".ehrpdbgdata.EhrpdBgData" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/usb_tethering" android:name=".usbtethering.UsbTethering" android:screenOrientation="landscape"/>
+        <activity android:label="@string/clk_quality_at" android:name=".clkqualityat.ClkQualityAtActivity" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/md_log_filter" android:name=".mdlogfilters.MDLogFiltersActivity" android:screenOrientation="landscape"/>
+        <activity android:label="@string/md_em_filter" android:name=".modemfilter.ModemFilterSimType" android:screenOrientation="landscape"/>
+        <activity android:label="@string/cdma_network_select" android:name=".cdmanetworkselect.NetworkSelectSimType" android:screenOrientation="landscape"/>
+        <activity android:label="@string/ims_title" android:name=".ims.SimSelectActivity" android:screenOrientation="landscape"/>
+        <activity android:label="@string/ims_title" android:name=".ims.ImsActivity" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/ims_title" android:name=".ims.ConfigIMSActivity" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/ims_title" android:name=".ims.imsSettingPageActivity" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/ap_ir" android:name=".c2kapir.C2KAPIR" android:screenOrientation="landscape"/>
+        <activity android:label="@string/iatype" android:name=".iatype.IATypeActivity" android:screenOrientation="landscape"/>
+        <activity android:label="@string/tellog_setting" android:name=".tellogsetting.TelLogSettingActivity" android:screenOrientation="landscape"/>
+        <receiver android:name=".tellogsetting.EnableTelLogReceiver">
+            <intent-filter>
+                <action android:name="com.mediatek.engineermode.tellog.enable.start"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/force_ant" android:name=".forceant.ForceTx" android:process="com.android.phone" android:screenOrientation="landscape" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/force_ant_95" android:name=".forceant.ForceTx95Menu" android:process="com.android.phone" android:screenOrientation="landscape" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/force_ant_95_by_states" android:name=".forceant.ForceTx95" android:process="com.android.phone" android:screenOrientation="landscape" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/force_ant" android:name=".forceant.ForceTxSelect" android:process="com.android.phone" android:screenOrientation="landscape" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:label="@string/video_log" android:name=".videolog.VideoLogActivity" android:screenOrientation="landscape"/>
+        <activity android:label="@string/sib_capture_support_title" android:name=".sibcapturesupport.SIBCaptureActivity" android:screenOrientation="landscape"/>
+        <activity android:label="@string/apc_feature" android:name=".apc.ApcFeatureSimType" android:screenOrientation="landscape"/>
+        <activity android:label="@string/apc_feature" android:name=".apc.ApcFeature" android:screenOrientation="landscape"/>
+        <activity android:label="@string/apc_menu" android:name=".apc.ApcFakeInfo" android:screenOrientation="landscape"/>
+        <activity android:configChanges="locale|mcc|mnc" android:label="@string/sim_info" android:name=".siminfo.SimSelectActivity" android:screenOrientation="landscape"/>
+        <activity android:configChanges="locale|mcc|mnc" android:label="@string/sim_info" android:name=".siminfo.SimInfo" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/lte_ca_config" android:name=".ltecaconfigure.LteCAConfigActivity" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/testsimcard" android:name=".testsimswitch.TestSimSwitchActivity" android:screenOrientation="landscape"/>
+        <activity android:label="@string/presence_set" android:name=".misc.PresenceSet" android:process="com.android.phone" android:screenOrientation="landscape" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="@string/title_activity_ant_tuner_debug" android:name=".anttunerdebug.AntTunerDebugInterfaceSelect" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/ant_tuner_debug_bpi" android:name=".anttunerdebug.AntTunerDebugBPI" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/ant_tuner_debug_mipi" android:name=".anttunerdebug.AntTunerDebugMIPI" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/ant_tuner_debug_dat" android:name=".anttunerdebug.AntTunerDebugDAT" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/epdg_config" android:name=".epdgconfig.epdgConfigSimSelect" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/epdg_config" android:name=".epdgconfig.epdgConfig" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/iot_config" android:name=".iotconfig.IotConfigurationActivity" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <receiver android:name=".tethering.TetheringTestReceiver">
+            <intent-filter>
+                <action android:name="com.mediatek.intent.action.ACTION_ENABLE_NSIOT_TESTING"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name=".tethering.TetheringTestService"/>
+        <activity android:label="@string/WCN_Core_dump_name" android:name=".wcncoredump.wcncoredumpActivity" android:screenOrientation="landscape"/>
+        <activity android:label="@string/mdm_diagnostic_title" android:name=".mdmdiagnosticinfo.MDMComponentSelectActivity" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/mdm_diagnostic_title" android:name=".mdmdiagnosticinfo.MDMSimSelectActivity" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/mdm_diagnostic_title" android:name=".mdmdiagnosticinfo.MDMComponentDetailActivity" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/mcf_config" android:name=".mcfconfig.McfSimSelectActivity" android:screenOrientation="landscape"/>
+        <activity android:label="@string/mcf_config" android:name=".mcfconfig.McfFileSelectActivity" android:screenOrientation="landscape"/>
+        <activity android:label="@string/mcf_config" android:name=".mcfconfig.McfConfigActivity" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <receiver android:name=".desenseat.ATEServerBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.mediatek.NotifyServiceStart"/>
+                <action android:name="com.mediatek.NotifyServiceStop"/>
+            </intent-filter>
+        </receiver>
+        <service android:name=".desenseat.ATEServer" android:process="com.android.phone"/>
+        <activity android:label="@string/vilte_menu_select" android:name=".vilte.VilteMenuSelect"/>
+        <activity android:label="@string/vilte_menu_common" android:name=".vilte.VilteMenuCommon"/>
+        <activity android:label="@string/vilte_menu_operator" android:name=".vilte.VilteMenuOperator"/>
+        <activity android:label="ViLTEVtService" android:name=".vilte.ViLTEVtService"/>
+        <activity android:label="VilteMenuMedia" android:name=".vilte.VilteMenuMedia"/>
+        <activity android:label="VilteMenuCodec" android:name=".vilte.VilteMenuCodec"/>
+        <activity android:label="@string/md_low_power_monitor_title" android:name=".mdlowpowermonitor.MDLowPowerMonitor" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <activity android:label="@string/connsys_patch_info" android:name=".connsyspatchinfo.ConnsysPatchInfoActivity" android:screenOrientation="landscape"/>
+        <activity android:label="@string/rsc_title" android:name=".rsc.RuntimeSwitchConfig" android:screenOrientation="landscape"/>
+        <activity android:label="@string/lte_rx_mimo_configure" android:name=".lterxmimoconfigure.LteRxMimoConfigure" android:process="com.android.phone" android:screenOrientation="landscape"/>
+        <service android:name=".ModemTypeService" android:process="com.android.phone"/>
+        <activity android:label="@string/wifi_calling_title" android:name=".wificalling.WifiCallingConfigActivity" android:screenOrientation="landscape"/>
+    </application>
+</manifest>

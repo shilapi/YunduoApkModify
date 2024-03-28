@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout android:orientation="horizontal" android:visibility="visible" android:addStatesFromChildren="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TableRow android:id="@id/mobile_num_row" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textSize="20.0sp" android:id="@id/editText17" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rtn_mobile_num" android:inputType="textPersonName" />
+        <TextView android:textSize="20.0sp" android:id="@id/editText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rtn_mobile_num_val" android:inputType="textPersonName" />
+    </TableRow>
+    <TableRow android:id="@id/msid_imsi_row" android:layout_width="wrap_content" android:layout_height="fill_parent">
+        <TextView android:textSize="20.0sp" android:id="@id/editText_imsi" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rtn_msid_imsi" android:inputType="textPersonName" />
+        <TextView android:textSize="20.0sp" android:id="@id/editText_imsi_val" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rtn_mobile_num_val" android:inputType="textPersonName" />
+    </TableRow>
+    <TableRow android:id="@id/sw_version_row" android:layout_width="wrap_content" android:layout_height="fill_parent">
+        <TextView android:textSize="20.0sp" android:id="@id/editText18" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rtn_sw_version" android:inputType="textPersonName" />
+        <TextView android:textSize="20.0sp" android:id="@id/editText2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:inputType="textPersonName" />
+    </TableRow>
+    <TableRow android:id="@id/os_version_row" android:layout_width="wrap_content" android:layout_height="fill_parent">
+        <TextView android:textSize="20.0sp" android:id="@id/editText19" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rtn_os_version" android:inputType="textPersonName" />
+        <TextView android:textSize="20.0sp" android:id="@id/editText5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:inputType="textPersonName" />
+    </TableRow>
+    <TableRow android:id="@id/radio_version_row" android:layout_width="wrap_content" android:layout_height="fill_parent">
+        <TextView android:textSize="20.0sp" android:id="@id/editText25" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rtn_radio_version" android:inputType="textPersonName" />
+        <TextView android:textSize="10.0sp" android:id="@id/editText6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:inputType="textPersonName" />
+    </TableRow>
+    <TableRow android:id="@id/hw_version_row" android:layout_width="wrap_content" android:layout_height="fill_parent">
+        <TextView android:textSize="20.0sp" android:id="@id/editText20" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rtn_hw_version" android:inputType="textPersonName" />
+        <TextView android:textSize="20.0sp" android:id="@id/editText7" android:layout_width="wrap_content" android:layout_height="wrap_content" android:inputType="textPersonName" />
+    </TableRow>
+    <TableRow android:id="@id/PRL_row" android:layout_width="wrap_content" android:layout_height="fill_parent">
+        <TextView android:textSize="20.0sp" android:id="@id/editText22" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rtn_prl" android:inputType="textPersonName" />
+        <TextView android:textSize="20.0sp" android:id="@id/editText8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rtn_prl_val" android:inputType="textPersonName" />
+    </TableRow>
+    <TableRow android:id="@id/life_timer_row" android:layout_width="wrap_content" android:layout_height="fill_parent">
+        <TextView android:textSize="20.0sp" android:id="@id/editText23" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rtn_life_timer" android:inputType="textPersonName" />
+        <TextView android:textSize="20.0sp" android:id="@id/editText9" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rtn_life_timer_val" android:inputType="textPersonName" />
+    </TableRow>
+    <TableRow android:id="@id/life_calls_row" android:layout_width="wrap_content" android:layout_height="fill_parent">
+        <TextView android:textSize="20.0sp" android:id="@id/editText26" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rtn_life_calls" android:inputType="textPersonName" />
+        <TextView android:textSize="20.0sp" android:id="@id/editText10" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rtn_life_calls_val" android:inputType="textPersonName" />
+    </TableRow>
+    <TableRow android:id="@id/life_data_row" android:layout_width="wrap_content" android:layout_height="fill_parent">
+        <TextView android:textSize="20.0sp" android:id="@id/editText27" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rtn_life_data" android:inputType="textPersonName" />
+        <TextView android:textSize="20.0sp" android:id="@id/editText11" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rtn_life_data_val" android:inputType="textPersonName" />
+    </TableRow>
+    <TableRow android:id="@id/recoditioned_status_row" android:layout_width="wrap_content" android:layout_height="fill_parent">
+        <TextView android:textSize="20.0sp" android:id="@id/editText28" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rtn_reconditioned_status" android:inputType="textPersonName" />
+        <TextView android:textSize="20.0sp" android:id="@id/editText12" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rtn_reconditioned_status_val" android:inputType="textPersonName" />
+    </TableRow>
+    <TableRow android:id="@id/reconditioned_date_row" android:layout_width="wrap_content" android:layout_height="fill_parent">
+        <TextView android:textSize="20.0sp" android:id="@id/editText29" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rtn_reconditioned_date" android:inputType="textPersonName" />
+        <TextView android:textSize="20.0sp" android:id="@id/editText13" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rtn_mm_dd_yy" android:inputType="textPersonName" />
+    </TableRow>
+    <TableRow android:id="@id/esn_meid_imei_row" android:layout_width="wrap_content" android:layout_height="fill_parent">
+        <TextView android:textSize="20.0sp" android:id="@id/editText30" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rtn_esn_meid_imei" android:inputType="textPersonName" />
+        <TextView android:textSize="20.0sp" android:id="@id/editText14" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rtn_esn_meid_imei_val" android:inputType="textPersonName" />
+    </TableRow>
+    <TableRow android:id="@id/activation_date_row" android:layout_width="wrap_content" android:layout_height="fill_parent">
+        <TextView android:textSize="20.0sp" android:id="@id/editText31" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rtn_activation_date" android:inputType="textPersonName" />
+        <TextView android:textSize="20.0sp" android:id="@id/editText15" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rtn_mm_dd_yy" android:inputType="textPersonName" />
+    </TableRow>
+    <TableRow android:id="@id/date_of_manufacture_row" android:layout_width="wrap_content" android:layout_height="fill_parent">
+        <TextView android:textSize="20.0sp" android:id="@id/editText32" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rtn_date_of_manufacture" android:inputType="textPersonName" />
+        <TextView android:textSize="20.0sp" android:id="@id/editText33" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rtn_mm_dd_yy" android:inputType="textPersonName" />
+    </TableRow>
+    <TableRow android:id="@id/last_rtn_date_row" android:layout_width="wrap_content" android:layout_height="fill_parent">
+        <TextView android:textSize="20.0sp" android:id="@id/editText34" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rtn_lastdate" android:inputType="textPersonName" />
+        <TextView android:textSize="20.0sp" android:id="@id/editText35" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/rtn_mm_dd_yy" android:inputType="textPersonName" />
+    </TableRow>
+</TableLayout>

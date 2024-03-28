@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="1818.0dip" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include android:id="@id/auto_layout_bv_left" android:layout_width="978.0dip" android:layout_height="fill_parent" app:layout_constraintStart_toStartOf="parent" layout="@layout/auto_parking_bv_left_layout" />
+    <include android:id="@id/auto_layout_bv_right" android:layout_width="840.0dip" android:layout_height="fill_parent" android:layout_marginTop="81.0dip" android:layout_marginBottom="81.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" layout="@layout/auto_parking_bv_right_layout" />
+</androidx.constraintlayout.widget.ConstraintLayout>

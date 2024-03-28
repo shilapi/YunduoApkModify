@@ -1,0 +1,154 @@
+// From planning/dji_msg_planning_gui.h
+
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+
+/**
+ * Co-Driving数据
+ * 结构体: dji_msgs::planning::AppCoDriving
+ * topic: /sys/pl_co_driving_app/v2
+ */
+message AppCoDrivingEvt {
+  APPEBInfo aeb_info = 2;                   /**< AEB info   自动紧急制动    */
+  APPEBInfo meb_info = 3;                   /**< MEB info       */
+  APPEBInfo raeb_info = 4;                  /**< RAEB info      */
+  APPEBInfo rsaeb_info = 5;                 /**< RSAEB info     */
+  APPLDWCommand ldw_command = 6;            /**< LDW info   车道偏离预警    */
+  APPLKACommand lka_command = 7;            /**< LKA info   车道保持辅助    */
+  APPELKInfo elk_info = 8;                  /**< ELK info   紧急车道保持   */
+  APPBSDInfo bsd_info = 9;                  /**< BSD info   盲区监测    */
+  APPDOWInfo dow_info = 10;                 /**< DOW info   开门预警    */
+  APPHBAInfo hba_info = 11;                 /**< HBA info   自动远近光灯    */
+  LightFusion tlr_info = 12;                /**< TLR info   红绿灯    */
+  APPStopLineInfo stop_line_info = 13;      /**< Stop line info 停止线 */
+}
+
+/// \brief EB command
+enum APPEBCommand {
+  APPEB_DISABLE = 0;         /**< disable                             */
+  APPEB_WARNING = 1;         /**< warning level one                   */
+  APPEB_LEVEL_ONE = 2;       /**< EB level one / warning level two    */
+  APPEB_LEVEL_TWO = 3;       /**< EB level two   (pre brake)          */
+  APPEB_LEVEL_THREE = 4;     /**< EB level three (full brake)         */
+};
+
+/// \brief EB info
+message APPEBInfo {
+  int32 id = 1;                  /**< MOT id                            */
+  APPEBCommand pl_command = 2;   /**< PL command                        */
+}
+
+/// \brief LDW command
+enum APPLDWCommand {
+  APPLDW_NONE_WARNING = 0;    /**< disable                               */
+  APPLDW_LEFT_WARNING = 1;    /**< left ldw                              */
+  APPLDW_RIGHT_WARNING = 2;   /**< right ldw                             */
+};
+
+/// \brief LKA command
+enum APPLKACommand {
+  APPLKA_NONE_WARNING = 0;     /**< disable                               */
+  APPLKA_LEFT_STEERING = 1;    /**< left lka                              */
+  APPLKA_RIGHT_STEERING = 2;   /**< right lka                             */
+};
+
+
+/// \brief ELK command
+enum APPELKCommand {
+  APPELK_NONE_WARNING = 0;     /**< disable                              */
+  APPELK_LEFT_STEERING = 1;    /**< left elk                             */
+  APPELK_RIGHT_STEERING = 2;   /**< right elk                            */
+};
+
+/// \brief ELK info
+message APPELKInfo {
+  int32 id = 1;                    /**< MOT id                            */
+  APPELKCommand pl_command = 2;    /**< PL command                        */
+}
+
+/// \brief BSD command
+enum APPBSDCommand {
+  APPBSD_NONE_WARNING = 0;    /**< disable                               */
+  APPBSD_WARNING = 1;         /**< warning                               */
+};
+
+/// \brief BSD side info
+message APPBSDSideInfo {
+  int32 id = 1;                   /**< MOT id                            */
+  APPBSDCommand pl_command = 2;   /**< PL command                        */
+}
+
+/// \brief BSD info
+message APPBSDInfo {
+  APPBSDSideInfo left_side_info = 1;     /**< BSD left side info          */
+  APPBSDSideInfo right_side_info = 2;    /**< BSD right side info         */
+}
+
+/// \brief DOW command
+enum APPDOWCommand {
+  APPDOW_NONE_WARNING = 0;          /**< disable                          */
+  APPDOW_WARNING_LEVEL_ONE = 1;     /**< warning level I                  */
+  APPDOW_WARNING_LEVEL_TWO = 2;     /**< warning level II                 */
+};
+
+/// \brief DOW side info
+message APPDOWSideInfo {
+  int32 id = 1;                    /**< MOT id                            */
+  APPDOWCommand pl_command = 2;    /**< PL command                        */
+}
+
+/// \brief DOW info
+message APPDOWInfo {
+  APPDOWSideInfo left_side_info = 1;     /**< DOW left side info          */
+  APPDOWSideInfo right_side_info = 2;    /**< DOW right side info         */
+}
+
+/// \brief HBA command
+enum APPHBACommand {
+  APPHBA_DISABLE = 0;         /**< disable                              */
+  APPHBA_ENABLE = 1;          /**< enable                               */
+};
+
+/// \brief HBA info
+message APPHBAInfo {
+  int32 id = 1;                    /**< MOT id                            */
+  APPHBACommand pl_command = 2;    /**< PL command                        */
+}
+
+/// \brief Stop line point
+message APPStopLinePoint {
+  double x = 1;                    /**< Position x                         */
+  double y = 2;                    /**< Position y                         */
+}
+
+/// \brief Stop line info
+message APPStopLineInfo {
+  uint32 status = 1;                       /**< 0:Invalid   1:Valid                 */
+  uint32 nums = 2;                         /**< Point num                           */
+  repeated APPStopLinePoint points = 3;    /**< Point pos                           */
+}
+
+/**
+ * Traffic light output struct
+*/
+enum LightFusion_TrafficLightColor {
+  TrafficLightColor_UNSET = 0;
+  TrafficLightColor_RED = 1;
+  TrafficLightColor_GREEN = 2;
+  TrafficLightColor_YELLOW = 3;
+};
+
+message LightFusion_RawTrafficLight {
+  double x = 1;
+  double y = 2;
+  double z = 3;
+  LightFusion_TrafficLightColor color = 4;
+}
+
+message LightFusion {
+  uint32 status = 1;
+  uint32 nums = 2;
+  repeated LightFusion_RawTrafficLight traffic_lights = 3;
+}

@@ -1,0 +1,105 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+
+/**
+ * 建图完成后的地图数据
+ * 结构体: dji_msgs::alam::MapInfoToGatewayMsg
+ * topic: /alam/csm/map_info/v1
+ * 频率: 非周期消息
+ */
+message DrivingMapEvt {
+  uint64 map_id      = 1;
+  uint64 create_time = 2;
+  string map_name    = 3;
+  string start_site  = 4;
+  string end_site    = 5;
+  string creator     = 6;
+  bytes  map         = 7;
+  bytes  thumbnail   = 8;
+  bytes  pose        = 9;
+  uint64 distance    = 10;
+}
+
+/**
+ * 记忆行车地图创建状态
+ * 结构体: per_msgs:alam::DrivingMapperStateMsg
+ * topic: /alam/driving/map_info_v1
+ */
+message DrivingMapperStateEvt {
+  EnumDrivingMapperState state = 1;
+  double total_dist = 2; // total distance that have traveled when in mapping
+  uint32 percentage = 3; // 建图过程百分比
+  uint64 map_id     = 4; // 地图id
+}
+
+enum EnumDrivingMapperState {
+  //建图相关
+  WAITING_TRAINING     = 0; // 等待训练
+  TRAINING             = 1; // 训练中
+  MAPPING              = 2; // 建图中
+  BUILD_SUCCESS_1      = 3; // 一阶段建图完成
+  BUILD_SUCCESS_2      = 4; // 二阶段建图完成
+
+  //地图更新相关
+  UPDATER_WAITING = 5;        //等待训练
+  UPDATER_TRAINING = 6;       //训练中
+  UPDATER_MAPPING = 7;        //建图中
+  UPDATER_SUCCESS = 8;        //建图成功
+  UPDATER_UPLOAD_SUCCESS = 9; //上传成功
+
+  //众包地图相关
+  CROWED_MAPPER_WAITING = 10;         //等待训练
+  CROWED_MAPPER_TRAINING = 11;        //训练中
+  CROWED_MAPPER_MAPPING = 12;         //建图中
+  CROWED_MAPPER_SUCCESS = 13;         //建图成功
+  CROWED_MAPPER_UPLOAD_SUCCESS = 14;  //上传成功
+
+  NO_FAIL = 49;                       //无错误
+  // 建图失败原因
+  FAIL_TOO_FAST        = 100; // 速度太快(速度 > 40km/h)
+  FAIL_TOO_SHORT_TRAJ  = 101; // alam stage 1, 轨迹太短(长度<100m)
+  FAIL_TOO_LONG_TRAJ   = 102; // alam stage 1, 轨迹太长(长度>50km)
+  FAIL_GPS_TOO_BAD     = 103; // alam stage 2, GPS 太差, 无法全局优化
+  FAIL_LOOP_ERROR      = 104; // alam stage2, 地图闭环失败, 地图元素交错
+  FAIL_ELEM_TOO_SPARSE = 105; // alam stage2, 地图元素太稀疏
+  FAIL_HMI_CANCEL_UPLOAD = 106;   // HMI取消上传
+  FAIL_MAP_NOT_EXIST = 107;       // 地图不存在
+
+  FAIL_GPS_TOO_SPARSE = 121;                  //GPS太稀疏
+  FAIL_GPS_VELOCITY_ERROR = 122;              //GPS速度单位不正确
+  FAIL_ORIENTATION_ERROR = 123;               //GPS方向错误
+  FAIL_GPS_FILL_MODE_ERROR = 124;             //CSM代码错误
+  FAIL_GPS_ERROR_NO_CONVERGENCE = 125;        //GF不收敛
+  FAIL_GPS_ERROR_TIMESTAMP_MISS_ALIGN = 126;  //GPS时间对齐失败
+  FAIL_GPS_MESSAGE_LOST = 127;                //GPS消息缺失
+  FAIL_GPS_LARGE_RELATIVE_POSE = 128;         //GPS相对误差过大
+  FAIL_GPS_SEARCH_GNSS_RANGE_ERROR = 129;     //GPS范围搜索失败
+  FAIL_GPS_SEARCH_GNSS_BY_YAW_ERROR = 130;    //GPS方向搜索错误
+  FAIL_GPS_ERROR_UNDEFINED = 131;             //GPS错误未定义
+
+  FAIL_NO_MESSAGE = 140;              //上游消息缺失
+
+  FAIL_ZERO_ON_ROAD_ELEMENT = 151;    //没有地图元素（比如车道线）
+  FAIL_ZERO_OVER_ROAD_ELEMENT = 152;  //没有地上元素（比如杆牌）
+  FAIL_ZERO_SEMANTIC_ELEMENT = 153;   //整个地图完全没有语义要素
+  FAIL_ELEMENT_PARTIALLY_LOST = 154;  //较长距离所有语义要素缺失
+
+
+  FAIL_EXTRINSIC_ERROR = 170;   //查询外参失败
+  FAIL_INTRINSIC_ERROR = 171;   //查询内参失败
+
+  FAIL_SERVICE_CALL_REQ_SIZE_ERROR = 211;   //DCOS请求消息大小检查错误
+  FAIL_SERVICE_CALL_OPEN_FILE_ERROR = 212;  //地图文件打开错误
+  FAIL_SERVICE_CALL_CONNECT_ERROR = 213;    //网络连接错误
+  FAIL_SERVICE_CALL_HTTP_ERROR = 214;       //网络请求错误
+  FAIL_SERVICE_CALL_SERVICE_ERROR = 215;    //上传地图服务器错误
+  FAIL_SERVICE_CALL_UNKNOW_ERROR = 216;     //gateway未知错误
+  FAIL_DCOS_RETURN_FAILURE = 217;           //DCOS返回失败
+  FAIL_DCOS_TIMEOUT = 218;                  //DCOS调用超时
+  FAIL_DCOS_NOT_READY = 219;                //Service未注册
+  FAIL_DCOS_ERROR = 220;                    //其他DCOS错误
+
+  FAIL_UNKNOWN = 255;
+}

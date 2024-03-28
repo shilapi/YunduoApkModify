@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout style="@style/info_layout">
+        <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/vilte_operator_media_customize_mode" />
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <Button android:id="@id/vilte_operator_media_customize_mode_enable" android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/vilte_operator_media_customize_mode_enable" />
+            <Button android:id="@id/vilte_operator_media_customize_mode_disable" android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/vilte_operator_media_customize_mode_disable" />
+        </LinearLayout>
+        <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="10.0dip" />
+        <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/vilte_operator_codec_venc" />
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <EditText android:id="@id/vilte_operator_codec_venc_values" android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+            <Button android:id="@id/vilte_operator_codec_venc_set" android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/vilte_operator_ok" />
+        </LinearLayout>
+        <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/vilte_operator_codec_vdec" />
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <EditText android:id="@id/vilte_operator_codec_vdec_values" android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+            <Button android:id="@id/vilte_operator_codec_vdec_set" android:layout_width="100.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/vilte_operator_ok" />
+        </LinearLayout>
+        <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="10.0dip" />
+        <TextView android:id="@id/vilte_customize_status_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        <TextView android:id="@id/vilte_venc_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        <TextView android:id="@id/vilte_vdec_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+    </LinearLayout>
+</ScrollView>

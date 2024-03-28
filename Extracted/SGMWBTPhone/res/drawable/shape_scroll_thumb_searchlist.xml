@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:height="120.0px" android:left="-10.0px" android:top="10.0px" android:right="10.0px" android:bottom="10.0px">
+        <shape>
+            <solid android:color="@color/rv_scroll_thumb" />
+            <corners android:radius="2.0px" />
+        </shape>
+    </item>
+</layer-list>

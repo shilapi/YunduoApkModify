@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/modem_test_textview" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="30.0dip" />
+    <Button android:textAppearance="?android:textAppearanceMedium" android:id="@id/modem_test_none_btn" android:layout_width="200.0dip" android:layout_height="wrap_content" android:text="@string/modem_test_none" />
+    <Button android:textAppearance="?android:textAppearanceMedium" android:id="@id/modem_test_cta_btn" android:layout_width="200.0dip" android:layout_height="wrap_content" android:layout_marginTop="30.0dip" android:text="@string/modem_test_integrity_off" />
+    <Button android:textAppearance="?android:textAppearanceMedium" android:id="@id/modem_test_fta_btn" android:layout_width="200.0dip" android:layout_height="wrap_content" android:layout_marginTop="30.0dip" android:text="@string/modem_test_fta" />
+    <Button android:textAppearance="?android:textAppearanceMedium" android:id="@id/modem_test_iot_btn" android:layout_width="200.0dip" android:layout_height="wrap_content" android:layout_marginTop="30.0dip" android:text="@string/modem_test_iot" />
+    <Button android:textAppearance="?android:textAppearanceMedium" android:id="@id/modem_test_operator_btn" android:layout_width="200.0dip" android:layout_height="wrap_content" android:layout_marginTop="30.0dip" android:text="@string/modem_test_operator" />
+</LinearLayout>

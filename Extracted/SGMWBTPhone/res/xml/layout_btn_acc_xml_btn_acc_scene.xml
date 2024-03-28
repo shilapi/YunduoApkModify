@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:motion="http://schemas.android.com/apk/res-auto">
+    <Transition motion:constraintSetEnd="@id/end_acc" motion:constraintSetStart="@id/curcall_time_show" motion:duration="1000">
+        <KeyFrameSet>
+            <KeyPosition />
+            <KeyPosition motion:percentX="2.0" />
+            <KeyCycle android:rotation="7.5" motion:framePosition="100" motion:motionTarget="@id/rotation_acc" motion:waveOffset="0.0" motion:wavePeriod="5.0" motion:waveShape="triangle" />
+        </KeyFrameSet>
+    </Transition>
+    <ConstraintSet android:id="@id/curcall_time_show">
+        <Constraint android:id="@id/rotation_acc" android:layout_width="@dimen/p48" android:layout_height="@dimen/p48" android:layout_marginTop="@dimen/p10" android:layout_marginStart="@dimen/p24" motion:layout_constraintStart_toStartOf="parent" motion:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+    <ConstraintSet android:id="@id/end_acc">
+        <Constraint android:id="@id/rotation_acc" android:layout_width="@dimen/p48" android:layout_height="@dimen/p48" android:layout_marginTop="@dimen/p10" android:layout_marginStart="@dimen/p24" motion:layout_constraintStart_toStartOf="parent" motion:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+</MotionScene>

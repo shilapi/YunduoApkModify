@@ -1,0 +1,103 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+
+import "v1/message/device/vehicle/common.proto";
+
+/**
+ * 结构体: DmmRoadElements
+ * Topic: /sys/dmm/app_road_element_display/v4
+ * 频率: 5hz
+ */
+message DmmRoadElementsEvt {
+    DmmBorderInstances dmm_border_instances = 1;
+    DmmLaneInstances dmm_lane_instances = 2;
+    DmmMarkerInstances dmm_marker_instances = 3;
+    OdomPose3d pose = 4;
+}
+
+message DmmBorderInstances {
+    repeated DmmBorderInstance borders = 1;
+}
+
+message DmmBorderInstance {
+    uint32 border_valid = 1;
+    uint32 border_id = 2;
+    uint32 border_color = 3;
+    uint32 border_order = 4;
+    RoadBorderSubType border_type = 5;
+    repeated Point points = 6;
+}
+
+enum RoadBorderSubType {
+    TYPE_ROAD_NONE = 0;
+    TYPE_ROAD_BORDER = 1;
+    TYPE_REFUGE_ISLAND_BORDER = 2;
+    TYPE_ROUND_ABOUNT_BORDER = 3;
+}
+
+message DmmLaneInstances {
+    repeated DmmLaneInstance lanes = 1;
+}
+
+message DmmLaneInstance {
+    uint32 lane_valid = 1;
+    uint32 lane_id = 2;
+    uint32 lane_color = 3;
+    uint32 lane_order = 4;
+    LaneBorderSubType lane_type = 5;
+    repeated Point points = 6;
+}
+
+enum LaneBorderSubType {
+    TYPE_LANE_NONE = 0;
+    TYPE_SINGLE_DASHED_LINE = 1;
+    TYPE_SINGLE_SOLID_LINE = 2;
+    TYPE_DOUBLE_DASHED_LINE = 3;
+    TYPE_DOUBLE_SOLID_LINE = 4;
+    TYPE_DASHED_SOLID_LINE = 5;
+    TYPE_SOLID_DASHED_LINE = 6;
+    TYPE_VARIABLE_DIRECTION_LINE = 7;
+    TYPE_CHANNELIZING_LINE = 8;
+    TYPE_PARKING_LINE = 9;
+    TYPE_DASHED_STOP_LINE = 10;
+    TYPE_SOLID_STOP_LINE = 11;
+    TYPE_SPEED_BUMP = 12;
+}
+
+message DmmMarkerInstances {
+    repeated DmmMarkerInstance markers = 1;
+}
+
+message DmmMarkerInstance {
+    RoadMarkerSubType marker_type = 1;
+    repeated Point points = 2;
+}
+
+enum RoadMarkerSubType {
+    TYPE_MARKER_NONE = 0;
+    TYPE_STRAIGHT = 1;
+    TYPE_LEFT_TURN = 2;
+    TYPE_RIGHT_TURN = 3;
+    TYPE_U_TURN = 4;
+    TYPE_STRAIGHT_LEFT = 5;
+    TYPE_STRAIGHT_RIGHT = 6;
+    TYPE_STRAIGHT_U_TURN = 7;
+    TYPE_LEFT_U_TURN = 8;
+    TYPE_LEFT_RIGHT = 9;
+    TYPE_STRAIGHT_LEFT_RIGHT = 10;
+    TYPE_STRAIGHT_LEFT_U_TURN = 11;
+    TYPE_STRAIGHT_RIGHT_U_TURN = 12;
+    TYPE_LEFT_MERGE = 13;
+    TYPE_RIGHT_MERGE = 14;
+    TYPE_BICYCLE = 15;
+    TYPE_BUS = 16;
+    TYPE_WHEEL_CHAIR = 17;
+    TYPE_DIAMOND = 18;
+    TYPE_INVERTED_TRIANGLE = 19;
+    TYPE_STOP = 20;
+    TYPE_CHARACTER = 21;
+    TYPE_NUMBER = 22;
+    TYPE_SPEED_LIMIT = 23;
+}

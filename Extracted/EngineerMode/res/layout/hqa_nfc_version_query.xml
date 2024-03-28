@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="16.0sp" android:id="@id/hqa_version_tv_mw_version" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0pt" android:layout_marginTop="40.0dip" android:text="@string/hqa_nfc_mw_version" />
+    <TextView android:textSize="16.0sp" android:id="@id/hqa_version_tv_fw_version" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0pt" android:layout_marginTop="10.0dip" android:text="@string/hqa_nfc_fw_version" />
+    <TextView android:textSize="16.0sp" android:id="@id/hqa_version_tv_hw_version" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0pt" android:layout_marginTop="10.0dip" android:text="@string/hqa_nfc_hw_version" />
+    <Button android:id="@id/hqa_version_btn_return" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="190.0dip" android:layout_marginTop="60.0dip" android:text="@string/hqa_nfc_return" android:width="100.0dip" />
+</LinearLayout>

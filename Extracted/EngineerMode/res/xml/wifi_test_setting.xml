@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference android:persistent="false" android:title="@string/wifi_ctia_test" android:key="mtk_wifi_ctia_test" android:summary="@string/wifi_ctia_test_summary" />
+</PreferenceScreen>

@@ -1,0 +1,120 @@
+syntax = "proto3";
+
+package v2.device.driving.service;
+option go_package = "v2/device/driving/service";
+
+//开始记忆行车或高精地图定位
+message HmiStartDrivingMapLocateReq {
+  uint64 map_id = 1;
+  EnumDrivingLocateType type = 2;
+}
+
+enum EnumDrivingLocateType {
+  LOCATE_HD_MAP = 0;      //高精地图
+  LOCATE_CSM_MAP = 1;     //记忆行车地图
+}
+
+//结束记忆行车或高精地图定位
+message HmiStopDrivingMapLocateReq {
+  uint64 map_id = 1;
+  EnumDrivingLocateType type = 2;
+}
+
+//开始记忆行车建图
+message HmiStartDrivingMapTrainReq {
+  uint64 map_id = 1; // 选择更新的地图, 0 表示未选择地图
+}
+
+//开始记忆行车地图构建
+message HmiStartDrivingMapBuildReq {
+  uint64 map_id = 1;
+}
+
+//取消记忆行车地图构建
+message HmiCancelDrivingMapBuildReq {
+  uint64 map_id = 1;
+}
+
+//重新上传记忆行车地图
+message HmiRetryDrivingMapUploadReq {
+  uint64 map_id = 1;
+}
+
+//NOD临时控件开关
+message HmiNODTemporaryReq {
+  EnumNODTemporary nod_temporary = 1;
+}
+
+//MOD临时控件开关
+message HmiMODTemporaryReq {
+  EnumMODTemporary mod_temporary = 1;
+}
+
+enum EnumNODTemporary {
+  NOD_NONE = 0;
+  TJA_TO_NOD = 1;
+  NOD_TO_TJA = 2;
+}
+
+enum EnumMODTemporary {
+  MOD_NONE = 0;
+  TJA_TO_MOD = 1;
+  MOD_TO_TJA = 2;
+}
+
+/**
+ * 高德导航信息
+ * @brief navigation info from Amap of APP, Amap means GaoDe-map.
+ */
+message HmiDrivingAmapReq {
+  int32 cur_speed_limit = 1;                /**< current speed limit(km/h) */
+  int32 cur_retain_distance = 2;            /**< remain distance(m) of current road section */
+  int32 icon_type = 3;                      /**< navigation steering icon */
+  int32 functional_road_class = 4;          /** 0-Un know, 1-freeway*/
+  AmapLaneInfo lane_info = 5;               /**< lane info */
+  int32 path_retain_distance = 6;           /** 路线剩余距离 */
+  EnumNaviType navi_type = 7;               /** 导航类型 */
+}
+
+enum EnumNaviType {
+  TYPE_NONE = 0;
+  TYPE_GPS = 1;           //GPS导航
+  TYPE_SIMULATION = 2;    //模拟导航
+}
+
+message AmapLaneInfo {
+  repeated AmapLaneType front_lane = 1;     //前景车道类型
+  repeated AmapLaneType background_lane = 2;//背景车道类型
+  double distance = 3;
+}
+
+/**
+ * 对应高德的 LaneAction：https://a.amap.com/lbs/static/unzip/Android_Navi_Doc/com/amap/api/navi/enums/LaneAction.html
+ */
+enum AmapLaneType {
+  LANE_ACTION_AHEAD = 0;                    //直行
+  LANE_ACTION_LEFT = 1;                     //左转
+  LANE_ACTION_AHEAD_LEFT = 2;               //直行｜左转
+  LANE_ACTION_RIGHT = 3;                    //右转
+  LANE_ACTION_AHEAD_RIGHT = 4;              //直行｜右转
+  LANE_ACTION_LU_TURN = 5;                  //左掉头
+  LANE_ACTION_LEFT_RIGHT = 6;               //左转｜右转
+  LANE_ACTION_AHEAD_LEFT_RIGHT = 7;         //直行｜左转｜右转
+  LANE_ACTION_RU_TURN = 8;                  //右掉头
+  ANE_ACTION_AHEAD_LU_TURN = 9;             //直行｜左掉头
+  LANE_ACTION_AHEAD_RU_TURN = 10;           //直行｜右掉头
+  LANE_ACTION_LEFT_LU_TURN = 11;            //左转｜左掉头
+  LANE_ACTION_RIGHT_RU_TURN = 12;           //右转｜右掉头
+  LANE_ACTION_LEFT_IN_AHEAD = 13;           //直行｜拓展
+  LANE_ACTION_LEFT_IN_LEFT_LU_TURN = 14;    //左转｜左掉头｜拓展
+  LANE_ACTION_RESERVED = 15;                //保留
+  LANE_ACTION_AHEAD_LEFT_LU_TURN = 16;      //直行｜左转｜左掉头
+  LANE_ACTION_RIGHT_RU_TURN_EX = 17;        //右转｜左掉头
+  LANE_ACTION_LEFT_RU_TURN = 18;            //左转｜左掉头
+  LANE_ACTION_AHEAD_RIGHT_RU_TURN = 19;     //直行｜右转｜右掉头
+  LANE_ACTION_LEFT_LU_TURN_EX = 20;         //左转｜右掉头
+  LANE_ACTION_BUS = 21;                     //公交车道
+  LANE_ACTION_EMPTY = 22;                   //空车道
+  LANE_ACTION_VARIABLE = 23;                //可变车道
+  LANE_ACTION_NULL = 255;                   //无对应车道
+}

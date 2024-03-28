@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/root" android:tag="layout/adapter_contacts_search_0" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:alpha="1.0">
+        <ImageView android:id="@id/header" android:tag="binding_1" android:layout_width="@dimen/p56" android:layout_height="@dimen/p56" android:layout_marginTop="@dimen/p22" android:src="@mipmap/img_item_header" android:scaleType="fitXY" android:layout_marginStart="@dimen/p20" />
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p17" android:layout_marginStart="@dimen/p20" android:layout_toEndOf="@id/header">
+            <TextView android:textSize="@dimen/s21" android:textColor="@color/frg_contact_item_number" android:id="@id/name" android:tag="binding_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/p9" android:text="@string/content" android:includeFontPadding="false" android:fontFamily="@font/cn_medium" />
+            <TextView android:textSize="@dimen/s19" android:textColor="@color/frg_contact_item_number" android:id="@id/number" android:tag="binding_3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/content" android:includeFontPadding="false" android:fontFamily="@font/mn_regular" />
+        </LinearLayout>
+    </RelativeLayout>
+    <View android:id="@id/sp_line" android:background="@drawable/shape_adapter_contact_line" android:layout_width="@dimen/p752" android:layout_height="@dimen/p1" android:layout_marginTop="@dimen/p20" android:layout_marginStart="@dimen/p20" />
+</LinearLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView android:id="@id/BLETestMode" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@string/BLETestMode" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/LinearLayout" android:layout_width="310.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip">
+            <RadioGroup android:orientation="horizontal" android:id="@id/BLETxRx" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <RadioButton android:id="@id/BLETestModeTx" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/BLETestModeTx" android:layout_weight="1.0" />
+                <RadioButton android:id="@id/BLETestModeRx" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/BLETestModeRx" android:layout_weight="1.0" />
+            </RadioGroup>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/LinearLayout" android:layout_width="310.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip">
+            <RadioGroup android:orientation="horizontal" android:id="@id/BLEHoppingSingle" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <RadioButton android:id="@id/BLEHopping" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/BLEHopping" android:layout_weight="1.0" />
+                <RadioButton android:id="@id/BLESingle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/BLESingle" android:layout_weight="1.0" />
+            </RadioGroup>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/LinearLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip">
+            <TextView android:id="@id/BLEChannel" android:paddingTop="10.0dip" android:layout_width="80.0dip" android:layout_height="wrap_content" android:text="@string/BLEChannel" />
+            <Spinner android:id="@id/BLEChannelSpinner" android:layout_width="230.0dip" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/LinearLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip">
+            <TextView android:id="@id/BLEPattern" android:paddingTop="10.0dip" android:layout_width="80.0dip" android:layout_height="wrap_content" android:text="@string/BLEPattern" />
+            <Spinner android:entries="@array/bt_ble_test_pattern" android:id="@id/BLEPatternSpinner" android:layout_width="230.0dip" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <CheckBox android:id="@id/BLEContiniousTx" android:paddingTop="10.0dip" android:layout_width="310.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@string/BLEContiniousTx" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/LinearLayout" android:paddingTop="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <Button android:id="@id/BLEStart" android:layout_width="155.0dip" android:layout_height="wrap_content" android:text="@string/BLEStart" />
+            <Button android:id="@id/BLEStop" android:layout_width="155.0dip" android:layout_height="wrap_content" android:text="@string/BLEStop" />
+        </LinearLayout>
+        <TextView android:id="@id/BLEResult_Text" android:paddingTop="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>

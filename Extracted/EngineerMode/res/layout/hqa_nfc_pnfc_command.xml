@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="30.0dip">
+        <TextView android:textSize="16.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0pt" android:layout_marginTop="10.0dip" android:text="@string/hqa_nfc_pnfc_text" />
+        <EditText android:id="@id/hqa_pnfc_et_pnfc" android:layout_width="90.0pt" android:layout_height="wrap_content" android:layout_marginLeft="35.0pt" android:singleLine="true" />
+        <Button android:id="@id/hqa_pnfc_btn_send" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="70.0dip" android:layout_marginTop="60.0dip" android:text="@string/hqa_nfc_send" android:width="100.0dip" />
+        <Button android:id="@id/hqa_pnfc_btn_return" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="190.0dip" android:layout_marginTop="60.0dip" android:text="@string/hqa_nfc_return" android:width="100.0dip" />
+    </RelativeLayout>
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="30.0dip">
+        <TextView android:textSize="16.0sp" android:id="@id/hqa_pnfc_tv_reslut" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0pt" android:layout_marginTop="10.0dip" />
+    </LinearLayout>
+</LinearLayout>

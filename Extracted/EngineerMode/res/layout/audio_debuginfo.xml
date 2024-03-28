@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:id="@id/Audio_DebugInfo_ParameterText" android:layout_width="240.0dip" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip" android:layout_marginTop="40.0dip" android:text="@string/Audio_DebugInfo_ParameterText" />
+        <Spinner android:id="@id/Audio_DebugInfo_Spinner" android:layout_width="240.0dip" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip" android:layout_marginTop="20.0dip" />
+        <TextView android:id="@id/Audio_DebugInfo_ValueText" android:layout_width="240.0dip" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip" android:layout_marginTop="20.0dip" android:text="@string/Audio_DebugInfo_ValueText" />
+        <EditText android:id="@id/Audio_DebugInfo_EditText" android:layout_width="240.0dip" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip" android:layout_marginTop="20.0dip" android:text="@string/Audio_DebugInfo_EditText" android:singleLine="true" android:numeric="integer" />
+        <Button android:id="@id/Audio_DebugInfo_Button" android:layout_width="240.0dip" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip" android:layout_marginTop="20.0dip" android:text="@string/Audio_DebugInfo_Button" />
+    </LinearLayout>
+</ScrollView>

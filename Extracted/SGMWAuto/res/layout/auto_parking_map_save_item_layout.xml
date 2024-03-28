@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="192.0dip" android:layout_marginTop="12.0dip" android:layout_marginBottom="12.0dip" android:layout_marginVertical="12.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView android:id="@id/auto_training_cv_content" android:background="@drawable/auto_parking_map_parking_in_item_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" app:cardBackgroundColor="@color/trans" app:cardCornerRadius="20.0dip" app:cardElevation="0.0dip">
+        <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/auto_training_cl_content" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ImageView android:id="@id/auto_training_iv_image" android:focusable="false" android:layout_width="144.0dip" android:layout_height="144.0dip" android:layout_marginStart="24.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+            <TextView android:textSize="@dimen/common_text_size_middle" android:textColor="@color/parking_map_parking_in_item_title_text" android:ellipsize="end" android:id="@id/auto_training_tv_title" android:focusable="false" android:layout_width="282.0dip" android:layout_height="wrap_content" android:layout_marginTop="21.0dip" android:maxLines="1" android:layout_marginStart="24.0dip" android:layout_marginEnd="50.0dip" app:layout_constraintStart_toEndOf="@id/auto_training_iv_image" app:layout_constraintTop_toTopOf="parent" />
+            <TextView android:textSize="@dimen/common_text_size_small" android:textColor="@color/parking_map_parking_in_item_subtitle_text" android:id="@id/auto_training_tv_create_time" android:focusable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="23.0dip" android:layout_marginEnd="24.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+option objc_class_prefix = "DSG";
+
+import "v1/message/device/vehicle/common.proto";
+import "v1/message/device/vehicle/hmi/event/parking_map.proto";
+
+message ParkingDmmFeedbackEvt {
+  EnumParkingMode mode = 1;         //泊车模式(车机选择)
+  repeated OdomVector points = 2;   //区域、车位框、召唤点(车机选择)
+  uint32 slotId = 3;                //车位框ID(车机选择)
+  uint64 map_id = 4;                //地图ID(车机泊车准备好后的地图、dmm推荐的召唤地图)
+  int32 floorId = 5;                //当前楼层id, B1->-1, B2->-2, L1-1, ...
+  EnumParkingLocatorState state = 6;//定位状态(泊车/召唤)
+  CarPose pose = 7;                 //车辆在地图位置
+  ParkingResult parking_result = 8; //泊车结果反馈
+}
+
+message CarPose {
+  OdomVector pose = 1;              //车辆在地图位置
+  float yaw = 2;
+  float pitch = 3;
+  float roll = 4;
+}
+
+message ParkingResult {
+  float parking_distance = 1;      //泊车距离
+  float parking_time = 2;          //泊车时间
+  uint32 avoidance_times = 3;      //泊车避让次数
+}

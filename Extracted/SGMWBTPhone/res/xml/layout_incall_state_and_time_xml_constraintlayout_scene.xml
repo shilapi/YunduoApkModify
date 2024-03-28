@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:motion="http://schemas.android.com/apk/res-auto">
+    <Transition motion:constraintSetEnd="@id/curcall_time_gone" motion:constraintSetStart="@id/curcall_time_show" motion:duration="600" motion:motionInterpolator="cubic(1,0,0,1)">
+        <KeyFrameSet />
+    </Transition>
+    <ConstraintSet android:id="@id/curcall_time_show">
+        <Constraint android:id="@id/cur_call_time" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p6" android:layout_marginStart="@dimen/p250" motion:layout_constraintStart_toStartOf="parent" motion:layout_constraintTop_toTopOf="parent" />
+        <Constraint android:id="@id/msg_state" android:layout_width="@dimen/p96" android:layout_height="wrap_content" android:layout_marginStart="@dimen/p135" motion:layout_constraintStart_toStartOf="parent" motion:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+    <ConstraintSet android:id="@id/curcall_time_gone">
+        <Constraint android:id="@id/cur_call_time" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p6" android:layout_marginStart="@dimen/p250" motion:layout_constraintStart_toStartOf="parent" motion:layout_constraintTop_toTopOf="parent" />
+        <Constraint android:id="@id/msg_state" android:layout_width="@dimen/p96" android:layout_height="wrap_content" android:layout_marginStart="@dimen/p192" motion:layout_constraintStart_toStartOf="parent" motion:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+</MotionScene>

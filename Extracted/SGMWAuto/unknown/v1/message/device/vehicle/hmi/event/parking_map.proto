@@ -1,0 +1,150 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+
+import "v1/message/device/vehicle/common.proto";
+
+/**
+ * 泊车地图定位状态
+ * 结构体: per_msgs::alam::LocatorInfo (per_msgs/schema/alam/ipa_location.h)
+ * topic : /alam/ipa/loc_info
+ * 频率  : 5 Hz
+ */
+message ParkingLocateInfoEvt {
+  int64 mapId = 1;
+  int32 floorId = 2;
+  EnumParkingLocatorState state = 3;
+  OdomPose3d pose = 4;
+}
+
+enum EnumParkingLocatorState {
+  LS_INITIALIZING = 0; //定位初始化中
+  LS_TRACKING = 1;     //定位成功
+  LS_FAIL = 2;         //定位失败
+}
+
+
+/**
+ * 泊车地图上传状态
+ * 结构体: per_msgs::alam::MapInfoUploadStatMsg
+ * topic: /alam/ipa/map_upload_stat
+ */
+message ParkingMapUploadStateEvt {
+  int64 map_id = 1;
+  EnumParkingMapUploadState state = 2;
+}
+
+enum EnumParkingMapUploadState {
+  PARKING_MAP_UPLOAD_SUCC = 0; //上传成功
+  PARKING_MAP_UPLOAD_FAIL = 1; //上传失败
+  PARKING_MAP_UPLOADING = 2;   //正在上传
+}
+
+
+message ParkingMapInfo {
+  uint64 map_id = 1;                 //范围:0-256
+  string map_name = 2;               //地图名(根据GPS定位)
+  string vin = 3;                    //车辆vin码
+  string create_time = 4;            //创建时间
+  repeated SubMapInfo sub_maps = 5;
+  EnumParkingMapType map_type = 6;   //地图类型
+}
+
+message SubMapInfo {
+  int32 floor_id = 1;                           //楼层id, B1->-1, B2->-2, L1-1, ...    范围:-5-5
+  repeated ParkingSlot slot = 2;                //车位框数据
+  repeated OdomPose3d path = 3;                 //地图轨迹
+  bytes thumbImg = 4;                           //缩略图信息，大小:几百k，如果只有一层
+  int32 slot_num = 5;                         //车位框个数
+}
+
+enum EnumParkingMapperState {
+  MS_WAITING_TRAINING = 0; //等待建图
+  MS_TRAINING = 1; //正在建图
+  MS_SEMANTIC_OPTIMIZING = 2; //语义优化
+  MS_MAPPING = 3; //正在地图构建(App建图结束后地图算法进行后台优化)
+  MS_SUCC = 4; //建图完成
+  MS_FAIL = 5; //建图失败
+}
+
+enum EnumParkingSlotState {
+  PSS_IDLE_SLOT = 0;
+  PSS_NOT_IDLE_SLOT = 1;
+  PSS_PRIVATE_SLOT = 2;
+}
+
+message ParkingSlotInfo {
+  EnumParkingSlotState state = 1;
+  ParkingSlot slot = 2;
+}
+
+enum EnumSemanticLandmarkType {
+  SLT_UNKNOWN = 0;
+  SLT_ARROW = 1;
+  SLT_SPEED_BUMP = 2;
+  SLT_TRAFFIC_CONE = 3;
+  SLT_OBSTACLES = 4;
+  SLT_CROSS_WALK = 5;
+  SLT_PILLAR = 6;
+  SLT_TOLLGATE_POLE = 7;
+}
+
+//停车场静态语义
+message SemanticLandmarkInfo {
+  uint32 landmarkId = 1;
+  EnumSemanticLandmarkType landmarkType = 2;
+  // some landmark has many subtype, eg: arrow
+  uint32 landmarkSubType = 3;
+  // 3-d corrdinate
+  Coordinate pose = 4;
+
+  float yaw = 5;
+  // describe some landmark attribute
+  float size = 6;
+}
+
+
+// ISV2.0 使用
+message IsSubMapInfo {
+  int32 floor_id = 1;                 //floor_id, B1->-1, B2->-2, L1-1, ...
+  repeated ParkingSlotInfo slots = 2; //parking slots in map
+  repeated OdomPose3d path = 3;       //path when in training
+  bytes thumbImg = 4;                 //缩略图信息，用于gateway给云端发送
+  int32 slot_num = 5;                 //车位框个数
+}
+
+message IsParkingMapInfo {
+  uint64 map_id = 1;
+  repeated uint32 map_name = 2;
+  repeated IsSubMapInfo sub_maps = 3;
+}
+
+/**
+ * 停车场建图信息
+ * 结构体: per_msgs::alam::MapperInfo
+ * topic : /alam/ipa/map_info
+ * 频率  : 5 Hz
+ */
+message ParkingMapperInfoEvt {
+  EnumParkingMapperState state = 1; // state of IPA mapper
+  repeated uint32 fail_text = 2;  //text that tells failure reason
+  OdomPose3d pose = 3; //current pose
+  double total_dist = 4; //total distance that have traveled when in mapping
+  double percentage = 5; //percentage of mapping process
+  int32 cur_floor_id = 6; //floor_id when mapping
+  IsParkingMapInfo map_info = 7; //map information that have builded
+}
+
+// gateway上传停车场建图信息（app从云端下载后也是转换成这个结构体发送给3D）
+message UploadParkingAreaMap {
+  int64 mapId = 1;
+  string name = 2;
+  repeated IsSubMapInfo list = 3;
+  EnumParkingMapType map_type = 4;
+  double total_dist = 5;
+}
+
+message UploadParkingAreaMapRsp {
+  int64 adc_map_id = 1;
+}

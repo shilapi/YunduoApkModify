@@ -1,0 +1,278 @@
+syntax = "proto3";
+
+package v2.device.driving.event;
+option go_package = "v2/device/driving/event";
+
+/**
+ * DMM Driving信息
+ * 结构体 : DmmDrivingHMIInfo
+ * topic : /sys/dmm/driving_hmi_info/v5
+ */
+message DmmDrivingInfoEvt {
+  LaneChangeInfo lc_info = 1;             //变道
+  PassByInfo by_pass_info = 2;            //绕行
+  EnumSysOddWarning sys_odd_warning = 3;  //系统边界提醒
+  EnumPassTrafficLightExplain pass_traffic_light_explain = 4; //过红绿灯路口提醒
+  ADASOddInfo adas_odd_info = 5;          //ADAS异常提醒
+  D130DrivingInfo d130_driving_info = 6;  //D130信息
+}
+
+message LaneChangeInfo {
+  EnumLaneChangeStatus lc_status = 1;              //变道状态
+  EnumLaneChangeDirection lc_direction = 2;        //变道方向
+  EnumLaneChangeMotivation lc_motivation = 3;      //变道动机
+  EnumLaneChangeExplain lc_status_explain = 4;     //变道状态解释
+  float nod_lc_target_position_x = 5;              //变道目标位置x
+  float nod_lc_target_position_y = 6;              //变道目标位置y
+  float dis_to_left_marker = 7;                    //距离左车道线值
+  float dis_to_right_marker = 8;                   //距离右车道线值
+  EnumLaneChangeOddMsg lc_odd_msg = 9;             //DTLC失败原因
+}
+
+message PassByInfo {
+  EnumPassByStatus pass_by_status = 1;              //绕行状态
+  EnumPassByDirection pass_by_direction = 2;        //绕行方向
+  EnumPassByPrompt pass_by_prompt = 4;              //绕行提示
+  float pass_by_lat_distance = 5;                   //绕行侧偏距离
+}
+
+message ADASOddInfo {
+  EnumSysModeUpdate sys_mode_update = 1;        //ADAS升降级提醒
+  EnumSysOddInWarning sys_odd_in_warning = 2;   //无法切入上述类中模式的原因
+  EnumSysOddOutWarning sys_odd_out_warning = 3; //自动切出上述类中模式的原因
+  EnumFSDWarning fsd_warning = 4;               //FSD提示
+}
+
+message D130DrivingInfo {
+  uint32 target_veh_spd = 1;      //期望速度
+  uint32 time_gap = 2;            //跟车距离
+  uint32 hands_off_warning = 3;   //脱手报警
+  uint32 d130_recommend_flag = 4; //D130功能推荐
+  EnumStopAndGo stop_and_go = 5;  //跟车启停
+}
+
+enum EnumPassTrafficLightExplain {
+  PASS_TRAFFIC_LIGHT_NONE = 0;
+  PASS_TRAFFIC_LIGHT_STOP = 1;              //红灯刹车
+  PASS_TRAFFIC_LIGHT_GO = 2;                //绿灯起步
+  PASS_TRAFFIC_LIGHT_NO_LIGHT = 3;          //路口无红绿灯报警
+  PASS_TRAFFIC_LIGHT_NO_LIGHT_DETECT = 4;   //路口未检测红绿灯报警
+  PASS_TRAFFIC_LIGHT_NO_STOP_LINE = 5;      //路口未检测到停止线
+  PASS_TRAFFIC_LIGHT_WHIT_BAD_WEATHER = 6;  //恶劣天气红绿灯检测报警
+  PASS_TRAFFIC_LIGHT_AHEAD = 7;             //前方红绿灯
+}
+
+enum EnumSysOddWarning {
+  SYS_ODD_NONE = 0;                       //无系统边界报警
+  SYS_ODD_CROSS_LINE = 1;                 //压线提醒
+  SYS_ODD_SHARE_BEND_LEVEL1 = 2;          //大曲率弯道提醒1
+  SYS_ODD_SHARE_BEND_LEVEL2 = 3;          //大曲率弯道提醒2
+  SYS_ODD_COMPLEX_ROAD_LEVEL1 = 4;        //复杂路况提醒1
+  SYS_ODD_SHARE_COMPLEX_ROAD_LEVEL2 = 5;  //复杂路况提醒2
+  SYS_ODD_SLAM_STEER = 6;                 //猛打方向盘接管提醒
+  SYS_ODD_OPPOSITE_LANE = 7;              //驶入对向车道接管提醒
+  SYS_ODD_MERGE_POINT = 8;                //合流点提醒
+  SYS_ODD_END_MERGE = 9;                  //合流点无法汇入提醒
+  SYS_ODD_CUT_IN_LEVEL1 = 10;             //cut-in一级提醒
+  SYS_ODD_CUT_IN_LEVEL2 = 11;             //cut-in二级提醒
+  SYS_ODD_CUT_IN_LEVEL3 = 12;             //cut-in三级提醒
+  SYS_ODD_LEFT_COLLISION = 13;            //左侧碰撞预警
+  SYS_ODD_RIGHT_COLLISION = 14;           //右侧碰撞预警
+  SYS_ODD_FRONT_COLLISION = 15;           //前向碰撞预警
+  SYS_ODD_INTERSECTION_AHEAD = 16;        //前方交叉口提醒
+  SYS_ODD_PEDESTRIANS_AHEAD = 17;         //前方行人提醒
+  SYS_ODD_RUN_OUT_OF_CURVE = 18;          //冲出弯道提醒
+  SYS_ODD_OVER_SPEED = 19;                //超速
+  SYS_ODD_HOLD_ON_STEER = 20;             //握紧方向盘提醒
+  SYS_ODD_TAKE_OVER_ADAS = 21;            //请求接管提醒
+  SYS_ODD_FOLLOW_CAR_STOP_GO = 22;        //跟随车辆停起
+  SYS_ODD_LANE_DEVIATE = 23;              //车道偏离
+}
+
+enum EnumLaneChangeExplain {
+  LC_EXPLAIN_NONE = 0;
+  LC_EXPLAIN_SMALL_SPEED_DIFFERENCE = 1;                        //变道前低速度差提醒
+  LC_EXPLAIN_BIG_SPEED_DIFFERENCE = 11;                         //变道前高速度差提醒
+  LC_EXPLAIN_PUSH_MODE_BIG_SPACE = 2;                           //push模式大变道空间提醒
+  LC_EXPLAIN_PUSH_MODE_SMALL_SPACE = 12;                        //push模式小变道空间提醒
+  LC_EXPLAIN_INTO_HOLD_MODE_LOW_COLLISION_RISK = 3;             //低碰撞风险进入hold提醒
+  LC_EXPLAIN_INTO_HOLD_MODE_HIGH_COLLISION_RISK = 13;           //高碰撞风险进入hold提醒
+  LC_EXPLAIN_INTO_HOLD_MODE_FOR_LANE_TYPE_REASON = 4;           //车道线原因进入hold提醒（未压线）
+  LC_EXPLAIN_INTO_HOLD_MODE_FOR_PRESSING_SOLID_LINE = 14;       //hold中压实线提醒
+  LC_EXPLAIN_HOLD_MODE_PRESS_LINE_DRIVE_OVER_TIME_LEVEL1 = 5;   //hold中压实虚线行驶超时报警1
+  LC_EXPLAIN_HOLD_MODE_PRESS_LINE_DRIVE_OVER_TIME_LEVEL2 = 15;  //hold中压实虚线行驶超时报警2
+  LC_EXPLAIN_HOLD_MODE_OVER_TIME_LEVEL1 = 6;                    //障碍物原因超时报警1
+  LC_EXPLAIN_HOLD_MODE_OVER_TIME_LEVEL2 = 16;                   //障碍物原因超时报警2
+  LC_EXPLAIN_HOLD_MODE_INTO_LOW_RISK_ROAD_CONDITION = 7;        //hold中目标车道旁有锥桶情况
+  LC_EXPLAIN_HOLD_MODE_INTO_HIGH_RISK_ROAD_CONDITION = 17;      //hold中目标车道范围内有锥桶情况
+  LC_EXPLAIN_HOLD_MODE_INTO_SIMPLE_ROAD_STRUCTURE = 8;          //hold中进入较复杂道路结构--如大曲率弯道一级报警
+  LC_EXPLAIN_HOLD_MODE_INTO_COMPLEX_ROAD_STRUCTURE = 18;        //hold中进入复杂道路结构--如大曲率弯道二级报警
+  LC_EXPLAIN_GENERAL_ALERT_LEVEL1 = 9;                          //通用一级报警
+  LC_EXPLAIN_GENERAL_ALERT_LEVEL2 = 19;                         //通用二级报警
+  LC_EXPLAIN_ALERT_LEVEL1_RESERVED = 10;                        //预留一级报警
+  LC_EXPLAIN_ALERT_LEVEL2_RESERVED = 20;                        //预留二级报警
+  LC_EXPLAIN_RECOMMEND_LEFT = 21;                               //系统推荐向左变道
+  LC_EXPLAIN_RECOMMEND_RIGHT = 22;                              //系统推荐向右变道
+}
+
+enum EnumLaneChangeStatus {
+  LC_INIT = 0;
+  LC_STANDBY = 1;
+  LC_READY = 2;
+  LC_ACTIVE = 3;
+  LC_HOLD = 4;
+  LC_RETURN = 5;
+  LC_RETURN_FINISHED = 6;
+  LC_FINISHED = 7;
+  LC_FAILED = 8;
+}
+
+enum EnumLaneChangeDirection {
+  LC_NONE = 0;
+  LC_LEFT = 1;
+  LC_RIGHT = 2;
+}
+
+enum EnumLaneChangeMotivation {
+  LC_MOTIVATION_NONE = 0;
+  LC_MOTIVATION_TO_RAMP = 1;        //匝道变道
+  LC_MOTIVATION_TO_MERGE = 2;       //合流变道
+  LC_MOTIVATION_OVERTAKE = 3;       //超车变道
+  LC_MOTIVATION_LANE_SECTION = 4;   //车道选择变道
+  LC_MOTIVATION_TO_LEFT_TURN = 5;   //左转变道
+  LC_MOTIVATION_TO_RIGHT_TURN = 6;  //右转变道
+  LC_MOTIVATION_TO_U_TURN = 7;      //掉头变道
+  LC_MOTIVATION_BY_DRIVER = 8;      //驾驶员指令变道
+}
+
+enum EnumLaneChangeOddMsg {
+  LC_ODD_MSG_NONE = 0;
+  LC_ODD_MSG_LINE_TYPE_SOLID = 1;                 //实线
+  LC_ODD_MSG_DYNAMIC_OBSTACLE_IN_TARGET_LANE = 2; //有动态障碍物在目标车道
+  LC_ODD_MSG_NEAR_STATIC_OBSTACLE = 3;            //靠近静态障碍物
+  LC_ODD_MSG_LOW_SAFETY_DISTANCE = 4;             //没有变道空间
+  LC_ODD_MSG_SPEED_TOO_HIGH = 5;                  //速度太高
+  LC_ODD_MSG_SPEED_TOO_LOW = 6;                   //速度太低
+  LC_ODD_MSG_USER_TAKE_OVER = 7;                  //用户接管
+  LC_ODD_MSG_USER_CANCEL = 8;                     //用户取消变道
+  LC_ODD_MSG_SYSTEM_CANCEL = 9;                   //系统取消变道
+  LC_ODD_MSG_CNDT_NOT_SATISFIED = 10;             //不符合变道条件（其他原因变道失败）
+  LC_ODD_MSG_SURROUND_VIEW_CAMERA_BLOCKED = 11;   //环视摄像头无法使用
+}
+
+enum EnumPassByStatus {
+  PASS_BY_INIT = 0;
+  PASS_BY_START = 1;
+  PASS_BY_WAITING = 2;
+  PASS_BY_CANCEL = 3;             //用户取消绕行
+  PASS_BY_FINISH = 4;
+  PASS_BY_CANCEL_FINISH = 5;
+  PASS_BY_TERMINATION = 6;        //系统终止绕行
+  PASS_BY_FAILED = 7;
+}
+
+enum EnumPassByDirection {
+  PASS_BY_NONE = 0;
+  PASS_BY_LEFT = 1;
+  PASS_BY_RIGHT = 2;
+}
+
+enum EnumPassByPrompt {
+  PASS_BY_PROMPT_NONE = 0;
+  PASS_BY_PROMPT_EVADE_TO_LEFT = 1;         //向左避让
+  PASS_BY_PROMPT_EVADE_TO_RIGHT = 2;        //向右避让
+  PASS_BY_PROMPT_OVERTIME_LEVEL1 = 3;       //绕行等待超时报警1
+  PASS_BY_PROMPT_OVERTIME_LEVEL2 = 4;       //绕行等待超时报警2
+  PASS_BY_PROMPT_TAKEOVER_LEVEL1 = 5;       //绕行接管报警1
+  PASS_BY_PROMPT_TAKEOVER_LEVEL2 = 6;       //绕行接管报警2
+  PASS_BY_PROMPT_GENERAL_ALERT_LEVEL1 = 7;  //绕行通用报警1
+  PASS_BY_PROMPT_GENERAL_ALERT_LEVEL2 = 8;  //绕行通用报警2
+  PASS_BY_PROMPT_RESERVE_ALERT_LEVEL1 = 9;  //绕行预留报警1
+  PASS_BY_PROMPT_RESERVE_ALERT_LEVEL2 = 10; //绕行预留报警2
+}
+
+enum EnumSysModeUpdate {
+  SYS_MODE_NONE = 0;
+  SYS_MODE_ACC_ON = 1;          //开启ACC
+  SYS_MODE_ACC_OFF = 2;         //关闭ACC
+  SYS_MODE_CA_ON = 3;           //开启CA
+  SYS_MODE_CA_OFF = 4;          //关闭CA
+  SYS_MODE_TJA_ON = 5;          //开启TJA
+  SYS_MODE_TJA_OFF = 6;         //关闭TJA
+  SYS_MODE_TJA_RECOMMEND = 7;   //系统推荐开启TJA
+  SYS_MODE_TJA_TO_ACC = 8;      //TJA降级到ACC
+}
+
+enum EnumSysOddInWarning {
+  SYS_ODD_IN_NONE = 0;
+  SYS_ODD_IN_ROAD_CURVE = 1;              //弯道
+  SYS_ODD_IN_REQUIRE_GEAR_D = 2;          //需要D挡
+  SYS_ODD_IN_FRONT_DOOR = 3;              //前门未关
+  SYS_ODD_IN_TRAIL_DOOR = 4;              //后门未关
+  SYS_ODD_IN_UCU_TIME = 5;                //UCU时间
+  SYS_ODD_IN_EPB_LOCKED = 6;              //手刹未放下
+  SYS_ODD_IN_HEAVY_RAIN = 7;              //大雨
+  SYS_ODD_IN_SAFETY_BELT = 8;             //安全带
+  SYS_ODD_IN_BRAKE_PEDAL_DOWN = 9;        //刹车被踩下
+  SYS_ODD_IN_OVER_SPEED = 10;             //超速
+  SYS_ODD_IN_IQA_REFLECTED = 11;          //图像质量低
+  SYS_ODD_IN_IQA_GLARED = 12;             //图像过亮
+  SYS_ODD_IN_IQA_BLURRED = 13;            //图像模糊
+  SYS_ODD_IN_STEER_ANG = 14;              //方向盘角度
+  SYS_ODD_IN_LOW_SOC = 15;                //电量低
+  SYS_ODD_IN_REQUIRE_REACTIVE_GEAR_P = 16;//需要重新挂P挡
+  SYS_ODD_IN_SCENE_FOG = 17;              //雾
+  SYS_ODD_IN_PARTS_FAIL = 18;             //零部件失效
+  SYS_ODD_IN_PARTS_SUPPRESS = 19;         //零部件性能降低
+  SYS_ODD_IN_ESC_OFF = 20;                //ESC系统关闭
+  SYS_ODD_IN_REAR_MIRROR = 21;            //后视镜
+  SYS_ODD_IN_LANE_CNDT = 22;              //道路条件
+  SYS_ODD_IN_PARK_ACTIVATED = 23;         //泊车已激活
+  SYS_ODD_IN_ACTUATOR_FAULT = 24;         //致动器故障（雨刮、刹车）
+  SYS_ODD_IN_NIGHT_ENV = 25;              //夜间环境
+  SYS_ODD_IN_FRONT_CAMERA_BLOCKED = 26;   //前向相机阻塞
+  SYS_ODD_IN_TSK_FAULT = 27;              //TSK故障
+  SYS_ODD_IN_QFK_FAULT = 28;              //QFK故障
+  SYS_ODD_IN_UDP_FAULT = 29;              //UDP故障
+  SYS_ODD_IN_OTHER_SCENE = 30;            //其他场景
+}
+
+enum EnumSysOddOutWarning {
+  SYS_ODD_OUT_NONE = 0;
+  SYS_ODD_OUT_BUTTON = 1;       //按钮退出
+  SYS_ODD_OUT_BRAKE_PEDAL = 2;  //刹车
+  SYS_ODD_OUT_STEER_WHEEL = 3;  //方向盘
+  SYS_ODD_OUT_OVER_SPEED = 4;   //超速
+  SYS_ODD_OUT_BOTH_OR = 5;      //横纵向接管
+  SYS_ODD_OUT_CTRL_ERR = 6;     //控制错误
+  SYS_ODD_OUT_PLN_ERR = 7;      //规划错误
+  SYS_ODD_OUT_EPB_ERR = 8;      //EPB错误
+  SYS_ODD_OUT_OVER_GAS = 9;     //油门过大
+  SYS_ODD_OUT_LOW_SOC = 10;     //低电量
+  SYS_ODD_OUT_EPS_OFF = 11;     //EPS系统关闭
+  SYS_ODD_OUT_TSK_ERR = 12;     //TSK系统错误
+  SYS_ODD_OUT_QFK_ERR = 13;     //QFK系统错误
+}
+
+enum EnumFSDWarning {
+  FSD_PROMPT_NONE = 0;
+  DETECTION_WARNING_ABNORMAL_DIVIDER = 1;                   //分隔线检测异常
+  DETECTION_WARNING_UNSTABLE_DIVIDER = 2;                   //分隔线跳动
+  DETECTION_WARNING_LACK_DIVIDER = 3;                       //分隔线缺失
+  DETECTION_WARNING_CLOSE_ROAD_SEGMENTATION = 4;            //目标车道被封闭
+  DETECTION_WARNING_LACK_BORDER = 5;                        //无法检测到道路边缘
+  DETECTION_WARNING_ABNORMAL_EXITS = 6;                     //出口点检测异常
+  DETECTION_WARNING_ABNORMAL_ENTRANCES = 7;                 //入口点检测异常
+  BEHAVIOR_EXPLANATION_YIELD_TO_PEDESTRIANS = 8;            //正在礼让行人
+  BEHAVIOR_EXPLANATION_ABOUT_TO_TURN = 9;                   //正在转弯
+  BEHAVIOR_EXPLANATION_ABOUT_TO_U_TURN = 10;                //即将掉头
+  BEHAVIOR_EXPLANATION_HUGE_INTERSECTION = 11;              //超大路口
+  BEHAVIOR_EXPLANATION_BYPASS_DISCOURAGED_BY_DISTANCE = 12; //绕行距离不足
+
+}
+
+enum EnumStopAndGo {
+  STOP_AND_GO_NONE = 0;
+  FRONT_VEHICLE_GO = 1;   //前车启动
+  FRONT_VEHICLE_STOP = 2; //前车刹车
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/whole_view" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@id/select_cancel_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" style="@android:style/Holo.ButtonBar">
+        <Button android:id="@id/select_cancel" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/select_cancel" style="?android:attr/buttonBarButtonStyle" />
+    </LinearLayout>
+    <View android:background="@android:color/darker_gray" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_alignTop="@id/select_cancel_bar" />
+    <ListView android:id="@id/list_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/select_cancel_bar" />
+    <TextView android:textAppearance="?android:textAppearanceLarge" android:textColor="#ffc0c0c0" android:gravity="center" android:id="@id/empty_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/empty_msg" android:layout_above="@id/select_cancel_bar" />
+</RelativeLayout>

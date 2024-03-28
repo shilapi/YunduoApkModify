@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/tv_connected_state" />
+            <corners android:radius="18.0px" />
+            <size android:height="36.0px" android:width="78.0px" />
+        </shape>
+    </item>
+</layer-list>

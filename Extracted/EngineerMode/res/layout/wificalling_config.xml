@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_marginTop="20.0dip" style="@style/info_layout"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/entitlement_status" />
+        <RadioGroup android:orientation="vertical" android:id="@id/entitlement_status" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <RadioButton android:id="@id/entitlement_enable" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/entitlement_enable" android:layout_weight="1.0" />
+            <RadioButton android:id="@id/entitlement_disable" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/entitlement_disable" android:layout_weight="1.0" />
+        </RadioGroup>
+    </LinearLayout>
+    <View android:background="#fff39a1e" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/epdg_address" />
+        <EditText android:id="@id/epdg_address" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="textUri" />"
+</LinearLayout>
+    <View android:background="#fff39a1e" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/entitlement_server" />
+        <EditText android:id="@id/entitlement_server" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="textUri" />
+    </LinearLayout>
+    <View android:background="#fff39a1e" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="50.0dip">
+        <Button android:id="@id/wificalling_set" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/wificonfig_set" android:layout_weight="1.0" />
+        <Button android:id="@id/wificalling_get" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/wificonfig_get" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

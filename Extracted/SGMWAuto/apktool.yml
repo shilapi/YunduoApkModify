@@ -1,0 +1,270 @@
+version: 2.9.1
+apkFileName: SGMWAuto.apk
+isFrameworkApk: false
+usesFramework:
+  ids:
+  - 1
+  tag: null
+sdkInfo:
+  minSdkVersion: 23
+  targetSdkVersion: 29
+packageInfo:
+  forcedPackageId: 127
+  renameManifestPackage: null
+versionInfo:
+  versionCode: 3003002
+  versionName: 3.3.2.10141743
+resourcesAreCompressed: false
+sharedLibrary: false
+sparseResources: false
+unknownFiles:
+  DebugProbesKt.bin: 8
+  bundle.properties: 8
+  kotlin-tooling-metadata.json: 8
+  okhttp3/internal/publicsuffix/publicsuffixes.gz: 0
+  okhttp3/internal/publicsuffix/NOTICE: 8
+  common/message_header.proto: 8
+  google/protobuf/any.proto: 8
+  google/protobuf/api.proto: 8
+  google/protobuf/descriptor.proto: 8
+  google/protobuf/duration.proto: 8
+  google/protobuf/empty.proto: 8
+  google/protobuf/field_mask.proto: 8
+  google/protobuf/source_context.proto: 8
+  google/protobuf/struct.proto: 8
+  google/protobuf/timestamp.proto: 8
+  google/protobuf/type.proto: 8
+  google/protobuf/wrappers.proto: 8
+  google/protobuf/compiler/plugin.proto: 8
+  main/java/androidx/datastore/preferences/PreferencesProto.java: 8
+  org/eclipse/paho/client/mqttv3/internal/nls/logcat.properties: 8
+  org/eclipse/paho/client/mqttv3/internal/nls/messages.properties: 8
+  org/eclipse/paho/client/mqttv3/internal/nls/messages_cs.properties: 8
+  org/eclipse/paho/client/mqttv3/internal/nls/messages_de.properties: 8
+  org/eclipse/paho/client/mqttv3/internal/nls/messages_es.properties: 8
+  org/eclipse/paho/client/mqttv3/internal/nls/messages_fr.properties: 8
+  org/eclipse/paho/client/mqttv3/internal/nls/messages_hu.properties: 8
+  org/eclipse/paho/client/mqttv3/internal/nls/messages_it.properties: 8
+  org/eclipse/paho/client/mqttv3/internal/nls/messages_ja.properties: 8
+  org/eclipse/paho/client/mqttv3/internal/nls/messages_ko.properties: 8
+  org/eclipse/paho/client/mqttv3/internal/nls/messages_pl.properties: 8
+  org/eclipse/paho/client/mqttv3/internal/nls/messages_pt_BR.properties: 8
+  org/eclipse/paho/client/mqttv3/internal/nls/messages_ru.properties: 8
+  org/eclipse/paho/client/mqttv3/internal/nls/messages_zh_CN.properties: 8
+  org/eclipse/paho/client/mqttv3/internal/nls/messages_zh_TW.properties: 8
+  org/eclipse/paho/client/mqttv3/logging/jsr47min.properties: 8
+  rhp/hmi_msg_border.proto: 8
+  rhp/hmi_msg_lane.proto: 8
+  rhp/hmi_msg_traject.proto: 8
+  rhp/hmi_msg_udp_rhp02.proto: 8
+  rhp/hmi_msg_udp_rhp03.proto: 8
+  v1/message/command/command.proto: 8
+  v1/message/common/common.proto: 8
+  v1/message/device/connect/device_connector.proto: 8
+  v1/message/device/vehicle/common.proto: 8
+  v1/message/device/vehicle/adc/service/dms_stream.proto: 8
+  v1/message/device/vehicle/adc/service/terminal.proto: 8
+  v1/message/device/vehicle/common/event/fusion_gnss_info.proto: 8
+  v1/message/device/vehicle/common/event/gnss_info.proto: 8
+  v1/message/device/vehicle/common/event/sonar_display.proto: 8
+  v1/message/device/vehicle/common/event/system_mode.proto: 8
+  v1/message/device/vehicle/common/property/dmm_vehicle_status.proto: 8
+  v1/message/device/vehicle/common/property/vehicle_dms.proto: 8
+  v1/message/device/vehicle/common/property/vehicle_info.proto: 8
+  v1/message/device/vehicle/common/property/vehicle_stat.proto: 8
+  v1/message/device/vehicle/hmi/debug/debug_common.proto: 8
+  v1/message/device/vehicle/hmi/debug/debug_driving.proto: 8
+  v1/message/device/vehicle/hmi/event/alam_driving_mapper_evt.proto: 8
+  v1/message/device/vehicle/hmi/event/alam_local_map.proto: 8
+  v1/message/device/vehicle/hmi/event/co_driving_planning.proto: 8
+  v1/message/device/vehicle/hmi/event/dmm_bev_road_element.proto: 8
+  v1/message/device/vehicle/hmi/event/dmm_cd_info.proto: 8
+  v1/message/device/vehicle/hmi/event/dmm_cdmap_recommend_info.proto: 8
+  v1/message/device/vehicle/hmi/event/dmm_driving_info.proto: 8
+  v1/message/device/vehicle/hmi/event/dmm_driving_static_semantic_evt.proto: 8
+  v1/message/device/vehicle/hmi/event/dmm_driving_trajectory.proto: 8
+  v1/message/device/vehicle/hmi/event/dmm_env_info.proto: 8
+  v1/message/device/vehicle/hmi/event/dmm_line_info.proto: 8
+  v1/message/device/vehicle/hmi/event/dmm_memory_pilot_evt.proto: 8
+  v1/message/device/vehicle/hmi/event/dmm_parking_json_file_evt.proto: 8
+  v1/message/device/vehicle/hmi/event/dmm_parking_map_info.proto: 8
+  v1/message/device/vehicle/hmi/event/dmm_parking_map_sync.proto: 8
+  v1/message/device/vehicle/hmi/event/dmm_parking_slots.proto: 8
+  v1/message/device/vehicle/hmi/event/dmm_ps_cloud.proto: 8
+  v1/message/device/vehicle/hmi/event/dmm_sence_visualization.proto: 8
+  v1/message/device/vehicle/hmi/event/dmm_static_obstacle.proto: 8
+  v1/message/device/vehicle/hmi/event/dmm_static_semantic.proto: 8
+  v1/message/device/vehicle/hmi/event/dmm_topview_avm.proto: 8
+  v1/message/device/vehicle/hmi/event/dmm_virtual_driver.proto: 8
+  v1/message/device/vehicle/hmi/event/dms_face_id.proto: 8
+  v1/message/device/vehicle/hmi/event/dms_face_prompt.proto: 8
+  v1/message/device/vehicle/hmi/event/driving_dmm_city_assist.proto: 8
+  v1/message/device/vehicle/hmi/event/driving_map.proto: 8
+  v1/message/device/vehicle/hmi/event/driving_map_locator.proto: 8
+  v1/message/device/vehicle/hmi/event/driving_planning_feedback.proto: 8
+  v1/message/device/vehicle/hmi/event/driving_planning_trajectory.proto: 8
+  v1/message/device/vehicle/hmi/event/fsd_occupancy.proto: 8
+  v1/message/device/vehicle/hmi/event/fsd_road_element.proto: 8
+  v1/message/device/vehicle/hmi/event/fused_freespace.proto: 8
+  v1/message/device/vehicle/hmi/event/hmi_lanes_info.proto: 8
+  v1/message/device/vehicle/hmi/event/lane_fusion.proto: 8
+  v1/message/device/vehicle/hmi/event/map_image.proto: 8
+  v1/message/device/vehicle/hmi/event/mot_list.proto: 8
+  v1/message/device/vehicle/hmi/event/odometry.proto: 8
+  v1/message/device/vehicle/hmi/event/parking_dmm_feedback.proto: 8
+  v1/message/device/vehicle/hmi/event/parking_map.proto: 8
+  v1/message/device/vehicle/hmi/event/parking_planning_context.proto: 8
+  v1/message/device/vehicle/hmi/event/parking_planning_feedback.proto: 8
+  v1/message/device/vehicle/hmi/event/parking_slots.proto: 8
+  v1/message/device/vehicle/hmi/event/parking_topological_map.proto: 8
+  v1/message/device/vehicle/hmi/event/planning_driving_mpp_evt.proto: 8
+  v1/message/device/vehicle/hmi/event/planning_trajectory.proto: 8
+  v1/message/device/vehicle/hmi/service/service_hmi_cdmap_info.proto: 8
+  v1/message/device/vehicle/hmi/service/service_hmi_cdmap_manage.proto: 8
+  v1/message/device/vehicle/hmi/service/service_hmi_driving.proto: 8
+  v1/message/device/vehicle/hmi/service/service_hmi_driving_map_info.proto: 8
+  v1/message/device/vehicle/hmi/service/service_hmi_driving_setting.proto: 8
+  v1/message/device/vehicle/hmi/service/service_hmi_driving_settings.proto: 8
+  v1/message/device/vehicle/hmi/service/service_hmi_faceid.proto: 8
+  v1/message/device/vehicle/hmi/service/service_hmi_mode.proto: 8
+  v1/message/device/vehicle/hmi/service/service_hmi_navi_req.proto: 8
+  v1/message/device/vehicle/hmi/service/service_hmi_parking.proto: 8
+  v1/message/device/vehicle/hmi/service/service_hmi_parking_map_manage.proto: 8
+  v1/message/device/vehicle/three_d/event/event_app_common.proto: 8
+  v1/message/device/vehicle/three_d/event/event_app_driving.proto: 8
+  v1/message/device/vehicle/three_d/event/event_app_parking.proto: 8
+  v1/message/device/vehicle/three_d/service/service_ue_common.proto: 8
+  v1/message/device/vehicle/three_d/service/service_ue_driving.proto: 8
+  v1/message/device/vehicle/three_d/service/service_ue_parking.proto: 8
+  v1/message/product/thing/thing_cloud_service.proto: 8
+  v1/message/product/thing/thing_event.proto: 8
+  v1/message/product/thing/thing_property.proto: 8
+  v1/message/product/thing/thing_service.proto: 8
+  v1/rpc/device/device.proto: 8
+  v1/rpc/product/thing_cloud_service.proto: 8
+  v1/rpc/product/thing_event.proto: 8
+  v1/rpc/product/thing_property.proto: 8
+  v1/rpc/product/thing_service.proto: 8
+  v2/common/auto_common.proto: 8
+  v2/device/as/event/dmm_as_evt.proto: 8
+  v2/device/as/event/planning_as_evt.proto: 8
+  v2/device/common/event/alam_fusion_gnss_evt.proto: 8
+  v2/device/common/event/dmm_bev_road_element_evt.proto: 8
+  v2/device/common/event/dmm_fsd_occupancy_evt.proto: 8
+  v2/device/common/event/dmm_mot_evt.proto: 8
+  v2/device/common/event/dmm_sence_visualization_evt.proto: 8
+  v2/device/common/event/dmm_static_semantic_evt.proto: 8
+  v2/device/common/event/dmm_system_mode_evt.proto: 8
+  v2/device/common/event/dmm_topview_avm_evt.proto: 8
+  v2/device/common/event/dmm_vehicle_status_evt.proto: 8
+  v2/device/common/event/odometry_evt.proto: 8
+  v2/device/common/event/planning_sonar_display_evt.proto: 8
+  v2/device/common/service/hmi_mode_req.proto: 8
+  v2/device/driving/event/alam_driving_map_evt.proto: 8
+  v2/device/driving/event/alam_driving_mapper_evt.proto: 8
+  v2/device/driving/event/alam_driving_mapper_state_evt.proto: 8
+  v2/device/driving/event/alam_hd_map_evt.proto: 8
+  v2/device/driving/event/dmm_cd_info_evt.proto: 8
+  v2/device/driving/event/dmm_cdmap_recommend_evt.proto: 8
+  v2/device/driving/event/dmm_driving_info_evt.proto: 8
+  v2/device/driving/event/dmm_driving_lane_change_evt.proto: 8
+  v2/device/driving/event/dmm_driving_static_element.proto: 8
+  v2/device/driving/event/dmm_driving_static_semantic_evt.proto: 8
+  v2/device/driving/event/dmm_line_evt.proto: 8
+  v2/device/driving/event/dmm_memory_pilot_evt.proto: 8
+  v2/device/driving/event/dmm_static_obstacle_evt.proto: 8
+  v2/device/driving/event/planning_driving_feedback_evt.proto: 8
+  v2/device/driving/event/planning_driving_mpp_evt.proto: 8
+  v2/device/driving/event/planning_driving_trajectory_evt.proto: 8
+  v2/device/driving/event/planning_mod_info_evt.proto: 8
+  v2/device/driving/service/hmi_cdmap_manage_req.proto: 8
+  v2/device/driving/service/hmi_cdmap_req.proto: 8
+  v2/device/driving/service/hmi_driving_req.proto: 8
+  v2/device/driving/service/hmi_navi_req.proto: 8
+  v2/device/parking/event/alam_parking_map_evt.proto: 8
+  v2/device/parking/event/alam_parking_planning_context_evt.proto: 8
+  v2/device/parking/event/alam_parking_topological_map_evt.proto: 8
+  v2/device/parking/event/dmm_parking_feedback_evt.proto: 8
+  v2/device/parking/event/dmm_parking_json_file_evt.proto: 8
+  v2/device/parking/event/dmm_parking_lanes_info_evt.proto: 8
+  v2/device/parking/event/dmm_parking_map_info_evt.proto: 8
+  v2/device/parking/event/dmm_parking_map_sync_evt.proto: 8
+  v2/device/parking/event/dmm_parking_slots_evt.proto: 8
+  v2/device/parking/event/dmm_parking_state_evt.proto: 8
+  v2/device/parking/event/planning_parking_feedback_evt.proto: 8
+  v2/device/parking/event/planning_parking_trajectory_evt.proto: 8
+  v2/device/parking/service/hmi_parking_map_manage_req.proto: 8
+  v2/device/parking/service/hmi_parking_req.proto: 8
+  v2/thing/thing_event.proto: 8
+  v2/thing/thing_property.proto: 8
+  v2/thing/thing_service.proto: 8
+  v2/ue/common/app_to_ue_common.proto: 8
+  v2/ue/common/ue_to_app_common.proto: 8
+  v2/ue/driving/app_to_ue_driving.proto: 8
+  v2/ue/driving/ue_to_app_driving.proto: 8
+  v2/ue/parking/app_to_ue_parking.proto: 8
+  v2/ue/parking/ue_to_app_parking.proto: 8
+doNotCompress:
+- classes.dex
+- resources.arsc
+- META-INF/androidx.activity_activity-ktx.version
+- META-INF/androidx.activity_activity.version
+- META-INF/androidx.annotation_annotation-experimental.version
+- META-INF/androidx.appcompat_appcompat-resources.version
+- META-INF/androidx.appcompat_appcompat.version
+- META-INF/androidx.arch.core_core-runtime.version
+- META-INF/androidx.cardview_cardview.version
+- META-INF/androidx.coordinatorlayout_coordinatorlayout.version
+- META-INF/androidx.core_core-ktx.version
+- META-INF/androidx.core_core.version
+- META-INF/androidx.cursoradapter_cursoradapter.version
+- META-INF/androidx.customview_customview.version
+- META-INF/androidx.databinding_baseAdapters.version
+- META-INF/androidx.databinding_databindingKtx.version
+- META-INF/androidx.databinding_library.version
+- META-INF/androidx.databinding_viewbinding.version
+- META-INF/androidx.datastore_datastore-preferences.version
+- META-INF/androidx.datastore_datastore.version
+- META-INF/androidx.drawerlayout_drawerlayout.version
+- META-INF/androidx.exifinterface_exifinterface.version
+- META-INF/androidx.fragment_fragment-ktx.version
+- META-INF/androidx.fragment_fragment.version
+- META-INF/androidx.interpolator_interpolator.version
+- META-INF/androidx.lifecycle_lifecycle-livedata-core-ktx.version
+- META-INF/androidx.lifecycle_lifecycle-livedata-core.version
+- META-INF/androidx.lifecycle_lifecycle-livedata-ktx.version
+- META-INF/androidx.lifecycle_lifecycle-livedata.version
+- META-INF/androidx.lifecycle_lifecycle-process.version
+- META-INF/androidx.lifecycle_lifecycle-runtime-ktx.version
+- META-INF/androidx.lifecycle_lifecycle-runtime.version
+- META-INF/androidx.lifecycle_lifecycle-service.version
+- META-INF/androidx.lifecycle_lifecycle-viewmodel-ktx.version
+- META-INF/androidx.lifecycle_lifecycle-viewmodel-savedstate.version
+- META-INF/androidx.lifecycle_lifecycle-viewmodel.version
+- META-INF/androidx.loader_loader.version
+- META-INF/androidx.localbroadcastmanager_localbroadcastmanager.version
+- META-INF/androidx.recyclerview_recyclerview.version
+- META-INF/androidx.room_room-ktx.version
+- META-INF/androidx.room_room-runtime.version
+- META-INF/androidx.savedstate_savedstate.version
+- META-INF/androidx.sqlite_sqlite-framework.version
+- META-INF/androidx.sqlite_sqlite.version
+- META-INF/androidx.startup_startup-runtime.version
+- META-INF/androidx.tracing_tracing.version
+- META-INF/androidx.transition_transition.version
+- META-INF/androidx.vectordrawable_vectordrawable-animated.version
+- META-INF/androidx.vectordrawable_vectordrawable.version
+- META-INF/androidx.versionedparcelable_versionedparcelable.version
+- META-INF/androidx.viewpager2_viewpager2.version
+- META-INF/androidx.viewpager_viewpager.version
+- META-INF/androidx.work_work-runtime-ktx.version
+- META-INF/androidx.work_work-runtime.version
+- META-INF/com.android.games.engine.build_fingerprint
+- META-INF/com.google.android.material_material.version
+- lib/arm64-v8a/lib_burst_generated.so
+- lib/arm64-v8a/libil2cpp.so
+- lib/arm64-v8a/libmain.so
+- lib/arm64-v8a/libunity.so
+- png
+- webp
+- res/raw/keystore.p12

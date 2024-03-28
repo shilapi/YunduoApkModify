@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">USB Handler</string>
+    <string name="usb_title">USB Devices settings</string>
+    <string name="usb_description">Customize your USB Devices settings</string>
+    <string name="usb_available_devices">Connected devices</string>
+    <string name="usb_saved_devices">Saved devices</string>
+    <string name="usb_pref_delete_title">Remove handling app for USB device</string>
+    <string name="usb_pref_delete_message">Are you sure you wan to delete dafault handling app for %1$s?</string>
+    <string name="usb_pref_delete_yes">Yes</string>
+    <string name="usb_pref_delete_cancel">Cancel</string>
+    <string name="usb_resolving_handlers">Getting supported handlers</string>
+    <string name="usb_unknown_device">Unknown USB device</string>
+</resources>

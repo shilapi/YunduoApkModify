@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center" android:id="@id/iv_default_header" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/ic_contact_call_default_photo" />
+    <TextView android:textSize="@dimen/sp_40" android:textStyle="bold" android:textColor="@color/white" android:layout_gravity="center" android:id="@id/tv_default_header" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" />
+    <com.sgmw.lingos.btcall.view.widget.headerview.CircleImageView android:layout_gravity="center" android:id="@id/iv_really_header" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+</FrameLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout style="@style/info_layout">
+        <View android:background="#ff0000ff" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="10.0dip" />
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/ike_rekey_timer" />
+            <EditText android:id="@id/ike_rekey_timer" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/seconds" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/esp_rekey_timer" />
+            <EditText android:id="@id/esp_rekey_timer" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/seconds" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/rekey_margin" />
+            <EditText android:id="@id/rekey_margin" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/seconds" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/dpd_timer" />
+            <EditText android:id="@id/dpd_timer" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/seconds" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/keep_timer" />
+            <EditText android:id="@id/keep_timer" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/seconds" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/esp_setup_time" />
+            <EditText android:id="@id/esp_setup_time" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/seconds" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/pdn_setup_time" />
+            <EditText android:id="@id/pdn_setup_time" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/seconds" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/dns_timer" />
+            <EditText android:id="@id/dns_timer" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/seconds" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/oos" />
+            <EditText android:id="@id/oos" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/seconds" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/detach_soft_timer" />
+            <EditText android:id="@id/detach_soft_timer" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/seconds" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/detach_hard_timer" />
+            <EditText android:id="@id/detach_hard_timer" android:layout_width="150.0dip" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:inputType="number" />
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/seconds" />
+        </LinearLayout>
+        <Button android:id="@id/timer_set" android:layout_width="120.0dip" android:layout_height="wrap_content" android:text="@string/epdg_set" />
+    </LinearLayout>
+</ScrollView>

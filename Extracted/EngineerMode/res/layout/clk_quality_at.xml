@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <Button android:textSize="16.0sp" android:id="@id/clk_quality_at_test_items" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@string/clk_quality_at_test_items" />
+    <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <TextView android:textSize="16.0sp" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:text="@string/clk_quality_at_clock_type" />
+    <RadioGroup android:orientation="horizontal" android:id="@id/clk_quality_at_clock_type" android:layout_width="fill_parent" android:layout_height="wrap_content" android:checkedButton="@id/clk_quality_at_clock_txco">
+        <RadioButton android:id="@id/clk_quality_at_clock_txco" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/clk_quality_at_clock_type_tcxo" android:layout_weight="1.0" />
+        <RadioButton android:id="@id/clk_quality_at_clock_co_tms" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/clk_quality_at_clock_type_co_tms" android:layout_weight="1.0" />
+    </RadioGroup>
+    <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <TextView android:textSize="16.0sp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@string/clk_quality_at_test_modes" />
+    <RadioGroup android:orientation="horizontal" android:id="@id/clk_quality_at_test_modes" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RadioButton android:id="@id/clk_quality_at_signal_mode" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/clk_quality_at_signal_mode" android:layout_weight="1.0" />
+        <RadioButton android:id="@id/clk_quality_at_cw_mode" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/clk_quality_at_cw_mode" android:layout_weight="1.0" />
+    </RadioGroup>
+    <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:id="@id/heating_time" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/clk_quality_at_heating_time" android:layout_weight="1.0" />
+        <EditText android:id="@id/heating_time_edit" android:layout_width="0.0dip" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0" android:inputType="number" />
+        <TextView android:id="@id/cool_time" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/clk_quality_at_cool_time" android:layout_weight="1.0" />
+        <EditText android:id="@id/cool_time_edit" android:layout_width="0.0dip" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0" android:inputType="number" />
+    </LinearLayout>
+    <View android:background="#ff909090" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:id="@id/clk_quality_at_start" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/clk_quality_at_start" android:layout_weight="1.0" android:onClick="onClick" />
+        <Button android:id="@id/clk_quality_at_stop" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/clk_quality_at_stop" android:layout_weight="1.0" android:onClick="onClick" />
+    </LinearLayout>
+    <TextView android:id="@id/set_result" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/clk_quality_at_check_bit_fail" />
+    <include layout="@layout/clk_quality_at_result_format" />
+</LinearLayout>

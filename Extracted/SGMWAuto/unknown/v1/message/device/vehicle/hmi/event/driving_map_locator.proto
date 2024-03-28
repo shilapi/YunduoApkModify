@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+
+import "v1/message/device/vehicle/common.proto";
+
+/**
+ * 记忆行车地图定位
+ * 结构体: per_msgs::alam::DrivingLocatorInfo
+ * topic: /alam/driving/loc_info/v1
+ */
+message DrivingLocatorInfoEvt {
+  EnumDrivingFaultCode fault_code = 1;
+  int64 map_id = 2; //实例-- 地图名称：csm_20220317080548，地图id：20220317080548, planning根据该消息的map_id切换地图
+  EnumDrivingMapType map_type = 3;
+  EnumDrivingLocatorState state = 4; //NORMAL_TRACKING或GOOD_TRACKING为可用
+  OdomPose3d map_vins_transform = 5; //转换矩阵，vins系下的坐标转为map系坐标, map坐标 = transform * vins坐标
+  OdomPose3d map_pose = 6;
+}
+
+enum EnumDrivingFaultCode {
+  DEFAULT = 0;
+  NO_GPS = 1;
+  NO_MAP_FEATURE = 2;
+  MATCH_FAILIED = 3;
+  LATERAL_POSITION_ERROR = 4;
+  LONGITUDINAL_POSITION_ERROR = 5;
+  LL_POSTTION_ERROR = 6;
+  LONGITUDINAL_VELOCITY_JUMP = 7;
+  YAW_JUMP = 8;
+  PITCH_JUMP = 9;
+  ROLL_JUMP = 10;
+  ROLL_MAX = 11;
+  PITCH_MAX = 12;
+  SPEED_MAX = 13;
+}
+
+enum EnumDrivingMapType {
+  HD_MAP = 0; //高精地图
+  CSM_MAP = 1; //记忆行车地图
+  UNKNOWN_MAP = 100;
+}
+
+enum EnumDrivingLocatorState {
+  INITIALIZING = 0; //初始化中
+  LOST_TRACKING = 1; //定位失败
+  NORMAL_TRACKING = 2; //定位成功
+  GOOD_TRACKING = 3; //定位成功
+  UNKNOWN_STATE = 999;
+}

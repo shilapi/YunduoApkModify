@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package v2.device.driving.event;
+option go_package = "v2/device/driving/event";
+
+/**
+ * 建图完成后的地图数据
+ * 结构体: dji_msgs::alam::MapInfoToGatewayMsg
+ * topic: /alam/csm/map_info/v1
+ * 频率: 非周期消息
+ */
+message AlamDrivingMapEvt {
+  uint64 map_id      = 1;
+  uint64 create_time = 2;   //创建时间
+  string map_name    = 3;   //地图名
+  string start_site  = 4;   //地图起点
+  string end_site    = 5;   //地图终点
+  string creator     = 6;   //创建者
+  bytes  map         = 7;   //地图文件
+  bytes  thumbnail   = 8;   //缩略图
+  bytes  pose        = 9;   //行车轨迹文件
+  uint64 distance    = 10;  //轨迹总长度
+}

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package v2.device.parking.event;
+option go_package = "v2/device/parking/event";
+
+
+/**
+ * Parking地图Json文件
+ * topic: /sys/gateway/upload_parking_map/v1
+ */
+message DmmParkingJsonFileEvt {
+  int32 map_id = 1;
+  bytes parking_json_file = 2;
+}

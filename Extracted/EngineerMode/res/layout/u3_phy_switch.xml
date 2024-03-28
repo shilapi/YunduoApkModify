@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RadioGroup android:gravity="left" android:orientation="vertical" android:id="@id/u3_phy_switch_group" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <RadioButton android:id="@id/u3_phy_switch_ap" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/u3_phy_switch_ap" />
+        <RadioButton android:id="@id/u3_phy_switch_md" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/u3_phy_switch_md" />
+    </RadioGroup>
+    <TextView android:id="@id/u3_phy_switch_hint" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/u3_phy_switch_hint" />
+    <Button android:gravity="center" android:id="@id/u3_phy_switch_set" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/u3_phy_switch_set" />
+</LinearLayout>

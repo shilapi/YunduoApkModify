@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView style="@style/info_layout"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <HorizontalScrollView android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TableLayout android:id="@id/epdg_table_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:stretchColumns="*">
+                <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0dip">
+                    <TextView android:gravity="center" android:layout_width="1.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+                    <TextView android:gravity="center" android:layout_width="1.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+                    <TextView android:gravity="center" android:layout_width="1.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+                    <TextView android:gravity="center" android:layout_width="1.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+</ScrollView>

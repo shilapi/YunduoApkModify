@@ -1,0 +1,300 @@
+// From sys_msgs/schema/hmi/hmi_msg_udp_rhp02.h
+
+syntax = "proto3";
+
+package rhp;
+
+option go_package = "rhp";
+
+/**
+ * topic: /sys/interactor/hmi02/v2
+ */
+message HmiMsgRhp02 {
+  uint32 rhp_02_crc = 1;
+  uint32 rhp_02_bz = 2;
+  float  rhp_wunschgeschw = 3; //期望车速 0-327.04km/h
+  /**
+   * 期望车速颜色
+   * 0x0 : Grundfarbe, RHP not activated, 灰色
+   * 0x1 : Farbe_1, RHP activated, 绿色
+   * 0x2 : Farbe_2, 预留
+   * 0x3 : Farbe_3, 预留
+   */
+  uint32 rhp_wunschgeschw_farbe = 4;
+  /**
+   * 告警信息
+   * 0 : No_Display
+   * 1 : RHP_Selected
+   * 2 : Not_in_ODD
+   * 3 : No_Sensor_View
+   * 4 : Too_Big_Slope
+   * 5 : Parking_Brake_Active
+   * 6 : ESP_intervention
+   * 7 : HDC_is_active
+   * 8 : Speed_not_in_RHP_Range
+   * 9 : ESC_off
+   * 10 : Gear_position_is_not_drive
+   * 11 : Standing_Object_Ahead
+   * 12 : Parking_Assistance_Active
+   * 13 : Door_is_Open
+   * 14 : Safety_Belt_not_Fasten
+   * 15 : RHP_Available
+   * 16 : RHP_Activated
+   * 17 : RHP_Low_Activated
+   * 18 : Lane_Change_not_Available_Traffic
+   * 19 : Lane_Change_not_Available
+   * 20 : Lane_Change_Possible
+   * 21 : Lane_Change
+   * 22 : Lane_Change_Cancelled
+   * 23 : Turn_Lever_Reset
+   * 24 : Bus_lane
+   * 25 : Deactivation
+   * 26 : Close_Distance
+   * 27 : Resume_RHP
+   * 28 : Hard_Brake_Following
+   * 29 : Hard_Brake_Cut-in
+   * 30 : Tidal_Lane
+   * 31 : WBA_Not_Active
+   */
+  uint32 rhp_text_02 = 5;
+  /**
+   * 音效提示
+   * 0x0 : kein_akustisches_Signal 无声音
+   * 0x1 : Gong_1 Acoustic L
+   * 0x2 : Gong_2 Acoustic H
+   * 0x3 : Gong_3 Acoustic K
+   */
+  uint32 rhp_gong = 6;
+    /**
+   * 将来限速牌的值
+   * 0 : keine_Anzeige 无限速
+   * 1 : 5_zulHoechstgeschw 5km/h
+   * 2 : 7_zulHoechstgeschw
+   * 3 : 10_zulHoechstgeschw
+   * 4 : 15_zulHoechstgeschw
+   * 5 : 20_zulHoechstgeschw
+   * 6 : 25_zulHoechstgeschw
+   * 7 : 30_zulHoechstgeschw
+   * 8 : 35_zulHoechstgeschw
+   * 9 : 40_zulHoechstgeschw
+   * 10 : 45_zulHoechstgeschw
+   * 11 : 50_zulHoechstgeschw
+   * 12 : 55_zulHoechstgeschw
+   * 13 : 60_zulHoechstgeschw
+   * 14 : 65_zulHoechstgeschw
+   * 15 : 70_zulHoechstgeschw
+   * 16 : 75_zulHoechstgeschw
+   * 17 : 80_zulHoechstgeschw
+   * 18 : 85_zulHoechstgeschw
+   * 19 : 90_zulHoechstgeschw
+   * 20 : 95_zulHoechstgeschw
+   * 21 : 100_zulHoechstgeschw
+   * 22 : 110_zulHoechstgeschw
+   * 23 : 120_zulHoechstgeschw
+   * 24 : 130_zulHoechstgeschw
+   * 25 : 140_zulHoechstgeschw
+   * 26 : 150_zulHoechstgeschw
+   * 27 : 160_zulHoechstgeschw
+   * 28 : 200_zulHoechstgeschw
+   * 30 : 250_zulHoechstgeschw-in
+   * 31 : Ende_zulHoechstgeschw 限速取消
+   */
+  uint32 rhp_tempolimit = 7;
+    /**
+   * 限速颜色
+   * 0x0 : Grundfarbe 灰色
+   * 0x1 : Farbe_1 绿色
+   * 0x2 : Farbe_2 预留
+   * 0x3 : Farbe_3 预留
+   */
+  uint32 rhp_tempolimit_farbe = 8;
+  uint32 rhp_texte_sekundaeranz = 9;
+  uint32 rhp_aktiv_hmi = 10;
+  uint32 rhp_fod_status = 11;
+  uint32 rhp_anzeige_objektregelung = 12;
+  /**
+   * 左右车道高亮(建议变道)
+   * 0:initial;
+   * 1:左车道高亮;
+   * 2:右车道高亮;
+   * 3:左右车道都高亮
+   */
+  uint32 rhp_hmi_detectedlane = 13;
+  /**
+   * 本车道左车道线颜色
+   * 0:off; 1:Deactivated; 2:Control; 3:Recognized; 4:Warning
+   */
+  uint32 rhp_hmi_ego_li_anzeige = 14;
+  float  rhp_hmi_ego_li_seg1_querabst = 15; //本车道左车道线横向距离（米）
+  /**
+   * 本车道左车道线类型（目前只考虑实现和虚线）
+   * 0:invalid;
+   * 1:Gruenstreifen;
+   * 2:Durchgezogen(实线);
+   * 3:Gestrichelt(虚线);
+   * 4:Randbebauung;
+   * 5:virtuelle_Spuebegrenzung
+   */
+  uint32 rhp_hmi_ego_li_typ = 16;
+  uint32 rhp_hmi_ego_re_anzeige = 17;//本车道右车道线颜色
+  float  rhp_hmi_ego_re_seg1_querabst = 18; //本车道右车道线横向距离（米）
+  uint32 rhp_hmi_ego_re_typ = 19; //本车道右车道线类型
+  float  rhp_hmi_egoobj_dy = 20; //本车相对于本车道的横向距离（百分比）
+  uint32 rhp_hmi_kurvenwarnung = 21;
+  /**
+   * todo
+   * No; Display
+   */
+  uint32 rhp_hmi_lanechangeindicator = 22;
+  /**
+   * 变道轨迹（暂时只考虑0、1、2）控制变道执行的popup提示
+   * 0: initial(不显示，有可能取消变道和完成变道);
+   * 1: Left_Active(左变道轨迹);
+   * 2: Right_Active(右变道轨迹);
+   * 3: Cancel_Left;
+   * 4: Cancel_Right
+   */
+  uint32 rhp_hmi_lanechangetrajectory = 23;
+  uint32 rhp_hmi_nachb_li_anzeige = 24; //左车道左车道线颜色
+  float  rhp_hmi_nachb_li_seg1_querabst = 25; //左车道左车道线横向距离（米）
+  uint32 rhp_hmi_nachb_li_typ = 26; //左车道左车道线类型
+  uint32 rhp_hmi_nachb_re_anzeige = 27; //右车道右车道线颜色
+  float  rhp_hmi_nachb_re_seg1_querabst = 28; //右车道右车道线横向距离（米）
+  uint32 rhp_hmi_nachb_re_typ = 29; //右车道右车道线类型
+  float  rhp_abstand_wzo = 30;
+  /**
+   * 跟车距离显示
+   */
+  float  rhp_sollabstand_1 = 31;
+  float  rhp_sollabstand_2 = 32;
+  float  rhp_sollabstand_3 = 33;
+  float  rhp_sollabstand_4 = 34;
+  float  rhp_sollabstand_5 = 35;
+  /**
+   * Time Gap
+   * 0x0 : 不显示
+   * 0x1 : 显示
+   */
+  uint32 rhp_anzeige_zeitluecke = 36;
+  /**
+   * todo
+   */
+  uint32 rhp_abstandsindex = 37;
+  float  rhp_abstand_lns = 38;
+  float  rhp_abstand_rns = 39;
+  uint32 rhp_typ_lns = 40;
+  uint32 rhp_typ_rns = 41;
+  uint32 rhp_typ_wzo = 42;
+  /**
+   * todo
+   * 0-254
+   */
+  uint32 rhp_anzeige_maximalabstand = 43;
+  /**
+   * 当前车速
+   */
+  float  rhp_regelgeschw = 44;
+  uint32 rhp_ego_fahrzeug = 45;
+  uint32 rhp_relevantes_objekt = 46;
+  /**
+   * 设定速度单位, 0:kmh, 1:mph
+   */
+  uint32 rhp_tempolimit_einheit = 47;
+  uint32 rhp_maxsetzgeschw = 48;
+  uint32 rhp_einheit_maxsetzgeschw = 49;
+  /**
+   * 接管方向盘
+   * 0：不显示
+   * 1：白色
+   * 2：红色
+   * 3：保留
+   */
+  uint32 rhp_tor_lamp = 50;
+  /**
+   * Time Gap级别 1-5
+   */
+  uint32 rhp_gesetzte_zeitluecke = 51;
+  /**
+   * 0 : Off
+   * 1 : Standby_Deactivation
+   * 2 : Ready
+   * 3 : Function_Active
+   * 4 : Error
+   * 5 : Override_Longitudinal
+   * 6 : Override_Lateral
+   * 7 : Reserve
+   */
+  uint32 rhp_statuslamp = 52;
+  /**
+   * RHP横向控制模式
+   * 0 : No_Display
+   * 1 : Hands_on_control
+   * 2 : Hands_off_costrol
+   * 3 : reserve
+   */
+  uint32 rhp_laterallamp = 53;
+  /**
+   * RHP告警提示（接管）
+   * 0: no display
+   * 1: Rush_Hour_Pilot_not_available
+   * 2: Please_Take_Over_Error_Warning
+   * 3: Please_Take_Over_Leave_Geofence
+   * 4: Please_Take_Over_1
+   * 5: Please_Take_Over_2
+   * 6: Please_Take_Over_3
+   * 7: Take_Over_About_to_Deactivate
+   * 8: Please_Take_Over_4
+   * 9: Please_Take_Over_5
+   * 10: Hands_On_Mode
+   * 11: Lane_Change_Waiting
+   * 12: Press_Brake_1
+   * 13: Press_Brake_2
+   * 14: Lane_Change_Take_Steering
+   * 15: RHP_Degrade_Speed
+   */
+  uint32 rhp_text_01 = 54;
+  /**
+   * todo
+   * 0 : kein_Fehler
+   * 1 : RHP-without lane change
+   * 2 : RHP_Low_keine_Sensorsicht
+   * 3 : RHP_with_lane_change
+   * 4 : RHP_High_kein_Sensorsicht
+   */
+  uint32 rhp_errorstatus = 55;
+    /**
+   * 当前限速牌的值
+   * 0 : keine_Anzeige 无限速
+   * 1 : 5_zulHoechstgeschw 5km/h
+   * 2 : 7_zulHoechstgeschw
+   * 3 : 10_zulHoechstgeschw
+   * 4 : 15_zulHoechstgeschw
+   * 5 : 20_zulHoechstgeschw
+   * 6 : 25_zulHoechstgeschw
+   * 7 : 30_zulHoechstgeschw
+   * 8 : 35_zulHoechstgeschw
+   * 9 : 40_zulHoechstgeschw
+   * 10 : 45_zulHoechstgeschw
+   * 11 : 50_zulHoechstgeschw
+   * 12 : 55_zulHoechstgeschw
+   * 13 : 60_zulHoechstgeschw
+   * 14 : 65_zulHoechstgeschw
+   * 15 : 70_zulHoechstgeschw
+   * 16 : 75_zulHoechstgeschw
+   * 17 : 80_zulHoechstgeschw
+   * 18 : 85_zulHoechstgeschw
+   * 19 : 90_zulHoechstgeschw
+   * 20 : 95_zulHoechstgeschw
+   * 21 : 100_zulHoechstgeschw
+   * 22 : 110_zulHoechstgeschw
+   * 23 : 120_zulHoechstgeschw
+   * 24 : 130_zulHoechstgeschw
+   * 25 : 140_zulHoechstgeschw
+   * 26 : 150_zulHoechstgeschw
+   * 27 : 160_zulHoechstgeschw
+   * 28 : 200_zulHoechstgeschw
+   * 30 : 250_zulHoechstgeschw-in
+   * 31 : Ende_zulHoechstgeschw 限速取消
+   */
+  uint32 rhp_tempolimit_now = 56;
+}

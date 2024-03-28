@@ -1,0 +1,22 @@
+[
+  {
+    "name": "导航",
+    "packageName": "com.desaysv.psmap",
+    "launchActivity": "com.desaysv.psmap.ui.activity.SplashActivity"
+  },
+  {
+    "name": "音乐",
+    "packageName": "com.sgmw.lingos.sgmwmediamusic",
+    "launchActivity": "com.sgmw.lingos.sgmwmediamusic.main.activity.MainActivity"
+  },
+  {
+    "name": "电台",
+    "packageName": "com.sgmw.lingos.sgmwradio",
+    "launchActivity": "com.sgmw.lingos.sgmwradio.MainActivity"
+  },
+  {
+    "name": "智能行车",
+    "packageName": "com.dji.autoivi",
+    "launchActivity": "com.dji.autoivi.ui.SplashDrivingActivity"
+  }
+]

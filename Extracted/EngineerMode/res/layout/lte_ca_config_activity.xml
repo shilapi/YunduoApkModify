@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip">
+        <TextView android:textAppearance="?android:textAppearanceLarge" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/lte_ca_config" />
+        <RadioGroup android:gravity="left" android:orientation="vertical" android:id="@id/lte_ca_radio_group" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <RadioButton android:id="@id/lte_ca_on_radio" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lte_ca_turn_on" />
+            <RadioButton android:id="@id/lte_ca_off_radio" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lte_ca_turn_off" />
+        </RadioGroup>
+        <Button android:gravity="center" android:id="@id/lte_ca_set_button" android:layout_width="120.0dip" android:layout_height="wrap_content" android:layout_marginLeft="200.0dip" android:text="@string/lte_ca_set" />
+    </LinearLayout>
+</LinearLayout>

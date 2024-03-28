@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:id="@id/MSDC_Host_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="0.0dip" android:layout_marginTop="10.0dip" android:text="@string/NEW_MSDC_HOST" />
+        <Spinner android:id="@id/NEW_MSDC_HOST_sppiner" android:layout_width="240.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" />
+        <TextView android:id="@id/MSDC_Clk_pu_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="0.0dip" android:layout_marginTop="10.0dip" android:text="@string/NEW_MSDC_CLK" />
+        <Spinner android:id="@id/MSDC_Clk_pu_spinner" android:layout_width="240.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="2.0dip" />
+        <TextView android:id="@id/MSDC_Cmd_pu_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="0.0dip" android:layout_marginTop="10.0dip" android:text="@string/NEW_MSDC_CMD" />
+        <Spinner android:id="@id/MSDC_cmd_pu_spinner" android:layout_width="240.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="2.0dip" />
+        <TextView android:id="@id/MSDC_Data_pu_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="0.0dip" android:layout_marginTop="10.0dip" android:text="@string/NEW_MSDC_DATA" />
+        <Spinner android:id="@id/MSDC_data_pu_spinner" android:layout_width="240.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="2.0dip" />
+        <TextView android:id="@id/MSDC_Voltage_pu_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="0.0dip" android:layout_marginTop="10.0dip" android:text="@string/NEW_MSDC_VOLTAGE" />
+        <Spinner android:id="@id/MSDC_voltage_pu_spinner" android:layout_width="240.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="2.0dip" />
+        <View android:background="#ff909090" android:layout_width="240.0dip" android:layout_height="1.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="20.0dip" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+            <Button android:id="@id/NEW_MSDC_Get" android:layout_width="110.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:text="@string/NEW_MSDC_Get" />
+            <Button android:id="@id/NEW_MSDC_Set" android:layout_width="110.0dip" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="10.0dip" android:text="@string/NEW_MSDC_Set" />
+        </LinearLayout>
+        <View android:background="#ff909090" android:layout_width="240.0dip" android:layout_height="1.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="20.0dip" />
+        <TextView android:id="@id/MSDC_result_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="0.0dip" android:layout_marginTop="10.0dip" android:text="@string/msdc_result" />
+        <TextView android:id="@id/MSDC_result_text" android:layout_width="240.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="2.0dip" />
+    </LinearLayout>
+</ScrollView>

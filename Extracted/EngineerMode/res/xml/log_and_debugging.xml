@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference android:persistent="false" android:title="@string/ATCI_title" android:key="atci">
+        <intent android:targetPackage="com.mediatek.engineermode" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.engineermode.atci.atciActivity" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/BatteryLog" android:key="battery_log">
+        <intent android:targetPackage="com.mediatek.engineermode" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.engineermode.BatteryLog" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/debug_utils" android:key="debug_utils">
+        <intent android:targetPackage="com.mediatek.mtklogger" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.mtklogger.debugtool.DebugToolboxActivity" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/md_log_filter" android:key="md_log_filter">
+        <intent android:targetPackage="com.mediatek.engineermode" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.engineermode.mdlogfilters.MDLogFiltersActivity" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/modem_reset_debug" android:key="modem_reset_delay">
+        <intent android:targetPackage="com.mediatek.engineermode" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.engineermode.modemresetdelay.ModemResetDelay" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/modem_warning_title" android:key="modem_warning">
+        <intent android:targetPackage="com.mediatek.engineermode" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.engineermode.modemwarning.ModemWarning" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/mtk_logger" android:key="mtk_logger">
+        <intent android:targetPackage="com.mediatek.mtklogger" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.mtklogger.MainActivity" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/tellog_setting" android:key="telephony_log_setting">
+        <intent android:targetPackage="com.mediatek.engineermode" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.engineermode.tellogsetting.TelLogSettingActivity" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/video_log" android:key="video_log">
+        <intent android:targetPackage="com.mediatek.engineermode" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.engineermode.videolog.VideoLogActivity" />
+    </Preference>
+    <Preference android:persistent="false" android:title="@string/WCN_Core_dump_name" android:key="wcn_core_dump">
+        <intent android:targetPackage="com.mediatek.engineermode" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.engineermode.wcncoredump.wcncoredumpActivity" />
+    </Preference>
+</PreferenceScreen>

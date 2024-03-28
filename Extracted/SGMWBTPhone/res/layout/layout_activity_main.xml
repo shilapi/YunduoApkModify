@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:tag="layout/layout_activity_main_0" android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/layout_header" android:layout_width="fill_parent" android:layout_height="@dimen/p64" />
+    <RelativeLayout android:id="@id/layout_info" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <FrameLayout android:layout_width="@dimen/width_frag_contact" android:layout_height="fill_parent">
+            <androidx.viewpager.widget.ViewPager android:id="@id/vp" android:layout_width="fill_parent" android:layout_height="@dimen/p588" />
+            <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <androidx.recyclerview.widget.RecyclerView android:id="@id/filteredList" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/p500" android:layout_marginTop="@dimen/p88" android:overScrollMode="never" android:layout_marginStart="@dimen/p80" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+                <com.sgmw.lingos.btcall.view.widget.RecycleSlidBar android:id="@id/sb_contact" android:visibility="gone" android:layout_width="@dimen/p30" android:layout_height="@dimen/p467" android:layout_marginTop="@dimen/p88" android:layout_marginStart="@dimen/margin_left_rsb" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+                <com.cathu.core.SmartScrollBar android:id="@id/ssb" android:background="@color/ssb_background" android:visibility="gone" android:layout_width="@dimen/p4" android:layout_height="@dimen/p400" android:layout_marginTop="@dimen/p112" android:layout_marginStart="@dimen/margin_left_ssb" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:smart_background_corner="@dimen/p2" app:smart_can_scroll_style="always_show" app:smart_cant_scroll_style="dismiss_invisible" app:smart_enable_drag="true" app:smart_orientation="vertical" app:smart_slider_color="@color/ssb_slider" app:smart_slider_corner="@dimen/p2" app:smart_slider_style="倍数缩放" />
+                <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/search_none" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <ImageView android:layout_width="@dimen/p200" android:layout_height="@dimen/p200" android:layout_marginTop="@dimen/p166" android:src="@mipmap/img_activity_search_nothing" />
+                    <TextView android:textSize="@dimen/s21" android:textColor="@color/general_ff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/no_contact" android:includeFontPadding="false" android:fontFamily="@font/cn_regular" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </FrameLayout>
+        <FrameLayout android:layout_width="@dimen/width_frg_pad" android:layout_height="fill_parent" android:layout_alignParentEnd="true">
+            <com.sgmw.lingos.btcall.view.widget.dialpad.DialPad android:gravity="center_horizontal" android:id="@id/dial_pad" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p84" android:layout_marginStart="@dimen/margin_left_frg_pad" />
+        </FrameLayout>
+        <View android:id="@id/mask_top" android:background="@mipmap/bg_mask_top" android:layout_width="fill_parent" android:layout_height="@dimen/p118" />
+        <View android:background="@mipmap/bg_mask_bottom" android:layout_width="fill_parent" android:layout_height="@dimen/p119" android:layout_marginTop="@dimen/p538" />
+        <LinearLayout android:orientation="horizontal" android:clipChildren="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p14">
+            <com.sgmw.lingos.btcall.view.widget.MinWidthTabLayout android:id="@id/tab" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p5" android:layout_marginStart="@dimen/margin_left_title_frag" />
+            <EditText android:textSize="@dimen/s13" android:textColorHint="@color/general_99" android:textColorLink="#ff333333" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/search_in_contacts" android:tag="binding_1" android:background="@mipmap/bg_main_search" android:layout_width="@dimen/p284" android:layout_height="@dimen/p40" android:hint="@string/hint_search" android:maxLines="1" android:includeFontPadding="false" android:drawablePadding="@dimen/p4" android:fontFamily="@font/cn_regular" android:paddingStart="@dimen/p8" android:layout_marginStart="@dimen/margin_left_main_search" />
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/iv_refresh" android:tag="binding_2" android:layout_width="@dimen/p40" android:layout_height="@dimen/p40" android:src="@mipmap/img_main_refresh" android:scaleType="fitXY" android:layout_marginStart="@dimen/p8" />
+        </LinearLayout>
+    </RelativeLayout>
+    <FrameLayout android:id="@id/container" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:tag="layout/frag_calllog_0" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_calllog" android:tag="binding_1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/p88" android:overScrollMode="never" android:layout_marginStart="@dimen/p80" />
+    <com.cathu.core.SmartScrollBar android:id="@id/ssb" android:background="@color/ssb_background" android:layout_width="@dimen/p4" android:layout_height="@dimen/p400" android:layout_marginTop="@dimen/p112" android:layout_marginStart="@dimen/margin_left_ssb" app:smart_background_corner="@dimen/p2" app:smart_can_scroll_style="always_show" app:smart_cant_scroll_style="dismiss_invisible" app:smart_enable_drag="true" app:smart_orientation="vertical" app:smart_slider_color="@color/ssb_slider" app:smart_slider_corner="@dimen/p2" app:smart_slider_style="倍数缩放" />
+    <View android:id="@id/v_mask_fg" android:tag="binding_2" android:background="@drawable/ic_list_mask" android:focusable="false" android:clickable="false" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <LinearLayout android:orientation="vertical" android:tag="binding_3" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:layout_width="@dimen/p168" android:layout_height="@dimen/p168" android:layout_marginTop="@dimen/p164" android:src="@mipmap/img_frg_calllog_nothing" android:scaleType="fitXY" android:layout_marginStart="@dimen/p276" />
+        <TextView android:textSize="@dimen/s21" android:textColor="@color/general_ff" android:id="@id/tv_no_call_log" android:tag="binding_4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p8" android:includeFontPadding="false" android:fontFamily="@font/cn_regular" android:layout_marginStart="@dimen/p280" />
+        <TextView android:textSize="@dimen/p16" android:textColor="@color/general_99" android:tag="binding_5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p8" android:text="@string/no_call_history_check_permission" android:includeFontPadding="false" android:fontFamily="@font/cn_regular" android:layout_marginStart="@dimen/p160" />
+    </LinearLayout>
+</FrameLayout>

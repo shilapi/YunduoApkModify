@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package v2.device.common.event;
+option go_package = "v2/device/common/event";
+
+import "v2/common/auto_common.proto";
+
+/**
+ * DMM MOT数据
+ * 结构体 : sys_msgs::dmm::DmmAppEnvDisplay
+ * topic : /sys/dmm/app_env_display/v4
+ * 频率: 5hz
+ */
+message DmmMotInfoEvt {
+  repeated MotInfo mot_info = 1;
+  .v2.common.OdomPose3d pose = 2;
+}
+
+message MotInfo {
+  uint32 mot_id = 1;            //MOT id：1-10
+  EnumMotType mot_type = 2;     //MOT类型
+  EnumMotColor mot_color = 3;   //MOT颜色
+  .v2.common.Point dist = 4;               //position in ego coordinate system
+  .v2.common.Vector2f velocity = 5;        //velocity in ego coordinate system
+  .v2.common.Vector2f acceleration = 6;    //acceleration in ego coordinate system
+  float mot_yaw_angle = 7;      //yaw angle in ego coordinate system
+  float mot_yaw_rate = 8;       //yaw angle rate in ego coordinate system
+  repeated .v2.common.EnumSwitch lights_status = 9;   //车灯，顺序是：刹车灯，左转向灯，右转向灯，双闪
+  float confident = 10;         //MOT置信度
+}
+
+enum EnumMotType {
+  MOT_UNKNOWN = 0;                //未知
+  MOT_WALKER = 1;                 //行人
+  MOT_RIDER = 2;                  //骑行者
+  MOT_CAR = 3;                    //轿车
+  MOT_BUS = 4;                    //巴士
+  MOT_TRUCK = 5;                  //卡车
+  MOT_OTHER_VEHICLE = 6;          //其他车辆
+  MOT_CONE = 7;                   //锥桶
+  MOT_TRAFFIC_TRIPOD = 8;         //三脚架
+  MOT_ANIMAL = 9;                 //动物
+  MOT_HYDRANT = 10;               //消防栓
+  MOT_PARKING_LOCK = 11;          //地锁
+  MOT_SHOPPING_CART = 12;         //购物手推车
+  MOT_SPECIAL_VEHICLE = 13;       //特殊车辆
+  MOT_VEHICLE_WHEEL = 14;         //车轮
+  MOT_TRICYCLE = 15;              //三轮车
+  MOT_ROUND_WATER_BARRIER = 16;   //圆形水障
+  MOT_LICENSE_PLATE = 18;         //车牌
+  MOT_TRAFFIC_PILLAR = 20;        //柱子
+}
+
+enum EnumMotColor {
+  MOT_COLOR_DEFAULT = 0;
+  MOT_COLOR_BLUE = 1;             //蓝色
+  MOT_COLOR_RED = 2;              //红色
+  MOT_COLOR_YELLOW = 3;           //黄色
+}

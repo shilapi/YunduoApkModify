@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip">
+        <TextView android:textAppearance="?android:textAppearanceLarge" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/lte_rx_mimo_configure" />
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip">
+            <CheckBox android:id="@id/lte_rx_mimo_4_momo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lte_rx_mimo_4_momo" />
+            <CheckBox android:id="@id/lte_rx_mimo_ras_4rx_2rx" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lte_rx_mimo_ras_4rx_2rx" />
+            <CheckBox android:id="@id/lte_rx_mimo_ras_2rx_1rx" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lte_rx_mimo_ras_2rx_1rx" />
+            <CheckBox android:id="@id/lte_rx_mimo_4_rx" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lte_rx_mimo_4_rx" />
+        </LinearLayout>
+        <Button android:gravity="center" android:id="@id/lte_ca_set_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lte_ca_set" />
+    </LinearLayout>
+</LinearLayout>

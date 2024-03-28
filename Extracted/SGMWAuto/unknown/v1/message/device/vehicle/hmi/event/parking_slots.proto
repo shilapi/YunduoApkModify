@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package v1.message.device.vehicle.hmi.event;
+option go_package = "v1/message/device/vehicle/hmi/event";
+
+import "v1/message/device/vehicle/common.proto";
+
+/**
+ * 感知车位框
+ * 结构体: sys_msgs::EvaluatedParkingSlotList
+ * topic : /sys/evaluated_parking_slots/v1
+ * 频率  : 5 Hz
+ */
+message EvaluatedParkingSlotListEvt {
+  uint32 suggested_slot_id = 1;
+  repeated EvaluatedParkingSlot slots = 2;
+}
+
+message EvaluatedParkingSlot {
+  ParkingSlot slot = 1;
+  ParkingSlotEvaluation slot_evaluation = 2;
+}
+
+message ParkingSlotEvaluation {
+  float safety_cost = 1;
+  float efficiency_cost = 2;
+  float comfort_cost = 3;
+}

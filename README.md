@@ -1,9 +1,3 @@
-<style>
-img{
-    width: 30%;
-    padding-left: 35%;
-}
-</style>
 
 # YunduoApkModify
 

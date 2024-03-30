@@ -1,2 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+Original_Packages/SGMWAuto/SGMWAuto.apk filter=lfs diff=lfs merge=lfs -text
+Original_Packages/SGMWPersonalizedMap/SGMWPersonalizedMap.apk filter=lfs diff=lfs merge=lfs -text

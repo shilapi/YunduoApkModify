@@ -29,7 +29,7 @@
 按照你自己的盒子对文件进行修改：
 
  - preference中package项修改为你的盒子配套apk的包名
- - vendor-id、product-id项修改为你盒子的vid、pid（请键入为十进制格式，Windows直接连接盒子查看的vid、pid为16进制、请自行转换）
+ - vendor-id、product-id项修改为你盒子的vid、pid（请键入为十进制格式，Windows直接连接盒子查看的vid、pid为16进制,请自行转换）
  - manufacturer-name、product-name、serial-number项如法炮制，按照你的盒子进行修改
 
 （以下操作均通过笔记本usb直连，通过adb进行操作）

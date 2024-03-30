@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<settings>
+  <preference package="cn.manstep.phonemirrorBox" user="0">
+    <usb-device vendor-id="4884" product-id="5409" class="0" subclass="0" protocol="0" manufacturer-name="Magic Communication Tec." product-name="Auto Box" serial-number="0123456789FEDCBA" />
+  </preference>
+</settings>
